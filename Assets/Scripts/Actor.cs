@@ -24,6 +24,8 @@ public class Actor : MonoBehaviour
         if (health > 0)
         {
             health -= damageValue;
+            string text = "- " + damageValue;
+            TextSpawner.instance.Spawn(this.transform, text);
         }
         else
         {

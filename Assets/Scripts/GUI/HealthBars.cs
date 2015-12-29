@@ -25,17 +25,9 @@ public class HealthBars : MonoBehaviour
 
     private void spawnSliders()
     {
-        foreach (Transform child in transform)
+        foreach (Actor actor in Actors.get())
         {
-            Actor actor = child.GetComponent<Actor>();
-            if (actor != null)
-            {
-                spawnHitPointsSlider(actor);
-            }
-            else
-            {
-                Debug.Log(child.name + " :to nie jest aktor, czy na pewno umiesciles tu poprawny object?");
-            }
+            spawnHitPointsSlider(actor);
         }
     }
 

@@ -29,8 +29,11 @@ public class Actor : MonoBehaviour
         }
         else
         {
-            //todo: smierc
+            //dead state ;]
             Debug.Log(name + " is dead");
+            Actors.get().Remove(this);
+            Destroy(healthBar.transform.gameObject); //transform.gameObject.SetActive(false); -> jesli bedziemy miec wskrzeszanie mozna uzywac zamiennie
+            Destroy(this.gameObject);
         }
 
         if (healthBar != null)

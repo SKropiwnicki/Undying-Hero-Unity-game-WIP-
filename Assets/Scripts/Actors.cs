@@ -22,6 +22,8 @@ public class Actors : MonoBehaviour
                 Debug.Log(child.name + " :to nie jest aktor, czy na pewno umiesciles tu poprawny object?");
             }
         }
+
+        TurnManagement.instance.initTurnManagement();
     }
 
     public static List<Actor> get()

@@ -6,6 +6,7 @@ public class Actor : MonoBehaviour
 {
     public int maxHealth;
     public int health; //aktualne hp
+    public int initiative;
 
     private Slider healthBar;
 

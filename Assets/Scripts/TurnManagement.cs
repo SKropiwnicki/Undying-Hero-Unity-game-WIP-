@@ -13,6 +13,10 @@ public class TurnManagement : MonoBehaviour
     public GameObject pointerParent;
     public float pointerYOffset = 2.5f;
 
+    public GameObject portraitBorderPrefab;
+    public GameObject portraitsParent;
+    public float portraitXOffset; //szerokosc portretu/ramki
+
     void Awake()
     {
         if (instance == null)
@@ -25,9 +29,11 @@ public class TurnManagement : MonoBehaviour
     {
         StartCoroutine(spawnPointer()); //wczytywanie prefabow trwa te pare milisekund - bolesnie sie o tym przekonalem
         initRound();
+        spawnPortraits();
+        spawnPortraitBorder();
     }
 
-    public void initRound()
+    private void initRound()
     {
         actors = new List<Actor>(Actors.get());
 
@@ -53,12 +59,14 @@ public class TurnManagement : MonoBehaviour
             Debug.Log("Pora na kolejna rundke ;)");
 
             initRound();
+            updatePortraitsPosition();
         }
         else
         {
             currentActor = actors[currentIndex + 1];
         }
         setPointerPosition();
+        updatePortraitBorderPosition();
         Debug.Log("Tura " + currentActor.name + " inicjatywa: " + currentActor.initiative);
     }
 
@@ -78,5 +86,40 @@ public class TurnManagement : MonoBehaviour
         Vector3 worldPos = new Vector3(pointerXOffset, pointerYOffset, transform.position.z);
         Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
         pointerPrefab.transform.position = new Vector3(screenPos.x, screenPos.y, screenPos.z);
+    }
+
+    private void spawnPortraits()
+    {
+        int i = 0;
+        foreach (Actor actor in actors)
+        {
+            actor.portraitPrefab = Instantiate(actor.portraitPrefab, new Vector3(i * portraitXOffset, 0, 0), Quaternion.identity) as GameObject;
+            actor.portraitPrefab.transform.SetParent(portraitsParent.transform, false);
+
+            i++;
+        }
+    }
+
+    private void spawnPortraitBorder()
+    {
+        portraitBorderPrefab = Instantiate(portraitBorderPrefab) as GameObject;
+        portraitBorderPrefab.transform.SetParent(portraitsParent.transform, false);
+    }
+
+    private void updatePortraitBorderPosition()
+    {
+        int currentIndex = actors.IndexOf(currentActor);
+        portraitBorderPrefab.GetComponent<RectTransform>().anchoredPosition = new Vector2(currentIndex * portraitXOffset, 0f);
+    }
+
+    private void updatePortraitsPosition()
+    {
+        int i = 0;
+        foreach (Actor actor in actors)
+        {
+            actor.portraitPrefab.GetComponent<RectTransform>().anchoredPosition = new Vector2(i * portraitXOffset, 0f);
+
+            i++;
+        }
     }
 }

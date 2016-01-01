@@ -8,6 +8,8 @@ public class Actor : MonoBehaviour
     public int health; //aktualne hp
     public int initiative;
 
+    public GameObject portraitPrefab;
+
     private Slider healthBar;
 
     public void setHpBar(Slider healthBar)

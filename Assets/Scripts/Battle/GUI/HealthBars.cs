@@ -37,7 +37,7 @@ public class HealthBars : MonoBehaviour
         healthObject.transform.SetParent(healthBarParent.transform, false);
 
         Slider healthBar = healthObject.GetComponentInChildren<Slider>();
-        actor.setHpBar(healthBar);
+        actor.SetHpBar(healthBar);
 
         int maxHealth = actor.maxHealth;
         healthBar.maxValue = maxHealth;

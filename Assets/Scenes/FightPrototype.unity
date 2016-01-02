@@ -161,7 +161,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1962447948}
-        m_MethodName: testNextTurn
+        m_MethodName: nextTurn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

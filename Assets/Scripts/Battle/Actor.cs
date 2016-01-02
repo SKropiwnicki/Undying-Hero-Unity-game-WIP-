@@ -7,12 +7,13 @@ public class Actor : MonoBehaviour
     public int maxHealth;
     public int health; //aktualne hp
     public int initiative;
+    public float dmgAnimSpeed = 0.9f;
 
     public GameObject portraitPrefab;
 
     private Slider healthBar;
 
-    public void setHpBar(Slider healthBar)
+    public void SetHpBar(Slider healthBar)
     {
         this.healthBar = healthBar;
     }
@@ -28,7 +29,8 @@ public class Actor : MonoBehaviour
         health -= damageValue;
         string text = "- " + damageValue;
         TextSpawner.instance.Spawn(this.transform, text);
-
+        StartCoroutine(damageAnimation());
+   
         if (health <= 0)
         {
             //dead state ;]
@@ -46,5 +48,17 @@ public class Actor : MonoBehaviour
         {
             Debug.Log("Actor.cs, slider problem");
         }
+    }
+
+    IEnumerator damageAnimation()
+    {
+        SpriteRenderer renderer = GetComponent<SpriteRenderer>();
+        renderer.color = new Color(1f, 0f, 0f, 1f);
+        while (renderer.color.r > 0.1f)
+        {
+            renderer.color = Color.Lerp(renderer.color, Color.white, dmgAnimSpeed * Time.deltaTime);
+            yield return null;
+        }
+       
     }
 }

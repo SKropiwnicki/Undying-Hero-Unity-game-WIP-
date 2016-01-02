@@ -782,6 +782,7 @@ GameObject:
   - 4: {fileID: 527623287}
   - 212: {fileID: 527623288}
   - 114: {fileID: 527623289}
+  - 61: {fileID: 527623290}
   m_Layer: 0
   m_Name: Orc1
   m_TagString: Target
@@ -842,12 +843,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec7ce56101794704c87b8d29ab2449e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 2
+  maxHealth: 10
   health: 0
   initiative: 1
+  attackPower: 3
   portraitPrefab: {fileID: 189602, guid: dc36bad4258f8364b9714cf67ddee2f7, type: 2}
   dmgAnimSpeed: 0.9
   spriteRenderer: {fileID: 0}
+--- !u!61 &527623290
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 527623286}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 1.95, y: 2.7}
 --- !u!1 &793837815
 GameObject:
   m_ObjectHideFlags: 0
@@ -1104,9 +1120,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec7ce56101794704c87b8d29ab2449e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 80
+  maxHealth: 30
   health: 0
   initiative: 2
+  attackPower: 5
   portraitPrefab: {fileID: 100442, guid: fe83bf6781076aa409d31a3b35fb605e, type: 2}
   dmgAnimSpeed: 0.9
   spriteRenderer: {fileID: 0}
@@ -1834,6 +1851,7 @@ GameObject:
   - 4: {fileID: 2029425090}
   - 212: {fileID: 2029425091}
   - 114: {fileID: 2029425092}
+  - 61: {fileID: 2029425093}
   m_Layer: 0
   m_Name: Orc2
   m_TagString: Target
@@ -1894,9 +1912,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec7ce56101794704c87b8d29ab2449e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 2
+  maxHealth: 10
   health: 0
   initiative: 3
+  attackPower: 3
   portraitPrefab: {fileID: 189602, guid: dc36bad4258f8364b9714cf67ddee2f7, type: 2}
   dmgAnimSpeed: 0.9
   spriteRenderer: {fileID: 0}
+--- !u!61 &2029425093
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2029425089}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 1.95, y: 2.7}

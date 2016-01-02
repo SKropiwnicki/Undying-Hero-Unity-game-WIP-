@@ -4,6 +4,7 @@ using System.Collections;
 public class Targetting : MonoBehaviour {
 
     private bool isTargetting;
+    private string skillName;
 
 
 	// Use this for initialization
@@ -18,13 +19,21 @@ public class Targetting : MonoBehaviour {
        if (Input.GetMouseButtonDown(0) && isTargetting)
         {
             RaycastHit2D hit = Physics2D.Raycast(new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y), Vector2.zero, 10f);
-            Debug.Log("Position of click" + new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y));      
+            Debug.Log("Position of click" + new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y)); //do wyjebania potem     
             if (hit.collider != null  && hit.transform.tag == "Target")
             {
 
-                Destroy(hit.collider.gameObject);
-                //Display the name of the parent of the object hit.
-                Debug.Log(hit.rigidbody.name);
+                Actor source = TurnManagement.instance.getCurrentActor();
+               
+                foreach (Skill skill in source.skills)
+                {
+                    Debug.Log(skillName + " " + skill.name);
+                    if (skill.name == skillName)
+                    {
+                        skill.action(source, hit.collider.gameObject.GetComponent<Actor>());
+                    }
+                }
+            
                 isTargetting = false;
             }
         }
@@ -33,6 +42,7 @@ public class Targetting : MonoBehaviour {
 
     public void checkTarget()
     {
+        skillName = "AutoAttack";
         isTargetting = true;
     }
 }

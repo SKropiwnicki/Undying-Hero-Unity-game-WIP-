@@ -119,4 +119,15 @@ public class TurnManagement : MonoBehaviour
             i++;
         }
     }
+
+    public bool isThisCurrentActor(Actor actor)
+    {
+        if (currentActor == actor) { return true; }
+        else return false;
+    }
+
+    public Actor getCurrentActor ()
+    {
+        return currentActor;
+    } 
 }

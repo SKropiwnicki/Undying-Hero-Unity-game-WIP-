@@ -1,12 +1,17 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Actor : MonoBehaviour
 {
     public int maxHealth;
     public int health; //aktualne hp
     public int initiative;
+    public int attackPower;
+
+    [HideInInspector]
+    public List<Skill> skills;
 
     public GameObject portraitPrefab;
 
@@ -28,6 +33,13 @@ public class Actor : MonoBehaviour
         health = maxHealth; //TODO: Do ogarniecia, ze w przyszlosci postac moze zaczynac z mniej niz maxhp.
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+        
+    }
+    public void Start()
+    {
+        skills = new List<Skill>();
+        AutoAttack atakauto = new AutoAttack();
+        skills.Add(atakauto);
     }
 
     public void onAnimationAttack()

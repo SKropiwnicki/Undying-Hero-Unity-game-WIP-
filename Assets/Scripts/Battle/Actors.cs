@@ -10,6 +10,7 @@ public class Actors : MonoBehaviour
     {
         actors = new List<Actor>();
 
+        //Uwazac na tego foreacha w przyszłości, narazie działa i wygląda ok.
         foreach (Transform child in transform)
         {
             Actor actor = child.GetComponent<Actor>();

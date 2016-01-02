@@ -19,18 +19,17 @@ public class Actor : MonoBehaviour
 
     public void Awake()
     {
-        health = maxHealth;
+        health = maxHealth; //TODO: Do ogarniecia, ze w przyszlosci postac moze zaczynac z mniej niz maxhp.
     }
 
     public void TakeDamage(int damageValue)
     {
-        if (health > 0)
-        {
-            health -= damageValue;
-            string text = "- " + damageValue;
-            TextSpawner.instance.Spawn(this.transform, text);
-        }
-        else
+
+        health -= damageValue;
+        string text = "- " + damageValue;
+        TextSpawner.instance.Spawn(this.transform, text);
+
+        if (health <= 0)
         {
             //dead state ;]
             Debug.Log(name + " is dead");

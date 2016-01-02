@@ -45,16 +45,13 @@ public class TurnManagement : MonoBehaviour
         currentActor = actors[0];
     }
 
-    public void testNextTurn() //potrzebne dla buttonka - nie uruchamia statycznych funkcji //todo: del
-    {
-        nextTurn();
-    }
 
     public void nextTurn()
     {
         int currentIndex = actors.IndexOf(currentActor);
+        int nextIndex = currentIndex + 1;
 
-        if (currentIndex + 1 >= actors.Count)
+        if (nextIndex >= actors.Count)
         {
             Debug.Log("Pora na kolejna rundke ;)");
 
@@ -63,7 +60,7 @@ public class TurnManagement : MonoBehaviour
         }
         else
         {
-            currentActor = actors[currentIndex + 1];
+            currentActor = actors[nextIndex];
         }
         setPointerPosition();
         updatePortraitBorderPosition();

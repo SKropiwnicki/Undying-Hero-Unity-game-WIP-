@@ -40,38 +40,46 @@ public class Board : MonoBehaviour
 
     public void updateTiles()
     {
-        centerTile.sprite = getProperSprite(currentTile.x, currentTile.y);
-        upTile.sprite = getProperSprite(currentTile.x, currentTile.y + 1);
-        downTile.sprite = getProperSprite(currentTile.x, currentTile.y - 1);
-        rightTile.sprite = getProperSprite(currentTile.x + 1, currentTile.y);
-        leftTile.sprite = getProperSprite(currentTile.x - 1, currentTile.y);
+        setTileSprite(currentTile.x, currentTile.y, centerTile);
+        setTileSprite(currentTile.x, currentTile.y + 1, upTile);
+        setTileSprite(currentTile.x, currentTile.y - 1, downTile);
+        setTileSprite(currentTile.x + 1, currentTile.y, rightTile);
+        setTileSprite(currentTile.x - 1, currentTile.y, leftTile);
     }
 
-    private Sprite getProperSprite(int x, int y)
+    private void setTileSprite(int x, int y, Image image)
     {
+        Sprite sprite = image.sprite;
+
         if (x < 0 || x >= weight || y < 0 || y >= height)
         {
-            return emptyTile;
+            image.enabled = false;
+            return;
         }
+
+        image.enabled = true;
 
         switch (board[x, y].type)
         {
             case Tile.Type.START: //todo: del
-                return blockTile;
+                sprite = blockTile;
+                break;
 
             case Tile.Type.END: //todo: del
-                return blockTile;
+                sprite = blockTile;
+                break;
 
             case Tile.Type.BATTLE:
-                return battleTile;
+                sprite = battleTile;
+                break;
 
             //case Tile.Type.BLOCK:
             //    return blockTile;
 
             default:
-                return emptyTile;
+                sprite = emptyTile;
+                break;
         }
-        
     }
 
     private void generateBoard()
@@ -162,7 +170,6 @@ public class Board : MonoBehaviour
             Debug.Log("no na blocka to nie wejdziesz ziom");
             return false;
         }
-
         return true;
     }
 }

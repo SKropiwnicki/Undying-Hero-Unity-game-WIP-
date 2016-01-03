@@ -474,7 +474,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: JakasPrzyszlaFunkcja
+  m_Text: On Attack anim
 --- !u!222 &296967095
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -493,7 +493,7 @@ GameObject:
   - 114: {fileID: 398694098}
   - 114: {fileID: 398694097}
   m_Layer: 5
-  m_Name: JakasPrzyslaFunkcja
+  m_Name: OnAttackAnimation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -555,7 +555,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 398694098}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 918146998}
+        m_MethodName: onAnimationAttack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &398694098
@@ -833,8 +844,9 @@ MonoBehaviour:
   maxHealth: 2
   health: 0
   initiative: 1
-  dmgAnimSpeed: 0.9
   portraitPrefab: {fileID: 189602, guid: dc36bad4258f8364b9714cf67ddee2f7, type: 2}
+  dmgAnimSpeed: 0.9
+  spriteRenderer: {fileID: 0}
 --- !u!1 &793837815
 GameObject:
   m_ObjectHideFlags: 0
@@ -1043,7 +1055,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 918146995}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.53, y: 0.9, z: 0}
+  m_LocalPosition: {x: 2.53, y: 1.25, z: 0}
   m_LocalScale: {x: 1.6, y: 1.6, z: 1}
   m_Children: []
   m_Father: {fileID: 1962447945}
@@ -1092,8 +1104,9 @@ MonoBehaviour:
   maxHealth: 80
   health: 0
   initiative: 2
-  dmgAnimSpeed: 0.9
   portraitPrefab: {fileID: 100442, guid: fe83bf6781076aa409d31a3b35fb605e, type: 2}
+  dmgAnimSpeed: 0.9
+  spriteRenderer: {fileID: 0}
 --- !u!95 &918146999
 Animator:
   serializedVersion: 3
@@ -1530,7 +1543,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBarPrefab: {fileID: 191076, guid: bcef9774fc0069147a84525ccd980125, type: 2}
   healthBarParent: {fileID: 976792497}
-  healthBarYOffset: -2.5
+  healthBarYOffset: -0.5
 --- !u!114 &1962447947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1718,5 +1731,6 @@ MonoBehaviour:
   maxHealth: 2
   health: 0
   initiative: 3
-  dmgAnimSpeed: 0.9
   portraitPrefab: {fileID: 189602, guid: dc36bad4258f8364b9714cf67ddee2f7, type: 2}
+  dmgAnimSpeed: 0.9
+  spriteRenderer: {fileID: 0}

@@ -7,12 +7,16 @@ public class Actor : MonoBehaviour
     public int maxHealth;
     public int health; //aktualne hp
     public int initiative;
-    public float dmgAnimSpeed = 0.9f;
-    SpriteRenderer renderer;
 
     public GameObject portraitPrefab;
 
     private Slider healthBar;
+
+    public float dmgAnimSpeed = 0.9f;
+    [HideInInspector]
+    public SpriteRenderer spriteRenderer;
+
+    private Animator animator;
 
     public void SetHpBar(Slider healthBar)
     {
@@ -22,7 +26,13 @@ public class Actor : MonoBehaviour
     public void Awake()
     {
         health = maxHealth; //TODO: Do ogarniecia, ze w przyszlosci postac moze zaczynac z mniej niz maxhp.
-        renderer = GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
+    }
+
+    public void onAnimationAttack()
+    {
+        animator.SetTrigger("Attack");
     }
 
     public void TakeDamage(int damageValue)
@@ -33,15 +43,10 @@ public class Actor : MonoBehaviour
         string text = "- " + damageValue;
         TextSpawner.instance.Spawn(this.transform, text);
         StartCoroutine(damageAnimation());
-        
    
         if (health <= 0)
         {
-            //dead state ;]
-            Debug.Log(name + " is dead");
-            Actors.get().Remove(this);
-            Destroy(healthBar.transform.gameObject); //transform.gameObject.SetActive(false); -> jesli bedziemy miec wskrzeszanie mozna uzywac zamiennie
-            Destroy(this.gameObject);
+            onDeath();
         }
 
         if (healthBar != null)
@@ -54,15 +59,22 @@ public class Actor : MonoBehaviour
         }
     }
 
+    private void onDeath()
+    {
+        Debug.Log(name + " is dead");
+        Actors.get().Remove(this);
+        Destroy(healthBar.transform.gameObject); //transform.gameObject.SetActive(false); -> jesli bedziemy miec wskrzeszanie mozna uzywac zamiennie
+        Destroy(this.gameObject);
+    }
+
     IEnumerator damageAnimation()
     {
-        renderer.color = new Color(1f, 0f, 0f, 1f);
-        while (renderer.color.r > 0.1f)
+        spriteRenderer.color = new Color(1f, 0f, 0f, 1f);
+        while (spriteRenderer.color.r > 0.1f)
         {
-            renderer.color = Color.Lerp(renderer.color, Color.white, dmgAnimSpeed * Time.deltaTime);
+            spriteRenderer.color = Color.Lerp(spriteRenderer.color, Color.white, dmgAnimSpeed * Time.deltaTime);
             yield return null;
         }
         yield return new  WaitForSeconds(1.5f);
-       
     }
 }

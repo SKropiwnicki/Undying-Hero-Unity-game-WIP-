@@ -42,8 +42,9 @@ public class HealthBars : MonoBehaviour
         int maxHealth = actor.maxHealth;
         healthBar.maxValue = maxHealth;
         healthBar.value = maxHealth;
-      
-        Vector3 worldPos = new Vector3(actor.transform.position.x, actor.transform.position.y + healthBarYOffset, actor.transform.position.z);
+
+        float sizeY = actor.spriteRenderer.bounds.size.y;
+        Vector3 worldPos = new Vector3(actor.transform.position.x, actor.transform.position.y - (sizeY / 2f) + healthBarYOffset, actor.transform.position.z);
         Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
         healthObject.transform.position = new Vector3(screenPos.x, screenPos.y, screenPos.z);
     }

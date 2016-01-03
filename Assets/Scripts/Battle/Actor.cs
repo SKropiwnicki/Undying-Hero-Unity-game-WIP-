@@ -25,11 +25,13 @@ public class Actor : MonoBehaviour
 
     public void TakeDamage(int damageValue)
     {
+        StopAllCoroutines(); //UWAGA! to moze wpływać na inne coroutiny!
 
         health -= damageValue;
         string text = "- " + damageValue;
         TextSpawner.instance.Spawn(this.transform, text);
         StartCoroutine(damageAnimation());
+        
    
         if (health <= 0)
         {
@@ -59,6 +61,7 @@ public class Actor : MonoBehaviour
             renderer.color = Color.Lerp(renderer.color, Color.white, dmgAnimSpeed * Time.deltaTime);
             yield return null;
         }
+        yield return new  WaitForSeconds(1.5f);
        
     }
 }

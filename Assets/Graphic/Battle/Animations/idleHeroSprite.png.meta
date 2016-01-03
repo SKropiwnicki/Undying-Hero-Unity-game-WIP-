@@ -1,0 +1,491 @@
+fileFormatVersion: 2
+guid: bf0440303b9ed6d4e958aae7adb73973
+timeCreated: 1451832364
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: idleHeroSprite_0
+    21300002: idleHeroSprite_1
+    21300004: idleHeroSprite_2
+    21300006: idleHeroSprite_3
+    21300008: idleHeroSprite_4
+    21300010: idleHeroSprite_5
+    21300012: idleHeroSprite_6
+    21300014: idleHeroSprite_7
+    21300016: idleHeroSprite_8
+    21300018: idleHeroSprite_9
+    21300020: idleHeroSprite_10
+    21300022: idleHeroSprite_11
+    21300024: idleHeroSprite_12
+    21300026: idleHeroSprite_13
+    21300028: idleHeroSprite_14
+    21300030: idleHeroSprite_15
+    21300032: idleHeroSprite_16
+    21300034: idleHeroSprite_17
+    21300036: idleHeroSprite_18
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: idleHeroSprite_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 130
+        height: 350
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 40}
+        - {x: -54, y: -63}
+        - {x: -54, y: -135}
+        - {x: -51, y: -145}
+        - {x: 45, y: -145}
+        - {x: 54, y: -124}
+        - {x: 54, y: -17}
+        - {x: 22, y: 40}
+    - name: idleHeroSprite_1
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 0
+        width: 130
+        height: 350
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 9.214287, y: 40}
+        - {x: 0.2142868, y: 40}
+        - {x: -31.785713, y: 1}
+        - {x: -53.785713, y: -90}
+        - {x: -53.785713, y: -104}
+        - {x: -49.785713, y: -129}
+        - {x: -21.785713, y: -139}
+        - {x: -9.785713, y: -124}
+        - {x: 16.214287, y: -145}
+        - {x: 30.214287, y: -145}
+        - {x: 55.214287, y: -128}
+        - {x: 55.214287, y: -44}
+        - {x: 45.214287, y: 6}
+    - name: idleHeroSprite_2
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 0
+        width: 130
+        height: 350
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 30.928574, y: 40}
+        - {x: -22.071426, y: 40}
+        - {x: -54.071426, y: -33}
+        - {x: -54.071426, y: -108}
+        - {x: -46.071426, y: -104}
+        - {x: -41.071426, y: -100}
+        - {x: -39.071426, y: -98}
+        - {x: -34.071426, y: -90}
+        - {x: -41.071426, y: -100}
+        - {x: -49.071426, y: -106}
+        - {x: -54.071426, y: -112}
+        - {x: -54.071426, y: -145}
+        - {x: 35.928574, y: -145}
+        - {x: 54.928574, y: -121}
+        - {x: 54.928574, y: -53}
+        - {x: 32.928574, y: 38}
+    - name: idleHeroSprite_3
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 0
+        width: 130
+        height: 350
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 14.142853, y: 40}
+        - {x: -10.857147, y: 40}
+        - {x: -53.857147, y: -34}
+        - {x: -53.857147, y: -143}
+        - {x: -51.857147, y: -145}
+        - {x: 39.142853, y: -145}
+        - {x: 54.142853, y: -123}
+        - {x: 54.142853, y: -47}
+        - {x: 42.142853, y: 7}
+    - name: idleHeroSprite_4
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 0
+        width: 130
+        height: 350
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 17.357147, y: 45}
+        - {x: -14.642853, y: 45}
+        - {x: -53.642853, y: -38}
+        - {x: -53.642853, y: -122}
+        - {x: -42.642853, y: -145}
+        - {x: 48.357147, y: -145}
+        - {x: 55.357147, y: -127}
+        - {x: 55.357147, y: 4}
+        - {x: 49.357147, y: 17}
+    - name: idleHeroSprite_5
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 0
+        width: 130
+        height: 350
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3.9285889, y: 44}
+        - {x: -33.92859, y: 13}
+        - {x: -53.92859, y: -27}
+        - {x: -53.92859, y: -113}
+        - {x: -43.92859, y: -145}
+        - {x: 48.07141, y: -145}
+        - {x: 55.07141, y: -122}
+        - {x: 55.07141, y: -25}
+        - {x: 22.071411, y: 44}
+    - name: idleHeroSprite_6
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 0
+        width: 130
+        height: 350
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 25.285706, y: 33}
+        - {x: 11.285706, y: 43}
+        - {x: -17.714294, y: 43}
+        - {x: -21.714294, y: 41}
+        - {x: -53.714294, y: -43}
+        - {x: -53.714294, y: -123}
+        - {x: -38.714294, y: -145}
+        - {x: 37.285706, y: -145}
+        - {x: 54.285706, y: -114}
+        - {x: 54.285706, y: -60}
+        - {x: 37.285706, y: 5}
+      - - {x: -53.714294, y: -78}
+        - {x: -50.714294, y: -77}
+        - {x: -50.714294, y: -68}
+        - {x: -52.714294, y: -66}
+        - {x: -53.714294, y: -66}
+    - name: idleHeroSprite_7
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 0
+        width: 130
+        height: 350
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24, y: 43}
+        - {x: -54, y: 7}
+        - {x: -54, y: -145}
+        - {x: 54, y: -145}
+        - {x: 54, y: 33}
+        - {x: 37, y: 43}
+      - - {x: -54, y: -77}
+        - {x: -51, y: -76}
+        - {x: -51, y: -68}
+        - {x: -53, y: -66}
+        - {x: -54, y: -66}
+    - name: idleHeroSprite_8
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 0
+        width: 130
+        height: 350
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.785706, y: 44}
+        - {x: -47.785706, y: 15}
+        - {x: -53.785706, y: -21}
+        - {x: -53.785706, y: -111}
+        - {x: -50.785706, y: -110}
+        - {x: -46.785706, y: -123}
+        - {x: -36.785706, y: -141}
+        - {x: -20.785706, y: -137}
+        - {x: -5.7857056, y: -126}
+        - {x: 9.214294, y: -145}
+        - {x: 55.214294, y: -145}
+        - {x: 55.214294, y: 37}
+        - {x: 42.214294, y: 44}
+    - name: idleHeroSprite_9
+      rect:
+        serializedVersion: 2
+        x: 1170
+        y: 0
+        width: 130
+        height: 350
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 3.9285889, y: 40}
+        - {x: -6.071411, y: 34}
+        - {x: -29.071411, y: -2}
+        - {x: -54.07141, y: -63}
+        - {x: -54.07141, y: -143}
+        - {x: -49.07141, y: -145}
+        - {x: 54.92859, y: -145}
+        - {x: 54.92859, y: -30}
+        - {x: 37.92859, y: 40}
+    - name: idleHeroSprite_10
+      rect:
+        serializedVersion: 2
+        x: 1300
+        y: 0
+        width: 130
+        height: 350
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 11.142822, y: 40}
+        - {x: -1.8571777, y: 40}
+        - {x: -32.857178, y: -2}
+        - {x: -53.857178, y: -81}
+        - {x: -53.857178, y: -98}
+        - {x: -49.857178, y: -98}
+        - {x: -52.857178, y: -112}
+        - {x: -53.857178, y: -126}
+        - {x: -53.857178, y: -145}
+        - {x: 50.142822, y: -145}
+        - {x: 54.142822, y: -137}
+        - {x: 54.142822, y: -48}
+        - {x: 36.142822, y: 17}
+    - name: idleHeroSprite_11
+      rect:
+        serializedVersion: 2
+        x: 1430
+        y: 0
+        width: 130
+        height: 350
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 16.357178, y: 40}
+        - {x: -4.6428223, y: 40}
+        - {x: -40.642822, y: 4}
+        - {x: -53.642822, y: -80}
+        - {x: -53.642822, y: -114}
+        - {x: -49.642822, y: -121}
+        - {x: -26.642822, y: -145}
+        - {x: 40.357178, y: -145}
+        - {x: 55.357178, y: -116}
+        - {x: 55.357178, y: -57}
+        - {x: 46.357178, y: 6}
+    - name: idleHeroSprite_12
+      rect:
+        serializedVersion: 2
+        x: 1560
+        y: 0
+        width: 130
+        height: 350
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 13.071411, y: 40}
+        - {x: -16.928589, y: 40}
+        - {x: -53.92859, y: 11}
+        - {x: -53.92859, y: -145}
+        - {x: 43.07141, y: -145}
+        - {x: 55.07141, y: -123}
+        - {x: 55.07141, y: -53}
+        - {x: 43.07141, y: 8}
+    - name: idleHeroSprite_13
+      rect:
+        serializedVersion: 2
+        x: 1690
+        y: 0
+        width: 130
+        height: 350
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 15.285767, y: 40}
+        - {x: -1.7142334, y: 40}
+        - {x: -36.714233, y: 1}
+        - {x: -53.714233, y: -80}
+        - {x: -53.714233, y: -98}
+        - {x: -50.714233, y: -97}
+        - {x: -44.714233, y: -93}
+        - {x: -47.714233, y: -105}
+        - {x: -45.714233, y: -113}
+        - {x: -38.714233, y: -132}
+        - {x: -23.714233, y: -135}
+        - {x: -7.7142334, y: -123}
+        - {x: 12.285767, y: -145}
+        - {x: 45.285767, y: -145}
+        - {x: 54.285767, y: -115}
+        - {x: 54.285767, y: -36}
+        - {x: 31.285767, y: 15}
+    - name: idleHeroSprite_14
+      rect:
+        serializedVersion: 2
+        x: 1820
+        y: 0
+        width: 130
+        height: 350
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -54, y: -128}
+        - {x: -44, y: -145}
+        - {x: 54, y: -145}
+        - {x: 54, y: 3}
+        - {x: 36, y: 44}
+        - {x: -23, y: 44}
+        - {x: -54, y: -33}
+    - name: idleHeroSprite_15
+      rect:
+        serializedVersion: 2
+        x: 1950
+        y: 0
+        width: 130
+        height: 350
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.785645, y: 43}
+        - {x: -42.785645, y: 3}
+        - {x: -53.785645, y: -58}
+        - {x: -53.785645, y: -131}
+        - {x: -31.785645, y: -145}
+        - {x: 38.214355, y: -145}
+        - {x: 55.214355, y: -124}
+        - {x: 55.214355, y: 13}
+        - {x: 20.214355, y: 43}
+    - name: idleHeroSprite_16
+      rect:
+        serializedVersion: 2
+        x: 2080
+        y: 0
+        width: 130
+        height: 350
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.071411, y: 43}
+        - {x: -46.07141, y: 15}
+        - {x: -54.07141, y: -31}
+        - {x: -54.07141, y: -145}
+        - {x: 52.92859, y: -145}
+        - {x: 54.92859, y: -142}
+        - {x: 54.92859, y: -23}
+        - {x: 35.92859, y: 43}
+    - name: idleHeroSprite_17
+      rect:
+        serializedVersion: 2
+        x: 2210
+        y: 0
+        width: 130
+        height: 350
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23.857178, y: 44}
+        - {x: -53.857178, y: -38}
+        - {x: -53.857178, y: -110}
+        - {x: -50.857178, y: -109}
+        - {x: -49.857178, y: -106}
+        - {x: -37.857178, y: -139}
+        - {x: -24.857178, y: -145}
+        - {x: 54.142822, y: -145}
+        - {x: 54.142822, y: -29}
+        - {x: 23.142822, y: 44}
+    - name: idleHeroSprite_18
+      rect:
+        serializedVersion: 2
+        x: 2340
+        y: 0
+        width: 130
+        height: 350
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 31.357178, y: 41}
+        - {x: 26.357178, y: 45}
+        - {x: -15.642822, y: 45}
+        - {x: -53.642822, y: -12}
+        - {x: -53.642822, y: -127}
+        - {x: -29.642822, y: -145}
+        - {x: 38.357178, y: -145}
+        - {x: 39.357178, y: -143}
+        - {x: 55.357178, y: -115}
+        - {x: 55.357178, y: -47}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

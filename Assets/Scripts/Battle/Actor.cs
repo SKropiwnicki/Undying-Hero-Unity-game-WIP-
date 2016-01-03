@@ -8,6 +8,7 @@ public class Actor : MonoBehaviour
     public int health; //aktualne hp
     public int initiative;
     public float dmgAnimSpeed = 0.9f;
+    SpriteRenderer renderer;
 
     public GameObject portraitPrefab;
 
@@ -21,6 +22,7 @@ public class Actor : MonoBehaviour
     public void Awake()
     {
         health = maxHealth; //TODO: Do ogarniecia, ze w przyszlosci postac moze zaczynac z mniej niz maxhp.
+        renderer = GetComponent<SpriteRenderer>();
     }
 
     public void TakeDamage(int damageValue)
@@ -54,7 +56,6 @@ public class Actor : MonoBehaviour
 
     IEnumerator damageAnimation()
     {
-        SpriteRenderer renderer = GetComponent<SpriteRenderer>();
         renderer.color = new Color(1f, 0f, 0f, 1f);
         while (renderer.color.r > 0.1f)
         {

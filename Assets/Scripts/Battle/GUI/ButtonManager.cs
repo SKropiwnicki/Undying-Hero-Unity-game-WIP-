@@ -21,8 +21,7 @@ public class ButtonManager : MonoBehaviour
         else
             Destroy(gameObject);
     }
-
-    //Koniecznie przed Turn management, najlepiej jedno z pierwszych
+    
     public void init()
     {
         currentButtons = new List<GameObject>();

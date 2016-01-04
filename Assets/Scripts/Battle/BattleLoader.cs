@@ -37,6 +37,10 @@ public class BattleLoader : MonoBehaviour
         Hero1Prefab.name = "Hero1";
         Hero1Prefab.transform.SetParent(ActorsParent.transform, false);
 
+        ButtonManager.instance.init();
+
+        yield return new WaitForEndOfFrame();
+
         yield return new WaitForEndOfFrame();
 
         Actors.instance.init();
@@ -48,10 +52,6 @@ public class BattleLoader : MonoBehaviour
         yield return new WaitForEndOfFrame();
 
         HealthBars.instance.spawnSliders();
-
-        yield return new WaitForEndOfFrame();
-
-        ButtonManager.instance.init();
 
         yield return new WaitForEndOfFrame();
 

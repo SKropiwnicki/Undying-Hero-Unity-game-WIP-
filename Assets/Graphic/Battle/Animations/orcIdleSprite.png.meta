@@ -1,0 +1,330 @@
+fileFormatVersion: 2
+guid: 4d8ad88d63e31fe4c8a022fd60a0fe91
+timeCreated: 1451875243
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: orcIdleSprite_0
+    21300002: orcIdleSprite_1
+    21300004: orcIdleSprite_2
+    21300006: orcIdleSprite_3
+    21300008: orcIdleSprite_4
+    21300010: orcIdleSprite_5
+    21300012: orcIdleSprite_6
+    21300014: orcIdleSprite_7
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: orcIdleSprite_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 296
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 110, y: -49}
+        - {x: 94, y: -42}
+        - {x: 76, y: -36}
+        - {x: 86, y: -25}
+        - {x: 89, y: -17}
+        - {x: 91, y: -10}
+        - {x: 92, y: -5}
+        - {x: 103, y: 8}
+        - {x: 109, y: 18}
+        - {x: 113, y: 83}
+        - {x: 55, y: 120}
+        - {x: -9, y: 120}
+        - {x: -12, y: 119}
+        - {x: -49, y: 56}
+        - {x: -56, y: 28}
+        - {x: -56, y: 16}
+        - {x: -44, y: -3}
+        - {x: -33, y: -2}
+        - {x: -28, y: 1}
+        - {x: -24, y: 5}
+        - {x: -22, y: 14}
+        - {x: -20, y: 10}
+        - {x: -35, y: -11}
+        - {x: -53, y: -49}
+        - {x: -54, y: -89}
+        - {x: -49, y: -101}
+        - {x: 6, y: -118}
+        - {x: 89, y: -118}
+        - {x: 117, y: -81}
+        - {x: 117, y: -55}
+    - name: orcIdleSprite_1
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 0
+        width: 296
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 72.32857, y: -35}
+        - {x: 64.32857, y: -35}
+        - {x: 69.32857, y: -35}
+        - {x: 87.32857, y: -32}
+        - {x: 110.32857, y: 7}
+        - {x: 117.32857, y: 81}
+        - {x: 57.328568, y: 121}
+        - {x: -21.671432, y: 121}
+        - {x: -54.671432, y: 45}
+        - {x: -54.671432, y: 11}
+        - {x: -46.671432, y: -6}
+        - {x: -25.671432, y: 0}
+        - {x: -22.671432, y: 5}
+        - {x: -21.671432, y: 9}
+        - {x: -8.6714325, y: 23}
+        - {x: -23.671432, y: 3}
+        - {x: -29.671432, y: -9}
+        - {x: -53.671432, y: -42}
+        - {x: -38.671432, y: -64}
+        - {x: -29.671432, y: -61}
+        - {x: -26.671432, y: -61}
+        - {x: -28.671432, y: -61}
+        - {x: -54.671432, y: -76}
+        - {x: -54.671432, y: -87}
+        - {x: -33.671432, y: -110}
+        - {x: -0.6714325, y: -119}
+        - {x: 83.32857, y: -119}
+        - {x: 118.32857, y: -91}
+        - {x: 118.32857, y: -48}
+        - {x: 94.32857, y: -36}
+    - name: orcIdleSprite_2
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 0
+        width: 296
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.842865, y: 120}
+        - {x: -54.842865, y: 81}
+        - {x: -54.842865, y: 7}
+        - {x: -52.842865, y: -8}
+        - {x: -37.842865, y: -4}
+        - {x: -25.842865, y: 0}
+        - {x: -19.842865, y: 10}
+        - {x: -16.842865, y: 8}
+        - {x: -26.842865, y: -2}
+        - {x: -51.842865, y: -44}
+        - {x: -54.842865, y: -66}
+        - {x: -54.842865, y: -94}
+        - {x: -3.842865, y: -119}
+        - {x: 79.157135, y: -119}
+        - {x: 118.157135, y: -100}
+        - {x: 118.157135, y: 100}
+        - {x: 67.157135, y: 120}
+    - name: orcIdleSprite_3
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 0
+        width: 296
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24.014282, y: 120}
+        - {x: -55.014282, y: 45}
+        - {x: -55.014282, y: 6}
+        - {x: -46.014282, y: 0}
+        - {x: -37.014282, y: -4}
+        - {x: -26.014282, y: 0}
+        - {x: -23.014282, y: 4}
+        - {x: -20.014282, y: 14}
+        - {x: -18.014282, y: 10}
+        - {x: -31.014282, y: -9}
+        - {x: -55.014282, y: -57}
+        - {x: -55.014282, y: -104}
+        - {x: -16.014282, y: -120}
+        - {x: 92.98572, y: -120}
+        - {x: 117.98572, y: -95}
+        - {x: 117.98572, y: 85}
+        - {x: 53.985718, y: 120}
+    - name: orcIdleSprite_4
+      rect:
+        serializedVersion: 2
+        x: 1184
+        y: 0
+        width: 296
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 109.81427, y: -44}
+        - {x: 102.81427, y: -37}
+        - {x: 100.81427, y: -38}
+        - {x: 73.81427, y: -37}
+        - {x: 63.81427, y: -36}
+        - {x: 69.81427, y: -36}
+        - {x: 83.81427, y: -37}
+        - {x: 111.81427, y: 3}
+        - {x: 117.81427, y: 58}
+        - {x: 117.81427, y: 86}
+        - {x: 59.81427, y: 120}
+        - {x: -6.18573, y: 120}
+        - {x: -55.18573, y: 53}
+        - {x: -55.18573, y: -102}
+        - {x: 22.81427, y: -120}
+        - {x: 67.81427, y: -120}
+        - {x: 117.81427, y: -80}
+        - {x: 117.81427, y: -63}
+        - {x: 116.81427, y: -56}
+    - name: orcIdleSprite_5
+      rect:
+        serializedVersion: 2
+        x: 1480
+        y: 0
+        width: 296
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23.857178, y: 120}
+        - {x: -54.857178, y: 45}
+        - {x: -54.857178, y: 6}
+        - {x: -45.857178, y: 0}
+        - {x: -36.857178, y: -4}
+        - {x: -25.857178, y: 0}
+        - {x: -22.857178, y: 4}
+        - {x: -19.857178, y: 14}
+        - {x: -17.857178, y: 10}
+        - {x: -30.857178, y: -9}
+        - {x: -54.857178, y: -57}
+        - {x: -54.857178, y: -104}
+        - {x: -15.857178, y: -120}
+        - {x: 93.14282, y: -120}
+        - {x: 118.14282, y: -95}
+        - {x: 118.14282, y: 85}
+        - {x: 54.142822, y: 120}
+    - name: orcIdleSprite_6
+      rect:
+        serializedVersion: 2
+        x: 1776
+        y: 0
+        width: 296
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -22.528564, y: 120}
+        - {x: -53.528564, y: 45}
+        - {x: -53.528564, y: 6}
+        - {x: -44.528564, y: 0}
+        - {x: -35.528564, y: -4}
+        - {x: -24.528564, y: 0}
+        - {x: -21.528564, y: 4}
+        - {x: -18.528564, y: 14}
+        - {x: -16.528564, y: 10}
+        - {x: -29.528564, y: -9}
+        - {x: -53.528564, y: -57}
+        - {x: -53.528564, y: -110}
+        - {x: -24.528564, y: -120}
+        - {x: 92.471436, y: -120}
+        - {x: 119.471436, y: -91}
+        - {x: 119.471436, y: 84}
+        - {x: 52.471436, y: 120}
+    - name: orcIdleSprite_7
+      rect:
+        serializedVersion: 2
+        x: 2072
+        y: 0
+        width: 296
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 73.29993, y: -35}
+        - {x: 65.29993, y: -35}
+        - {x: 70.29993, y: -35}
+        - {x: 88.29993, y: -32}
+        - {x: 111.29993, y: 7}
+        - {x: 118.29993, y: 81}
+        - {x: 58.299927, y: 121}
+        - {x: -20.700073, y: 121}
+        - {x: -53.700073, y: 45}
+        - {x: -53.700073, y: 11}
+        - {x: -45.700073, y: -6}
+        - {x: -24.700073, y: 0}
+        - {x: -21.700073, y: 5}
+        - {x: -20.700073, y: 9}
+        - {x: -7.7000732, y: 23}
+        - {x: -22.700073, y: 3}
+        - {x: -28.700073, y: -9}
+        - {x: -52.700073, y: -42}
+        - {x: -37.700073, y: -64}
+        - {x: -28.700073, y: -61}
+        - {x: -25.700073, y: -61}
+        - {x: -27.700073, y: -61}
+        - {x: -53.700073, y: -76}
+        - {x: -53.700073, y: -87}
+        - {x: -32.700073, y: -110}
+        - {x: 0.29992676, y: -119}
+        - {x: 84.29993, y: -119}
+        - {x: 119.29993, y: -91}
+        - {x: 119.29993, y: -48}
+        - {x: 95.29993, y: -36}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

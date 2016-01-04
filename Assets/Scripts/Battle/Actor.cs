@@ -10,8 +10,12 @@ public class Actor : MonoBehaviour
     public int initiative;
     public int attackPower;
 
+    public bool isControllable;
+
     [HideInInspector]
     public List<Skill> skills;
+
+    public GameObject skillPrefab;
 
     public GameObject portraitPrefab;
 

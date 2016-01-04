@@ -250,6 +250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 416857ec5cce7d64ca9ac94197474880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonOffsetX: 2
 --- !u!1 &144285719
 GameObject:
   m_ObjectHideFlags: 0
@@ -828,6 +829,7 @@ GameObject:
   - 212: {fileID: 527623288}
   - 114: {fileID: 527623289}
   - 61: {fileID: 527623290}
+  - 95: {fileID: 527623291}
   m_Layer: 0
   m_Name: Orc1
   m_TagString: Target
@@ -873,7 +875,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: cefec2c46f3231f4c825fe537623fd06, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7c493981d8aeefe4db0edf7898558cdb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -892,6 +894,7 @@ MonoBehaviour:
   health: 0
   initiative: 1
   attackPower: 3
+  isControllable: 0
   portraitPrefab: {fileID: 189602, guid: dc36bad4258f8364b9714cf67ddee2f7, type: 2}
   dmgAnimSpeed: 0.9
   spriteRenderer: {fileID: 0}
@@ -910,6 +913,23 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 1.95, y: 2.7}
+--- !u!95 &527623291
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 527623286}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 5131880a52678024f866e8705cbc8182, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &793837815
 GameObject:
   m_ObjectHideFlags: 0
@@ -1170,6 +1190,7 @@ MonoBehaviour:
   health: 0
   initiative: 2
   attackPower: 5
+  isControllable: 0
   portraitPrefab: {fileID: 100442, guid: fe83bf6781076aa409d31a3b35fb605e, type: 2}
   dmgAnimSpeed: 0.9
   spriteRenderer: {fileID: 0}
@@ -1899,6 +1920,7 @@ GameObject:
   - 212: {fileID: 2029425091}
   - 114: {fileID: 2029425092}
   - 61: {fileID: 2029425093}
+  - 95: {fileID: 2029425094}
   m_Layer: 0
   m_Name: Orc2
   m_TagString: Target
@@ -1944,7 +1966,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: cefec2c46f3231f4c825fe537623fd06, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7c493981d8aeefe4db0edf7898558cdb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1963,6 +1985,7 @@ MonoBehaviour:
   health: 0
   initiative: 3
   attackPower: 3
+  isControllable: 0
   portraitPrefab: {fileID: 189602, guid: dc36bad4258f8364b9714cf67ddee2f7, type: 2}
   dmgAnimSpeed: 0.9
   spriteRenderer: {fileID: 0}
@@ -1981,3 +2004,20 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 1.95, y: 2.7}
+--- !u!95 &2029425094
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2029425089}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 5131880a52678024f866e8705cbc8182, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1

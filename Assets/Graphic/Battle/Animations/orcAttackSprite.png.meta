@@ -1,0 +1,333 @@
+fileFormatVersion: 2
+guid: 36683deda3dd3ed499edc04015fac69c
+timeCreated: 1451871385
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: orcAttackSprite_0
+    21300002: orcAttackSprite_1
+    21300004: orcAttackSprite_2
+    21300006: orcAttackSprite_3
+    21300008: orcAttackSprite_4
+    21300010: orcAttackSprite_5
+    21300012: orcAttackSprite_6
+    21300014: orcAttackSprite_7
+    21300016: orcAttackSprite_8
+    21300018: orcAttackSprite_9
+    21300020: orcAttackSprite_10
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: orcAttackSprite_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 296
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.5, y: 88}
+        - {x: -41.5, y: 35}
+        - {x: -41.5, y: -77}
+        - {x: -19.5, y: -87}
+        - {x: 84.5, y: -87}
+        - {x: 84.5, y: 80}
+        - {x: 38.5, y: 88}
+      - - {x: 90.5, y: 21}
+        - {x: 92.5, y: 19}
+        - {x: 93.5, y: 19}
+        - {x: 93.5, y: 42}
+        - {x: 90.5, y: 41}
+    - name: orcAttackSprite_1
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 0
+        width: 296
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -93.442856, y: 15}
+        - {x: -38.442856, y: -78}
+        - {x: -13.442856, y: -88}
+        - {x: 58.557144, y: -88}
+        - {x: 93.557144, y: -81}
+        - {x: 93.557144, y: 84}
+        - {x: 92.557144, y: 88}
+        - {x: -22.442856, y: 88}
+        - {x: -93.442856, y: 45}
+    - name: orcAttackSprite_2
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 0
+        width: 296
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 59.61429, y: 88}
+        - {x: -38.38571, y: 88}
+        - {x: -93.38571, y: 58}
+        - {x: -93.38571, y: -79}
+        - {x: -92.38571, y: -88}
+        - {x: 93.61429, y: -88}
+        - {x: 93.61429, y: 48}
+        - {x: 81.61429, y: 84}
+    - name: orcAttackSprite_3
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 0
+        width: 296
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 92.67145, y: -41}
+        - {x: 85.67145, y: -32}
+        - {x: 93.67145, y: -25}
+        - {x: 93.67145, y: 49}
+        - {x: 90.67145, y: 66}
+        - {x: 41.671448, y: 88}
+        - {x: -12.328552, y: 88}
+        - {x: -93.32855, y: 38}
+        - {x: -93.32855, y: -6}
+        - {x: -39.328552, y: -84}
+        - {x: -12.328552, y: -88}
+        - {x: 57.671448, y: -88}
+        - {x: 87.67145, y: -61}
+        - {x: 93.67145, y: -54}
+        - {x: 93.67145, y: -46}
+      - - {x: -93.32855, y: -10}
+        - {x: -90.32855, y: -9}
+        - {x: -90.32855, y: 5}
+        - {x: -92.32855, y: 7}
+        - {x: -93.32855, y: 7}
+    - name: orcAttackSprite_4
+      rect:
+        serializedVersion: 2
+        x: 1184
+        y: 0
+        width: 296
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -34.271423, y: 88}
+        - {x: -93.27142, y: 35}
+        - {x: -93.27142, y: -5}
+        - {x: -19.271423, y: -88}
+        - {x: 78.72858, y: -88}
+        - {x: 93.72858, y: -81}
+        - {x: 93.72858, y: 66}
+        - {x: 56.728577, y: 88}
+    - name: orcAttackSprite_5
+      rect:
+        serializedVersion: 2
+        x: 1480
+        y: 0
+        width: 296
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 37.785767, y: 88}
+        - {x: -8.214233, y: 88}
+        - {x: -76.21423, y: 45}
+        - {x: -93.21423, y: 34}
+        - {x: -93.21423, y: -25}
+        - {x: -32.214233, y: -88}
+        - {x: 70.78577, y: -88}
+        - {x: 93.78577, y: -66}
+        - {x: 93.78577, y: 39}
+        - {x: 74.78577, y: 78}
+      - - {x: -93.21423, y: 12}
+        - {x: -90.21423, y: 13}
+        - {x: -90.21423, y: 17}
+        - {x: -92.21423, y: 19}
+        - {x: -93.21423, y: 19}
+    - name: orcAttackSprite_6
+      rect:
+        serializedVersion: 2
+        x: 1776
+        y: 0
+        width: 296
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -4.1571045, y: 88}
+        - {x: -13.1571045, y: 83}
+        - {x: -93.157104, y: 39}
+        - {x: -93.157104, y: 21}
+        - {x: -90.157104, y: 22}
+        - {x: -28.157104, y: -81}
+        - {x: -2.1571045, y: -88}
+        - {x: 70.842896, y: -88}
+        - {x: 93.842896, y: -58}
+        - {x: 93.842896, y: 56}
+        - {x: 53.842896, y: 88}
+      - - {x: -93.157104, y: 12}
+        - {x: -90.157104, y: 13}
+        - {x: -90.157104, y: 17}
+        - {x: -92.157104, y: 19}
+        - {x: -93.157104, y: 19}
+    - name: orcAttackSprite_7
+      rect:
+        serializedVersion: 2
+        x: 2072
+        y: 0
+        width: 296
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 41.900024, y: 88}
+        - {x: -21.099976, y: 88}
+        - {x: -93.099976, y: 41}
+        - {x: -93.099976, y: 13}
+        - {x: -67.099976, y: -88}
+        - {x: 93.900024, y: -88}
+        - {x: 93.900024, y: 51}
+        - {x: 74.900024, y: 83}
+      - - {x: -93.099976, y: 19}
+        - {x: -93.099976, y: 12}
+        - {x: -91.099976, y: 12}
+        - {x: -89.099976, y: 14}
+        - {x: -89.099976, y: 17}
+        - {x: -91.099976, y: 19}
+    - name: orcAttackSprite_8
+      rect:
+        serializedVersion: 2
+        x: 2368
+        y: 0
+        width: 296
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -93.04285, y: 10}
+        - {x: -92.04285, y: 10}
+        - {x: -88.04285, y: 12}
+        - {x: -45.042847, y: -68}
+        - {x: -15.042847, y: -88}
+        - {x: 93.95715, y: -88}
+        - {x: 93.95715, y: 56}
+        - {x: 89.95715, y: 88}
+        - {x: -32.042847, y: 88}
+        - {x: -93.04285, y: 42}
+    - name: orcAttackSprite_9
+      rect:
+        serializedVersion: 2
+        x: 2664
+        y: 0
+        width: 296
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14.985596, y: 88}
+        - {x: -92.985596, y: 42}
+        - {x: -92.985596, y: -15}
+        - {x: -88.985596, y: -14}
+        - {x: -40.985596, y: -78}
+        - {x: 9.014404, y: -88}
+        - {x: 60.014404, y: -88}
+        - {x: 94.014404, y: -78}
+        - {x: 94.014404, y: 73}
+        - {x: 91.014404, y: 88}
+      - - {x: -92.985596, y: -55}
+        - {x: -89.985596, y: -54}
+        - {x: -89.985596, y: -45}
+        - {x: -91.985596, y: -43}
+        - {x: -92.985596, y: -43}
+    - name: orcAttackSprite_10
+      rect:
+        serializedVersion: 2
+        x: 2960
+        y: 0
+        width: 296
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 50.071533, y: 88}
+        - {x: -12.928467, y: 88}
+        - {x: -92.92847, y: 44}
+        - {x: -92.92847, y: -18}
+        - {x: -89.92847, y: -21}
+        - {x: -41.928467, y: -85}
+        - {x: -12.928467, y: -88}
+        - {x: 73.07153, y: -88}
+        - {x: 94.07153, y: -78}
+        - {x: 94.07153, y: 61}
+        - {x: 76.07153, y: 84}
+      - - {x: -92.92847, y: -41}
+        - {x: -92.92847, y: -57}
+        - {x: -91.92847, y: -57}
+        - {x: -88.92847, y: -54}
+        - {x: -88.92847, y: -44}
+        - {x: -91.92847, y: -41}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -3,8 +3,34 @@ using System.Collections;
 
 public class ButtonManager : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
+    public static ButtonManager instance;
+
+    public float buttonOffsetX = 2.0f;
+
+
+    void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(gameObject);
+    }
+
+    public void spawnButtons(Actor actor)
+    {
+        int i = 0;
+        foreach (Skill skill in actor.skills)
+        {
+            GameObject button = Instantiate(actor.portraitPrefab, new Vector3(i * buttonOffsetX, 10, 0), Quaternion.identity) as GameObject;
+            button.transform.SetParent(this.gameObject.transform, false);
+
+            i++;
+        }
+    }
+
+
+    // Use this for initialization
+    void Start () {
 	
 	}
 	

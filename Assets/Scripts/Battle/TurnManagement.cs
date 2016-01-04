@@ -7,7 +7,7 @@ public class TurnManagement : MonoBehaviour
     public static TurnManagement instance;
 
     private Actor currentActor;
-    private List<Actor> actors;
+    public List<Actor> actors;
 
     public GameObject pointerPrefab;
     public GameObject pointerParent;
@@ -103,13 +103,13 @@ public class TurnManagement : MonoBehaviour
         portraitBorderPrefab.transform.SetParent(portraitsParent.transform, false);
     }
 
-    private void updatePortraitBorderPosition()
+    public void updatePortraitBorderPosition()
     {
         int currentIndex = actors.IndexOf(currentActor);
         portraitBorderPrefab.GetComponent<RectTransform>().anchoredPosition = new Vector2(currentIndex * portraitXOffset, 0f);
     }
 
-    private void updatePortraitsPosition()
+    public void updatePortraitsPosition()
     {
         int i = 0;
         foreach (Actor actor in actors)

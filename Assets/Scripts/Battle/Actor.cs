@@ -78,8 +78,15 @@ public class Actor : MonoBehaviour
     private void onDeath()
     {
         Debug.Log(name + " is dead");
-        Actors.get().Remove(this);
+
+        Actors.remove(this);
+
         Destroy(healthBar.transform.gameObject); //transform.gameObject.SetActive(false); -> jesli bedziemy miec wskrzeszanie mozna uzywac zamiennie
+        Destroy(portraitPrefab.transform.gameObject);
+
+        TurnManagement.instance.updatePortraitsPosition();
+        TurnManagement.instance.updatePortraitBorderPosition();
+
         Destroy(this.gameObject);
     }
 

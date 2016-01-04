@@ -35,4 +35,10 @@ public class Actors : MonoBehaviour
         }
         return actors;
     }
+
+    public static void remove(Actor actor)
+    {
+        actors.Remove(actor);
+        TurnManagement.instance.actors.Remove(actor);
+    }
 }

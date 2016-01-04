@@ -27,12 +27,11 @@ public class TurnManagement : MonoBehaviour
 
     public void initTurnManagement()
     {
-        StartCoroutine(spawnPointer()); //wczytywanie prefabow trwa te pare milisekund - bolesnie sie o tym przekonalem
         initRound();
+        StartCoroutine(spawnPointer()); //wczytywanie prefabow trwa te pare milisekund - bolesnie sie o tym przekonalem
         spawnPortraits();
         spawnPortraitBorder();
-        
-
+        updatePortraitBorderPosition();
     }
 
     private void initRound()
@@ -45,9 +44,6 @@ public class TurnManagement : MonoBehaviour
         });
 
         currentActor = actors[0];
-
-        
-
     }
 
 

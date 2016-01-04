@@ -42,7 +42,11 @@ public class BattleLoadingScreen : MonoBehaviour
 
         Actors.instance.init();
 
+        yield return new WaitForEndOfFrame();
+
         TurnManagement.instance.initTurnManagement();
+
+        yield return new WaitForEndOfFrame();
 
         HealthBars.instance.spawnSliders();
 

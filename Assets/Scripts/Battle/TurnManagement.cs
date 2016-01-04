@@ -31,6 +31,8 @@ public class TurnManagement : MonoBehaviour
         initRound();
         spawnPortraits();
         spawnPortraitBorder();
+        
+
     }
 
     private void initRound()
@@ -43,7 +45,9 @@ public class TurnManagement : MonoBehaviour
         });
 
         currentActor = actors[0];
-        ButtonManager.instance.spawnButtons(currentActor);
+
+        
+
     }
 
 

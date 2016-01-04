@@ -3,16 +3,21 @@ using System.Collections;
 
 public class Targetting : MonoBehaviour {
 
+    public static Targetting instance;
+
     private bool isTargetting;
     private bool isSkillUsed;
     private string skillName;
 
+    void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(gameObject);
+    }
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
+
 	// Update is called once per frame
 	void Update ()
     {

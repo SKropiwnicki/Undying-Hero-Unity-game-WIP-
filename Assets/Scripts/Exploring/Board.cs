@@ -49,8 +49,6 @@ public class Board : MonoBehaviour
 
     private void setTileSprite(int x, int y, Image image)
     {
-        Sprite sprite = image.sprite;
-
         if (x < 0 || x >= weight || y < 0 || y >= height)
         {
             image.enabled = false;
@@ -62,22 +60,22 @@ public class Board : MonoBehaviour
         switch (board[x, y].type)
         {
             case Tile.Type.START: //todo: del
-                sprite = blockTile;
+                image.sprite = blockTile;
                 break;
 
             case Tile.Type.END: //todo: del
-                sprite = blockTile;
+                image.sprite = blockTile;
                 break;
 
             case Tile.Type.BATTLE:
-                sprite = battleTile;
+                image.sprite = battleTile;
                 break;
 
             //case Tile.Type.BLOCK:
             //    return blockTile;
 
             default:
-                sprite = emptyTile;
+                image.sprite = emptyTile;
                 break;
         }
     }

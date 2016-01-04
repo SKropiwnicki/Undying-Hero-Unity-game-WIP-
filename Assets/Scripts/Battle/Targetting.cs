@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Targetting : MonoBehaviour {
-
+public class Targetting : MonoBehaviour
+{
     public static Targetting instance;
 
     private bool isTargetting;
@@ -16,12 +16,11 @@ public class Targetting : MonoBehaviour {
         else
             Destroy(gameObject);
     }
-
-
+    
 	// Update is called once per frame
 	void Update ()
     {
-        if (BattleLoadingScreen.loaded)
+        if (BattleLoader.loaded)
         {
             if (Input.GetMouseButtonDown(0) && isTargetting)
             {

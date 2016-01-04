@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System.Collections.Generic;
 
-public class BattleLoadingScreen : MonoBehaviour
+public class BattleLoader : MonoBehaviour
 {
     public static bool loaded;
 
@@ -25,7 +24,7 @@ public class BattleLoadingScreen : MonoBehaviour
         Object[] enemies = Resources.LoadAll("Enemies/1", typeof(GameObject));
 
         int count = Random.Range(minEnemies, maxEnemies + 1);
-        for(int i = 0; i < count; i++)
+        for (int i = 0; i < count; i++)
         {
             int numb = Random.Range(0, enemies.Length);
             GameObject enemy = enemies[numb] as GameObject;
@@ -49,6 +48,10 @@ public class BattleLoadingScreen : MonoBehaviour
         yield return new WaitForEndOfFrame();
 
         HealthBars.instance.spawnSliders();
+
+        yield return new WaitForEndOfFrame();
+
+        ButtonManager.instance.init();
 
         yield return new WaitForEndOfFrame();
 

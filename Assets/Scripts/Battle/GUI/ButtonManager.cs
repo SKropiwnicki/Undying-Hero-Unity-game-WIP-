@@ -3,9 +3,10 @@ using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
 
-public class ButtonManager : MonoBehaviour {
-
+public class ButtonManager : MonoBehaviour
+{
     public static ButtonManager instance;
+
     public GameObject AutoAttackButton;
     public GameObject parent;
     private List<GameObject> currentButtons;
@@ -13,14 +14,12 @@ public class ButtonManager : MonoBehaviour {
 
     public float buttonOffsetX = 2.0f;
 
-
     void Awake()
     {
         if (instance == null)
             instance = this;
         else
             Destroy(gameObject);
-        init();
     }
 
     //Koniecznie przed Turn management, najlepiej jedno z pierwszych

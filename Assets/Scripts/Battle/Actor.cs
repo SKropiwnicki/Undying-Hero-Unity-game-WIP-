@@ -21,7 +21,7 @@ public class Actor : MonoBehaviour
     [HideInInspector]
     public SpriteRenderer spriteRenderer;
 
-    private Animator animator;
+    public Animator animator;
 
     public void SetHpBar(Slider healthBar)
     {
@@ -42,7 +42,7 @@ public class Actor : MonoBehaviour
         skills.Add(atakauto);
     }
 
-    public void onAnimationAttack()
+    public void onAttackAnimation()
     {
         animator.SetTrigger("Attack");
     }

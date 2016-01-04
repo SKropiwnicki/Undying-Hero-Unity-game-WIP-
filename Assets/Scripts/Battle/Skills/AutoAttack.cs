@@ -9,6 +9,7 @@ public class AutoAttack : Skill
     }
     public  override void action(Actor source, Actor target)
     {
+        if (source.animator) source.onAttackAnimation();
         target.TakeDamage(source.attackPower);
     }
 }

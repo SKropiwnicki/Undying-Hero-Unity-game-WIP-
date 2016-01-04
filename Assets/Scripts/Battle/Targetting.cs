@@ -4,6 +4,7 @@ using System.Collections;
 public class Targetting : MonoBehaviour {
 
     private bool isTargetting;
+    private bool isSkillUsed;
     private string skillName;
 
 
@@ -18,6 +19,7 @@ public class Targetting : MonoBehaviour {
 
        if (Input.GetMouseButtonDown(0) && isTargetting)
         {
+            isSkillUsed = false;
             RaycastHit2D hit = Physics2D.Raycast(new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y), Vector2.zero, 10f);
             Debug.Log("Position of click" + new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y)); //do wyjebania potem     
             if (hit.collider != null  && hit.transform.tag == "Target")
@@ -30,8 +32,10 @@ public class Targetting : MonoBehaviour {
                     Debug.Log(skillName + " " + skill.name);
                     if (skill.name == skillName)
                     {
+                        isSkillUsed = true;
                         skill.action(source, hit.collider.gameObject.GetComponent<Actor>());
                     }
+                    if (isSkillUsed) break;
                 }
             
                 isTargetting = false;
@@ -40,9 +44,9 @@ public class Targetting : MonoBehaviour {
 
     }
 
-    public void checkTarget()
+    public void checkTarget(string buttonName)
     {
-        skillName = "AutoAttack";
+        skillName = buttonName;
         isTargetting = true;
     }
 }

@@ -43,6 +43,7 @@ public class TurnManagement : MonoBehaviour
         });
 
         currentActor = actors[0];
+        ButtonManager.instance.spawnButtons(currentActor);
     }
 
 
@@ -64,6 +65,7 @@ public class TurnManagement : MonoBehaviour
         }
         setPointerPosition();
         updatePortraitBorderPosition();
+        ButtonManager.instance.spawnButtons(currentActor);
         Debug.Log("Tura " + currentActor.name + " inicjatywa: " + currentActor.initiative);
     }
 

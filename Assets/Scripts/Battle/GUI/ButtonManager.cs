@@ -4,6 +4,7 @@ using System.Collections;
 public class ButtonManager : MonoBehaviour {
 
     public static ButtonManager instance;
+    public GameObject AutoAttackButton;
 
     public float buttonOffsetX = 2.0f;
 
@@ -21,10 +22,13 @@ public class ButtonManager : MonoBehaviour {
         int i = 0;
         foreach (Skill skill in actor.skills)
         {
-            GameObject button = Instantiate(actor.portraitPrefab, new Vector3(i * buttonOffsetX, 10, 0), Quaternion.identity) as GameObject;
-            button.transform.SetParent(this.gameObject.transform, false);
-
-            i++;
+            if (skill.name == "AutoAttack")
+            {
+                GameObject button = Instantiate(actor.portraitPrefab, new Vector3(i * buttonOffsetX, 10, 0), Quaternion.identity) as GameObject;
+                button.transform.SetParent(this.gameObject.transform, false);
+            }
+                i++;
+            
         }
     }
 

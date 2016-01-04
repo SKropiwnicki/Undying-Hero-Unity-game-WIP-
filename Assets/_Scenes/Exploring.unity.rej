@@ -1,0 +1,10 @@
+diff a/Assets/Scenes/Exploring.unity b/Assets/Scenes/Exploring.unity	(rejected hunks)
+@@ -97,8 +97,6 @@
+   - 92: {fileID: 16259562}
+   - 124: {fileID: 16259561}
+   - 81: {fileID: 16259560}
+-  - 114: {fileID: 16259565}
+-  - 114: {fileID: 16259566}
+   m_Layer: 0
+   m_Name: Main Camera
+   m_TagString: MainCamera

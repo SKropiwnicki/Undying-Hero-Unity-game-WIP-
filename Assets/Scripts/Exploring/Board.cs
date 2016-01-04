@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Board : MonoBehaviour
 {
@@ -151,6 +152,16 @@ public class Board : MonoBehaviour
             Debug.Log("nowa pozycja: " + newX + ", " + newY + " : " + board[newX, newY].type);
             currentTile.x = newX;
             currentTile.y = newY;
+        }
+
+        switch (board[currentTile.x, currentTile.y].type)
+        {
+            case Tile.Type.BATTLE:
+                SceneManager.LoadScene("FightPrototype");
+                break;
+
+            default:
+                break;
         }
     }
 

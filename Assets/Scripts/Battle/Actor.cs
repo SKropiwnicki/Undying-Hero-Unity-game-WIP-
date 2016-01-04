@@ -32,9 +32,21 @@ public class Actor : MonoBehaviour
         this.healthBar = healthBar;
     }
 
+    public void loadHero1Stats()
+    {
+        isControllable = true;
+
+        maxHealth = ExploreToBattle.hero1.maxHealth;
+        health = ExploreToBattle.hero1.health;
+        initiative = ExploreToBattle.hero1.initiative;
+    }
+
     public void Awake()
     {
-        health = maxHealth; //TODO: Do ogarniecia, ze w przyszlosci postac moze zaczynac z mniej niz maxhp.
+        if (name == "Hero1")
+        {
+            loadHero1Stats();
+        }
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         

@@ -6,42 +6,36 @@ public class Targetting : MonoBehaviour {
     private bool isTargetting;
     private bool isSkillUsed;
     private string skillName;
-
-
-	// Use this for initialization
-	void Start () {
-	
-	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-
-       if (Input.GetMouseButtonDown(0) && isTargetting)
+        if (BattleLoadingScreen.loaded)
         {
-            isSkillUsed = false;
-            RaycastHit2D hit = Physics2D.Raycast(new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y), Vector2.zero, 10f);
-            Debug.Log("Position of click" + new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y)); //do wyjebania potem     
-            if (hit.collider != null  && hit.transform.tag == "Target")
+            if (Input.GetMouseButtonDown(0) && isTargetting)
             {
-
-                Actor source = TurnManagement.instance.getCurrentActor();
-               
-                foreach (Skill skill in source.skills)
+                isSkillUsed = false;
+                RaycastHit2D hit = Physics2D.Raycast(new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y), Vector2.zero, 10f);
+                Debug.Log("Position of click" + new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y)); //do wyjebania potem     
+                if (hit.collider != null && hit.transform.tag == "Target")
                 {
-                    Debug.Log(skillName + " " + skill.name);
-                    if (skill.name == skillName)
+                    Actor source = TurnManagement.instance.getCurrentActor();
+
+                    foreach (Skill skill in source.skills)
                     {
-                        isSkillUsed = true;
-                        skill.action(source, hit.collider.gameObject.GetComponent<Actor>());
+                        Debug.Log(skillName + " " + skill.name);
+                        if (skill.name == skillName)
+                        {
+                            isSkillUsed = true;
+                            skill.action(source, hit.collider.gameObject.GetComponent<Actor>());
+                        }
+                        if (isSkillUsed) break;
                     }
-                    if (isSkillUsed) break;
+
+                    isTargetting = false;
                 }
-            
-                isTargetting = false;
             }
         }
-
     }
 
     public void checkTarget(string buttonName)

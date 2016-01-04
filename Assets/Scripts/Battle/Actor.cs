@@ -32,28 +32,32 @@ public class Actor : MonoBehaviour
         this.healthBar = healthBar;
     }
 
-    public void loadHero1Stats()
+    public void loadHeroStats()
     {
-        isControllable = true;
+        Hero hero = null;
 
-        maxHealth = ExploreToBattle.hero1.maxHealth;
-        health = ExploreToBattle.hero1.health;
-        initiative = ExploreToBattle.hero1.initiative;
+        if(name == "Hero1")
+        {
+            hero = ExploreToBattle.hero1;
+        }
+        else if(name == "Hero2")
+        {
+            hero = ExploreToBattle.hero2;
+        }
+        else
+        {
+            return;
+        }
+
+        maxHealth = hero.maxHealth;
+        health = hero.health;
+        initiative = hero.initiative;
     }
 
     public void Awake()
     {
-        if (ExploreToBattle.wasGenerated)
-        {
-            if (name == "Hero1")
-            {
-                loadHero1Stats();
-            }
-        }
-        else
-        {
-            health = maxHealth;
-        }
+        health = maxHealth;
+
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         
@@ -98,15 +102,20 @@ public class Actor : MonoBehaviour
     {
         Debug.Log(name + " is dead");
 
-        Actors.remove(this);
+        Actors.instance.remove(this);
 
-        Destroy(healthBar.transform.gameObject); //transform.gameObject.SetActive(false); -> jesli bedziemy miec wskrzeszanie mozna uzywac zamiennie
-        Destroy(portraitPrefab.transform.gameObject);
+        destroyActorThings();
 
         TurnManagement.instance.updatePortraitsPosition();
         TurnManagement.instance.updatePortraitBorderPosition();
 
         Destroy(this.gameObject);
+    }
+
+    public void destroyActorThings()
+    {
+        Destroy(healthBar.transform.gameObject); //transform.gameObject.SetActive(false); -> jesli bedziemy miec wskrzeszanie mozna uzywac zamiennie
+        Destroy(portraitPrefab.transform.gameObject);
     }
 
     IEnumerator damageAnimation()

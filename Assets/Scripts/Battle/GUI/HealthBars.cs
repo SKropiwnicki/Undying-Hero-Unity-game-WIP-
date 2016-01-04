@@ -18,14 +18,9 @@ public class HealthBars : MonoBehaviour
             Destroy(gameObject);
     }
 
-    void Start()
+    public void spawnSliders()
     {
-        spawnSliders();
-    }
-
-    private void spawnSliders()
-    {
-        foreach (Actor actor in Actors.get())
+        foreach (Actor actor in Actors.instance.get())
         {
             spawnHitPointsSlider(actor);
         }

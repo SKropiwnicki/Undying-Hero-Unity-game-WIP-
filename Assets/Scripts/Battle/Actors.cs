@@ -4,9 +4,19 @@ using System.Collections.Generic;
 
 public class Actors : MonoBehaviour
 {
-    private static List<Actor> actors;
+    public static Actors instance;
 
-	void Awake ()
+    private List<Actor> actors;
+
+    void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(gameObject);
+    }
+
+    public void init()
     {
         actors = new List<Actor>();
 
@@ -16,6 +26,11 @@ public class Actors : MonoBehaviour
             Actor actor = child.GetComponent<Actor>();
             if (actor != null)
             {
+                if (ExploreToBattle.wasGenerated)
+                {
+                    actor.loadHeroStats();
+                }
+
                 actors.Add(actor);
             }
             else
@@ -23,11 +38,9 @@ public class Actors : MonoBehaviour
                 Debug.Log(child.name + " :to nie jest aktor, czy na pewno umiesciles tu poprawny object?");
             }
         }
-
-        TurnManagement.instance.initTurnManagement();
     }
 
-    public static List<Actor> get()
+    public List<Actor> get()
     {
         if(actors == null)
         {
@@ -36,7 +49,7 @@ public class Actors : MonoBehaviour
         return actors;
     }
 
-    public static void remove(Actor actor)
+    public void remove(Actor actor)
     {
         actors.Remove(actor);
         TurnManagement.instance.actors.Remove(actor);

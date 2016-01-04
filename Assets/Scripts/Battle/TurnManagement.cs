@@ -35,7 +35,7 @@ public class TurnManagement : MonoBehaviour
 
     private void initRound()
     {
-        actors = new List<Actor>(Actors.get());
+        actors = new List<Actor>(Actors.instance.get());
 
         actors.Sort(delegate (Actor x, Actor y)
         {

@@ -9,6 +9,8 @@ public class ExploreToBattle : MonoBehaviour
     public static Hero hero1;
     public static Hero hero2;
 
+    public static bool wasGenerated = false;
+
     void Awake()
     {
         DontDestroyOnLoad(this.transform);

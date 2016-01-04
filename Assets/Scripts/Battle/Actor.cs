@@ -43,9 +43,16 @@ public class Actor : MonoBehaviour
 
     public void Awake()
     {
-        if (name == "Hero1")
+        if (ExploreToBattle.wasGenerated)
         {
-            loadHero1Stats();
+            if (name == "Hero1")
+            {
+                loadHero1Stats();
+            }
+        }
+        else
+        {
+            health = maxHealth;
         }
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();

@@ -157,6 +157,7 @@ public class Board : MonoBehaviour
         switch (board[currentTile.x, currentTile.y].type)
         {
             case Tile.Type.BATTLE:
+                ExploreToBattle.wasGenerated = true;
                 SceneManager.LoadScene("FightPrototype");
                 break;
 

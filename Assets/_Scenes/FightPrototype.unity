@@ -1546,7 +1546,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1882678596}
   - 212: {fileID: 1882678597}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}

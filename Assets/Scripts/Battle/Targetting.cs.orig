@@ -8,7 +8,10 @@ public class Targetting : MonoBehaviour {
     private bool isTargetting;
     private bool isSkillUsed;
     private string skillName;
+<<<<<<< HEAD
 	
+=======
+
     void Awake()
     {
         if (instance == null)
@@ -18,6 +21,7 @@ public class Targetting : MonoBehaviour {
     }
 
 
+>>>>>>> origin/master
 	// Update is called once per frame
 	void Update ()
     {

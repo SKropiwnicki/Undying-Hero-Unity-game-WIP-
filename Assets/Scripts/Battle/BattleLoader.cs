@@ -9,10 +9,15 @@ public class BattleLoader : MonoBehaviour
     public GameObject Hero1Prefab;
     public GameObject Hero2Prefab;
 
-    public int enemiesLevel = 1;
+    public int enemiesLevel;
 
     public int minEnemies;
     public int maxEnemies;
+
+    void Awake()
+    {
+        //dane z ExploreToBattle tutaj bedzie mozna przekazac
+    }
 
     void Start()
     {
@@ -24,11 +29,17 @@ public class BattleLoader : MonoBehaviour
         Hero1Prefab = Instantiate(Hero1Prefab, new Vector3(2.5f, 1.25f, 0), Quaternion.identity) as GameObject;
         Hero1Prefab.name = "Hero1";
         Hero1Prefab.transform.SetParent(ActorsParent.transform, false);
+
+        /*wykomentowac gdy Hero2 w koncu bedzie
+        Hero2Prefab = Instantiate(Hero2Prefab, new Vector3(5f, 1.25f, 0), Quaternion.identity) as GameObject;
+        Hero2Prefab.name = "Hero2";
+        Hero2Prefab.transform.SetParent(ActorsParent.transform, false);*/
     }
 
     private void spawnEnemies()
     {
-        Object[] enemies = Resources.LoadAll("Enemies/1", typeof(GameObject));
+        string path = "Enemies/" + enemiesLevel;
+        Object[] enemies = Resources.LoadAll(path, typeof(GameObject));
 
         int count = Random.Range(minEnemies, maxEnemies + 1);
         for (int i = 0; i < count; i++)

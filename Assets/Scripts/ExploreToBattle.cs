@@ -9,13 +9,12 @@ public class ExploreToBattle : MonoBehaviour
     public static Hero hero1;
     public static Hero hero2;
 
-    public static bool wasGenerated = false;
+    public static bool wasGenerated;
 
     void Awake()
     {
         DontDestroyOnLoad(this.transform);
 
-        Debug.Log("statyczne rzeczy dzialac musza!");
         if(hero1 == null)
         {
             hero1 = gameObjectWithHero1Script.GetComponent<Hero>();

@@ -253,6 +253,7 @@ MonoBehaviour:
   AutoAttackButton: {fileID: 169154, guid: 8fa2416cb220f7a41a8e6e78854162b6, type: 2}
   PowerAttackButton: {fileID: 169154, guid: 23a1a8ab6d7741c4eb725d027a23503f, type: 2}
   parent: {fileID: 17654198}
+  currentButtons: []
   buttonOffsetX: 2
 --- !u!1 &144285719
 GameObject:
@@ -1326,6 +1327,7 @@ MonoBehaviour:
   portraitBorderPrefab: {fileID: 104244, guid: 0acdd0525be6ae44ba764c5fe9c664cf, type: 2}
   portraitsParent: {fileID: 147203569}
   portraitXOffset: 120
+  isBattleFinished: 0
 --- !u!114 &1962447949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1337,6 +1339,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52484703f2bb04e4998b3687946fbfcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2012525763
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2012525765}
+  - 114: {fileID: 2012525764}
+  m_Layer: 0
+  m_Name: Battle->Explore
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2012525764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2012525763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b5b30b6a9136c48b545cf7a14e9db5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panel: {fileID: 156170, guid: 9bf36e304a9accd4795d1c1662b9f41d, type: 2}
+  win: {fileID: 11434712, guid: 9bf36e304a9accd4795d1c1662b9f41d, type: 2}
+  lose: {fileID: 11438268, guid: 9bf36e304a9accd4795d1c1662b9f41d, type: 2}
+--- !u!4 &2012525765
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2012525763}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 522, y: 275.9, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
 --- !u!1 &2024347893
 GameObject:
   m_ObjectHideFlags: 0

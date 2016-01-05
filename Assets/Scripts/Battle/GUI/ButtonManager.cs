@@ -10,7 +10,7 @@ public class ButtonManager : MonoBehaviour
     public GameObject AutoAttackButton;
     public GameObject PowerAttackButton;
     public GameObject parent;
-    private List<GameObject> currentButtons;
+    public List<GameObject> currentButtons;
     private List<GameObject> allButtons;
 
     public float buttonOffsetX = 2.0f;
@@ -38,28 +38,32 @@ public class ButtonManager : MonoBehaviour
     {
         DestroyOldButtons();
 
-        int i = 0;
-        foreach (Skill skill in actor.skills)
+        if (!TurnManagement.instance.isBattleFinished)
         {
-            Debug.Log("Szukanei buttona dla skilla: " + skill.name);
-            
-            foreach (GameObject buttonPrefab in allButtons)
+
+            int i = 0;
+            foreach (Skill skill in actor.skills)
             {
-                Debug.Log("Ogarniam buttonek dla : " + allButtons[0].GetComponent<ButtonSkills>().skillName);
-                if (skill.name == buttonPrefab.GetComponent<ButtonSkills>().skillName)
+                Debug.Log("Szukanei buttona dla skilla: " + skill.name);
+
+                foreach (GameObject buttonPrefab in allButtons)
                 {
-                    GameObject button = Instantiate(buttonPrefab, new Vector3(0.0f, 0.0f, 0), Quaternion.identity) as GameObject;
-                    button.transform.SetParent(this.gameObject.transform, false);
+                    Debug.Log("Ogarniam buttonek dla : " + allButtons[0].GetComponent<ButtonSkills>().skillName);
+                    if (skill.name == buttonPrefab.GetComponent<ButtonSkills>().skillName)
+                    {
+                        GameObject button = Instantiate(buttonPrefab, new Vector3(0.0f, 0.0f, 0), Quaternion.identity) as GameObject;
+                        button.transform.SetParent(this.gameObject.transform, false);
 
-                    Vector3 worldPos = new Vector3(-6.0f + (2.0f * i), -4.0f, 0);
-                    Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
-                    button.transform.position = new Vector3(screenPos.x, screenPos.y, screenPos.z);
+                        Vector3 worldPos = new Vector3(-6.0f + (2.0f * i), -4.0f, 0);
+                        Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
+                        button.transform.position = new Vector3(screenPos.x, screenPos.y, screenPos.z);
 
-                    currentButtons.Add(button);
+                        currentButtons.Add(button);
+                    }
+
                 }
-                
+                i++;
             }
-            i++;
         }
     }
 
@@ -69,6 +73,7 @@ public class ButtonManager : MonoBehaviour
         {
             foreach (GameObject button in currentButtons)
             {
+                Debug.Log("Done");
                 Destroy(button);
             }
         }

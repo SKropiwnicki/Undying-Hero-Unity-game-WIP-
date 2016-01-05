@@ -7,8 +7,11 @@ public class Actor : MonoBehaviour
 {
     public int maxHealth;
     public int health; //aktualne hp
-    public int initiative;
-    public int attackPower;
+    public int initiative; //jak nizej
+    public int attackPower; //trza wyliczyc ze statow
+    public int strength;
+    public int dexterity;
+    public int intelligence;
 
     public bool isControllable;
     public bool hasSpecialAI;
@@ -55,6 +58,9 @@ public class Actor : MonoBehaviour
         maxHealth = hero.maxHealth;
         health = hero.health;
         initiative = hero.initiative;
+        strength = hero.strength;
+        dexterity = hero.dexterity;
+        intelligence = hero.intelligence;
     }
 
     public void Awake()

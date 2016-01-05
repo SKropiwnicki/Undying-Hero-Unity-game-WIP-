@@ -17,6 +17,8 @@ public class TurnManagement : MonoBehaviour
     public GameObject portraitsParent;
     public float portraitXOffset; //szerokosc portretu/ramki
 
+    public bool isBattleFinished;
+
     void Awake()
     {
         if (instance == null)

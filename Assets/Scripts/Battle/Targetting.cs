@@ -20,7 +20,7 @@ public class Targetting : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        if (BattleLoader.loaded)
+        if (BattleLoader.loaded && !TurnManagement.instance.isBattleFinished)
         {
             if (Input.GetMouseButtonDown(0) && isTargetting)
             {

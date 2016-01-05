@@ -11,8 +11,11 @@ public class Actor : MonoBehaviour
     public int attackPower;
 
     public bool isControllable;
+    public bool hasSpecialAI;
 
-    [HideInInspector]
+    public IAI ai;
+
+    public List<string> skillsNames;
     public List<Skill> skills;
 
     public GameObject skillPrefab;
@@ -64,10 +67,34 @@ public class Actor : MonoBehaviour
     }
     public void Start()
     {
+        //Debug.Log("Czy lista skills istnieje? " + skills == null);
         skills = new List<Skill>();
-        AutoAttack atakauto = new AutoAttack();
-        skills.Add(atakauto);
+        skillsNames = new List<string>();
+        skills.Add(new AutoAttack());
+        skills.Add(new PowerAttack());
+        skillLoader();
     }
+
+
+    public void skillLoader()
+    {
+        foreach (string skillName in skillsNames)
+        { 
+            foreach (Skill skill in AllSkills.instance.allSkillList)
+            {
+                if (skillName == skill.name)
+                {
+                    skills.Add(skill);
+                }
+            }
+        }
+        Debug.Log("Nazywam sie " + name +" a moje skille to: ");
+        foreach (Skill skill in skills)
+        {
+            Debug.Log("Skill: " + skill.name);
+        }
+    }
+
 
     public void onAttackAnimation()
     {
@@ -118,6 +145,8 @@ public class Actor : MonoBehaviour
         Destroy(portraitPrefab.transform.gameObject);
     }
 
+  
+
     IEnumerator damageAnimation()
     {
         spriteRenderer.color = new Color(1f, 0f, 0f, 1f);
@@ -128,4 +157,11 @@ public class Actor : MonoBehaviour
         }
         yield return new  WaitForSeconds(1.5f);
     }
+
+
+    public virtual void AI()
+    {
+        ai.specialAI();
+    }
+
 }

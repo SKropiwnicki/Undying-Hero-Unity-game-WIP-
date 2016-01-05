@@ -37,9 +37,14 @@ public class BattleLoader : MonoBehaviour
         Hero1Prefab.name = "Hero1";
         Hero1Prefab.transform.SetParent(ActorsParent.transform, false);
 
+       
+
+
         ButtonManager.instance.init();
 
         yield return new WaitForEndOfFrame();
+
+       // AllSkills.instance.init();  //w sumie nie wiem czemu tu nie dziala
 
         yield return new WaitForEndOfFrame();
 

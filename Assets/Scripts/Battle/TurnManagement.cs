@@ -32,7 +32,20 @@ public class TurnManagement : MonoBehaviour
         spawnPortraits();
         spawnPortraitBorder();
         updatePortraitBorderPosition();
-        ButtonManager.instance.spawnButtons(currentActor);
+        if (currentActor.isControllable) { ButtonManager.instance.spawnButtons(currentActor); }
+        onTurnAction();
+    }
+
+    private void onTurnAction()
+    {
+        if (currentActor.isControllable)
+        {
+            ButtonManager.instance.spawnButtons(currentActor);
+        }
+        else
+        {
+            currentActor.AI();
+        }
     }
 
     private void initRound()
@@ -67,6 +80,8 @@ public class TurnManagement : MonoBehaviour
         setPointerPosition();
         updatePortraitBorderPosition();
         Debug.Log("Tura " + currentActor.name + " inicjatywa: " + currentActor.initiative);
+        
+        onTurnAction();
     }
 
     private IEnumerator spawnPointer()

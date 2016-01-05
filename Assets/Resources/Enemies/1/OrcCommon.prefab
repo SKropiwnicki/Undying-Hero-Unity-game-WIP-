@@ -12,6 +12,7 @@ GameObject:
   - 114: {fileID: 11499988}
   - 61: {fileID: 6145620}
   - 95: {fileID: 9522124}
+  - 114: {fileID: 11474724}
   m_Layer: 0
   m_Name: OrcCommon
   m_TagString: Target
@@ -62,6 +63,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11474724
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 107284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4d58eead90db774bbbd41c0e8ecf7d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11499988
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -78,6 +90,9 @@ MonoBehaviour:
   initiative: 1
   attackPower: 3
   isControllable: 0
+  hasSpecialAI: 0
+  skillsNames:
+  - PowerAttack
   skillPrefab: {fileID: 0}
   portraitPrefab: {fileID: 189602, guid: dc36bad4258f8364b9714cf67ddee2f7, type: 2}
   dmgAnimSpeed: 0.9
@@ -119,7 +134,19 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: skillsNames.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: isControllable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: skillsNames.Array.data[0]
+      value: PowerAttack
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 107284}

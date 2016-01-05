@@ -12,6 +12,7 @@ GameObject:
   - 114: {fileID: 11496768}
   - 61: {fileID: 6152116}
   - 95: {fileID: 9579978}
+  - 114: {fileID: 11490184}
   m_Layer: 0
   m_Name: OrcRare
   m_TagString: Target
@@ -62,6 +63,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11490184
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 170866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4d58eead90db774bbbd41c0e8ecf7d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11496768
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -73,11 +85,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec7ce56101794704c87b8d29ab2449e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  maxHealth: 15
   health: 0
   initiative: 3
   attackPower: 3
   isControllable: 0
+  hasSpecialAI: 0
+  skillsNames:
+  - PowerAttack
   skillPrefab: {fileID: 0}
   portraitPrefab: {fileID: 189602, guid: dc36bad4258f8364b9714cf67ddee2f7, type: 2}
   dmgAnimSpeed: 0.9
@@ -121,6 +136,10 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 0}
+      propertyPath: skillsNames.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: m_Color.r
       value: 0.01092129
       objectReference: {fileID: 0}
@@ -131,6 +150,18 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Color.b
       value: 0.74264705
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: skillsNames.Array.data[0]
+      value: PowerAttack
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: isControllable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: maxHealth
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

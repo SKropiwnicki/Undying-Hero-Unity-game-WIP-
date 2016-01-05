@@ -149,10 +149,11 @@ public class Actor : MonoBehaviour
 
     IEnumerator damageAnimation()
     {
+        Color defaultColor = spriteRenderer.color;
         spriteRenderer.color = new Color(1f, 0f, 0f, 1f);
         while (spriteRenderer.color.r > 0.1f)
         {
-            spriteRenderer.color = Color.Lerp(spriteRenderer.color, Color.white, dmgAnimSpeed * Time.deltaTime);
+            spriteRenderer.color = Color.Lerp(spriteRenderer.color, defaultColor, dmgAnimSpeed * Time.deltaTime);
             yield return null;
         }
         yield return new  WaitForSeconds(1.5f);

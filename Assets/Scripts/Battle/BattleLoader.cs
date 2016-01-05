@@ -19,7 +19,14 @@ public class BattleLoader : MonoBehaviour
         StartCoroutine("start");
     }
 
-    private IEnumerator start()
+    private void spawnHeroes()
+    {
+        Hero1Prefab = Instantiate(Hero1Prefab, new Vector3(2.5f, 1.25f, 0), Quaternion.identity) as GameObject;
+        Hero1Prefab.name = "Hero1";
+        Hero1Prefab.transform.SetParent(ActorsParent.transform, false);
+    }
+
+    private void spawnEnemies()
     {
         Object[] enemies = Resources.LoadAll("Enemies/1", typeof(GameObject));
 
@@ -32,19 +39,21 @@ public class BattleLoader : MonoBehaviour
             enemy = Instantiate(enemy, new Vector3(((i + 1) * -3f + 0.75f), 0.05f, 0), Quaternion.identity) as GameObject;
             enemy.transform.SetParent(ActorsParent.transform, false);
         }
+    }
 
-        Hero1Prefab = Instantiate(Hero1Prefab, new Vector3(2.5f, 1.25f, 0), Quaternion.identity) as GameObject;
-        Hero1Prefab.name = "Hero1";
-        Hero1Prefab.transform.SetParent(ActorsParent.transform, false);
+    private IEnumerator start()
+    {
+        spawnEnemies();
+        spawnHeroes();
 
-       
 
+        yield return new WaitForEndOfFrame();
 
         ButtonManager.instance.init();
 
         yield return new WaitForEndOfFrame();
 
-       // AllSkills.instance.init();  //w sumie nie wiem czemu tu nie dziala
+        AllSkills.instance.init();
 
         yield return new WaitForEndOfFrame();
 
@@ -52,14 +61,16 @@ public class BattleLoader : MonoBehaviour
 
         yield return new WaitForEndOfFrame();
 
-        TurnManagement.instance.initTurnManagement();
-
-        yield return new WaitForEndOfFrame();
-
         HealthBars.instance.spawnSliders();
 
         yield return new WaitForEndOfFrame();
 
+        StartCoroutine(TurnManagement.instance.initTurnManagement());
+
+        yield return new WaitForEndOfFrame();
+
         loaded = true;
+
+        yield return new WaitForEndOfFrame();
     }
 }

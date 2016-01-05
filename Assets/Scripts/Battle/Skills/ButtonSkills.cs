@@ -2,47 +2,27 @@
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using System;
 
-public class ButtonSkills : MonoBehaviour
+public class ButtonSkills : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public string skillName;
     private Image img;
     private Color defaultColor;
 
-    private bool overTrigger;
-
-    private EventSystem EventSystem;
-    
     void Awake ()
     {
-        img = GetComponent<Image>();
+        img = transform.GetComponent<Image>();
         defaultColor = img.color;
     }
 
-    void Start()
+    public void OnPointerEnter(PointerEventData eventData)
     {
-        EventSystem = GameObject.Find("EventSystem").GetComponent<EventSystem>();
+        img.color = new Color(1.0f, 0.2f, 0.2f, 1f);
     }
-	
-	void Update ()
+
+    public void OnPointerExit(PointerEventData eventData)
     {
-        if (EventSystem.IsPointerOverGameObject())
-        {
-            if (!overTrigger)
-            {
-                Debug.Log("OnMouseOver");
-                img.color = new Color(1.0f, 0.2f, 0.2f, 1f);
-                overTrigger = true;
-            }
-        }
-        else
-        {
-            if (overTrigger)
-            {
-                Debug.Log("OnMouseExit");
-                img.color = defaultColor;
-                overTrigger = false;
-            }
-        }
+        img.color = defaultColor;
     }
 }

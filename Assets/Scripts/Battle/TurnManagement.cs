@@ -25,18 +25,25 @@ public class TurnManagement : MonoBehaviour
             Destroy(gameObject);
     }
 
-    public void initTurnManagement()
+    public IEnumerator initTurnManagement()
     {
         initRound();
         StartCoroutine(spawnPointer()); //wczytywanie prefabow trwa te pare milisekund - bolesnie sie o tym przekonalem
         spawnPortraits();
         spawnPortraitBorder();
         updatePortraitBorderPosition();
-        if (currentActor.isControllable) { ButtonManager.instance.spawnButtons(currentActor); }
-        onTurnAction();
+        if (currentActor.isControllable)
+        {
+            ButtonManager.instance.spawnButtons(currentActor);
+        }
+        while(!BattleLoader.loaded) //nie jest potrzebne w tym wypadku "bo dziala", ale jest mocno zalecane
+        {
+            yield return new WaitForEndOfFrame();
+        }
+        TurnManagement.instance.onTurnAction();
     }
 
-    private void onTurnAction()
+    public void onTurnAction()
     {
         if (currentActor.isControllable)
         {

@@ -2,8 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class AllSkills : MonoBehaviour {
-
+public class AllSkills : MonoBehaviour
+{
     public static AllSkills instance;
 
     public List<Skill> allSkillList;
@@ -15,7 +15,6 @@ public class AllSkills : MonoBehaviour {
             instance = this;
         else
             Destroy(gameObject);
-        init(); //TYMCZASOWE
     }
 	
     //powinno jako pierwsze właściwie. Tutaj dodajemy nowe skille, bo inaczej są one nieznane przez unity ;_;

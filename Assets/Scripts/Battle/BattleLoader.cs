@@ -80,6 +80,10 @@ public class BattleLoader : MonoBehaviour
 
         yield return new WaitForEndOfFrame();
 
+        EndBattlePanel.instance.init();
+
+        yield return new WaitForEndOfFrame();
+
         loaded = true;
 
         yield return new WaitForEndOfFrame();

@@ -27,6 +27,36 @@ public class TurnManagement : MonoBehaviour
             Destroy(gameObject);
     }
 
+    public bool winCheck()
+    {
+        int enemiesCount = 0;
+        int controllableCount = 0;
+
+        foreach(Actor actor in actors)
+        {
+            if(actor.isControllable)
+            {
+                controllableCount++;
+            }
+            else
+            {
+                enemiesCount++;
+            }
+        }
+
+        if(controllableCount == 0)
+        {
+            EndBattlePanel.instance.onLose();
+            return true;
+        }
+        else if(enemiesCount == 0)
+        {
+            EndBattlePanel.instance.onWin();
+            return true;
+        }
+        return false;
+    }
+
     public IEnumerator initTurnManagement()
     {
         initRound();
@@ -72,6 +102,11 @@ public class TurnManagement : MonoBehaviour
 
     public void nextTurn()
     {
+        if(winCheck())
+        {
+            return;
+        }
+
         int currentIndex = actors.IndexOf(currentActor);
         int nextIndex = currentIndex + 1;
 
@@ -93,13 +128,35 @@ public class TurnManagement : MonoBehaviour
         onTurnAction();
     }
 
+    public bool isThisCurrentActor(Actor actor)
+    {
+        if (currentActor == actor) { return true; }
+        else return false;
+    }
+
+    public Actor getCurrentActor()
+    {
+        return currentActor;
+    }
+
+
+
+
+
+
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns></returns>
+
     private IEnumerator spawnPointer()
     {
         pointerPrefab = Instantiate(pointerPrefab) as GameObject;
         pointerPrefab.transform.SetParent(pointerParent.transform, false);
         yield return new WaitForEndOfFrame();
         setPointerPosition();
-        Debug.Log("Tura " + currentActor.name + " inicjatywa: " + currentActor.initiative);
+        //Debug.Log("Tura " + currentActor.name + " inicjatywa: " + currentActor.initiative);
     }
 
     private void setPointerPosition()
@@ -145,15 +202,4 @@ public class TurnManagement : MonoBehaviour
             i++;
         }
     }
-
-    public bool isThisCurrentActor(Actor actor)
-    {
-        if (currentActor == actor) { return true; }
-        else return false;
-    }
-
-    public Actor getCurrentActor ()
-    {
-        return currentActor;
-    } 
 }

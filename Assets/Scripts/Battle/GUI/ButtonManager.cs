@@ -44,7 +44,7 @@ public class ButtonManager : MonoBehaviour
             int i = 0;
             foreach (Skill skill in actor.skills)
             {
-                Debug.Log("Szukanei buttona dla skilla: " + skill.name);
+                Debug.Log("Szukanie buttona dla skilla: " + skill.name);
 
                 foreach (GameObject buttonPrefab in allButtons)
                 {

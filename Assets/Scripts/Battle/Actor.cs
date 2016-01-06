@@ -18,7 +18,7 @@ public class Actor : MonoBehaviour
 
     public IAI ai;
 
-    public List<string> skillsNames;
+    public string[] skillsNames;
     public List<Skill> skills;
 
     public GameObject skillPrefab;
@@ -63,24 +63,15 @@ public class Actor : MonoBehaviour
         intelligence = hero.intelligence;
     }
 
-    public void Awake()
+    void Awake()
     {
         health = maxHealth;
 
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
-        
-    }
-    public void Start()
-    {
-        //Debug.Log("Czy lista skills istnieje? " + skills == null);
-        skills = new List<Skill>();
-        skillsNames = new List<string>();
-        skills.Add(new AutoAttack());
-        skills.Add(new PowerAttack());
-        skillLoader();
-    }
 
+        skills = new List<Skill>();
+    }
 
     public void skillLoader()
     {
@@ -151,8 +142,6 @@ public class Actor : MonoBehaviour
         Destroy(portraitPrefab.transform.gameObject);
     }
 
-  
-
     IEnumerator damageAnimation()
     {
         Color defaultColor = spriteRenderer.color;
@@ -164,11 +153,9 @@ public class Actor : MonoBehaviour
         }
         yield return new  WaitForSeconds(1.5f);
     }
-
-
+    
     public virtual void AI()
     {
         ai.specialAI();
     }
-
 }

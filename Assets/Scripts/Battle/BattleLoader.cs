@@ -84,6 +84,13 @@ public class BattleLoader : MonoBehaviour
 
         yield return new WaitForEndOfFrame();
 
+        foreach (Actor actor in Actors.instance.get())
+        {
+            actor.skillLoader();
+        }
+
+        yield return new WaitForEndOfFrame();
+
         loaded = true;
 
         yield return new WaitForEndOfFrame();

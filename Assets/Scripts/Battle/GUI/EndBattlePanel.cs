@@ -8,17 +8,14 @@ public class EndBattlePanel : MonoBehaviour
     public static EndBattlePanel instance;
 
     public GameObject panel;
-    public GameObject parent;
+    private Canvas parent;
 
     public Text win;
     public Text lose;
 
     void Awake()
     {
-        if (instance == null)
-            instance = this;
-        else
-            Destroy(gameObject);
+        instance = this;
     }
 
     void Start()
@@ -28,13 +25,17 @@ public class EndBattlePanel : MonoBehaviour
     }
 
     //kolejnosc dowolna
-    public void init() { }
+    public void init()
+    {
+        parent = GameObject.Find("Canvas").GetComponent<Canvas>();
+    }
 
     private void onBattleEnd()
     {
-        panel = Instantiate(panel) as GameObject;
-        panel.transform.SetParent(parent.transform, false);
+        GameObject go = Instantiate(panel) as GameObject;
+        go.transform.SetParent(parent.transform, false);
         TurnManagement.instance.isBattleFinished = true;
+        BattleToExplore.wasGenerated = true;
     }
 
     public void onWin()
@@ -49,5 +50,10 @@ public class EndBattlePanel : MonoBehaviour
         //konsekwencje jakie?
         lose.gameObject.SetActive(true);
         onBattleEnd();
+    }
+
+    public void destroy()
+    {
+        Destroy(instance.gameObject);
     }
 }

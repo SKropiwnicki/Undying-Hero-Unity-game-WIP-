@@ -91,6 +91,10 @@ public class BattleLoader : MonoBehaviour
 
         yield return new WaitForEndOfFrame();
 
+        BattleToExplore.instance.init();
+
+        yield return new WaitForEndOfFrame();
+
         loaded = true;
 
         yield return new WaitForEndOfFrame();

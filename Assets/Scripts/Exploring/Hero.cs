@@ -19,6 +19,19 @@ public class Hero : MonoBehaviour
 
     void Awake()
     {
+        if(BattleToExplore.wasGenerated && name == "Hero1")
+        {
+            health = BattleToExplore.hero1.health;
+            if(health < 0)
+            {
+                health = 100; //todo: 0
+            }
+        }
+        //Hero2, a potem podzial hp jesli ktos ma 0 i koniec gry jesli obaj maja 0
+    }
+
+    void Start()
+    {
         setPanel();
     }
 

@@ -3,6 +3,8 @@ using System.Collections;
 
 public class ExploreToBattle : MonoBehaviour
 {
+    public static ExploreToBattle instance;
+
     public GameObject gameObjectWithHero1Script;
     public GameObject gameObjectWithHero2Script;
 
@@ -13,6 +15,8 @@ public class ExploreToBattle : MonoBehaviour
 
     void Awake()
     {
+        instance = this;
+
         DontDestroyOnLoad(this.transform);
 
         if(hero1 == null)
@@ -23,5 +27,10 @@ public class ExploreToBattle : MonoBehaviour
         {
             hero2 = gameObjectWithHero2Script.GetComponent<Hero>();
         }
+    }
+
+    public void destroy()
+    {
+        Destroy(instance.gameObject);
     }
 }

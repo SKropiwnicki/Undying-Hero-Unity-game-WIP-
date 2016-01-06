@@ -8,6 +8,7 @@ public class Targetting : MonoBehaviour
 
     private bool isTargetting;
     private bool isSkillUsed;
+    private bool needNoTarget;
     private string skillName;
 	
     void Awake()
@@ -23,7 +24,30 @@ public class Targetting : MonoBehaviour
     {
         if (BattleLoader.loaded && !TurnManagement.instance.isBattleFinished)
         {
-            if (Input.GetMouseButtonDown(0) && isTargetting)
+            isSkillUsed = false;
+            //Dla skilli bez targetu
+            if (needNoTarget && isTargetting)
+            {
+                Actor source = TurnManagement.instance.getCurrentActor();
+                List<Skill> sourceskills = new List<Skill>(source.skills);
+                Debug.Log("Wszedlem do skilla bez targetingu" + skillName);
+
+                foreach (Skill skill in sourceskills)
+                {
+                    Debug.Log(skill.name + " == "  + skillName);
+                    if (skill.name == skillName)
+                    {
+                        isSkillUsed = true;
+                        Debug.Log("Wywoluje selfclick z  targettingu: " + skill.name);
+                        skill.useSkill(source);
+                    }
+                    if (isSkillUsed || TurnManagement.instance.isBattleFinished) break;
+                }
+
+                isTargetting = false;
+            }
+            //Dla skilli z targetem (uzywamy raycast)
+            else if (Input.GetMouseButtonDown(0) && isTargetting)
             {
                 isSkillUsed = false;
                 RaycastHit2D hit = Physics2D.Raycast(new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y), Vector2.zero, 10f);
@@ -51,8 +75,9 @@ public class Targetting : MonoBehaviour
         }
     }
 
-    public void checkTarget(string buttonName)
+    public void checkTarget(string buttonName, bool needNoTarget)
     {
+        this.needNoTarget = needNoTarget;
         skillName = buttonName;
         isTargetting = true;
     }

@@ -4,25 +4,44 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System;
 
-public class ButtonSkills : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class ButtonSkills : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     public string skillName;
+    public bool enoughAP;
+    public bool needNoTarget;
+    public bool isOn;
     private Image img;
-    private Color defaultColor;
+    public Color defaultColor;
 
-    void Awake ()
+    void Awake()
     {
         img = transform.GetComponent<Image>();
         defaultColor = img.color;
+
+
+    }
+
+
+    void Update()
+    {
+        if (isOn) if (!enoughAP) isOn = false;
+        if (!isOn) if (enoughAP) isOn = true;
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        img.color = new Color(1.0f, 0.2f, 0.2f, 1f);
+        if (enoughAP) img.color = new Color(0.8f, 0.8f, 0.8f, 1f);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
         img.color = defaultColor;
     }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (enoughAP) defaultColor =  new Color(0.0f, 0.8f, 0.0f, 1f);
+    }
+
+
 }

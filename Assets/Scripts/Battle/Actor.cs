@@ -13,6 +13,11 @@ public class Actor : MonoBehaviour
     public int dexterity;
     public int intelligence;
 
+    public int startingAP;
+    public int currentAP;
+    public int maxAP;
+    
+
     public bool isControllable;
     public bool hasSpecialAI;
 
@@ -61,6 +66,10 @@ public class Actor : MonoBehaviour
         strength = hero.strength;
         dexterity = hero.dexterity;
         intelligence = hero.intelligence;
+
+
+        //OBSŁUGA AP
+        currentAP = startingAP;
     }
 
     void Awake()
@@ -71,6 +80,7 @@ public class Actor : MonoBehaviour
         animator = GetComponent<Animator>();
 
         skills = new List<Skill>();
+        skills.Add(new AutoAttack());
     }
 
     public void skillLoader()

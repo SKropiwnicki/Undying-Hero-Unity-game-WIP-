@@ -47,6 +47,7 @@ public class ButtonManager : MonoBehaviour
 
                 foreach (GameObject buttonPrefab in allButtons)
                 {
+                    
                     if (skill.name == buttonPrefab.GetComponent<ButtonSkills>().skillName)
                     {
                         GameObject button = Instantiate(buttonPrefab, new Vector3(0.0f, 0.0f, 0), Quaternion.identity) as GameObject;
@@ -57,11 +58,22 @@ public class ButtonManager : MonoBehaviour
                         button.transform.position = new Vector3(screenPos.x, screenPos.y, screenPos.z);
 
                         currentButtons.Add(button);
+
+
+                        //Sprawdzanie kosztu AP
+                        if (skill.APCost > actor.currentAP)
+                        {
+                            button.GetComponent<ButtonSkills>().defaultColor = new Color(1.0f, 0.0f, 0.0f, 1.0f);
+                            button.GetComponent<ButtonSkills>().enoughAP = false;
+                            button.transform.GetComponent<Image>().color = button.GetComponent<ButtonSkills>().defaultColor;
+                        }
+                        else button.GetComponent<ButtonSkills>().enoughAP = true;
                     }
 
                 }
                 i++;
             }
+           // checkButtonsAP(actor);
         }
     }
 
@@ -75,7 +87,7 @@ public class ButtonManager : MonoBehaviour
             }
         }
     }
-        
+
 
     /*
     Buttony maja prefaby  w którym jest przypisane wywołanie skryptu z targetting i tam też nazwa danego skilla.

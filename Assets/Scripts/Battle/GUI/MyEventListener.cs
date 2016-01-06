@@ -10,6 +10,7 @@ public class MyEventListener : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData data)
     {
+       
         int clickCount = 1; // single click
 
         // get interval between this click and the previous one (check for double click)
@@ -25,8 +26,9 @@ public class MyEventListener : MonoBehaviour, IPointerClickHandler
         // single click
         if (onClick && clickCount == 1)
         {
-            ButtonSkills szkil = this.GetComponent<ButtonSkills>();
-            Targetting.instance.checkTarget(szkil.skillName);  
+            ButtonSkills bskill = this.GetComponent<ButtonSkills>();
+            
+            if (bskill.isOn) Targetting.instance.checkTarget(bskill.skillName, bskill.needNoTarget);  
         }
 
         // double click

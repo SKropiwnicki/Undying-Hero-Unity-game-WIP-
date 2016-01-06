@@ -2526,8 +2526,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a40911dcd8eabb45b5c3bead1e4ca58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 70
-  health: 70
+  maxHealth: 50
+  health: 50
   initiative: 2
   strength: 7
   dexterity: 6

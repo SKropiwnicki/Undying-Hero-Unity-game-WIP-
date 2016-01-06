@@ -74,12 +74,20 @@ public class TurnManagement : MonoBehaviour
         {
             yield return new WaitForEndOfFrame();
         }
+
+
         TurnManagement.instance.onTurnAction();
     }
 
     public void onTurnAction()
     {
         ButtonManager.instance.spawnButtons(currentActor);
+        currentActor.calculateStats();
+        currentActor.currentAP += currentActor.perTurnAp;
+        currentActor.controlMaxAP();
+
+        Debug.Log("Tura " + currentActor.name + " inicjatywa: " + currentActor.initiative + " AP na start tury: " + currentActor.currentAP);
+
         if (currentActor.isControllable)
         {
             
@@ -122,6 +130,8 @@ public class TurnManagement : MonoBehaviour
     {
         yield return new WaitForSeconds(afterEnemyActionTurn);
 
+
+
         bool finished = winCheck();
 
         if (finished)
@@ -146,12 +156,16 @@ public class TurnManagement : MonoBehaviour
         }
         setPointerPosition();
         updatePortraitBorderPosition();
-        Debug.Log("Tura " + currentActor.name + " inicjatywa: " + currentActor.initiative);
 
-        currentActor.calculateStats();
-      
+        
 
-        if (!finished) onTurnAction();
+
+        if (!finished)
+        {
+            onTurnAction();
+            
+        }
+
     }
 
     public bool isThisCurrentActor(Actor actor)
@@ -175,7 +189,7 @@ public class TurnManagement : MonoBehaviour
     /// 
     /// </summary>
     /// <returns></returns>
-
+    #region spawn portraits and pointers
     private IEnumerator spawnPointer()
     {
         pointerPrefab = Instantiate(pointerPrefab) as GameObject;
@@ -228,4 +242,5 @@ public class TurnManagement : MonoBehaviour
             i++;
         }
     }
+    #endregion
 }

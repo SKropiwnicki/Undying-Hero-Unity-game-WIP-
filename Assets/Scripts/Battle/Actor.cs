@@ -95,7 +95,7 @@ public class Actor : MonoBehaviour
 
         //OBSŁUGA AP
         calculateStats();
-        currentAP = startingAP;
+        currentAP = startingAP - perTurnAp;
     }
 
     public void skillLoader()
@@ -202,6 +202,13 @@ public class Actor : MonoBehaviour
 
         //intelligence
         perTurnAp = 1 + (intelligence / 10);
+
+        controlMaxAP();
+    }
+
+    public void controlMaxAP ()
+    {
+        if (currentAP > maxAP) currentAP = maxAP;
     }
     
     public virtual void AI()

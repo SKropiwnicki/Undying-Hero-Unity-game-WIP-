@@ -7,7 +7,7 @@ public class AutoAttack : Skill
     public AutoAttack()
     {
         name = "AutoAttack";
-        APCost = -1;
+        APCost = 0;
     }
     public  override void action(Actor source, Actor target)
     {

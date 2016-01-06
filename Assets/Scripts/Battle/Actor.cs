@@ -7,8 +7,9 @@ public class Actor : MonoBehaviour
 {
     public int maxHealth;
     public int health; //aktualne hp
-    public int initiative; //jak nizej
-    public int attackPower; //trza wyliczyc ze statow
+    public int initiative;
+    public int experience;
+    public int attackPower;
     public int critChance;
 
     public int def;
@@ -75,7 +76,6 @@ public class Actor : MonoBehaviour
         dexterity = hero.dexterity;
         intelligence = hero.intelligence;
         def = hero.def;
-
 
         //OBSŁUGA AP
         calculateStats();
@@ -153,7 +153,7 @@ public class Actor : MonoBehaviour
 
     private void onDeath()
     {
-        Debug.Log(name + " is dead");
+        ExploreToBattle.experience += experience;
 
         Actors.instance.remove(this);
 
@@ -201,7 +201,6 @@ public class Actor : MonoBehaviour
     
     public virtual void AI()
     {
-
         ai.specialAI();
     }
 }

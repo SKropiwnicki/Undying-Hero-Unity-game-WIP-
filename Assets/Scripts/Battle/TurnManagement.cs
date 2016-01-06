@@ -19,6 +19,9 @@ public class TurnManagement : MonoBehaviour
 
     public bool isBattleFinished;
 
+    public float beforeEnemyActionTime;
+    public float afterEnemyActionTurn;
+
     void Awake()
     {
         if (instance == null)
@@ -83,9 +86,15 @@ public class TurnManagement : MonoBehaviour
         }
         else
         {
-            Debug.Log("Wywoluje AI dla " + currentActor.name);
-            currentActor.AI();
+            StartCoroutine("w8CurrentActorAi");
         }
+    }
+
+    private IEnumerator w8CurrentActorAi()
+    {
+        Debug.Log("Wywoluje AI dla " + currentActor.name);
+        yield return new WaitForSeconds(beforeEnemyActionTime);
+        currentActor.AI();
     }
 
     private void initRound()
@@ -103,14 +112,21 @@ public class TurnManagement : MonoBehaviour
         currentActor = actors[0];
     }
 
-
-    public void nextTurn()
+    public void nextTurnCor()
     {
+        StartCoroutine("nextTurn");
+    }
+
+
+    private IEnumerator nextTurn()
+    {
+        yield return new WaitForSeconds(afterEnemyActionTurn);
+
         bool finished = winCheck();
 
         if (finished)
         {
-              return;
+              yield return new WaitForEndOfFrame();
         }
       
 

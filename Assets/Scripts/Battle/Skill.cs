@@ -14,13 +14,13 @@ public abstract class Skill
     public void useSkill(Actor source)
     {
         action(source);
-        TurnManagement.instance.nextTurn();
+        TurnManagement.instance.nextTurnCor();
     }
 
     public void useSkill(Actor source, Actor target)
     {
         action(source, target);
-        TurnManagement.instance.nextTurn();
+        TurnManagement.instance.nextTurnCor();
     }
 
     protected bool isCriticalHit (int critChance)

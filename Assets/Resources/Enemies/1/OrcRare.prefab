@@ -88,6 +88,7 @@ MonoBehaviour:
   maxHealth: 15
   health: 0
   initiative: 3
+  experience: 20
   attackPower: 3
   critChance: 0
   def: 0
@@ -182,6 +183,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: intelligence
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: experience
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

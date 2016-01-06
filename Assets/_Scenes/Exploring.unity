@@ -2185,8 +2185,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1916201644}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -25.11, y: 12.5, z: -90}
-  m_LocalScale: {x: 2.8588064, y: 2.17, z: 1}
+  m_LocalPosition: {x: -22.91, y: 12.5, z: -90}
+  m_LocalScale: {x: 2.3513284, y: 2.17, z: 1}
   m_Children: []
   m_Father: {fileID: 2016638064}
   m_RootOrder: 1
@@ -2532,7 +2532,7 @@ MonoBehaviour:
   initiative: 2
   def: 2
   strength: 9
-  dexterity: 4
+  dexterity: 100
   intelligence: 5
   healthText: {fileID: 1953569006}
   strengthText: {fileID: 834835264}

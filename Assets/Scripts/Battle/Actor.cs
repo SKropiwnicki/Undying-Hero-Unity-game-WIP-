@@ -124,6 +124,7 @@ public class Actor : MonoBehaviour
     public void TakeDamage(int damageValue, bool isCriticalHit)
     {
         StopAllCoroutines(); //UWAGA! to moze wpływać na inne coroutiny!
+        spriteRenderer.color = new Color(1f, 1f, 1f, 1f);
 
         int actualDamage = (damageValue - def);
         if (actualDamage <= 0) actualDamage = 1;

@@ -11,6 +11,9 @@ public class ExploreToBattle : MonoBehaviour
     public static Hero hero1;
     public static Hero hero2;
 
+    public static Board.Tile[,] board;
+    public static int posX, posY;
+
     public static bool wasGenerated;
 
     void Awake()
@@ -18,8 +21,11 @@ public class ExploreToBattle : MonoBehaviour
         instance = this;
 
         DontDestroyOnLoad(this.transform);
+    }
 
-        if(hero1 == null)
+    public void beforeBattle()
+    {
+        if (hero1 == null)
         {
             hero1 = gameObjectWithHero1Script.GetComponent<Hero>();
         }
@@ -27,10 +33,14 @@ public class ExploreToBattle : MonoBehaviour
         {
             hero2 = gameObjectWithHero2Script.GetComponent<Hero>();
         }
+        board = Board.instance.board;
+        posX = Board.instance.currentTile.x;
+        posY = Board.instance.currentTile.y;
+        Board.instance.board[posX, posY].type = Board.Tile.Type.EMPTY;
     }
 
     public void destroy()
     {
-        Destroy(instance.gameObject);
+        Destroy(this.gameObject);
     }
 }

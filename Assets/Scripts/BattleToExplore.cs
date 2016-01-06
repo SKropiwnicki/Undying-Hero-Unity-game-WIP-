@@ -12,6 +12,9 @@ public class BattleToExplore : MonoBehaviour
 
     public static int health;
 
+    public static Board.Tile[,] board;
+    public static int posX, posY;
+
     void Awake()
     {
         instance = this;
@@ -26,6 +29,14 @@ public class BattleToExplore : MonoBehaviour
         {
             hero1 = GameObject.Find("Hero1").GetComponent<Actor>();
         }
+    }
+
+    public void beforeExplore()
+    {
+        board = ExploreToBattle.board;
+        posX = ExploreToBattle.posX;
+        posY = ExploreToBattle.posY;
+        wasGenerated = true;
     }
 
     public void destroy()

@@ -34,8 +34,17 @@ public class Board : MonoBehaviour
             instance = this;
         else
             Destroy(gameObject);
-
-        generateBoard();
+        
+        if (!BattleToExplore.wasGenerated)
+        {
+            generateBoard();
+        }
+        else
+        {
+            board = BattleToExplore.board;
+            currentTile.x = BattleToExplore.posX;
+            currentTile.y = BattleToExplore.posY;
+        }
         updateTiles();
     }
 
@@ -157,13 +166,19 @@ public class Board : MonoBehaviour
         switch (board[currentTile.x, currentTile.y].type)
         {
             case Tile.Type.BATTLE:
-                ExploreToBattle.wasGenerated = true;
-                SceneManager.LoadScene("FightPrototype");
+                onBattleTile();
                 break;
 
             default:
                 break;
         }
+    }
+
+    private void onBattleTile()
+    {
+        ExploreToBattle.instance.beforeBattle();
+        ExploreToBattle.wasGenerated = true;
+        SceneManager.LoadScene("FightPrototype");
     }
 
     private bool isMovePossible(int x, int y)

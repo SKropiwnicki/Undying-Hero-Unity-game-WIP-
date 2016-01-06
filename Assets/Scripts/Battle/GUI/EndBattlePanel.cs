@@ -36,6 +36,7 @@ public class EndBattlePanel : MonoBehaviour
         go.transform.SetParent(parent.transform, false);
         TurnManagement.instance.isBattleFinished = true;
         BattleToExplore.wasGenerated = true;
+        BattleToExplore.instance.beforeExplore();
     }
 
     public void onWin()

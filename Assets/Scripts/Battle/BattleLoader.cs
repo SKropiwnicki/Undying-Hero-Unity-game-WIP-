@@ -76,18 +76,18 @@ public class BattleLoader : MonoBehaviour
 
         yield return new WaitForEndOfFrame();
 
-        StartCoroutine(TurnManagement.instance.initTurnManagement());
-
-        yield return new WaitForEndOfFrame();
-
-        EndBattlePanel.instance.init();
-
-        yield return new WaitForEndOfFrame();
-
         foreach (Actor actor in Actors.instance.get())
         {
             actor.skillLoader();
         }
+
+        yield return new WaitForEndOfFrame();
+
+        StartCoroutine(TurnManagement.instance.initTurnManagement());
+
+        yield return new WaitForEndOfFrame();
+
+        EndBattlePanel.instance.init();        
 
         yield return new WaitForEndOfFrame();
 

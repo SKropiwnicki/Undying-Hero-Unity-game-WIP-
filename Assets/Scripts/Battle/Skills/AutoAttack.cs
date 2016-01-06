@@ -20,7 +20,7 @@ public class AutoAttack : Skill
         Debug.Log(source.name+ " zadaje " + dmg + " dla " + target.name + " CRIT: "+isCritical);
         if (source.animator)
         {
-            source.onAttackAnimation();
+            source.onAttackEfx();
         }
         target.TakeDamage(dmg, isCritical);
         source.currentAP -= APCost;

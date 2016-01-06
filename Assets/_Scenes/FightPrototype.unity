@@ -1023,6 +1023,7 @@ MonoBehaviour:
   enemiesLevel: 1
   minEnemies: 2
   maxEnemies: 3
+  music: {fileID: 8300000, guid: 2f50483c18e89384c856e72150657350, type: 3}
 --- !u!1 &1397164613
 GameObject:
   m_ObjectHideFlags: 0

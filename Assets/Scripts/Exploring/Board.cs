@@ -22,6 +22,8 @@ public class Board : MonoBehaviour
     public Sprite blockTile;
     public Sprite battleTile;
 
+    public AudioClip onMoveSound;
+
     public struct Point
     {
         public int x;
@@ -158,6 +160,7 @@ public class Board : MonoBehaviour
         int newY = currentTile.y + difY;
         if (isMovePossible(newX, newY))
         {
+            SoundManager.instance.playOnGui(onMoveSound);
             Debug.Log("nowa pozycja: " + newX + ", " + newY + " : " + board[newX, newY].type);
             currentTile.x = newX;
             currentTile.y = newY;
@@ -176,6 +179,7 @@ public class Board : MonoBehaviour
 
     private void onBattleTile()
     {
+        SoundManager.instance.musicSource.Stop();
         ExploreToBattle.instance.beforeBattle();
         ExploreToBattle.wasGenerated = true;
         SceneManager.LoadScene("FightPrototype");

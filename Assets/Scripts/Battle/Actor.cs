@@ -5,6 +5,7 @@ using System.Collections.Generic;
 
 public class Actor : MonoBehaviour
 {
+    #region Variables
     public int maxHealth;
     public int health; //aktualne hp
     public int initiative;
@@ -45,6 +46,21 @@ public class Actor : MonoBehaviour
 
     public Animator animator;
 
+    public AudioClip attackSound;
+    public AudioClip onDeathSound;
+    #endregion
+
+    void Awake()
+    {
+        health = maxHealth;
+
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
+
+        skills = new List<Skill>();
+        skills.Add(new AutoAttack());
+    }
+
     public void SetHpBar(Slider healthBar)
     {
         this.healthBar = healthBar;
@@ -82,20 +98,6 @@ public class Actor : MonoBehaviour
         currentAP = startingAP;
     }
 
-    void Awake()
-    {
-        health = maxHealth;
-
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        animator = GetComponent<Animator>();
-
-        skills = new List<Skill>();
-        skills.Add(new AutoAttack());
-
-        
-        
-    }
-
     public void skillLoader()
     {
         foreach (string skillName in skillsNames)
@@ -116,8 +118,9 @@ public class Actor : MonoBehaviour
     }
 
 
-    public void onAttackAnimation()
+    public void onAttackEfx()
     {
+        SoundManager.instance.playSingle(attackSound);
         animator.SetTrigger("Attack");
     }
 
@@ -153,6 +156,7 @@ public class Actor : MonoBehaviour
 
     private void onDeath()
     {
+        SoundManager.instance.playOnDeath(onDeathSound);
         ExploreToBattle.experience += experience;
 
         Actors.instance.remove(this);

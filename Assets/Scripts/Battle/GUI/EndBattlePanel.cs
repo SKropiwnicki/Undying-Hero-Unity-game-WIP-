@@ -32,6 +32,7 @@ public class EndBattlePanel : MonoBehaviour
 
     private void onBattleEnd()
     {
+        SoundManager.instance.musicSource.Stop();
         GameObject go = Instantiate(panel) as GameObject;
         go.transform.SetParent(parent.transform, false);
         TurnManagement.instance.isBattleFinished = true;

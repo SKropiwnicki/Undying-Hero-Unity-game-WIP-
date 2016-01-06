@@ -107,6 +107,8 @@ MonoBehaviour:
   dmgAnimSpeed: 0.9
   spriteRenderer: {fileID: 0}
   animator: {fileID: 0}
+  attackSound: {fileID: 8300000, guid: 30b2cc74ec0d36142bafe03970d06e4f, type: 3}
+  onDeathSound: {fileID: 8300000, guid: b2acc35107e77a24fa812f28f31d93e2, type: 3}
 --- !u!212 &21259176
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -172,6 +174,18 @@ Prefab:
       propertyPath: experience
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: atackSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 30b2cc74ec0d36142bafe03970d06e4f, type: 3}
+    - target: {fileID: 0}
+      propertyPath: onDeathSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b2acc35107e77a24fa812f28f31d93e2, type: 3}
+    - target: {fileID: 0}
+      propertyPath: attackSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 30b2cc74ec0d36142bafe03970d06e4f, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 107284}

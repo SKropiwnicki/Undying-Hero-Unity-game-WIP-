@@ -48,7 +48,7 @@ public class Targetting : MonoBehaviour
                 isTargetting = false;
             }
             //Dla skilli z targetem (uzywamy raycast)
-            else if (Input.GetMouseButtonDown(0) && isTargetting)
+            else if (Input.GetMouseButtonDown(0) && isTargetting && ButtonManager.instance.isButtonClicked)
             {
                 isSkillUsed = false;
                 RaycastHit2D hit = Physics2D.Raycast(new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y), Vector2.zero, 10f);

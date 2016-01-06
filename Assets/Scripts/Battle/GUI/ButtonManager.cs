@@ -14,6 +14,8 @@ public class ButtonManager : MonoBehaviour
     public List<GameObject> currentButtons;
     private List<GameObject> allButtons;
 
+    public bool isButtonClicked;
+
     public float buttonOffsetX = 2.0f;
     
     public float x = -4f;

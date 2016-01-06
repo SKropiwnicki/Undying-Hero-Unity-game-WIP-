@@ -40,8 +40,20 @@ public class ButtonSkills : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (enoughAP) defaultColor =  new Color(0.0f, 0.8f, 0.0f, 1f);
-    }
+        if (enoughAP)
+        {
+            if (!ButtonManager.instance.isButtonClicked)
+            {
+                defaultColor = new Color(0.0f, 0.8f, 0.0f, 1.0f);
+                ButtonManager.instance.isButtonClicked = true;
+            }
+            else
+            {
+                ButtonManager.instance.isButtonClicked = false;
+                defaultColor = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+            }
 
+        }
+    }
 
 }

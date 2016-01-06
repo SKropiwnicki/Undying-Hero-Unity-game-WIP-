@@ -81,10 +81,11 @@ public class TurnManagement : MonoBehaviour
 
     public void onTurnAction()
     {
-        ButtonManager.instance.spawnButtons(currentActor);
+        
         currentActor.calculateStats();
         currentActor.currentAP += currentActor.perTurnAp;
         currentActor.controlMaxAP();
+        ButtonManager.instance.spawnButtons(currentActor);
 
         Debug.Log("Tura " + currentActor.name + " inicjatywa: " + currentActor.initiative + " AP na start tury: " + currentActor.currentAP);
 

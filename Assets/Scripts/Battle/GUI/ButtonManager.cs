@@ -80,12 +80,9 @@ public class ButtonManager : MonoBehaviour
         allButtons = new List<GameObject>();
         allButtons.Add(AutoAttackButton);
         allButtons.Add(PowerAttackButton);
-<<<<<<< HEAD
 
         spawnAp();
-=======
         allButtons.Add(DefendButton);
->>>>>>> b4316c46949665b64d99f6c79a38abb6e51733be
     }
     //jak dochodza nowe skille to buttony dla nich tutaj dodajemy 
 

@@ -258,8 +258,8 @@ MonoBehaviour:
   buttonOffsetX: 2
   x: -6
   y: -4
-  allAp: 35
-  widthAp: 22
+  allAp: 36
+  widthAp: 25
   parentAP: {fileID: 1790347511}
   emptyAp: {fileID: 11416140, guid: e86e5711dafb4914097e7ebf32aaf94b, type: 2}
   greenAp: {fileID: 11493880, guid: 4b771642a000e524ba084b6bd2d97023, type: 2}

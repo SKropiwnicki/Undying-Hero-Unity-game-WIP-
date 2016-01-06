@@ -14,6 +14,8 @@ public class BattleLoader : MonoBehaviour
     public int minEnemies;
     public int maxEnemies;
 
+    public AudioClip music;
+
     void Awake()
     {
         //dane z ExploreToBattle tutaj bedzie mozna przekazac
@@ -98,5 +100,7 @@ public class BattleLoader : MonoBehaviour
         loaded = true;
 
         yield return new WaitForEndOfFrame();
+
+        SoundManager.instance.playMusic(music);
     }
 }

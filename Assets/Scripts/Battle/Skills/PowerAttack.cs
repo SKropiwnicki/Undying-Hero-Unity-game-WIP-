@@ -13,7 +13,7 @@ public class PowerAttack : Skill
        
         target.TakeDamage(source.attackPower*2, false);
         source.currentAP -= APCost;
-
+        source.onAttackEfx(); //dodane by Vuko
         Debug.Log("Nowe AP:" + source.currentAP);
     }
 

@@ -161,7 +161,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1962447948}
-        m_MethodName: nextTurn
+        m_MethodName: nextTurnCor
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1023,6 +1023,7 @@ MonoBehaviour:
   enemiesLevel: 1
   minEnemies: 2
   maxEnemies: 3
+  music: {fileID: 8300000, guid: 2f50483c18e89384c856e72150657350, type: 3}
 --- !u!1 &1397164613
 GameObject:
   m_ObjectHideFlags: 0
@@ -1328,6 +1329,8 @@ MonoBehaviour:
   portraitsParent: {fileID: 147203569}
   portraitXOffset: 120
   isBattleFinished: 0
+  beforeEnemyActionTime: 1
+  afterEnemyActionTurn: 0.5
 --- !u!114 &1962447949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1368,7 +1371,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panel: {fileID: 156170, guid: 9bf36e304a9accd4795d1c1662b9f41d, type: 2}
-  parent: {fileID: 515012629}
   win: {fileID: 11434712, guid: 9bf36e304a9accd4795d1c1662b9f41d, type: 2}
   lose: {fileID: 11438268, guid: 9bf36e304a9accd4795d1c1662b9f41d, type: 2}
 --- !u!4 &2012525765

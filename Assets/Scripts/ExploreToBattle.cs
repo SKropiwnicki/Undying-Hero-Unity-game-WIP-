@@ -8,6 +8,7 @@ public class ExploreToBattle : MonoBehaviour
     public GameObject gameObjectWithHero1Script;
     public GameObject gameObjectWithHero2Script;
 
+    public static int level, experience;
     public static Hero hero1;
     public static Hero hero2;
 
@@ -37,6 +38,8 @@ public class ExploreToBattle : MonoBehaviour
         posX = Board.instance.currentTile.x;
         posY = Board.instance.currentTile.y;
         Board.instance.board[posX, posY].type = Board.Tile.Type.EMPTY;
+        level = Heroes.level;
+        experience = Heroes.experience;
     }
 
     public void destroy()

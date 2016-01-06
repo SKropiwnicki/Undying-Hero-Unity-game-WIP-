@@ -7,6 +7,7 @@ public class BattleToExplore : MonoBehaviour
 
     public static bool wasGenerated;
 
+    public static int level, experience;
     public static Actor hero1;
     public static Actor hero2;
 
@@ -36,6 +37,8 @@ public class BattleToExplore : MonoBehaviour
         board = ExploreToBattle.board;
         posX = ExploreToBattle.posX;
         posY = ExploreToBattle.posY;
+        level = ExploreToBattle.level;
+        experience = ExploreToBattle.experience;
         wasGenerated = true;
     }
 

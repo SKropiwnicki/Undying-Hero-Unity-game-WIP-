@@ -5,10 +5,12 @@ using System.Collections.Generic;
 
 public class Actor : MonoBehaviour
 {
+    #region Variables
     public int maxHealth;
     public int health; //aktualne hp
-    public int initiative; //jak nizej
-    public int attackPower; //trza wyliczyc ze statow
+    public int initiative;
+    public int experience;
+    public int attackPower;
     public int critChance;
 
     public int def;
@@ -44,6 +46,21 @@ public class Actor : MonoBehaviour
 
     public Animator animator;
 
+    public AudioClip attackSound;
+    public AudioClip onDeathSound;
+    #endregion
+
+    void Awake()
+    {
+        health = maxHealth;
+
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
+
+        skills = new List<Skill>();
+        skills.Add(new AutoAttack());
+    }
+
     public void SetHpBar(Slider healthBar)
     {
         this.healthBar = healthBar;
@@ -76,24 +93,9 @@ public class Actor : MonoBehaviour
         intelligence = hero.intelligence;
         def = hero.def;
 
-
         //OBSŁUGA AP
         calculateStats();
         currentAP = startingAP;
-    }
-
-    void Awake()
-    {
-        health = maxHealth;
-
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        animator = GetComponent<Animator>();
-
-        skills = new List<Skill>();
-        skills.Add(new AutoAttack());
-
-        
-        
     }
 
     public void skillLoader()
@@ -116,8 +118,9 @@ public class Actor : MonoBehaviour
     }
 
 
-    public void onAttackAnimation()
+    public void onAttackEfx()
     {
+        SoundManager.instance.playSingle(attackSound);
         animator.SetTrigger("Attack");
     }
 
@@ -154,7 +157,8 @@ public class Actor : MonoBehaviour
 
     private void onDeath()
     {
-        Debug.Log(name + " is dead");
+        SoundManager.instance.playOnDeath(onDeathSound);
+        ExploreToBattle.experience += experience;
 
         Actors.instance.remove(this);
 
@@ -202,7 +206,6 @@ public class Actor : MonoBehaviour
     
     public virtual void AI()
     {
-
         ai.specialAI();
     }
 }

@@ -38,17 +38,15 @@ public class ButtonManager : MonoBehaviour
     {
         DestroyOldButtons();
 
-        if (!TurnManagement.instance.isBattleFinished)
+        if (!TurnManagement.instance.isBattleFinished  && actor.isControllable)
         {
 
             int i = 0;
             foreach (Skill skill in actor.skills)
-            {
-                Debug.Log("Szukanie buttona dla skilla: " + skill.name);
+            {    
 
                 foreach (GameObject buttonPrefab in allButtons)
                 {
-                    Debug.Log("Ogarniam buttonek dla : " + allButtons[0].GetComponent<ButtonSkills>().skillName);
                     if (skill.name == buttonPrefab.GetComponent<ButtonSkills>().skillName)
                     {
                         GameObject button = Instantiate(buttonPrefab, new Vector3(0.0f, 0.0f, 0), Quaternion.identity) as GameObject;
@@ -73,7 +71,6 @@ public class ButtonManager : MonoBehaviour
         {
             foreach (GameObject button in currentButtons)
             {
-                Debug.Log("Done");
                 Destroy(button);
             }
         }

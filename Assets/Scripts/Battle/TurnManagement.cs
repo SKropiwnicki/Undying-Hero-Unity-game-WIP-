@@ -64,10 +64,9 @@ public class TurnManagement : MonoBehaviour
         spawnPortraits();
         spawnPortraitBorder();
         updatePortraitBorderPosition();
-        if (currentActor.isControllable)
-        {
-            ButtonManager.instance.spawnButtons(currentActor);
-        }
+
+        ButtonManager.instance.spawnButtons(currentActor);
+
         while(!BattleLoader.loaded) //nie jest potrzebne w tym wypadku "bo dziala", ale jest mocno zalecane
         {
             yield return new WaitForEndOfFrame();
@@ -77,12 +76,14 @@ public class TurnManagement : MonoBehaviour
 
     public void onTurnAction()
     {
+        ButtonManager.instance.spawnButtons(currentActor);
         if (currentActor.isControllable)
         {
-            ButtonManager.instance.spawnButtons(currentActor);
+            
         }
         else
         {
+            Debug.Log("Wywoluje AI dla " + currentActor.name);
             currentActor.AI();
         }
     }
@@ -90,11 +91,14 @@ public class TurnManagement : MonoBehaviour
     private void initRound()
     {
         actors = new List<Actor>(Actors.instance.get());
-
+        
+        if (actors.Count != 0)
+        {
         actors.Sort(delegate (Actor x, Actor y)
         {
             return y.initiative.CompareTo(x.initiative);
         });
+        }
 
         currentActor = actors[0];
     }
@@ -102,10 +106,13 @@ public class TurnManagement : MonoBehaviour
 
     public void nextTurn()
     {
-        if(winCheck())
+        bool finished = winCheck();
+
+        if (finished)
         {
-            return;
+              return;
         }
+      
 
         int currentIndex = actors.IndexOf(currentActor);
         int nextIndex = currentIndex + 1;
@@ -125,7 +132,7 @@ public class TurnManagement : MonoBehaviour
         updatePortraitBorderPosition();
         Debug.Log("Tura " + currentActor.name + " inicjatywa: " + currentActor.initiative);
         
-        onTurnAction();
+        if (!finished) onTurnAction();
     }
 
     public bool isThisCurrentActor(Actor actor)

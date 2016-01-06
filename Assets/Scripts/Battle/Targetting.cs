@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Targetting : MonoBehaviour
 {
@@ -30,16 +31,18 @@ public class Targetting : MonoBehaviour
                 if (hit.collider != null && hit.transform.tag == "Target")
                 {
                     Actor source = TurnManagement.instance.getCurrentActor();
+                    List<Skill> sourceskills = new List<Skill>(source.skills);
 
-                    foreach (Skill skill in source.skills)
+                    foreach (Skill skill in sourceskills)
                     {
-                        Debug.Log(skillName + " " + skill.name);
+                        
                         if (skill.name == skillName)
                         {
                             isSkillUsed = true;
+                            Debug.Log("Wywoluje z targettingu: " + skill.name);
                             skill.useSkill(source, hit.collider.gameObject.GetComponent<Actor>());
                         }
-                        if (isSkillUsed) break;
+                        if (isSkillUsed || TurnManagement.instance.isBattleFinished) break;
                     }
 
                     isTargetting = false;

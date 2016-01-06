@@ -252,6 +252,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AutoAttackButton: {fileID: 169154, guid: 8fa2416cb220f7a41a8e6e78854162b6, type: 2}
   PowerAttackButton: {fileID: 169154, guid: 23a1a8ab6d7741c4eb725d027a23503f, type: 2}
+  DefendButton: {fileID: 133818, guid: 5b767a756fa463844ba0ebe308c97873, type: 2}
   parent: {fileID: 17654198}
   currentButtons: []
   buttonOffsetX: 2

@@ -108,6 +108,7 @@ MonoBehaviour:
   isControllable: 1
   skillsNames:
   - PowerAttack
+  - Defend
   skillPrefab: {fileID: 0}
   portraitPrefab: {fileID: 100442, guid: fe83bf6781076aa409d31a3b35fb605e, type: 2}
   dmgAnimSpeed: 0.9
@@ -154,7 +155,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: skillsNames.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: isControllable
@@ -204,6 +205,10 @@ Prefab:
       propertyPath: onDeathSound
       value: 
       objectReference: {fileID: 8300000, guid: b2acc35107e77a24fa812f28f31d93e2, type: 3}
+    - target: {fileID: 0}
+      propertyPath: skillsNames.Array.data[1]
+      value: Defend
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 170692}

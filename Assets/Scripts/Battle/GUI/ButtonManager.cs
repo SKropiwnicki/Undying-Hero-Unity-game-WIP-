@@ -9,6 +9,7 @@ public class ButtonManager : MonoBehaviour
 
     public GameObject AutoAttackButton;
     public GameObject PowerAttackButton;
+    public GameObject DefendButton;
     public GameObject parent;
     public List<GameObject> currentButtons;
     private List<GameObject> allButtons;
@@ -29,6 +30,7 @@ public class ButtonManager : MonoBehaviour
         allButtons = new List<GameObject>();
         allButtons.Add(AutoAttackButton);
         allButtons.Add(PowerAttackButton);
+        allButtons.Add(DefendButton);
     }
     //jak dochodza nowe skille to buttony dla nich tutaj dodajemy 
 
@@ -44,13 +46,13 @@ public class ButtonManager : MonoBehaviour
             int i = 0;
             foreach (Skill skill in actor.skills)
             {
-                //Debug.Log("Mam skill o nazwie " + skill.name + (" i chce dla niego buttona"));
+                Debug.Log("Mam skill o nazwie " + skill.name + (" i chce dla niego buttona"));
                 foreach (GameObject buttonPrefab in allButtons)
                 {
                     
                     if (skill.name == buttonPrefab.GetComponent<ButtonSkills>().skillName)
                     {
-                        //Debug.Log("Generuje button dla skilla " + skill.name );
+                        Debug.Log("Generuje button dla skilla " + skill.name );
                         GameObject button = Instantiate(buttonPrefab, new Vector3(0.0f, 0.0f, 0), Quaternion.identity) as GameObject;
                         button.transform.SetParent(this.gameObject.transform, false);
 

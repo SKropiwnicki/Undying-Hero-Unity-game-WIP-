@@ -14,6 +14,56 @@ public class ButtonManager : MonoBehaviour
     private List<GameObject> allButtons;
 
     public float buttonOffsetX = 2.0f;
+    
+    public float x = -4f;
+    public float y = -6f;
+
+    #region AP
+
+    private List<Image> apList;
+    public int allAp;
+    public int widthAp;
+    public GameObject parentAP;
+    public Image emptyAp;
+    public Image greenAp;
+    public Image redAp;
+
+    private void spawnAp()
+    {
+        apList = new List<Image>();
+        for (int i = 0; i < allAp; i++)
+        {
+            Image go = Instantiate(emptyAp, new Vector3(0, 0, 0), Quaternion.identity) as Image;
+            go.transform.SetParent(parentAP.transform, false);
+
+            Vector3 worldPos = new Vector3(x - 2.25f, y + 1.25f, 0);
+            Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
+            go.transform.position = new Vector3(screenPos.x + (widthAp * i), screenPos.y, screenPos.z);
+
+            apList.Add(go);
+        }
+    }
+
+    private void updateAp(int ap, int mapAp)
+    {
+        for(int i = 0; i < allAp; i++)
+        {
+            if(i < ap)
+            {
+                apList[i].sprite = greenAp.sprite;
+            }
+            else if(i < mapAp)
+            {
+                apList[i].sprite = redAp.sprite;
+            }
+            else
+            {
+                apList[i].sprite = emptyAp.sprite;
+            }
+        }
+    }
+
+    #endregion
 
     void Awake()
     {
@@ -29,18 +79,19 @@ public class ButtonManager : MonoBehaviour
         allButtons = new List<GameObject>();
         allButtons.Add(AutoAttackButton);
         allButtons.Add(PowerAttackButton);
+
+        spawnAp();
     }
     //jak dochodza nowe skille to buttony dla nich tutaj dodajemy 
-
-
 
     public void spawnButtons(Actor actor)
     {
         DestroyOldButtons();
+        updateAp(0, 0);
 
         if (!TurnManagement.instance.isBattleFinished  && actor.isControllable)
         {
-
+            updateAp(actor.currentAP, actor.maxAP);
             int i = 0;
             foreach (Skill skill in actor.skills)
             {
@@ -54,13 +105,12 @@ public class ButtonManager : MonoBehaviour
                         GameObject button = Instantiate(buttonPrefab, new Vector3(0.0f, 0.0f, 0), Quaternion.identity) as GameObject;
                         button.transform.SetParent(this.gameObject.transform, false);
 
-                        Vector3 worldPos = new Vector3(-6.0f + (2.0f * i), -4.0f, 0);
+                        Vector3 worldPos = new Vector3(x + (2.0f * i), y, 0);
                         Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
                         button.transform.position = new Vector3(screenPos.x, screenPos.y, screenPos.z);
 
                         currentButtons.Add(button);
-
-
+                        
                         //Sprawdzanie kosztu AP
                         if (skill.APCost > actor.currentAP)
                         {

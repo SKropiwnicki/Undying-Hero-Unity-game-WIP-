@@ -49,7 +49,7 @@ public class BattleLoader : MonoBehaviour
             int numb = Random.Range(0, enemies.Length);
             GameObject enemy = enemies[numb] as GameObject;
 
-            enemy = Instantiate(enemy, new Vector3(((i + 1) * -3f + 0.75f), 0.05f, 0), Quaternion.identity) as GameObject;
+            enemy = Instantiate(enemy, new Vector3(((i + 1) * -2.7f + 0.75f), 0.05f, 0), Quaternion.identity) as GameObject;
             enemy.transform.SetParent(ActorsParent.transform, false);
         }
     }

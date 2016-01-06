@@ -37,9 +37,9 @@ public class ButtonManager : MonoBehaviour
             Image go = Instantiate(emptyAp, new Vector3(0, 0, 0), Quaternion.identity) as Image;
             go.transform.SetParent(parentAP.transform, false);
 
-            Vector3 worldPos = new Vector3(x - 2.25f, y + 1.25f, 0);
+            Vector3 worldPos = new Vector3(x - 2.25f + ((widthAp / 100.0f) * i), y + 1.25f, 0);
             Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
-            go.transform.position = new Vector3(screenPos.x + (widthAp * i), screenPos.y, screenPos.z);
+            go.transform.position = new Vector3(screenPos.x, screenPos.y, screenPos.z);
 
             apList.Add(go);
         }

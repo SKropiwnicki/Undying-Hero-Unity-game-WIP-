@@ -131,7 +131,10 @@ public class TurnManagement : MonoBehaviour
         setPointerPosition();
         updatePortraitBorderPosition();
         Debug.Log("Tura " + currentActor.name + " inicjatywa: " + currentActor.initiative);
-        
+
+        currentActor.calculateStats();
+      
+
         if (!finished) onTurnAction();
     }
 

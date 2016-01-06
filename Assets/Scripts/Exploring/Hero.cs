@@ -8,6 +8,8 @@ public class Hero : MonoBehaviour
     public int health; //aktualne hp
     public int initiative;
 
+    public int def;
+
     public int strength;
     public int dexterity;
     public int intelligence;

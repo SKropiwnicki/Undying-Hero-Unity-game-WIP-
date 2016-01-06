@@ -9,18 +9,24 @@ public class Actor : MonoBehaviour
     public int health; //aktualne hp
     public int initiative; //jak nizej
     public int attackPower; //trza wyliczyc ze statow
+    public int critChance;
+
+    public int def;
+
+    //CoreStats
     public int strength;
     public int dexterity;
     public int intelligence;
 
+
+    //AP
     public int startingAP;
     public int currentAP;
     public int maxAP;
-    
+    public int perTurnAp;    
 
     public bool isControllable;
-    public bool hasSpecialAI;
-
+    
     public IAI ai;
 
     public string[] skillsNames;
@@ -57,6 +63,8 @@ public class Actor : MonoBehaviour
         }
         else
         {
+            calculateStats();
+            currentAP = startingAP;
             return;
         }
 
@@ -66,9 +74,11 @@ public class Actor : MonoBehaviour
         strength = hero.strength;
         dexterity = hero.dexterity;
         intelligence = hero.intelligence;
+        def = hero.def;
 
 
         //OBSŁUGA AP
+        calculateStats();
         currentAP = startingAP;
     }
 
@@ -81,6 +91,9 @@ public class Actor : MonoBehaviour
 
         skills = new List<Skill>();
         skills.Add(new AutoAttack());
+
+        
+        
     }
 
     public void skillLoader()
@@ -108,12 +121,18 @@ public class Actor : MonoBehaviour
         animator.SetTrigger("Attack");
     }
 
-    public void TakeDamage(int damageValue)
+    public void TakeDamage(int damageValue, bool isCriticalHit)
     {
         StopAllCoroutines(); //UWAGA! to moze wpływać na inne coroutiny!
 
-        health -= damageValue;
-        string text = "- " + damageValue;
+        int actualDamage = (damageValue - def);
+        if (actualDamage <= 0) actualDamage = 1;
+        health -= actualDamage;
+
+        string text = "";
+        if (isCriticalHit) text += "CRIT! ";
+        text +="- " + actualDamage;
+
         TextSpawner.instance.Spawn(this.transform, text);
         StartCoroutine(damageAnimation());
    
@@ -163,9 +182,26 @@ public class Actor : MonoBehaviour
         }
         yield return new  WaitForSeconds(1.5f);
     }
+
+    public void calculateStats()
+    {
+        //strength
+        attackPower = 1 + strength;
+        if (attackPower < 0) attackPower = 0;
+        maxAP = 5 + Mathf.FloorToInt(strength/2);
+        //dexterity
+        initiative = Mathf.FloorToInt(dexterity / 3);
+        startingAP = 1 + Mathf.FloorToInt(dexterity / 5);
+        critChance = 0 + Mathf.FloorToInt(dexterity / 4);
+        if (critChance > 50) critChance = 50;
+
+        //intelligence
+        perTurnAp = 1 + (intelligence / 10);
+    }
     
     public virtual void AI()
     {
+
         ai.specialAI();
     }
 }

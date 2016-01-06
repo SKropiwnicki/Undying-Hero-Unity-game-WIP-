@@ -22,4 +22,16 @@ public abstract class Skill
         action(source, target);
         TurnManagement.instance.nextTurn();
     }
+
+    protected bool isCriticalHit (int critChance)
+    {
+        if (critChance >= Random.Range(0, 100)) return true;
+        else return false;
+    }
+
+    public bool hasEnoughAP(int i)
+    {
+        if (i >= APCost) return true;
+        else return false;
+    }
 }

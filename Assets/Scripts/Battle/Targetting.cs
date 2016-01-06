@@ -24,10 +24,11 @@ public class Targetting : MonoBehaviour
     {
         if (BattleLoader.loaded && !TurnManagement.instance.isBattleFinished)
         {
-            isSkillUsed = false;
+            
             //Dla skilli bez targetu
             if (needNoTarget && isTargetting)
             {
+                isSkillUsed = false;
                 Actor source = TurnManagement.instance.getCurrentActor();
                 List<Skill> sourceskills = new List<Skill>(source.skills);
                 Debug.Log("Wszedlem do skilla bez targetingu" + skillName);

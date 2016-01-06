@@ -29,6 +29,7 @@ public class Actors : MonoBehaviour
                 if (ExploreToBattle.wasGenerated)
                 {
                     actor.loadHeroStats();
+                  
                 }
 
                 actors.Add(actor);

@@ -89,8 +89,16 @@ MonoBehaviour:
   health: 0
   initiative: 1
   attackPower: 3
+  critChance: 0
+  def: 0
+  strength: 5
+  dexterity: 11
+  intelligence: 1
+  startingAP: 0
+  currentAP: 0
+  maxAP: 0
+  perTurnAp: 0
   isControllable: 0
-  hasSpecialAI: 0
   skillsNames:
   - PowerAttack
   skillPrefab: {fileID: 0}
@@ -146,6 +154,18 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: skillsNames.Array.data[0]
       value: PowerAttack
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: strength
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: dexterity
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: intelligence
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

@@ -8,10 +8,7 @@ public class JustAutoAttack : MonoBehaviour, IAI
     void Awake()
     {
         dis = GetComponent<Actor>();
-        if (dis)
-        {
-            dis.hasSpecialAI = true;
-        }
+
         dis.ai = this;
     }
 

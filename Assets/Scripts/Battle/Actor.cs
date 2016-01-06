@@ -95,7 +95,7 @@ public class Actor : MonoBehaviour
 
         //OBSŁUGA AP
         calculateStats();
-        currentAP = startingAP;
+        currentAP = startingAP - perTurnAp;
     }
 
     public void skillLoader()
@@ -127,6 +127,7 @@ public class Actor : MonoBehaviour
     public void TakeDamage(int damageValue, bool isCriticalHit)
     {
         StopAllCoroutines(); //UWAGA! to moze wpływać na inne coroutiny!
+        spriteRenderer.color = new Color(1f, 1f, 1f, 1f);
 
         int actualDamage = (damageValue - def);
         if (actualDamage <= 0) actualDamage = 1;
@@ -201,6 +202,13 @@ public class Actor : MonoBehaviour
 
         //intelligence
         perTurnAp = 1 + (intelligence / 10);
+
+        controlMaxAP();
+    }
+
+    public void controlMaxAP ()
+    {
+        if (currentAP > maxAP) currentAP = maxAP;
     }
     
     public virtual void AI()

@@ -22,5 +22,6 @@ public class AllSkills : MonoBehaviour
     {
         allSkillList = new List<Skill>();
         allSkillList.Add(new PowerAttack());
+        allSkillList.Add(new Defend());
     }
 }

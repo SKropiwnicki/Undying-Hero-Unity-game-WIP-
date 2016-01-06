@@ -10,7 +10,7 @@ public class PowerAttack : Skill
     }
     public override void action(Actor source, Actor target)
     {
-        source.strength += 5;
+       
         target.TakeDamage(source.attackPower*2, false);
         source.currentAP -= APCost;
         source.onAttackEfx(); //dodane by Vuko

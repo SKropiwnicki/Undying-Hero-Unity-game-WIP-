@@ -2914,7 +2914,7 @@ MonoBehaviour:
   initiative: 2
   def: 2
   strength: 9
-  dexterity: 100
+  dexterity: 10
   intelligence: 5
   healthText: {fileID: 1953569006}
   strengthText: {fileID: 834835264}

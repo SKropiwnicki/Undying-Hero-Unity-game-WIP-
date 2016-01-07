@@ -19,11 +19,21 @@ public class Board : MonoBehaviour
     public Image rightTile;
     public Image leftTile;
 
+    public Sprite endTile;
+    public Sprite healTile;
     public Sprite emptyTile;
     public Sprite blockTile;
     public Sprite battleTile;
 
     public AudioClip onMoveSound;
+
+    public string endText;
+
+    public string battleText;
+
+    public string healText;
+    public int healMin;
+    public int HealMax;
 
     public struct Point
     {
@@ -72,25 +82,142 @@ public class Board : MonoBehaviour
 
         switch (board[x, y].type)
         {
-            case Tile.Type.START: //todo: del
-                image.sprite = blockTile;
+            case Tile.Type.START:
+                image.sprite = emptyTile;
                 break;
 
-            case Tile.Type.END: //todo: del
-                image.sprite = blockTile;
+            case Tile.Type.END:
+                image.sprite = endTile;
                 break;
 
             case Tile.Type.BATTLE:
                 image.sprite = battleTile;
                 break;
 
-            //case Tile.Type.BLOCK:
-            //    return blockTile;
+            case Tile.Type.HEAL:
+                image.sprite = healTile;
+                break;
+
+            case Tile.Type.BLOCK:
+                image.sprite = blockTile;
+                break;
 
             default:
                 image.sprite = emptyTile;
                 break;
         }
+    }
+
+    public class Tile
+    {
+        public Type type;
+        public enum Type
+        {
+            START,
+            END,
+            EMPTY,
+            BLOCK,
+            BATTLE,
+            HEAL
+        }
+
+        public Tile()
+        {
+            type = Type.EMPTY;
+        }
+    }
+
+    public void move(int difX, int difY)
+    {
+        int newX = currentTile.x + difX;
+        int newY = currentTile.y + difY;
+        if (isMovePossible(newX, newY))
+        {
+            SoundManager.instance.playOnGui(onMoveSound);
+            Debug.Log("nowa pozycja: " + newX + ", " + newY + " : " + board[newX, newY].type);
+            currentTile.x = newX;
+            currentTile.y = newY;
+        }
+
+        switch (board[currentTile.x, currentTile.y].type)
+        {
+            case Tile.Type.BATTLE:
+                onBattle();
+                break;
+
+            case Tile.Type.HEAL:
+                onHeal();
+                break;
+
+            case Tile.Type.END:
+                onEnd();
+                break;
+
+            default:
+                break;
+        }
+    }
+
+    #region onEnd
+    private void onEnd()
+    {
+        OkPanel.instance().make(endText, new UnityAction(okEnd));
+    }
+
+    private void okEnd()
+    {
+    }
+
+    #endregion
+
+    #region onHeal
+    private void onHeal()
+    {
+        PlayerController.canMove = false;
+        int heal = Random.Range(healMin, HealMax + 1);
+        OkPanel.instance().make(healText + "\nUleczono: " + heal, new UnityAction(okHeal));
+        ExploreToBattle.hero1.heal(heal);
+        ExploreToBattle.hero2.heal(heal);
+        board[currentTile.x, currentTile.y].type = Tile.Type.EMPTY;
+    }
+
+    private void okHeal()
+    {
+    }
+
+    #endregion
+
+    #region onBattle
+    private void onBattle()
+    {
+        PlayerController.canMove = false;
+        SoundManager.instance.musicSource.Stop();
+        OkPanel.instance().make(battleText, new UnityAction(okBattle));
+    }
+
+    private void okBattle()
+    {
+        ExploreToBattle.instance.beforeBattle();
+        ExploreToBattle.wasGenerated = true;
+        SceneManager.LoadScene("FightPrototype");
+    }
+    #endregion
+
+    private bool isMovePossible(int x, int y)
+    {
+        if(x < 0 || x >= weight || y < 0 || y >= height)
+        {
+            Debug.Log("za krawedz wyszedl zes ;x");
+            return false;
+        }
+
+        Tile tile = board[x, y];
+        if(tile.type == Tile.Type.BLOCK)
+        {
+            Debug.Log("no na blocka to nie wejdziesz ziom");
+            return false;
+        }
+        return true;
     }
 
     private void generateBoard()
@@ -128,6 +255,20 @@ public class Board : MonoBehaviour
 
         for (int i = height - 1; i >= 0; i--)
         {
+            for (int j = 0; j < weight; j++)
+            {
+                if (board[j, i].type == Tile.Type.EMPTY)
+                {
+                    if (Random.Range(1, 3) == 1)
+                    {
+                        board[j, i].type = Tile.Type.HEAL;
+                    }
+                }
+            }
+        }
+
+        for (int i = height - 1; i >= 0; i--)
+        {
             string str = "";
             for (int j = 0; j < weight; j++)
             {
@@ -135,79 +276,5 @@ public class Board : MonoBehaviour
             }
             Debug.Log(str);
         }
-    }
-
-    public class Tile
-    {
-        public Type type;
-        public enum Type
-        {
-            START,
-            END,
-            EMPTY,
-            BLOCK,
-            BATTLE //, EVENT?
-        }
-
-        public Tile()
-        {
-            type = Type.EMPTY;
-        }
-    }
-
-    public void move(int difX, int difY)
-    {
-        int newX = currentTile.x + difX;
-        int newY = currentTile.y + difY;
-        if (isMovePossible(newX, newY))
-        {
-            SoundManager.instance.playOnGui(onMoveSound);
-            Debug.Log("nowa pozycja: " + newX + ", " + newY + " : " + board[newX, newY].type);
-            currentTile.x = newX;
-            currentTile.y = newY;
-        }
-
-        switch (board[currentTile.x, currentTile.y].type)
-        {
-            case Tile.Type.BATTLE:
-                onBattleTile();
-                break;
-
-            default:
-                break;
-        }
-    }
-
-    #region onBattle
-    private void onBattleTile()
-    {
-        PlayerController.canMove = false;
-        SoundManager.instance.musicSource.Stop();
-        OkPanel.instance().make("O życie walcz śmiertelniku!", new UnityAction(okFunction));
-    }
-
-    private void okFunction()
-    {
-        ExploreToBattle.instance.beforeBattle();
-        ExploreToBattle.wasGenerated = true;
-        SceneManager.LoadScene("FightPrototype");
-    }
-    #endregion
-
-    private bool isMovePossible(int x, int y)
-    {
-        if(x < 0 || x >= weight || y < 0 || y >= height)
-        {
-            Debug.Log("za krawedz wyszedl zes ;x");
-            return false;
-        }
-
-        Tile tile = board[x, y];
-        if(tile.type == Tile.Type.BLOCK)
-        {
-            Debug.Log("no na blocka to nie wejdziesz ziom");
-            return false;
-        }
-        return true;
     }
 }

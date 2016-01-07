@@ -44,4 +44,14 @@ public class Hero : MonoBehaviour
         dexterityText.text = "Dexterity: " + dexterity;
         intelligenceText.text = "Intelligence: " + intelligence;
     }
+
+    public void heal(int value)
+    {
+        health += value;
+        if(health > maxHealth)
+        {
+            health = maxHealth;
+        }
+        healthText.text = "Health: " + health + "/" + maxHealth;
+    }
 }

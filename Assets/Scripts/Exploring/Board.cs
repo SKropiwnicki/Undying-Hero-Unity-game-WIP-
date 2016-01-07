@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 public class Board : MonoBehaviour
 {
@@ -177,13 +178,21 @@ public class Board : MonoBehaviour
         }
     }
 
+    #region onBattle
     private void onBattleTile()
     {
+        PlayerController.canMove = false;
         SoundManager.instance.musicSource.Stop();
+        OkPanel.instance().make("O życie walcz śmiertelniku!", new UnityAction(okFunction));
+    }
+
+    private void okFunction()
+    {
         ExploreToBattle.instance.beforeBattle();
         ExploreToBattle.wasGenerated = true;
         SceneManager.LoadScene("FightPrototype");
     }
+    #endregion
 
     private bool isMovePossible(int x, int y)
     {

@@ -23,8 +23,7 @@ public class ButtonSkills : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
         img = transform.GetComponent<Image>();
         defaultColor = img.color;
     }
-
-
+    
     void Update()
     {
         if (isOn) if (!enoughAP) isOn = false;

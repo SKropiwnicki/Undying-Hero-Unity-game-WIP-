@@ -1,0 +1,265 @@
+fileFormatVersion: 2
+guid: 60f4cab18f9b4084ab607543c3405195
+timeCreated: 1452203501
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: orcMageBones_0
+    21300002: orcMageBones_1
+    21300004: orcMageBones_2
+    21300006: orcMageBones_3
+    21300008: orcMageBones_4
+    21300010: orcMageBones_5
+    21300012: orcMageBones_6
+    21300014: orcMageBones_7
+    21300016: orcMageBones_8
+    21300018: orcMageBones_9
+    21300020: orcMageBones_10
+    21300022: orcMage
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: orcMageBones_0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 367
+        width: 40
+        height: 27
+      alignment: 9
+      pivot: {x: 0.48169595, y: 0.25594527}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: orcMageBones_1
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 361
+        width: 41
+        height: 35
+      alignment: 9
+      pivot: {x: 0.4196405, y: 0.19667533}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17.205261, y: 28.116364}
+        - {x: -17.205261, y: -4.8836365}
+        - {x: -11.205261, y: -6.8836365}
+        - {x: 14.794739, y: -6.8836365}
+        - {x: 18.794739, y: -3.8836365}
+        - {x: 23.794739, y: 12.116364}
+        - {x: 23.794739, y: 28.116364}
+    - name: orcMageBones_2
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 192
+        width: 92
+        height: 165
+      alignment: 9
+      pivot: {x: 0.532175, y: 0.6157946}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -48.960102, y: -101.60611}
+        - {x: 43.039898, y: -101.60611}
+        - {x: 43.039898, y: -3.6061096}
+        - {x: 33.039898, y: 63.39389}
+        - {x: -20.960102, y: 63.39389}
+        - {x: -48.960102, y: -53.60611}
+    - name: orcMageBones_3
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 270
+        width: 29
+        height: 71
+      alignment: 9
+      pivot: {x: 0.75329906, y: 0.87196326}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: orcMageBones_4
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 289
+        width: 53
+        height: 34
+      alignment: 9
+      pivot: {x: 0.14360651, y: 0.66975224}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 24.388855, y: 11.228424}
+        - {x: -7.611145, y: 11.228424}
+        - {x: -7.611145, y: -15.771576}
+        - {x: 11.388855, y: -22.771576}
+        - {x: 43.388855, y: -22.771576}
+        - {x: 45.388855, y: -21.771576}
+        - {x: 45.388855, y: 2.228424}
+        - {x: 36.388855, y: 10.228424}
+    - name: orcMageBones_5
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 206
+        width: 25
+        height: 17
+      alignment: 9
+      pivot: {x: 0.2061737, y: 0.6440322}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: orcMageBones_6
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 68
+        width: 166
+        height: 166
+      alignment: 9
+      pivot: {x: 0.49367845, y: 0.5126431}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -65.95062, y: 80.901245}
+        - {x: -67.95062, y: 76.901245}
+        - {x: -71.95062, y: 71.901245}
+        - {x: -71.95062, y: 68.901245}
+        - {x: -66.95062, y: 56.901245}
+        - {x: -62.950623, y: 55.901245}
+        - {x: -71.95062, y: 59.901245}
+        - {x: -74.95062, y: 65.901245}
+        - {x: -77.95062, y: 65.901245}
+        - {x: -81.95062, y: 61.901245}
+        - {x: -81.95062, y: 2.901245}
+        - {x: 28.049377, y: -85.098755}
+        - {x: 84.04938, y: -85.098755}
+        - {x: 84.04938, y: -44.098755}
+        - {x: -17.950623, y: 80.901245}
+      - - {x: -81.95062, y: -57.098755}
+        - {x: -80.95062, y: -58.098755}
+        - {x: -77.95062, y: -57.098755}
+        - {x: -77.95062, y: -53.098755}
+        - {x: -79.95062, y: -51.098755}
+        - {x: -81.95062, y: -52.098755}
+      - - {x: -81.95062, y: -44.098755}
+        - {x: -81.95062, y: -50.098755}
+        - {x: -79.95062, y: -50.098755}
+        - {x: -77.95062, y: -48.098755}
+        - {x: -77.95062, y: -46.098755}
+        - {x: -79.95062, y: -44.098755}
+      - - {x: -27.950623, y: -0.09875488}
+        - {x: -28.950623, y: -4.098755}
+        - {x: -28.950623, y: -8.098755}
+        - {x: -26.950623, y: -10.098755}
+        - {x: -23.950623, y: -9.098755}
+        - {x: -22.950623, y: -3.098755}
+        - {x: -22.950623, y: -0.09875488}
+        - {x: -24.950623, y: 0.9012451}
+    - name: orcMageBones_7
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 135
+        width: 28
+        height: 37
+      alignment: 9
+      pivot: {x: 0.6061873, y: 0.78834325}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: orcMageBones_8
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 122
+        width: 40
+        height: 54
+      alignment: 9
+      pivot: {x: 0.6530348, y: 0.89513654}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.121391, y: 5.662628}
+        - {x: -19.121391, y: -1.3373718}
+        - {x: -26.121391, y: -19.337372}
+        - {x: -26.121391, y: -48.33737}
+        - {x: -7.1213913, y: -48.33737}
+        - {x: 0.8786087, y: -41.33737}
+        - {x: 13.878609, y: -3.3373718}
+        - {x: 13.878609, y: 5.662628}
+    - name: orcMageBones_9
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 94
+        width: 23
+        height: 24
+      alignment: 9
+      pivot: {x: 0.43916628, y: 0.740483}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: orcMageBones_10
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 92
+        width: 42
+        height: 18
+      alignment: 9
+      pivot: {x: 0.35425276, y: 0.52914935}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: orcMage
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 357
+        width: 25
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

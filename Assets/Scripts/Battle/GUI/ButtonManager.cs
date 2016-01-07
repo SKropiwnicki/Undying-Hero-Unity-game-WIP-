@@ -68,12 +68,31 @@ public class ButtonManager : MonoBehaviour
 
     #endregion
 
+    #region txtPanel
+    public GameObject txtPanel;
+    private GameObject panelParent;
+    private Rect rect;
+
+    private void spawnTxt(ButtonSkills bs)
+    {
+        bs.txtPanel = Instantiate(txtPanel, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
+        bs.txtPanel.GetComponentInChildren<Text>().text = bs.txt;
+        bs.txtPanel.transform.SetParent(panelParent.transform, false);
+        bs.txtPanel.transform.position = new Vector3(bs.transform.position.x, bs.transform.position.y, 0);
+        bs.txtPanel.transform.localPosition = new Vector3(bs.txtPanel.transform.localPosition.x + rect.width / 2, bs.txtPanel.transform.localPosition.y + rect.height / 2 + 69, 0);
+        bs.txtPanel.SetActive(false);
+    }
+    #endregion
+
     void Awake()
     {
         if (instance == null)
             instance = this;
         else
             Destroy(gameObject);
+        
+        panelParent = GameObject.Find("Canvas");
+        rect = txtPanel.GetComponent<RectTransform>().rect;
     }
     
     public void init()
@@ -114,6 +133,8 @@ public class ButtonManager : MonoBehaviour
                         button.transform.position = new Vector3(screenPos.x, screenPos.y, screenPos.z);
 
                         currentButtons.Add(button);
+
+                        spawnTxt(button.GetComponentInChildren<ButtonSkills>());
                         
                         //Sprawdzanie kosztu AP
                         if (skill.APCost > actor.currentAP)

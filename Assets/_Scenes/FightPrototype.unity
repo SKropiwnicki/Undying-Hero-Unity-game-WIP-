@@ -255,6 +255,7 @@ MonoBehaviour:
   DefendButton: {fileID: 133818, guid: 5b767a756fa463844ba0ebe308c97873, type: 2}
   parent: {fileID: 17654198}
   currentButtons: []
+  isButtonClicked: 0
   buttonOffsetX: 2
   x: -6
   y: -4
@@ -264,6 +265,7 @@ MonoBehaviour:
   emptyAp: {fileID: 11416140, guid: e86e5711dafb4914097e7ebf32aaf94b, type: 2}
   greenAp: {fileID: 11493880, guid: 4b771642a000e524ba084b6bd2d97023, type: 2}
   redAp: {fileID: 11492750, guid: b2694337580105643b13841e3ef33895, type: 2}
+  txtPanel: {fileID: 199122, guid: 1e6378d70f24b9d4c8561b38c74ef6a6, type: 2}
 --- !u!1 &144285719
 GameObject:
   m_ObjectHideFlags: 0

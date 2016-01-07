@@ -14,12 +14,14 @@ public class ButtonSkills : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     private Image img;
     public Color defaultColor;
 
+    [HideInInspector]
+    public GameObject txtPanel;
+    public string txt;
+
     void Awake()
     {
         img = transform.GetComponent<Image>();
         defaultColor = img.color;
-
-
     }
 
 
@@ -32,11 +34,13 @@ public class ButtonSkills : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     public void OnPointerEnter(PointerEventData eventData)
     {
         if (enoughAP) img.color = new Color(0.8f, 0.8f, 0.8f, 1f);
+        txtPanel.SetActive(true);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
         img.color = defaultColor;
+        txtPanel.SetActive(false);
     }
 
     public void OnPointerClick(PointerEventData eventData)

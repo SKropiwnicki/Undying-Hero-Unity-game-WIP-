@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Actor" Collapsed="true">
+    <Position X="11.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>JQABIRAIAAABiCSABwCAgQAAmACAAAgAQARAmBAwEEg=</HashCode>
+      <FileName>Assets\Scripts\Battle\Actor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Actors" Collapsed="true">
+    <Position X="11.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAIAAQAAAAABAAAIAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Battle\Actors.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="JustAutoAttack" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="10" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Battle\AI\JustAutoAttack.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BattleLoader" Collapsed="true">
+    <Position X="8" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAKBBAAChBAAAAAAEAAgAAAAAAAAAAAAgAEA=</HashCode>
+      <FileName>Assets\Scripts\Battle\BattleLoader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ButtonManager" Collapsed="true">
+    <Position X="11.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAwAAAAAAAABAVAQAICEMAABAkAIAACBwICEAAEA=</HashCode>
+      <FileName>Assets\Scripts\Battle\GUI\ButtonManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EndBattlePanel" Collapsed="true">
+    <Position X="8" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAGAAQABAAAAAAEAAABBAAAIAAAAAAQoAAEA=</HashCode>
+      <FileName>Assets\Scripts\Battle\GUI\EndBattlePanel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HealthBars" Collapsed="true">
+    <Position X="13" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAACAAAAAAAAAAAABAAAABAAAAAAEACEA=</HashCode>
+      <FileName>Assets\Scripts\Battle\GUI\HealthBars.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyEventListener" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="13.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAAAAAAAAAAgAAAAAAAQAAgAA=</HashCode>
+      <FileName>Assets\Scripts\Battle\GUI\MyEventListener.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TextDamage" Collapsed="true">
+    <Position X="15.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEAAAACAAAAAAAAAAAAAAAAEAAAAAAAgAQAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Battle\GUI\TextDamage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextSpawner" Collapsed="true">
+    <Position X="13.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAEAAAAAAABAAAEIAAIgAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Battle\GUI\TextSpawner.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Skill" Collapsed="true">
+    <Position X="14" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAQAAAAAAAgAAAEAAAAAAIIAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Battle\Skill.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AllSkills" Collapsed="true">
+    <Position X="15.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAAAAAAAAAAAAAAABAAAIAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Battle\Skills\AllSkills.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AutoAttack" Collapsed="true">
+    <Position X="14.75" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Battle\Skills\AutoAttack.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ButtonSkills" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAQBAAAAAgAAEAAAAAABAEBAAAAhEBAAAAAAAQAIAEA=</HashCode>
+      <FileName>Assets\Scripts\Battle\Skills\ButtonSkills.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Defend" Collapsed="true">
+    <Position X="16" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Battle\Skills\Defend.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerAttack" Collapsed="true">
+    <Position X="14.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Battle\Skills\PowerAttack.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Targetting" Collapsed="true">
+    <Position X="10.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQCAAAAAAACABAAAACAAEBAAABAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Battle\Targetting.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TurnManagement" Collapsed="true">
+    <Position X="10" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAhAAAAAiBACAAAAEKAEICAAQIRBAQAgAwAAAECAGEA=</HashCode>
+      <FileName>Assets\Scripts\Battle\TurnManagement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BattleToExplore" Collapsed="true">
+    <Position X="6.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AECAAAAAAAAAAAAAAAAAEEAAAAFAAAIAIABAwAgAAEg=</HashCode>
+      <FileName>Assets\Scripts\BattleToExplore.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ExploreToBattle" Collapsed="true">
+    <Position X="6.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gECAAAAAAAAAAAAAAAAAElAAAAFAAAAAIABAwAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\ExploreToBattle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Board" Collapsed="true">
+    <Position X="2.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAEAiAAJAAASAAAACAKAEUIBAAEIk4QAAQERAAEQ=</HashCode>
+      <FileName>Assets\Scripts\Exploring\Board.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ExploreLoader" Collapsed="true">
+    <Position X="5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACABAAAgAAAAAAAAAAAAAAAAAAACAAAAREI=</HashCode>
+      <FileName>Assets\Scripts\Exploring\ExploreLoader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hero" Collapsed="true">
+    <Position X="0.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIBAIAKAAgEAAAQAAgAEAAAAAEAAAQCAAAAAAAEg=</HashCode>
+      <FileName>Assets\Scripts\Exploring\Hero.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Heroes" Collapsed="true">
+    <Position X="0.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAIAAAAAAEAAAAAAABAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Exploring\Heroes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerController" Collapsed="true">
+    <Position X="2.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Exploring\PlayerController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InspectorStringAssistant" Collapsed="true">
+    <Position X="2.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\InspectorStringAssistant.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OkPanel" Collapsed="true">
+    <Position X="8" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BgQAAAAAAAAACAAAAAAAAAAAAABAEAAABAAAAAAAAEI=</HashCode>
+      <FileName>Assets\Scripts\OkPanel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SoundManager" Collapsed="true">
+    <Position X="5.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAEAAAAAAQAQABAgAABAQEAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\SoundManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="IAI" Collapsed="true">
+    <Position X="10" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Battle\AI\IAI.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

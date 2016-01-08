@@ -24,6 +24,17 @@ public class OkPanel : MonoBehaviour
         }
         return okPanel;
     }
+    void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.Return))
+        {
+            if (okButton.isActiveAndEnabled)
+            {
+                okButton.onClick.Invoke();
+                closePanel();
+            }
+        }
+    }
 
     public void make(string txt, UnityAction okEvent)
     {

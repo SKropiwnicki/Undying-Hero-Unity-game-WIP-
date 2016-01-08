@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &123720
 GameObject:
   m_ObjectHideFlags: 0
@@ -185,7 +185,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "Brawo! Wygra\u0142e\u015B!"
+  m_Text: Good job! You won... for now.
 --- !u!114 &11438268
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -218,7 +218,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "Przegra\u0142e\u015B... Ale lipa - co teraz b\u0119dzie?"
+  m_Text: You lost. Such a pity.
 --- !u!114 &11474188
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -440,6 +440,10 @@ Prefab:
       propertyPath: okSound
       value: 
       objectReference: {fileID: 8300000, guid: 1a4d46977c1a524448bbaed4cb638ea9, type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_Text
+      value: Good job! You won... for now.
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 156170}

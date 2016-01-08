@@ -397,6 +397,7 @@ MonoBehaviour:
   downTile: {fileID: 664329901}
   rightTile: {fileID: 1051483251}
   leftTile: {fileID: 1723190727}
+  currentTile: {fileID: 21300000, guid: 56ac27bf3a5d99c4b8c687b464a40257, type: 3}
   endTile: {fileID: 21300000, guid: e312e7763185d244696bb17cd8ed8dec, type: 3}
   healTile: {fileID: 21300000, guid: 9c4b4b456d2486c4b852f1e0e6ea3ebd, type: 3}
   emptyTile: {fileID: 21300000, guid: d1db130b0d4b59048a7f652899ff0c78, type: 3}

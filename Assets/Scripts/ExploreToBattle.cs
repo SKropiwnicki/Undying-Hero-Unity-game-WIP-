@@ -36,8 +36,8 @@ public class ExploreToBattle : MonoBehaviour
     public void beforeBattle()
     {
         board = Board.instance.board;
-        posX = Board.instance.currentTile.x;
-        posY = Board.instance.currentTile.y;
+        posX = Board.instance.currentPos.x;
+        posY = Board.instance.currentPos.y;
         Board.instance.board[posX, posY].type = Board.Tile.Type.EMPTY;
         level = Heroes.level;
         experience = Heroes.experience;

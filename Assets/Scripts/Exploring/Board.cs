@@ -11,7 +11,7 @@ public class Board : MonoBehaviour
 
     public Tile[,] board;
     public int weight, height;
-    public Point currentTile;
+    public Point currentPos;
 
     public Image centerTile;
     public Image upTile;
@@ -19,6 +19,7 @@ public class Board : MonoBehaviour
     public Image rightTile;
     public Image leftTile;
 
+    public Sprite currentTile;
     public Sprite endTile;
     public Sprite healTile;
     public Sprite emptyTile;
@@ -55,19 +56,19 @@ public class Board : MonoBehaviour
         else
         {
             board = BattleToExplore.board;
-            currentTile.x = BattleToExplore.posX;
-            currentTile.y = BattleToExplore.posY;
+            currentPos.x = BattleToExplore.posX;
+            currentPos.y = BattleToExplore.posY;
         }
         updateTiles();
     }
 
     public void updateTiles()
     {
-        setTileSprite(currentTile.x, currentTile.y, centerTile);
-        setTileSprite(currentTile.x, currentTile.y + 1, upTile);
-        setTileSprite(currentTile.x, currentTile.y - 1, downTile);
-        setTileSprite(currentTile.x + 1, currentTile.y, rightTile);
-        setTileSprite(currentTile.x - 1, currentTile.y, leftTile);
+        centerTile.sprite = currentTile;
+        setTileSprite(currentPos.x, currentPos.y + 1, upTile);
+        setTileSprite(currentPos.x, currentPos.y - 1, downTile);
+        setTileSprite(currentPos.x + 1, currentPos.y, rightTile);
+        setTileSprite(currentPos.x - 1, currentPos.y, leftTile);
     }
 
     private void setTileSprite(int x, int y, Image image)
@@ -129,17 +130,17 @@ public class Board : MonoBehaviour
 
     public void move(int difX, int difY)
     {
-        int newX = currentTile.x + difX;
-        int newY = currentTile.y + difY;
+        int newX = currentPos.x + difX;
+        int newY = currentPos.y + difY;
         if (isMovePossible(newX, newY))
         {
             SoundManager.instance.playOnGui(onMoveSound);
             Debug.Log("nowa pozycja: " + newX + ", " + newY + " : " + board[newX, newY].type);
-            currentTile.x = newX;
-            currentTile.y = newY;
+            currentPos.x = newX;
+            currentPos.y = newY;
         }
 
-        switch (board[currentTile.x, currentTile.y].type)
+        switch (board[currentPos.x, currentPos.y].type)
         {
             case Tile.Type.BATTLE:
                 onBattle();
@@ -178,7 +179,7 @@ public class Board : MonoBehaviour
         OkPanel.instance().make(InspectorStringAssistant.instance.make(healText) + "\nHeal: " + heal, new UnityAction(okHeal));
         ExploreToBattle.hero1.heal(heal);
         ExploreToBattle.hero2.heal(heal);
-        board[currentTile.x, currentTile.y].type = Tile.Type.EMPTY;
+        board[currentPos.x, currentPos.y].type = Tile.Type.EMPTY;
     }
 
     private void okHeal()
@@ -235,9 +236,9 @@ public class Board : MonoBehaviour
         int count = weight * height;
         int st = Random.Range(0, weight);
         board[st, 0].type = Tile.Type.START;
-        currentTile.x = st;
-        currentTile.y = 0;
-        Debug.Log("start: " + currentTile.x + " " + currentTile.y);
+        currentPos.x = st;
+        currentPos.y = 0;
+        Debug.Log("start: " + currentPos.x + " " + currentPos.y);
 
         int en = Random.Range(0, weight);
         board[en, weight - 1].type = Tile.Type.END;

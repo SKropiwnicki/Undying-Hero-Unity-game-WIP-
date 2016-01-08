@@ -8,6 +8,7 @@ public class Actor : MonoBehaviour
     #region Variables
     public int maxHealth;
     public int health; //aktualne hp
+    public int shield = 0;
     public int initiative;
     public int experience;
     public int attackPower;
@@ -39,6 +40,7 @@ public class Actor : MonoBehaviour
     public GameObject portraitPrefab;
 
     private Slider healthBar;
+    private Slider shieldBar;
 
     public float dmgAnimSpeed = 0.9f;
     [HideInInspector]
@@ -61,7 +63,12 @@ public class Actor : MonoBehaviour
         skills.Add(new AutoAttack());
     }
 
-    public void SetHpBar(Slider healthBar)
+    public void setShieldBar(Slider slider)
+    {
+        this.shieldBar = slider;
+    }
+
+    public void setHpBar(Slider healthBar)
     {
         this.healthBar = healthBar;
     }
@@ -124,8 +131,22 @@ public class Actor : MonoBehaviour
         animator.SetTrigger("Attack");
     }
 
+    private void changeShield(int value)
+    {
+        shield += value;
+        if(shield < 0)
+        {
+            shield = 0;
+        }
+        shieldBar.maxValue = value;
+        shieldBar.value = value;
+        float ratio = shield / (maxHealth * 1.0f);
+        shieldBar.transform.localScale = new Vector3(ratio, 1, 0);
+    }
+
     public void TakeDamage(int damageValue, bool isCriticalHit)
     {
+        changeShield(10);
         StopAllCoroutines(); //UWAGA! to moze wpływać na inne coroutiny!
         //spriteRenderer.color = new Color(1f, 1f, 1f, 1f);
 

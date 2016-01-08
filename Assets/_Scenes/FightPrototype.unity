@@ -1340,6 +1340,7 @@ MonoBehaviour:
   healthBarPrefab: {fileID: 191076, guid: bcef9774fc0069147a84525ccd980125, type: 2}
   healthBarParent: {fileID: 976792497}
   healthBarYOffset: -0.5
+  shieldBarPrefab: {fileID: 124990, guid: b64f8313ecc4d49419457493b45be2bf, type: 2}
 --- !u!114 &1962447947
 MonoBehaviour:
   m_ObjectHideFlags: 0

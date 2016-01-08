@@ -64,7 +64,7 @@ public class Board : MonoBehaviour
 
     void Update()
     {
-        if(TileOnClick.wasClicked)
+        if(TileOnClick.wasClicked && !OkPanel.instance().okButton.isActiveAndEnabled)
         {
             TileOnClick.wasClicked = false;
 

@@ -5,7 +5,7 @@ AnimatorOverrideController:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: orcMagefromHeroAC
+  m_Name: OrcMagefromHeroAC
   m_Controller: {fileID: 9100000, guid: 4965ae80a3fece046b32ce9751443cb1, type: 2}
   m_Clips:
   - m_OriginalClip: {fileID: 7400000, guid: 9aaddf26fb6b3dc4ba87592537c40c8a, type: 2}

@@ -31,7 +31,7 @@ public class ExploreLoader : MonoBehaviour
 
         if (!BattleToExplore.wasGenerated)
         {
-            okPanel.make(startingText, okAction);
+            okPanel.make(InspectorStringAssistant.instance.make(startingText), okAction);
         }
 
         yield return new WaitForEndOfFrame();

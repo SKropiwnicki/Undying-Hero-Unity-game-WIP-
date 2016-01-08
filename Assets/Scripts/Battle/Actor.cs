@@ -138,7 +138,7 @@ public class Actor : MonoBehaviour
         text +="- " + actualDamage;
 
         TextSpawner.instance.Spawn(this.transform, text);
-        StartCoroutine(damageAnimation());
+        //StartCoroutine(damageAnimation());
    
         if (health <= 0)
         {

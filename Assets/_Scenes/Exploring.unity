@@ -404,7 +404,7 @@ MonoBehaviour:
   battleTile: {fileID: 21300000, guid: ad68ac673147431479efdf1cd62fee61, type: 3}
   onMoveSound: {fileID: 8300000, guid: 1a4d46977c1a524448bbaed4cb638ea9, type: 3}
   endText: This is the end, you won.
-  battleText: You have met an enemy. Prepare yourself!
+  battleText: You have met an enemy.\nPrepare yourself!
   healText: You found some medicine and you were healed.
   healMin: 1
   HealMax: 5
@@ -1203,7 +1203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   music: {fileID: 8300000, guid: 3959e352148c19544951272b027fd9f6, type: 3}
-  startingText: Welcome to Undying Hero alpha. Find exit, but be aware of orcs in
+  startingText: Welcome to Undying Hero alpha.\nFind exit, but be aware of orcs in
     this dungeon. Good luck.
 --- !u!4 &714312699
 Transform:
@@ -1426,7 +1426,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &878199934
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -399,7 +399,7 @@ MonoBehaviour:
   downTile: {fileID: 664329901}
   rightTile: {fileID: 1051483251}
   leftTile: {fileID: 1723190727}
-  currentTile: {fileID: 21300000, guid: 56ac27bf3a5d99c4b8c687b464a40257, type: 3}
+  currentTile: {fileID: 21300000, guid: 7fffa0fdbc3cc474b9b1165f6b115580, type: 3}
   endTile: {fileID: 21300000, guid: e312e7763185d244696bb17cd8ed8dec, type: 3}
   healTile: {fileID: 21300000, guid: 9c4b4b456d2486c4b852f1e0e6ea3ebd, type: 3}
   emptyTile: {fileID: 21300000, guid: d1db130b0d4b59048a7f652899ff0c78, type: 3}
@@ -409,8 +409,8 @@ MonoBehaviour:
   endText: This is the end, you won.
   battleText: You have met an enemy.\nPrepare yourself!
   healText: You found some medicine and you were healed.
-  healMin: 1
-  HealMax: 5
+  healMin: 10
+  HealMax: 30
 --- !u!4 &250698178
 Transform:
   m_ObjectHideFlags: 0
@@ -4919,13 +4919,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a40911dcd8eabb45b5c3bead1e4ca58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 200
-  health: 200
+  maxHealth: 100
+  health: 100
   initiative: 2
   def: 2
   strength: 9
-  dexterity: 10
-  intelligence: 5
+  dexterity: 6
+  intelligence: 16
   healthText: {fileID: 1953569006}
   strengthText: {fileID: 834835264}
   dexterityText: {fileID: 1685561967}

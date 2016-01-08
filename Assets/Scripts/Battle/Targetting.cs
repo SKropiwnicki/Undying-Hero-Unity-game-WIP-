@@ -10,6 +10,8 @@ public class Targetting : MonoBehaviour
     private bool isSkillUsed;
     private bool needNoTarget;
     private string skillName;
+
+    private bool isMessageDisplayed;
 	
     void Awake()
     {
@@ -50,32 +52,40 @@ public class Targetting : MonoBehaviour
                 isTargetting = false;
             }
             //Dla skilli z targetem (uzywamy raycast)
-            else if (Input.GetMouseButtonDown(0) && isTargetting && ButtonManager.instance.isButtonClicked)
+            else if (isTargetting && ButtonManager.instance.isButtonClicked)
             {
-                
-                isSkillUsed = false;
-                RaycastHit2D hit = Physics2D.Raycast(new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y), Vector2.zero, 10f);
-                //Debug.Log("Position of click" + new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y)); //do wyjebania potem     
-                if (hit.collider != null && hit.transform.tag == "Target")
+                if (!isMessageDisplayed)
                 {
-                    ButtonManager.instance.isButtonClicked = false; //Odklikujemy button jak juz mamy cel dla niego
-
-                    Actor source = TurnManagement.instance.getCurrentActor();
-                    List<Skill> sourceskills = new List<Skill>(source.skills);
-
-                    foreach (Skill skill in sourceskills)
+                    TextSpawner.instance.spawnMessage(this.transform, "Choose your target", Color.green, 72);
+                    isMessageDisplayed = true;
+                }
+                if (Input.GetMouseButtonDown(0))
+                {
+                    isSkillUsed = false;
+                    RaycastHit2D hit = Physics2D.Raycast(new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y), Vector2.zero, 10f);
+                    //Debug.Log("Position of click" + new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y)); //do wyjebania potem     
+                    if (hit.collider != null && hit.transform.tag == "Target")
                     {
-                        
-                        if (skill.name == skillName)
-                        {
-                            isSkillUsed = true;
-                           // Debug.Log("Wywoluje z targettingu: " + skill.name);
-                            skill.useSkill(source, hit.collider.gameObject.GetComponent<Actor>());
-                        }
-                        if (isSkillUsed || TurnManagement.instance.isBattleFinished) break;
-                    }
+                        ButtonManager.instance.isButtonClicked = false; //Odklikujemy button jak juz mamy cel dla niego
 
-                    isTargetting = false;
+                        Actor source = TurnManagement.instance.getCurrentActor();
+                        List<Skill> sourceskills = new List<Skill>(source.skills);
+
+                        foreach (Skill skill in sourceskills)
+                        {
+
+                            if (skill.name == skillName)
+                            {
+                                isSkillUsed = true;
+                                isMessageDisplayed = false;
+                                // Debug.Log("Wywoluje z targettingu: " + skill.name);
+                                skill.useSkill(source, hit.collider.gameObject.GetComponent<Actor>());
+                            }
+                            if (isSkillUsed || TurnManagement.instance.isBattleFinished) break;
+                        }
+
+                        isTargetting = false;
+                    }
                 }
             }
         }

@@ -56,6 +56,7 @@ public class EndBattlePanel : MonoBehaviour
 
     public void destroy()
     {
+        gameObject.SetActive(false);
         Destroy(instance.gameObject);
     }
 }

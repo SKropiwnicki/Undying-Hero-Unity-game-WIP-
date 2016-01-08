@@ -161,7 +161,7 @@ public class Board : MonoBehaviour
     #region onEnd
     private void onEnd()
     {
-        OkPanel.instance().make(endText, new UnityAction(okEnd));
+        OkPanel.instance().make(InspectorStringAssistant.instance.make(endText), new UnityAction(okEnd));
     }
 
     private void okEnd()
@@ -175,7 +175,7 @@ public class Board : MonoBehaviour
     {
         PlayerController.canMove = false;
         int heal = Random.Range(healMin, HealMax + 1);
-        OkPanel.instance().make(healText + "\nUleczono: " + heal, new UnityAction(okHeal));
+        OkPanel.instance().make(InspectorStringAssistant.instance.make(healText) + "\nHeal: " + heal, new UnityAction(okHeal));
         ExploreToBattle.hero1.heal(heal);
         ExploreToBattle.hero2.heal(heal);
         board[currentTile.x, currentTile.y].type = Tile.Type.EMPTY;
@@ -192,7 +192,7 @@ public class Board : MonoBehaviour
     {
         PlayerController.canMove = false;
         SoundManager.instance.musicSource.Stop();
-        OkPanel.instance().make(battleText, new UnityAction(okBattle));
+        OkPanel.instance().make(InspectorStringAssistant.instance.make(battleText), new UnityAction(okBattle));
     }
 
     private void okBattle()

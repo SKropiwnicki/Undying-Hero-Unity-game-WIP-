@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class Hero : MonoBehaviour
 {
@@ -19,6 +20,14 @@ public class Hero : MonoBehaviour
     public Text dexterityText;
     public Text intelligenceText;
 
+    public Button healthUp;
+    public Button strengthUp;
+    public Button dexterityUp;
+    public Button intelligenceUp;
+
+    public int onLevelUpPoints;
+    public int levelUpPointsLeft;
+
     void Awake()
     {
         if(BattleToExplore.wasGenerated && name == "Hero1")
@@ -34,7 +43,19 @@ public class Hero : MonoBehaviour
 
     void Start()
     {
+        healthUp.onClick.AddListener( () => addStat("Hp"));
+        strengthUp.onClick.AddListener( () => addStat("Str"));
+        dexterityUp.onClick.AddListener( () => addStat("Dex"));
+        intelligenceUp.onClick.AddListener( () => addStat("Int"));
         setPanel();
+    }
+
+    public void setButtonsActive(bool b)
+    {
+        healthUp.gameObject.SetActive(b);
+        strengthUp.gameObject.SetActive(b);
+        dexterityUp.gameObject.SetActive(b);
+        intelligenceUp.gameObject.SetActive(b);
     }
 
     private void setPanel()
@@ -53,5 +74,35 @@ public class Hero : MonoBehaviour
             health = maxHealth;
         }
         healthText.text = "Health: " + health + "/" + maxHealth;
+    }
+
+    public void addStat(string str)
+    {
+        if(str == "Hp")
+        {
+            maxHealth+=10;
+            health+=10;
+            healthText.text = "Health: " + health + "/" + maxHealth;
+        }
+        if (str == "Str")
+        {
+            strength++;
+            strengthText.text = "Strength: " + strength;
+        }
+        if (str == "Dex")
+        {
+            dexterity++;
+            dexterityText.text = "Dexterity: " + dexterity;
+        }
+        if (str == "Int")
+        {
+            intelligence++;
+            intelligenceText.text = "Intelligence: " + intelligence;
+        }
+        levelUpPointsLeft--;
+        if(levelUpPointsLeft == 0)
+        {
+            setButtonsActive(false);
+        }
     }
 }

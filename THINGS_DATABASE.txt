@@ -1,0 +1,6 @@
+OkPanel w exploringu -> teksty
+{
+    Loader -> starting text
+    Board -> battle text, heal text, end text
+    Canvas->Panel -> on lvl up text
+}

@@ -64,7 +64,7 @@ MonoBehaviour:
   isChosen: 0
   defaultColor: {r: 0, g: 0, b: 0, a: 0}
   txtPanel: {fileID: 199122, guid: 1e6378d70f24b9d4c8561b38c74ef6a6, type: 2}
-  txt: rterteer
+  txt: Powerful attack, that doubles your normal damage. Costs 6 AP.
 --- !u!114 &11494352
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -139,7 +139,7 @@ Prefab:
       objectReference: {fileID: 199122, guid: 1e6378d70f24b9d4c8561b38c74ef6a6, type: 2}
     - target: {fileID: 0}
       propertyPath: txt
-      value: rterteer
+      value: Powerful attack, that doubles your normal damage. Costs 6 AP.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

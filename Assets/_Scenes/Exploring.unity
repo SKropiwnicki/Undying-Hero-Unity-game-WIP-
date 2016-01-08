@@ -397,15 +397,15 @@ MonoBehaviour:
   downTile: {fileID: 664329901}
   rightTile: {fileID: 1051483251}
   leftTile: {fileID: 1723190727}
-  endTile: {fileID: 21300000, guid: 56ac27bf3a5d99c4b8c687b464a40257, type: 3}
+  endTile: {fileID: 21300000, guid: e312e7763185d244696bb17cd8ed8dec, type: 3}
   healTile: {fileID: 21300000, guid: 9c4b4b456d2486c4b852f1e0e6ea3ebd, type: 3}
   emptyTile: {fileID: 21300000, guid: d1db130b0d4b59048a7f652899ff0c78, type: 3}
   blockTile: {fileID: 21300000, guid: 56ac27bf3a5d99c4b8c687b464a40257, type: 3}
   battleTile: {fileID: 21300000, guid: ad68ac673147431479efdf1cd62fee61, type: 3}
   onMoveSound: {fileID: 8300000, guid: 1a4d46977c1a524448bbaed4cb638ea9, type: 3}
-  endText: To juz jest koniec.
-  battleText: xd1
-  healText: xd2
+  endText: This is the end, you won.
+  battleText: You have met an enemy. Prepare yourself!
+  healText: You found some medicine and you were healed.
   healMin: 1
   HealMax: 5
 --- !u!4 &250698178
@@ -1203,8 +1203,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   music: {fileID: 8300000, guid: 3959e352148c19544951272b027fd9f6, type: 3}
-  startingText: Ta gra to straszna jest, wiesz? Krzywdy wielkie spotkac Cie, a strach
-    i rozpacz ogarna serce Twe!
+  startingText: Welcome to Undying Hero alpha. Find exit, but be aware of orcs in
+    this dungeon. Good luck.
 --- !u!4 &714312699
 Transform:
   m_ObjectHideFlags: 0

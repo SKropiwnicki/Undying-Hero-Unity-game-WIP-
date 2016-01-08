@@ -64,7 +64,7 @@ MonoBehaviour:
   isChosen: 0
   defaultColor: {r: 0, g: 0, b: 0, a: 0}
   txtPanel: {fileID: 199122, guid: 1e6378d70f24b9d4c8561b38c74ef6a6, type: 2}
-  txt: Blablabla\nxd xd
+  txt: 'Simply attack your enemy for your damage value.  AP COST: 0'
 --- !u!114 &11494352
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -192,7 +192,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: txt
-      value: Blablabla\nxd xd
+      value: 'Simply attack your enemy for your damage value.  AP COST: 0'
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: txtPanel

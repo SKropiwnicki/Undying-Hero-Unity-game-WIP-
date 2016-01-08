@@ -37,7 +37,8 @@ MonoBehaviour:
   isChosen: 0
   defaultColor: {r: 0, g: 0, b: 0, a: 0}
   txtPanel: {fileID: 199122, guid: 1e6378d70f24b9d4c8561b38c74ef6a6, type: 2}
-  txt: gfgg
+  txt: Defend yourself and increase your resistence to damage for this fight. You
+    gain 5 AP.
 --- !u!114 &11473310
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -127,7 +128,8 @@ Prefab:
       objectReference: {fileID: 199122, guid: 1e6378d70f24b9d4c8561b38c74ef6a6, type: 2}
     - target: {fileID: 0}
       propertyPath: txt
-      value: gfgg
+      value: Defend yourself and increase your resistence to damage for this fight.
+        You gain 5 AP.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

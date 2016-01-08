@@ -16,7 +16,11 @@ public class Heroes : MonoBehaviour
         {
             level = BattleToExplore.level;
             experience = BattleToExplore.experience;
-            //todo: przeliczenie xp -> lvl
+
+            if(experience >= level * (40 + (level * 10)))
+            {
+                level++;
+            }
         }
         else
         {

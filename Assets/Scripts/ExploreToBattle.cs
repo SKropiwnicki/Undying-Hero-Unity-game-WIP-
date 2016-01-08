@@ -22,10 +22,7 @@ public class ExploreToBattle : MonoBehaviour
         instance = this;
 
         DontDestroyOnLoad(this.transform);
-    }
 
-    public void beforeBattle()
-    {
         if (hero1 == null)
         {
             hero1 = gameObjectWithHero1Script.GetComponent<Hero>();
@@ -34,6 +31,10 @@ public class ExploreToBattle : MonoBehaviour
         {
             hero2 = gameObjectWithHero2Script.GetComponent<Hero>();
         }
+    }
+
+    public void beforeBattle()
+    {
         board = Board.instance.board;
         posX = Board.instance.currentTile.x;
         posY = Board.instance.currentTile.y;

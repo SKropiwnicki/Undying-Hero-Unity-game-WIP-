@@ -7,9 +7,6 @@ public class ButtonManager : MonoBehaviour
 {
     public static ButtonManager instance;
 
-    public GameObject AutoAttackButton;
-    public GameObject PowerAttackButton;
-    public GameObject DefendButton;
     public GameObject parent;
     public List<GameObject> currentButtons;
     private List<GameObject> allButtons;
@@ -99,11 +96,16 @@ public class ButtonManager : MonoBehaviour
     {
         currentButtons = new List<GameObject>();
         allButtons = new List<GameObject>();
-        allButtons.Add(AutoAttackButton);
-        allButtons.Add(PowerAttackButton);
 
+        string path = "SkillButtons";
+        Object[] skillButtons = Resources.LoadAll(path, typeof(GameObject));
+        foreach (Object obj in skillButtons)
+        {
+            allButtons.Add(obj as GameObject);
+        }
+        
         spawnAp();
-        allButtons.Add(DefendButton);
+        
     }
     //jak dochodza nowe skille to buttony dla nich tutaj dodajemy 
 

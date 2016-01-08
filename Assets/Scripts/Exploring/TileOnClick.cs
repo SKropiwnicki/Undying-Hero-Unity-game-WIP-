@@ -1,15 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.EventSystems;
+using System;
 
-public class TileOnClick : MonoBehaviour {
+public class TileOnClick : MonoBehaviour, IPointerClickHandler
+{
+    public static bool wasClicked;
+    public static TileOnClick tile;
+    public string direction;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        wasClicked = true;
+        tile = this;
+    }
 }

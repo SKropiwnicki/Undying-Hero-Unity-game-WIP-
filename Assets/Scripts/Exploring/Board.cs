@@ -62,6 +62,32 @@ public class Board : MonoBehaviour
         updateTiles();
     }
 
+    void Update()
+    {
+        if(TileOnClick.wasClicked)
+        {
+            TileOnClick.wasClicked = false;
+
+            if(TileOnClick.tile.direction == "UP")
+            {
+                move(0, 1);
+            }
+            else if(TileOnClick.tile.direction == "DOWN")
+            {
+                move(0, -1);
+            }
+            else if (TileOnClick.tile.direction == "RIGHT")
+            {
+                move(1, 0);
+            }
+            else if (TileOnClick.tile.direction == "LEFT")
+            {
+                move(-1, 0);
+            }
+            Board.instance.updateTiles();
+        }
+    }
+
     public void updateTiles()
     {
         centerTile.sprite = currentTile;

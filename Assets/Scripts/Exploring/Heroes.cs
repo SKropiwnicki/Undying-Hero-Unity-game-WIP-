@@ -31,7 +31,7 @@ public class Heroes : MonoBehaviour
 
     void Start()
     {
-        if (experience >= level * (4 + (level * 10)))
+        if (experience >= level * (40 + (level * 10)))
         {
             level++;
             ExploreToBattle.hero1.setButtonsActive(true);

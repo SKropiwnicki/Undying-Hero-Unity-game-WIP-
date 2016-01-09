@@ -30,15 +30,33 @@ public class Hero : MonoBehaviour
 
     void Awake()
     {
-        if(BattleToExplore.wasGenerated && name == "Hero1")
+        Actor actor = null;
+        if (BattleToExplore.wasGenerated && name == "Hero1")
         {
-            health = BattleToExplore.hero1.health;
-            if(health < 0)
+            actor = BattleToExplore.hero1;
+
+            health = actor.health;
+
+            if (health < 0)
             {
                 health = 100; //todo: 0
             }
         }
-        //Hero2, a potem podzial hp jesli ktos ma 0 i koniec gry jesli obaj maja 0
+        else if (BattleToExplore.wasGenerated && name == "Hero2")
+        {
+            actor = BattleToExplore.hero2;
+            return;
+            //Hero2, a potem podzial hp jesli ktos ma 0 i koniec gry jesli obaj maja 0
+        }
+        else
+        {
+            return;
+        }
+
+        maxHealth = actor.maxHealth;
+        strength = actor.strength;
+        dexterity = actor.dexterity;
+        intelligence = actor.intelligence;
     }
 
     void Start()

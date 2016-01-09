@@ -10,7 +10,7 @@ public class Board : MonoBehaviour
     public static Board instance;
 
     public Tile[,] board;
-    public int weight, height;
+    public int width, height;
     public Point currentPos;
 
     public Image centerTile;
@@ -18,6 +18,10 @@ public class Board : MonoBehaviour
     public Image downTile;
     public Image rightTile;
     public Image leftTile;
+    public Image rightUpTile;
+    public Image rightDownTile;
+    public Image leftUpTile;
+    public Image leftDownTile;
 
     public Sprite currentTile;
     public Sprite endTile;
@@ -95,11 +99,16 @@ public class Board : MonoBehaviour
         setTileSprite(currentPos.x, currentPos.y - 1, downTile);
         setTileSprite(currentPos.x + 1, currentPos.y, rightTile);
         setTileSprite(currentPos.x - 1, currentPos.y, leftTile);
+
+        setTileSprite(currentPos.x + 1, currentPos.y + 1, rightUpTile);
+        setTileSprite(currentPos.x + 1, currentPos.y - 1, rightDownTile);
+        setTileSprite(currentPos.x - 1, currentPos.y + 1, leftUpTile);
+        setTileSprite(currentPos.x - 1, currentPos.y - 1, leftDownTile);
     }
 
     private void setTileSprite(int x, int y, Image image)
     {
-        if (x < 0 || x >= weight || y < 0 || y >= height)
+        if (x < 0 || x >= width || y < 0 || y >= height)
         {
             image.enabled = false;
             return;
@@ -232,7 +241,7 @@ public class Board : MonoBehaviour
 
     private bool isMovePossible(int x, int y)
     {
-        if(x < 0 || x >= weight || y < 0 || y >= height)
+        if(x < 0 || x >= width || y < 0 || y >= height)
         {
             Debug.Log("za krawedz wyszedl zes ;x");
             return false;
@@ -250,8 +259,8 @@ public class Board : MonoBehaviour
     private void generateBoard()
     {
         //todo: do zmiany all
-        board = new Tile[weight, height];
-        for (int i = 0; i < weight; i++)
+        board = new Tile[width, height];
+        for (int i = 0; i < width; i++)
         {
             for (int j = 0; j < height; j++)
             {
@@ -259,19 +268,19 @@ public class Board : MonoBehaviour
             }
         }
 
-        int count = weight * height;
-        int st = Random.Range(0, weight);
+        int count = width * height;
+        int st = Random.Range(0, width);
         board[st, 0].type = Tile.Type.START;
         currentPos.x = st;
         currentPos.y = 0;
         Debug.Log("start: " + currentPos.x + " " + currentPos.y);
 
-        int en = Random.Range(0, weight);
-        board[en, weight - 1].type = Tile.Type.END;
+        int en = Random.Range(0, width);
+        board[en, width - 1].type = Tile.Type.END;
 
         for (int i = 0; i <= 0.5 * count; i++)
         {
-            int x = Random.Range(0, weight);
+            int x = Random.Range(0, width);
             int y = Random.Range(0, height);
 
             if (board[x, y].type == Tile.Type.EMPTY)
@@ -282,7 +291,7 @@ public class Board : MonoBehaviour
 
         for (int i = height - 1; i >= 0; i--)
         {
-            for (int j = 0; j < weight; j++)
+            for (int j = 0; j < width; j++)
             {
                 if (board[j, i].type == Tile.Type.EMPTY)
                 {
@@ -297,7 +306,7 @@ public class Board : MonoBehaviour
         for (int i = height - 1; i >= 0; i--)
         {
             string str = "";
-            for (int j = 0; j < weight; j++)
+            for (int j = 0; j < width; j++)
             {
                 str += board[j, i].type.ToString() + " ";
             }

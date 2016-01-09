@@ -30,14 +30,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96fddb3562a3269418de20272dd9ceed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillName: PowerAttack
+  skillName: Fireball
   enoughAP: 0
   needNoTarget: 0
   isOn: 0
   isChosen: 0
   defaultColor: {r: 0, g: 0, b: 0, a: 0}
   txtPanel: {fileID: 199122, guid: 1e6378d70f24b9d4c8561b38c74ef6a6, type: 2}
-  txt: Powerful attack, that doubles your normal damage. Costs 6 AP.
+  txt: 'Magical attack that strikes your opponent with fire. Scales with Intelligence.
+    \n AP cost: 4'
 --- !u!114 &11468166
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -70,7 +71,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: d193dd020a480884d9d8d69cafcf6af0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5dd93c8723297a74caa19b6fa1ca6a78, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -111,6 +112,20 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Name
       value: Fireball
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5dd93c8723297a74caa19b6fa1ca6a78,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: skillName
+      value: Fireball
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: txt
+      value: 'Magical attack that strikes your opponent with fire. Scales with Intelligence.
+        \n AP cost: 4'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

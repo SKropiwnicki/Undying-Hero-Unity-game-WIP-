@@ -14,12 +14,20 @@ public abstract class Skill
 
     public void useSkill(Actor source)
     {
+        if (source.currentAP < APCost)
+        {
+            Debug.LogError("NIEPOPRAWNA ILOSC AP. " + source.name + " ma " + source.currentAP + " AP. Wymagane: " + APCost);
+        }
         action(source);
         TurnManagement.instance.nextTurnCor();
     }
 
     public void useSkill(Actor source, Actor target)
     {
+        if (source.currentAP < APCost)
+        {
+            Debug.LogError("NIEPOPRAWNA ILOSC AP. " + source.name + " ma " + source.currentAP + " AP. Wymagane: " + APCost);
+        }
         action(source, target);
         TurnManagement.instance.nextTurnCor();
     }

@@ -4,12 +4,12 @@ using System.Collections.Generic;
 
 public class JustAutoAttack : MonoBehaviour, IAI
 {
-    Actor dis;
+    Actor Me;
     void Awake()
     {
-        dis = GetComponent<Actor>();
+        Me = GetComponent<Actor>();
 
-        dis.ai = this;
+        Me.ai = this;
     }
 
     public void specialAI()
@@ -19,9 +19,9 @@ public class JustAutoAttack : MonoBehaviour, IAI
         {
             if (target.name == "Hero1" || target.name == "Hero2")
             {
-                //TurnManagement.instance.nextTurn();
-                Skill autoattack = dis.skills.Find(x => x.name.Contains("AutoAttack"));
-                if (autoattack != null) autoattack.useSkill(dis, target);  // To moze sprawic problemy jesli autoattack nie jest na 0 pozycji. ALE MUSI BYC.
+                //TurnManageMent.instance.nextTurn();
+                Skill autoattack = Me.skills.Find(x => x.name.Contains("AutoAttack"));
+                if (autoattack != null) autoattack.useSkill(Me, target);  // To moze sprawic problemy jesli autoattack nie jest na 0 pozycji. ALE MUSI BYC.
             }
         }
     }

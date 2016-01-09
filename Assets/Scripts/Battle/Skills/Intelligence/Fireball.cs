@@ -3,27 +3,40 @@ using System.Collections;
 
 public class Fireball : Skill
 {
-    public float dmgRange = 0.15f;
+    private float dmgRange = 0.40f;
+    private float criticalDamageMultiply = 1.5f;
+    private float intelligenceMultiply = 1.5f;
     public Fireball()
     {
         name = "Fireball";
-        APCost = 2;
+        type = "DamageTarget";
+        APCost = 4;
     }
     public override void action(Actor source, Actor target)
     {
-        int dmg = Mathf.FloorToInt(Random.Range(source.attackPower - (source.attackPower * dmgRange), source.attackPower + (source.attackPower * dmgRange)));
-        bool isCritical = this.isCriticalHit(source.critChance);
 
-        if (isCritical) dmg = dmg * 2;
+        int baseDmg = Mathf.FloorToInt(source.intelligence * intelligenceMultiply);
 
 
-        Debug.Log(source.name + " zadaje " + dmg + " dla " + target.name + " CRIT: " + isCritical);
         if (source.animator)
         {
             source.onAttackEfx();
         }
+
+
+
+        int dmg = Mathf.FloorToInt(Random.Range(source.attackPower - (baseDmg * dmgRange), source.attackPower + (baseDmg * dmgRange)));
+        bool isCritical = this.isCriticalHit(source.critChance);
+
+        if (isCritical) dmg = Mathf.FloorToInt(dmg * criticalDamageMultiply);
+
+        Debug.Log(source.name + " zadaje " + dmg + " dla " + target.name + " CRIT: " + isCritical);
+
         target.TakeDamage(dmg, isCritical);
+
+
         source.currentAP -= APCost;
+
         Debug.Log("Nowe AP:" + source.currentAP);
     }
 }

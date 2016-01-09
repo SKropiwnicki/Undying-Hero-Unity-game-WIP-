@@ -25,5 +25,9 @@ public class AllSkills : MonoBehaviour
         allSkillList.Add(new Defend());
         allSkillList.Add(new LesserDefend());
         allSkillList.Add(new Whirlwind());
+        allSkillList.Add(new Fireball());
+        allSkillList.Add(new Heal());
+        allSkillList.Add(new MagicalFocus());
+        allSkillList.Add(new BloodBoil());
     }
 }

@@ -29,7 +29,7 @@ GameObject:
   - 95: {fileID: 9595262}
   - 50: {fileID: 5052966}
   - 61: {fileID: 6132498}
-  - 114: {fileID: 11460202}
+  - 114: {fileID: 11451022}
   m_Layer: 0
   m_Name: OrcMage
   m_TagString: Target
@@ -384,30 +384,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 15
   health: 0
+  shield: 0
   initiative: 0
   experience: 15
   attackPower: 5
   critChance: 0
   def: 1
-  strength: 3
-  dexterity: 3
+  strength: 7
+  dexterity: 7
   intelligence: 15
   startingAP: 5
   currentAP: 4
   maxAP: 10
   perTurnAp: 0
   isControllable: 0
+  shouldCalculateStats: 1
   skillsNames:
-  - PowerAttack
-  - Defend
+  - Fireball
+  - Heal
+  - BloodBoil
+  - MagicalFocus
   skillPrefab: {fileID: 0}
   portraitPrefab: {fileID: 188408, guid: c45a85d159f881243b45ef4fb6885660, type: 2}
+  healthBar: {fileID: 0}
+  shieldBar: {fileID: 0}
   dmgAnimSpeed: 1
   spriteRenderer: {fileID: 0}
   animator: {fileID: 0}
   attackSound: {fileID: 8300000, guid: 7300966f4cfbe2f41a83133617aaeb3a, type: 3}
   onDeathSound: {fileID: 8300000, guid: b2acc35107e77a24fa812f28f31d93e2, type: 3}
---- !u!114 &11460202
+--- !u!114 &11451022
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -415,7 +421,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 134598}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d58eead90db774bbbd41c0e8ecf7d4, type: 3}
+  m_Script: {fileID: 11500000, guid: 051072b79066e804d958e0179cbcd530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &21210270
@@ -756,12 +762,48 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 0}
+      propertyPath: skillsNames.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: m_LocalScale.x
       value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_LocalScale.y
       value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: skillsNames.Array.data[0]
+      value: Fireball
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: skillsNames.Array.data[1]
+      value: Heal
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: skillsNames.Array.data[2]
+      value: BloodBoil
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: skillsNames.Array.data[3]
+      value: MagicalFocus
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: skillsNames.Array.data[4]
+      value: Defend
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: shouldCalculateStats
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: strength
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: dexterity
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

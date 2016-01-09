@@ -112,6 +112,7 @@ MonoBehaviour:
   - PowerAttack
   - Whirlwind
   - Defend
+  - Fireball
   skillPrefab: {fileID: 0}
   portraitPrefab: {fileID: 100442, guid: fe83bf6781076aa409d31a3b35fb605e, type: 2}
   dmgAnimSpeed: 0.9
@@ -158,7 +159,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: skillsNames.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: isControllable
@@ -219,6 +220,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: shouldCalculateStats
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: skillsNames.Array.data[3]
+      value: Fireball
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

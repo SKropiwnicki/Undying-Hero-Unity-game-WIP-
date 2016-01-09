@@ -40,8 +40,9 @@ public class Actor : MonoBehaviour
 
     public GameObject portraitPrefab;
 
-    private Slider healthBar;
-    private Slider shieldBar;
+    //Zmiana na potrzebe skilli
+    public Slider healthBar;
+    public Slider shieldBar;
 
     public float dmgAnimSpeed = 0.9f;
     [HideInInspector]
@@ -234,7 +235,7 @@ public class Actor : MonoBehaviour
             //strength
             attackPower = 1 + Mathf.FloorToInt(strength*3/4 + dexterity /3);
             if (attackPower < 0) attackPower = 0;
-            maxAP = 5 + Mathf.FloorToInt(strength / 2);
+            maxAP = 7 + Mathf.FloorToInt(strength / 2);
             //dexterity
             initiative = Mathf.FloorToInt(dexterity / 3);
             startingAP = 1 + Mathf.FloorToInt(dexterity / 5);
@@ -255,6 +256,6 @@ public class Actor : MonoBehaviour
     
     public virtual void AI()
     {
-        ai.specialAI();
+        if (ai != null) ai.specialAI();
     }
 }

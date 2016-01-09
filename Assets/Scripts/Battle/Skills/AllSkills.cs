@@ -24,5 +24,6 @@ public class AllSkills : MonoBehaviour
         allSkillList.Add(new PowerAttack());
         allSkillList.Add(new Defend());
         allSkillList.Add(new LesserDefend());
+        allSkillList.Add(new Whirlwind());
     }
 }

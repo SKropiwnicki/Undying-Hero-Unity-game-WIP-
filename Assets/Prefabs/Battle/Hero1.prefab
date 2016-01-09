@@ -93,6 +93,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 30
   health: 0
+  shield: 0
   initiative: 2
   experience: 0
   attackPower: 5
@@ -106,8 +107,10 @@ MonoBehaviour:
   maxAP: 10
   perTurnAp: 0
   isControllable: 1
+  shouldCalculateStats: 1
   skillsNames:
   - PowerAttack
+  - Whirlwind
   - Defend
   skillPrefab: {fileID: 0}
   portraitPrefab: {fileID: 100442, guid: fe83bf6781076aa409d31a3b35fb605e, type: 2}
@@ -155,7 +158,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: skillsNames.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: isControllable
@@ -207,7 +210,15 @@ Prefab:
       objectReference: {fileID: 8300000, guid: b2acc35107e77a24fa812f28f31d93e2, type: 3}
     - target: {fileID: 0}
       propertyPath: skillsNames.Array.data[1]
+      value: Whirlwind
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: skillsNames.Array.data[2]
       value: Defend
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: shouldCalculateStats
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

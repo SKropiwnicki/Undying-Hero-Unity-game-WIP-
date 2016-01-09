@@ -159,6 +159,10 @@ public class Actor : MonoBehaviour
         if (shield > 0)
         {
             changeShield(-actualDamage);
+            /*
+            string shieldTxt = "-" + actualDamage;
+            TextSpawner.instance.spawnMessage(this.transform, shieldTxt, Color.blue, 34); 
+            */
         } 
         else
         {
@@ -228,7 +232,7 @@ public class Actor : MonoBehaviour
         if (shouldCalculateStats)  // Czy wyliczac staty (czasami nie chcemy)
         {
             //strength
-            attackPower = 1 + strength;
+            attackPower = 1 + Mathf.FloorToInt(strength*3/4 + dexterity /3);
             if (attackPower < 0) attackPower = 0;
             maxAP = 5 + Mathf.FloorToInt(strength / 2);
             //dexterity

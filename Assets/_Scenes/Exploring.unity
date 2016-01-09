@@ -403,6 +403,7 @@ MonoBehaviour:
   rightDownTile: {fileID: 957534711}
   leftUpTile: {fileID: 1843292019}
   leftDownTile: {fileID: 1843217627}
+  visitedColor: {r: 0.86418694, g: 0.99264705, b: 0.5693123, a: 1}
   currentTile: {fileID: 21300000, guid: 7fffa0fdbc3cc474b9b1165f6b115580, type: 3}
   endTile: {fileID: 21300000, guid: e312e7763185d244696bb17cd8ed8dec, type: 3}
   healTile: {fileID: 21300000, guid: 9c4b4b456d2486c4b852f1e0e6ea3ebd, type: 3}

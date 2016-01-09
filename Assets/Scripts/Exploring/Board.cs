@@ -23,6 +23,8 @@ public class Board : MonoBehaviour
     public Image leftUpTile;
     public Image leftDownTile;
 
+    public Color visitedColor = Color.red;
+
     public Sprite currentTile;
     public Sprite endTile;
     public Sprite healTile;
@@ -95,6 +97,7 @@ public class Board : MonoBehaviour
     public void updateTiles()
     {
         centerTile.sprite = currentTile;
+        centerTile.color = visitedColor;
         setTileSprite(currentPos.x, currentPos.y + 1, upTile);
         setTileSprite(currentPos.x, currentPos.y - 1, downTile);
         setTileSprite(currentPos.x + 1, currentPos.y, rightTile);
@@ -115,6 +118,15 @@ public class Board : MonoBehaviour
         }
 
         image.enabled = true;
+
+        if(board[x, y].wasVisited)
+        {
+            image.color = visitedColor;
+        }
+        else
+        {
+            image.color = Color.white;
+        }
 
         switch (board[x, y].type)
         {
@@ -147,6 +159,8 @@ public class Board : MonoBehaviour
     public class Tile
     {
         public Type type;
+        public bool wasVisited;
+
         public enum Type
         {
             START,
@@ -170,6 +184,7 @@ public class Board : MonoBehaviour
         if (isMovePossible(newX, newY))
         {
             SoundManager.instance.playOnGui(onMoveSound);
+            board[newX, newY].wasVisited = true;
             Debug.Log("nowa pozycja: " + newX + ", " + newY + " : " + board[newX, newY].type);
             currentPos.x = newX;
             currentPos.y = newY;
@@ -273,6 +288,7 @@ public class Board : MonoBehaviour
         board[st, 0].type = Tile.Type.START;
         currentPos.x = st;
         currentPos.y = 0;
+        board[currentPos.x, currentPos.y].wasVisited = true;
         Debug.Log("start: " + currentPos.x + " " + currentPos.y);
 
         int en = Random.Range(0, width);

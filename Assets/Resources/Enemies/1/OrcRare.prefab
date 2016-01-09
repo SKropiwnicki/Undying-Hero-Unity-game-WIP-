@@ -87,22 +87,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 30
   health: 0
-  shield: 0
+  shield: 5
   initiative: 3
   experience: 20
   attackPower: 3
   critChance: 0
-  def: 0
+  def: 2
   strength: 10
-  dexterity: 10
-  intelligence: 1
+  dexterity: 5
+  intelligence: 5
   startingAP: 0
   currentAP: 0
   maxAP: 0
   perTurnAp: 0
   isControllable: 0
+  shouldCalculateStats: 1
   skillsNames:
   - PowerAttack
+  - LesserDefend
   skillPrefab: {fileID: 0}
   portraitPrefab: {fileID: 176246, guid: bcdf09bad632c4d4296a382a334290c3, type: 2}
   dmgAnimSpeed: 0.9
@@ -149,7 +151,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: skillsNames.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Color.r
@@ -181,11 +183,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: dexterity
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: intelligence
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: experience
@@ -207,6 +209,22 @@ Prefab:
       propertyPath: portraitPrefab
       value: 
       objectReference: {fileID: 176246, guid: bcdf09bad632c4d4296a382a334290c3, type: 2}
+    - target: {fileID: 0}
+      propertyPath: shield
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: shouldCalculateStats
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: skillsNames.Array.data[1]
+      value: LesserDefend
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: def
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 170866}

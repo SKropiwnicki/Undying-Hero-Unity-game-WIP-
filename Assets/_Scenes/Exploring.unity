@@ -5008,10 +5008,10 @@ MonoBehaviour:
   maxHealth: 100
   health: 100
   initiative: 2
-  def: 2
-  strength: 9
-  dexterity: 6
-  intelligence: 16
+  def: 3
+  strength: 10
+  dexterity: 7
+  intelligence: 10
   healthText: {fileID: 1953569006}
   strengthText: {fileID: 834835264}
   dexterityText: {fileID: 1685561967}

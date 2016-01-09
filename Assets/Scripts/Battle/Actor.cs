@@ -29,6 +29,7 @@ public class Actor : MonoBehaviour
     public int perTurnAp;    
 
     public bool isControllable;
+    public bool shouldCalculateStats = true; //Niektorzy przeciwnicy sa tacy, ze nie chcemy wyliczac im statystyk wedlug zasad, gdyz oni omijaja zasady, np maja strasznie dużo maxAP i jeden epic skill
     
     public IAI ai;
 
@@ -131,12 +132,15 @@ public class Actor : MonoBehaviour
         animator.SetTrigger("Attack");
     }
 
-    private void changeShield(int value)
+    //musi byc publiczna zeby metody mogly używać
+    public void changeShield(int value)
     {
         shield += value;
         if(shield < 0)
         {
+            health += shield; //Overdamage leci w hp bo shield jest ujemny
             shield = 0;
+            
         }
         shieldBar.maxValue = value;
         shieldBar.value = value;
@@ -146,13 +150,22 @@ public class Actor : MonoBehaviour
 
     public void TakeDamage(int damageValue, bool isCriticalHit)
     {
-        changeShield(10);
+
         StopAllCoroutines(); //UWAGA! to moze wpływać na inne coroutiny!
         //spriteRenderer.color = new Color(1f, 1f, 1f, 1f);
 
         int actualDamage = (damageValue - def);
         if (actualDamage <= 0) actualDamage = 1;
-        health -= actualDamage;
+        if (shield > 0)
+        {
+            changeShield(-actualDamage);
+        } 
+        else
+        {
+            health -= actualDamage;
+        }
+        
+        
 
         string text = "";
         if (isCriticalHit) text += "CRIT! ";
@@ -212,20 +225,23 @@ public class Actor : MonoBehaviour
 
     public void calculateStats()
     {
-        //strength
-        attackPower = 1 + strength;
-        if (attackPower < 0) attackPower = 0;
-        maxAP = 5 + Mathf.FloorToInt(strength/2);
-        //dexterity
-        initiative = Mathf.FloorToInt(dexterity / 3);
-        startingAP = 1 + Mathf.FloorToInt(dexterity / 5);
-        critChance = 0 + Mathf.FloorToInt(dexterity / 4);
-        if (critChance > 50) critChance = 50;
+        if (shouldCalculateStats)  // Czy wyliczac staty (czasami nie chcemy)
+        {
+            //strength
+            attackPower = 1 + strength;
+            if (attackPower < 0) attackPower = 0;
+            maxAP = 5 + Mathf.FloorToInt(strength / 2);
+            //dexterity
+            initiative = Mathf.FloorToInt(dexterity / 3);
+            startingAP = 1 + Mathf.FloorToInt(dexterity / 5);
+            critChance = 0 + Mathf.FloorToInt(dexterity / 4);
+            if (critChance > 50) critChance = 50;
 
-        //intelligence
-        perTurnAp = 1 + (intelligence / 10);
+            //intelligence
+            perTurnAp = 1 + (intelligence / 10);
 
-        controlMaxAP();
+            controlMaxAP();
+        }
     }
 
     public void controlMaxAP ()

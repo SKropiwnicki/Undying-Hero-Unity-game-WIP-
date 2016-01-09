@@ -3,7 +3,7 @@
   <Class Name="Actor" Collapsed="true">
     <Position X="11.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>JQABIRAIAAABiCSABwCAgQAAmACAAAgAQARAmBAwEEg=</HashCode>
+      <HashCode>NQABITAIAAABiCShBwCAgQAAGACAgAgAQARAmBAwEEg=</HashCode>
       <FileName>Assets\Scripts\Battle\Actor.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -14,11 +14,11 @@
       <FileName>Assets\Scripts\Battle\Actors.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="JustAutoAttack" Collapsed="true" BaseTypeListCollapsed="true">
+  <Class Name="DefendTillYouCanHitHard" Collapsed="true" BaseTypeListCollapsed="true">
     <Position X="10" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAEACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
-      <FileName>Assets\Scripts\Battle\AI\JustAutoAttack.cs</FileName>
+      <HashCode>AAAAAAAEAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Battle\AI\DefendTillYouCanHitHard.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
@@ -46,7 +46,7 @@
   <Class Name="HealthBars" Collapsed="true">
     <Position X="13" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAEAAAAAAAAAACAAAAAAAAAAAABAAAABAAAAAAEACEA=</HashCode>
+      <HashCode>AAEAAAAAAAAAACAAAAAAAAAAAARAAAABAAAAAAEACEA=</HashCode>
       <FileName>Assets\Scripts\Battle\GUI\HealthBars.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -75,7 +75,7 @@
   <Class Name="Skill" Collapsed="true">
     <Position X="14" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAABAAAAAAAAAAQAAAAAAAgAAAEAAAAAAIIAAAAAAA=</HashCode>
+      <HashCode>AAAABAAAAAAAAAAQAAAAAAAgAAAFAAAAAAIIAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\Battle\Skill.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -146,7 +146,7 @@
   <Class Name="Board" Collapsed="true">
     <Position X="2.5" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAABAEAiAAJAAASAAAACAKAEUIBAAEIk4QAAQERAAEQ=</HashCode>
+      <HashCode>AAQBAEAiAAJAAASAABACAKAEUIBAAEIk4QAAQERAAEQ=</HashCode>
       <FileName>Assets\Scripts\Exploring\Board.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -160,14 +160,14 @@
   <Class Name="Hero" Collapsed="true">
     <Position X="0.75" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAIBAIAKAAgEAAAQAAgAEAAAAAEAAAQCAAAAAAAEg=</HashCode>
+      <HashCode>AAAAIBAIALAAgUAAEQBEgAEAAAAAEBAAQCAAAAAABEg=</HashCode>
       <FileName>Assets\Scripts\Exploring\Hero.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Heroes" Collapsed="true">
     <Position X="0.75" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAABAAIAAAAAAEAAAAAAABAAAAAAEA=</HashCode>
+      <HashCode>AAAAAAAAACAAAAAABAAIAAAAAAEAAgAAAABAAAAABEA=</HashCode>
       <FileName>Assets\Scripts\Exploring\Heroes.cs</FileName>
     </TypeIdentifier>
   </Class>

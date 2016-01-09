@@ -1,16 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class AutoAttack : Skill
+public class Fireball : Skill
 {
     public float dmgRange = 0.15f;
-    public AutoAttack()
+    public Fireball()
     {
-        name = "AutoAttack";
-        APCost = 0;
-        type = "DamageTarget";
+        name = "Fireball";
+        APCost = 2;
     }
-    public  override void action(Actor source, Actor target)
+    public override void action(Actor source, Actor target)
     {
         int dmg = Mathf.FloorToInt(Random.Range(source.attackPower - (source.attackPower * dmgRange), source.attackPower + (source.attackPower * dmgRange)));
         bool isCritical = this.isCriticalHit(source.critChance);
@@ -18,7 +17,7 @@ public class AutoAttack : Skill
         if (isCritical) dmg = dmg * 2;
 
 
-        Debug.Log(source.name+ " zadaje " + dmg + " dla " + target.name + " CRIT: "+isCritical);
+        Debug.Log(source.name + " zadaje " + dmg + " dla " + target.name + " CRIT: " + isCritical);
         if (source.animator)
         {
             source.onAttackEfx();

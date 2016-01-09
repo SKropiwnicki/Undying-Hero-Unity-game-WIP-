@@ -44,11 +44,28 @@ public class BattleLoader : MonoBehaviour
         Object[] enemies = Resources.LoadAll(path, typeof(GameObject));
 
         int count = Random.Range(minEnemies, maxEnemies + 1);
+        bool hasRareOrc = false;
         for (int i = 0; i < count; i++)
         {
+            
             int numb = Random.Range(0, enemies.Length);
             GameObject enemy = enemies[numb] as GameObject;
+            //UWAGA
+            if (enemy.name == "OrcRare")  //Tylko jeden OrcRare bo kilku to kurcze przesada :D
+            {
+                if (!hasRareOrc)
+                {
+                    Debug.Log("JEDEN RARE ORC TO DOSYC");
+                    hasRareOrc = true;
+                }
+                else while (enemy.name == "OrcRare")
+                {
+                    numb = Random.Range(0, enemies.Length);
+                    enemy = enemies[numb] as GameObject;
+                }
 
+            }
+            //UWAGA
             enemy = Instantiate(enemy, new Vector3(((i + 1) * -2.7f + 0.75f), 0, 0), Quaternion.identity) as GameObject;
             enemy.transform.SetParent(ActorsParent.transform, false);
         }

@@ -1,50 +1,49 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &133818
+--- !u!1 &105888
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 224: {fileID: 22493132}
-  - 222: {fileID: 22211790}
-  - 114: {fileID: 11474778}
-  - 114: {fileID: 11473310}
-  - 114: {fileID: 11472544}
+  - 224: {fileID: 22483156}
+  - 222: {fileID: 22282696}
+  - 114: {fileID: 11483674}
+  - 114: {fileID: 11468166}
+  - 114: {fileID: 11442950}
   m_Layer: 5
-  m_Name: Defend
+  m_Name: Fireball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &11472544
+--- !u!114 &11442950
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 133818}
+  m_GameObject: {fileID: 105888}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 96fddb3562a3269418de20272dd9ceed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillName: Defend
+  skillName: PowerAttack
   enoughAP: 0
-  needNoTarget: 1
+  needNoTarget: 0
   isOn: 0
   isChosen: 0
   defaultColor: {r: 0, g: 0, b: 0, a: 0}
   txtPanel: {fileID: 199122, guid: 1e6378d70f24b9d4c8561b38c74ef6a6, type: 2}
-  txt: Defend yourself and gain some protection. Gives 10 + [25% of your Strength]
-    shield points. /n Increases AP by 4.
---- !u!114 &11473310
+  txt: Powerful attack, that doubles your normal damage. Costs 6 AP.
+--- !u!114 &11468166
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 133818}
+  m_GameObject: {fileID: 105888}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 23b55062b9467be4b95533e495722c54, type: 3}
@@ -52,12 +51,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onClick: 1
   onDoubleClick: 0
---- !u!114 &11474778
+--- !u!114 &11483674
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 133818}
+  m_GameObject: {fileID: 105888}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
@@ -71,7 +70,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 162558f8e0b0cb64783960a03c26e84d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d193dd020a480884d9d8d69cafcf6af0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -79,18 +78,18 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!222 &22211790
+--- !u!222 &22282696
 CanvasRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 133818}
---- !u!224 &22493132
+  m_GameObject: {fileID: 105888}
+--- !u!224 &22483156
 RectTransform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 133818}
+  m_GameObject: {fileID: 105888}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.2121212, y: 1.2121212, z: 1.2121212}
@@ -110,28 +109,10 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 0}
-      propertyPath: skillName
-      value: Defend
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 162558f8e0b0cb64783960a03c26e84d,
-        type: 3}
-    - target: {fileID: 0}
-      propertyPath: needNoTarget
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: txtPanel
-      value: 
-      objectReference: {fileID: 199122, guid: 1e6378d70f24b9d4c8561b38c74ef6a6, type: 2}
-    - target: {fileID: 0}
-      propertyPath: txt
-      value: Defend yourself and gain some protection. Gives 10 + [25% of your Strength]
-        shield points. /n Increases AP by 4.
+      propertyPath: m_Name
+      value: Fireball
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 133818}
+  m_RootGameObject: {fileID: 105888}
   m_IsPrefabParent: 1

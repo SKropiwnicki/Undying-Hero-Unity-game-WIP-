@@ -6,6 +6,7 @@ public abstract class Skill
 {
     public string name = "none";
     public int APCost;
+    public string type = "none";
 
     public virtual void action(Actor source) { } //Buffy i działające na ciebie skile
     public virtual void action(Actor source, Actor target) { } //

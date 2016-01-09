@@ -3,16 +3,16 @@ using System.Collections;
 
 public class Defend : Skill {
 
-    public float dmgRange = 0.15f;
     public Defend()
     {
         name = "Defend";
+        type = "DefensiveNoTarget";
         APCost = -4;
     }
     public override void action(Actor source)
     {
-        source.def += 5;
-        source.currentAP -= APCost;
+        source.changeShield(10 + Mathf.FloorToInt(source.strength/4) );
+        source.currentAP -= APCost;  
         Debug.Log("Nowe AP:" + source.currentAP);
     }
 }

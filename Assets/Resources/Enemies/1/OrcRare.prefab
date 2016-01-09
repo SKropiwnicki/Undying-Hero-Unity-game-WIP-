@@ -12,7 +12,7 @@ GameObject:
   - 114: {fileID: 11496768}
   - 61: {fileID: 6152116}
   - 95: {fileID: 9579978}
-  - 114: {fileID: 11490184}
+  - 114: {fileID: 11468848}
   m_Layer: 0
   m_Name: OrcRare
   m_TagString: Target
@@ -63,7 +63,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11490184
+--- !u!114 &11468848
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -71,7 +71,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 170866}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d58eead90db774bbbd41c0e8ecf7d4, type: 3}
+  m_Script: {fileID: 11500000, guid: 954052ca31e1b9a4caa459d81ad65f7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &11496768
@@ -87,6 +87,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 30
   health: 0
+  shield: 0
   initiative: 3
   experience: 20
   attackPower: 3

@@ -6,6 +6,7 @@ public class PowerAttack : Skill
     public PowerAttack()
     {
         name = "PowerAttack";
+        type = "DamageTarget";
         APCost = 6;
     }
     public override void action(Actor source, Actor target)

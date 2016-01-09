@@ -194,6 +194,7 @@ public class Actor : MonoBehaviour
     public void destroyActorThings()
     {
         Destroy(healthBar.transform.gameObject); //transform.gameObject.SetActive(false); -> jesli bedziemy miec wskrzeszanie mozna uzywac zamiennie
+        Destroy(shieldBar.transform.gameObject);
         Destroy(portraitPrefab.transform.gameObject);
     }
 

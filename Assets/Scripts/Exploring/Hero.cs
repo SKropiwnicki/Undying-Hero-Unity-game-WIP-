@@ -57,6 +57,7 @@ public class Hero : MonoBehaviour
         strength = actor.strength;
         dexterity = actor.dexterity;
         intelligence = actor.intelligence;
+        def = actor.def;
     }
 
     void Start()

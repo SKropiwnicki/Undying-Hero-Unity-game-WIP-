@@ -55,15 +55,22 @@ public class Board : MonoBehaviour
         else
             Destroy(gameObject);
         
-        if (!BattleToExplore.wasGenerated)
+        if(Connector.wasGeneratedMapToExplore)
         {
+            width = Connector.dungeon.width;
+            height = Connector.dungeon.height;
+            endText = Connector.dungeon.endText;
             generateBoard();
         }
-        else
+        else if (BattleToExplore.wasGenerated)
         {
             board = BattleToExplore.board;
             currentPos.x = BattleToExplore.posX;
             currentPos.y = BattleToExplore.posY;
+        }
+        else
+        {
+            generateBoard();
         }
         updateTiles();
     }

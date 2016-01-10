@@ -12,6 +12,8 @@ public class ExploreToBattle : MonoBehaviour
     public static Hero hero1;
     public static Hero hero2;
 
+    public static int enemiesLevel = 1;
+
     public static Board.Tile[,] board;
     public static int posX, posY;
 
@@ -30,6 +32,10 @@ public class ExploreToBattle : MonoBehaviour
         if (hero2 == null)
         {
             hero2 = gameObjectWithHero2Script.GetComponent<Hero>();
+        }
+        if(Connector.wasGeneratedMapToExplore)
+        {
+            enemiesLevel = Connector.dungeon.enemiesLevel;
         }
     }
 

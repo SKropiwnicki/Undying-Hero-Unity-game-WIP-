@@ -13,6 +13,8 @@ public class BattleToExplore : MonoBehaviour
 
     public static int health;
 
+    public static int enemiesLevel;
+
     public static Board.Tile[,] board;
     public static int posX, posY;
 
@@ -30,6 +32,11 @@ public class BattleToExplore : MonoBehaviour
         {
             hero1 = GameObject.Find("Hero1").GetComponent<Actor>();
         }
+        /*
+        if (hero2 == null)
+        {
+            hero2 = GameObject.Find("Hero2").GetComponent<Actor>();
+        }*/
     }
 
     public void beforeExplore()
@@ -39,6 +46,8 @@ public class BattleToExplore : MonoBehaviour
         posY = ExploreToBattle.posY;
         level = ExploreToBattle.level;
         experience = ExploreToBattle.experience;
+        enemiesLevel = ExploreToBattle.enemiesLevel;
+        Connector.wasGeneratedMapToExplore = false;
         wasGenerated = true;
     }
 

@@ -18,7 +18,7 @@ public class BattleLoader : MonoBehaviour
 
     void Awake()
     {
-        //dane z ExploreToBattle tutaj bedzie mozna przekazac
+        enemiesLevel = ExploreToBattle.enemiesLevel;
     }
 
     void Start()

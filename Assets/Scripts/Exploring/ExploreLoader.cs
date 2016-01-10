@@ -5,8 +5,8 @@ using UnityEngine.Events;
 public class ExploreLoader : MonoBehaviour
 {
     public AudioClip music;
-
-    public string startingText;
+    
+    private string startText;
     private OkPanel okPanel;
     private UnityAction okAction; 
 
@@ -14,6 +14,10 @@ public class ExploreLoader : MonoBehaviour
     {
         okPanel = OkPanel.instance();
         okAction = new UnityAction(okFunction);
+        if(Connector.wasGeneratedMapToExplore)
+        {
+            startText = Connector.dungeon.startText;
+        }
     }
 
     void okFunction()
@@ -31,7 +35,7 @@ public class ExploreLoader : MonoBehaviour
 
         if (!BattleToExplore.wasGenerated)
         {
-            okPanel.make(InspectorStringAssistant.instance.make(startingText), okAction);
+            okPanel.make(InspectorStringAssistant.instance.make(startText), okAction);
         }
 
         yield return new WaitForEndOfFrame();

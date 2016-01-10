@@ -36,8 +36,8 @@ public class EndBattlePanel : MonoBehaviour
         GameObject go = Instantiate(panel) as GameObject;
         go.transform.SetParent(parent.transform, false);
         TurnManagement.instance.isBattleFinished = true;
-        BattleToExplore.wasGenerated = true;
-        BattleToExplore.instance.beforeExplore();
+        
+        Connector.instance.beforeExploreFromBattle();
     }
 
     public void onWin()

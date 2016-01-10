@@ -77,15 +77,15 @@ public class Actor : MonoBehaviour
 
     public void loadHeroStats()
     {
-        Hero hero = null;
+        HeroStats hero = null;
 
         if(name == "Hero1")
         {
-            hero = ExploreToBattle.hero1;
+            hero = Connector.hero1;
         }
         else if(name == "Hero2")
         {
-            hero = ExploreToBattle.hero2;
+            hero = Connector.hero2;
         }
         else
         {
@@ -168,6 +168,8 @@ public class Actor : MonoBehaviour
         else
         {
             health -= actualDamage;
+            if(name == "Hero1")  Connector.hero1.health = health;
+            if(name == "Hero2")  Connector.hero2.health = health;
         }
         
         
@@ -197,7 +199,7 @@ public class Actor : MonoBehaviour
     private void onDeath()
     {
         SoundManager.instance.playOnDeath(onDeathSound);
-        ExploreToBattle.experience += experience;
+        HeroStats.experience += experience;
 
         Actors.instance.remove(this);
 

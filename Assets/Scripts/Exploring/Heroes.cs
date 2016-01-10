@@ -8,6 +8,9 @@ public class Heroes : MonoBehaviour
     public static int level;
     public static int experience;
 
+    public static Hero hero1;
+    public static Hero hero2;
+
     public Text levelText;
     public Text experienceText;
 
@@ -17,10 +20,18 @@ public class Heroes : MonoBehaviour
 
     void Awake()
     {
-        if(BattleToExplore.wasGenerated)
+        hero1 = GameObject.Find("Hero1").GetComponent<Hero>();
+        hero2 = GameObject.Find("Hero2").GetComponent<Hero>();
+
+        if (Connector.wasGeneratedMapToExplore)
         {
-            level = BattleToExplore.level;
-            experience = BattleToExplore.experience;
+            level = HeroStats.level;
+            experience = HeroStats.experience;
+        }
+        else if(Connector.wasGeneratedBattleToExplore)
+        {
+            level = HeroStats.level;
+            experience = HeroStats.experience;
         }
         else
         {
@@ -34,10 +45,10 @@ public class Heroes : MonoBehaviour
         if (experience >= level * (40 + (level * 10)))
         {
             level++;
-            ExploreToBattle.hero1.setButtonsActive(true);
-            ExploreToBattle.hero2.setButtonsActive(true);
-            ExploreToBattle.hero1.levelUpPointsLeft += ExploreToBattle.hero1.onLevelUpPoints;
-            ExploreToBattle.hero2.levelUpPointsLeft += ExploreToBattle.hero2.onLevelUpPoints;
+            hero1.setButtonsActive(true);
+            hero2.setButtonsActive(true);
+            hero1.levelUpPointsLeft += hero1.onLevelUpPoints;
+            hero2.levelUpPointsLeft += hero2.onLevelUpPoints;
             OkPanel.instance().make(InspectorStringAssistant.instance.make(onLvlUpText), new UnityAction(okFunction));
         }
 

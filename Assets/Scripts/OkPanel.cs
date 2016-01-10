@@ -52,6 +52,7 @@ public class OkPanel : MonoBehaviour
     private void closePanel()
     {
         PlayerController.canMove = true;
+        TileOnClick.wasClicked = false;
         okPanelObject.SetActive(false);
     }
 }

@@ -18,7 +18,7 @@ public class BattleLoader : MonoBehaviour
 
     void Awake()
     {
-        enemiesLevel = ExploreToBattle.enemiesLevel;
+        enemiesLevel = Connector.dungeon.enemiesLevel;
     }
 
     void Start()
@@ -108,9 +108,8 @@ public class BattleLoader : MonoBehaviour
 
         EndBattlePanel.instance.init();        
 
-        yield return new WaitForEndOfFrame();
-
-        BattleToExplore.instance.init();
+        //yield return new WaitForEndOfFrame();
+        //BattleToExplore.instance.init();
 
         yield return new WaitForEndOfFrame();
 

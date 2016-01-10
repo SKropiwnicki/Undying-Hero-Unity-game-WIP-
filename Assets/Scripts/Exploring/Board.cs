@@ -62,16 +62,23 @@ public class Board : MonoBehaviour
             endText = Connector.dungeon.endText;
             generateBoard();
         }
-        else if (BattleToExplore.wasGenerated)
+        else if (Connector.wasGeneratedBattleToExplore)
         {
-            board = BattleToExplore.board;
-            currentPos.x = BattleToExplore.posX;
-            currentPos.y = BattleToExplore.posY;
+            board = Connector.board;
+            width = Connector.dungeon.width;
+            height = Connector.dungeon.height;
+            endText = Connector.dungeon.endText;
+            currentPos.x = Connector.boardPosX;
+            currentPos.y = Connector.boardPosY;
         }
         else
         {
             generateBoard();
         }
+    }
+
+    void Start()
+    {
         updateTiles();
     }
 
@@ -234,8 +241,8 @@ public class Board : MonoBehaviour
         PlayerController.canMove = false;
         int heal = Random.Range(healMin, HealMax + 1);
         OkPanel.instance().make(InspectorStringAssistant.instance.make(healText) + "\nHeal: " + heal, new UnityAction(okHeal));
-        ExploreToBattle.hero1.heal(heal);
-        ExploreToBattle.hero2.heal(heal);
+        Heroes.hero1.heal(heal);
+        Heroes.hero2.heal(heal);
         board[currentPos.x, currentPos.y].type = Tile.Type.EMPTY;
     }
 
@@ -255,8 +262,8 @@ public class Board : MonoBehaviour
 
     private void okBattle()
     {
-        ExploreToBattle.instance.beforeBattle();
-        ExploreToBattle.wasGenerated = true;
+        Connector.instance.beforeBattleFromExplore();
+        Connector.wasGeneratedExploreToBattle = true;
         SceneManager.LoadScene("FightPrototype");
     }
     #endregion

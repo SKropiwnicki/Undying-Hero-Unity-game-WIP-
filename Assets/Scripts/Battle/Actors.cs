@@ -26,7 +26,7 @@ public class Actors : MonoBehaviour
             Actor actor = child.GetComponent<Actor>();
             if (actor != null)
             {
-                if (ExploreToBattle.wasGenerated)
+                if (Connector.wasGeneratedExploreToBattle)
                 {
                     actor.loadHeroStats();
                   

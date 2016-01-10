@@ -5,16 +5,8 @@ using UnityEngine.Events;
 
 public class Hero : MonoBehaviour
 {
-    public int maxHealth;
-    public int health; //aktualne hp
-    public int initiative;
+    private HeroStats hero;
 
-    public int def;
-
-    public int strength;
-    public int dexterity;
-    public int intelligence;
-    
     public Text healthText;
     public Text strengthText;
     public Text dexterityText;
@@ -30,38 +22,42 @@ public class Hero : MonoBehaviour
 
     void Awake()
     {
-        Actor actor = null;
-        if (BattleToExplore.wasGenerated && name == "Hero1")
+        if (Connector.wasGeneratedMapToExplore)
         {
-            actor = BattleToExplore.hero1;
-
-            health = actor.health;
-
-            if (health < 0)
+            if (name == "Hero1")
             {
-                health = 100; //todo: 0
+                hero = Connector.hero1;
+            }
+            else if (name == "Hero2")
+            {
+                hero = Connector.hero2;
             }
         }
-        else if (BattleToExplore.wasGenerated && name == "Hero2")
+        else if (Connector.wasGeneratedBattleToExplore)
         {
-            actor = BattleToExplore.hero2;
-            return;
-            //Hero2, a potem podzial hp jesli ktos ma 0 i koniec gry jesli obaj maja 0
+            if (name == "Hero1")
+            {
+                hero = Connector.hero1;
+                if (Connector.hero1.health < 0)
+                {
+                    Connector.hero1.health = 100; //todo: 0
+                }
+            }
+            else if (name == "Hero2")
+            {
+                hero = Connector.hero2;
+                return;
+                //Hero2, a potem podzial hp jesli ktos ma 0 i koniec gry jesli obaj maja 0
+            }
         }
-        else
-        {
-            return;
-        }
-
-        maxHealth = actor.maxHealth;
-        strength = actor.strength;
-        dexterity = actor.dexterity;
-        intelligence = actor.intelligence;
-        def = actor.def;
     }
 
     void Start()
     {
+        if(Connector.wasGeneratedMapToExplore)
+        {
+            hero.health = hero.maxHealth;
+        }
         healthUp.onClick.AddListener( () => addStat("Hp"));
         strengthUp.onClick.AddListener( () => addStat("Str"));
         dexterityUp.onClick.AddListener( () => addStat("Dex"));
@@ -79,44 +75,44 @@ public class Hero : MonoBehaviour
 
     private void setPanel()
     {
-        healthText.text = "Health: " + health + "/" + maxHealth;
-        strengthText.text = "Strength: " + strength;
-        dexterityText.text = "Dexterity: " + dexterity;
-        intelligenceText.text = "Intelligence: " + intelligence;
+        healthText.text = "Health: " + hero.health + "/" + hero.maxHealth;
+        strengthText.text = "Strength: " + hero.strength;
+        dexterityText.text = "Dexterity: " + hero.dexterity;
+        intelligenceText.text = "Intelligence: " + hero.intelligence;
     }
 
     public void heal(int value)
     {
-        health += value;
-        if(health > maxHealth)
+        hero.health += value;
+        if(hero.health > hero.maxHealth)
         {
-            health = maxHealth;
+            hero.health = hero.maxHealth;
         }
-        healthText.text = "Health: " + health + "/" + maxHealth;
+        healthText.text = "Health: " + hero.health + "/" + hero.maxHealth;
     }
 
     public void addStat(string str)
     {
         if(str == "Hp")
         {
-            maxHealth+=10;
-            health+=10;
-            healthText.text = "Health: " + health + "/" + maxHealth;
+            hero.maxHealth +=10;
+            hero.health +=10;
+            healthText.text = "Health: " + hero.health + "/" + hero.maxHealth;
         }
         if (str == "Str")
         {
-            strength++;
-            strengthText.text = "Strength: " + strength;
+            hero.strength++;
+            strengthText.text = "Strength: " + hero.strength;
         }
         if (str == "Dex")
         {
-            dexterity++;
-            dexterityText.text = "Dexterity: " + dexterity;
+            hero.dexterity++;
+            dexterityText.text = "Dexterity: " + hero.dexterity;
         }
         if (str == "Int")
         {
-            intelligence++;
-            intelligenceText.text = "Intelligence: " + intelligence;
+            hero.intelligence++;
+            intelligenceText.text = "Intelligence: " + hero.intelligence;
         }
         levelUpPointsLeft--;
         if(levelUpPointsLeft == 0)

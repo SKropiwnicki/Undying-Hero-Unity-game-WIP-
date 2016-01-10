@@ -694,7 +694,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
 --- !u!82 &309577912
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1479,47 +1479,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 539753240}
---- !u!1 &542671191
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 542671192}
-  - 114: {fileID: 542671193}
-  m_Layer: 0
-  m_Name: Explore->Battle
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &542671192
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 542671191}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1269.3107, y: 448.62286, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
---- !u!114 &542671193
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 542671191}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40e9964770e198249bcd57bd70932482, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameObjectWithHero1Script: {fileID: 2131680062}
-  gameObjectWithHero2Script: {fileID: 1610778864}
 --- !u!1 &565267996
 GameObject:
   m_ObjectHideFlags: 0
@@ -1986,8 +1945,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   music: {fileID: 8300000, guid: 3959e352148c19544951272b027fd9f6, type: 3}
-  startingText: Welcome to Undying Hero alpha.\nFind exit, but be aware of orcs in
-    this dungeon. Good luck.
 --- !u!4 &714312699
 Transform:
   m_ObjectHideFlags: 0
@@ -1999,7 +1956,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
 --- !u!1001 &762693357
 Prefab:
   m_ObjectHideFlags: 0
@@ -3459,13 +3416,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a40911dcd8eabb45b5c3bead1e4ca58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 11
-  health: 9
-  initiative: 7
-  def: 0
-  strength: 10
-  dexterity: 5
-  intelligence: 7
   healthText: {fileID: 1177330737}
   strengthText: {fileID: 1674385852}
   dexterityText: {fileID: 984606230}
@@ -4198,7 +4148,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
 --- !u!1 &1787871275
 GameObject:
   m_ObjectHideFlags: 0
@@ -5363,13 +5313,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a40911dcd8eabb45b5c3bead1e4ca58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
-  health: 100
-  initiative: 2
-  def: 3
-  strength: 10
-  dexterity: 10
-  intelligence: 10
   healthText: {fileID: 1953569006}
   strengthText: {fileID: 834835264}
   dexterityText: {fileID: 1685561967}

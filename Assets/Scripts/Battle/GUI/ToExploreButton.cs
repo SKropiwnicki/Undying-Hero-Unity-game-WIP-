@@ -11,7 +11,6 @@ public class ToExploreButton : MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
     {
         SoundManager.instance.playOnGui(okSound);
-        ExploreToBattle.instance.destroy();
         EndBattlePanel.instance.destroy();
         SceneManager.LoadScene("Exploring");
     }

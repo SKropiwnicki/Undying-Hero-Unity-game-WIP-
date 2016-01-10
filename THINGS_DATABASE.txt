@@ -1,6 +1,9 @@
+Staty hero w Map-> Hero1, Hero2
+
+StartText i EndText w prefabach dungeonow
+
 OkPanel w exploringu -> teksty
 {
-    Loader -> starting text
-    Board -> battle text, heal text, end text
+    Board -> battle text, heal text
     Canvas->Panel -> on lvl up text
 }

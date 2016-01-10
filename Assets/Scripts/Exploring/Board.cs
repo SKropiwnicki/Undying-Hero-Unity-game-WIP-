@@ -231,6 +231,8 @@ public class Board : MonoBehaviour
 
     private void okEnd()
     {
+        Connector.instance.beforeMapFromExplore();
+        SceneManager.LoadScene("Map");
     }
 
     #endregion
@@ -263,7 +265,6 @@ public class Board : MonoBehaviour
     private void okBattle()
     {
         Connector.instance.beforeBattleFromExplore();
-        Connector.wasGeneratedExploreToBattle = true;
         SceneManager.LoadScene("FightPrototype");
     }
     #endregion

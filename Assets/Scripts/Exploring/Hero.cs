@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class Hero : MonoBehaviour
 {
-    private HeroStats hero;
+    public HeroStats hero;
 
     public Text healthText;
     public Text strengthText;

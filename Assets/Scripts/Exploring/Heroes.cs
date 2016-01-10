@@ -26,11 +26,13 @@ public class Heroes : MonoBehaviour
         if (Connector.wasGeneratedMapToExplore)
         {
             level = HeroStats.level;
+            Debug.Log("LEVEL: " + level);
             experience = HeroStats.experience;
         }
         else if(Connector.wasGeneratedBattleToExplore)
         {
             level = HeroStats.level;
+            Debug.Log("LEVEL: " + level);
             experience = HeroStats.experience;
         }
         else
@@ -42,9 +44,11 @@ public class Heroes : MonoBehaviour
 
     void Start()
     {
-        if (experience >= level * (40 + (level * 10)))
+        while(experience >= level * (40 + (level * 10)))
         {
+            Debug.Log(level + " " + experience);
             level++;
+            HeroStats.level = level;
             hero1.setButtonsActive(true);
             hero2.setButtonsActive(true);
             hero1.levelUpPointsLeft += hero1.onLevelUpPoints;

@@ -87,6 +87,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   health: 0
+  shield: 0
   initiative: 1
   experience: 10
   attackPower: 3
@@ -100,10 +101,13 @@ MonoBehaviour:
   maxAP: 0
   perTurnAp: 0
   isControllable: 0
+  shouldCalculateStats: 1
   skillsNames:
   - PowerAttack
   skillPrefab: {fileID: 0}
   portraitPrefab: {fileID: 189602, guid: dc36bad4258f8364b9714cf67ddee2f7, type: 2}
+  healthBar: {fileID: 0}
+  shieldBar: {fileID: 0}
   dmgAnimSpeed: 0.9
   spriteRenderer: {fileID: 0}
   animator: {fileID: 0}

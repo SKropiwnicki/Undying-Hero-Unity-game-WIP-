@@ -107,6 +107,8 @@ MonoBehaviour:
   - LesserDefend
   skillPrefab: {fileID: 0}
   portraitPrefab: {fileID: 176246, guid: bcdf09bad632c4d4296a382a334290c3, type: 2}
+  healthBar: {fileID: 0}
+  shieldBar: {fileID: 0}
   dmgAnimSpeed: 0.9
   spriteRenderer: {fileID: 0}
   animator: {fileID: 0}

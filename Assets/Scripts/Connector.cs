@@ -16,15 +16,10 @@ public class Connector : MonoBehaviour
     public static bool wasGeneratedMapToExplore;
     public static bool wasGeneratedExploreToMap;
     public static bool wasGeneratedBattleToExplore;
-
-    ///////////////////
+    public static bool wasGeneratedExploreToBattle;
 
     public static Board.Tile[,] board;
     public static int boardPosX, boardPosY;
-
-    public static bool wasGeneratedExploreToBattle;
-
-    ///////////////////
 
     void Awake()
     {
@@ -32,12 +27,9 @@ public class Connector : MonoBehaviour
 
         DontDestroyOnLoad(this.transform);
 
-        if (hero1 == null)
+        if (!wasGeneratedExploreToMap)
         {
             hero1 = gameObjectWithHero1Stats.GetComponent<HeroStats>();
-        }
-        if (hero2 == null)
-        {
             hero2 = gameObjectWithHero2Stats.GetComponent<HeroStats>();
         }
     }

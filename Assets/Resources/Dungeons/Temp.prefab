@@ -47,8 +47,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d017d3af21c37d34cb25fca77197f0ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 4
-  height: 4
+  width: 2
+  height: 2
   enemiesLevel: 1
   startText: Pierwsze rzeczy
   endText: Drugie rzeczy koncowe
@@ -181,11 +181,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: width
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: height
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: dungNumber

@@ -1,4 +1,4 @@
-Staty hero w Map-> Hero1, Hero2
+Staty hero w START-> Hero1, Hero2
 
 StartText i EndText w prefabach dungeonow
 

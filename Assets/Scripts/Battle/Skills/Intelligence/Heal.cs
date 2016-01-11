@@ -37,7 +37,7 @@ public class Heal : Skill {
         string txt = "+" + heal;
         target.healthBar.value = target.health;
 
-        TextSpawner.instance.spawnMessage(target.transform, txt, Color.green, 42);
+        TextSpawner.instance.spawn(target.transform, txt, Color.green, 42);
 
 //target.TakeDamage(dmg, isCritical);
         source.currentAP -= APCost;

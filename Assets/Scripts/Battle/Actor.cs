@@ -151,7 +151,6 @@ public class Actor : MonoBehaviour
 
     public void TakeDamage(int damageValue, bool isCriticalHit)
     {
-
         StopAllCoroutines(); //UWAGA! to moze wpływać na inne coroutiny!
         //spriteRenderer.color = new Color(1f, 1f, 1f, 1f);
 
@@ -171,16 +170,14 @@ public class Actor : MonoBehaviour
             if(name == "Hero1")  Connector.hero1.health = health;
             if(name == "Hero2")  Connector.hero2.health = health;
         }
-        
-        
 
         string text = "";
         if (isCriticalHit) text += "CRIT! ";
         text +="- " + actualDamage;
 
-        TextSpawner.instance.Spawn(this.transform, text);
+        TextSpawner.instance.spawn(this.transform, text);
         //StartCoroutine(damageAnimation());
-   
+
         if (health <= 0)
         {
             onDeath();

@@ -44,13 +44,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 4
     m_MaxSize: 42
-    m_Alignment: 4
+    m_Alignment: 5
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: '- 1'
+  m_Text: '- 3'
 --- !u!114 &11457560
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -62,8 +62,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffe98f65686eb77498d94fa5e810bc57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  posYChange: 100
-  flashSpeed: 1.5
+  posYChange: 110
+  flashSpeed: 1.4
 --- !u!222 &22272816
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -93,7 +93,19 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: posYChange
+      value: 110
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_FontData.m_Alignment
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: flashSpeed
+      value: 1.4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 112044}

@@ -1,10 +1,16 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.Events;
 
 public class TextSpawner : MonoBehaviour
 {
     public static TextSpawner instance = null;
+
+    private Queue<UnityAction> queue;
+
+    public float timeBeforeNextSpawn = 0.5f;
 
     void Awake()
     {
@@ -14,12 +20,47 @@ public class TextSpawner : MonoBehaviour
             Destroy(gameObject);
     }
 
+    void Start()
+    {
+        queue = new Queue<UnityAction>();
+        StartCoroutine("op");
+    }
+
     public Text text;
     public GameObject textHolder;
     public float yOffset;
 
-    public void Spawn(Transform transform, string str)
+    private IEnumerator op()
     {
+        while (!TurnManagement.instance.isBattleFinished)
+        {
+            if (queue.Count == 0)
+            {
+                yield return new WaitForSeconds(0.1f);
+            }
+            else
+            {
+                queue.Dequeue().Invoke();
+                yield return new WaitForSeconds(timeBeforeNextSpawn);
+            }
+        }
+    }
+
+    public void spawn(Transform transform, string str)
+    {
+        UnityAction ua = () => { spawnx(transform, str); };
+        queue.Enqueue(ua);
+    }
+
+    public void spawn(Transform transform, string str, Color color, int fontSize)
+    {
+        UnityAction ua = () => { spawnx(transform, str, color, fontSize); };
+        queue.Enqueue(ua);
+    }
+
+    private void spawnx(Transform transform, string str)
+    {
+        if (!transform) return;
         text.text = str;
 
         GameObject damageTextObject = Instantiate(text.gameObject) as GameObject;
@@ -30,8 +71,9 @@ public class TextSpawner : MonoBehaviour
         damageTextObject.transform.position = new Vector3(screenPos.x, screenPos.y, screenPos.z);
     }
 
-    public void spawnMessage(Transform transform, string str, Color color, int fontSize)
+    private void spawnx(Transform transform, string str, Color color, int fontSize)
     {
+        if (!transform) return;
         text.text = str;
 
         GameObject damageTextObject = Instantiate(text.gameObject) as GameObject;

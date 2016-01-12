@@ -263,6 +263,7 @@ MonoBehaviour:
   greenAp: {fileID: 11493880, guid: 4b771642a000e524ba084b6bd2d97023, type: 2}
   redAp: {fileID: 11492750, guid: b2694337580105643b13841e3ef33895, type: 2}
   txtPanel: {fileID: 199122, guid: 1e6378d70f24b9d4c8561b38c74ef6a6, type: 2}
+  apPerTurnPrefab: {fileID: 143544, guid: 8dafecd1c0613fa4e9d845aea0fc037a, type: 2}
 --- !u!1 &144285719
 GameObject:
   m_ObjectHideFlags: 0
@@ -1130,6 +1131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203a4dd086ba9134e9f5b8dbfd7cc04c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeBeforeNextSpawn: 0.5
   text: {fileID: 11429410, guid: 4e9d754b34c1ca24d8532c660584aed6, type: 2}
   textHolder: {fileID: 1624735772}
   yOffset: 2.2

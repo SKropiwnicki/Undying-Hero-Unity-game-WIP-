@@ -81,6 +81,18 @@ public class ButtonManager : MonoBehaviour
     }
     #endregion
 
+    public GameObject apPerTurnPrefab;
+    private GameObject apPerTurnText;
+
+    private void spawnApText(Actor actor)
+    {
+        apPerTurnText = Instantiate(apPerTurnPrefab, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
+        apPerTurnText.transform.SetParent(panelParent.transform, false);
+        apPerTurnText.GetComponent<Text>().text = "+ " + actor.perTurnAp + " AP per turn";
+        Vector2 v2 = new Vector2(currentButtons[0].transform.localPosition.x, currentButtons[0].transform.localPosition.y);
+        apPerTurnText.transform.localPosition = new Vector2(v2.x - 250f, v2.y + 150f);
+    }
+
     void Awake()
     {
         if (instance == null)
@@ -112,6 +124,7 @@ public class ButtonManager : MonoBehaviour
     public void spawnButtons(Actor actor)
     {
         DestroyOldButtons();
+        Destroy(apPerTurnText);
         updateAp(0, 0);
 
         if (!TurnManagement.instance.isBattleFinished  && actor.isControllable)
@@ -151,7 +164,8 @@ public class ButtonManager : MonoBehaviour
                 }
                 i++;
             }
-           // checkButtonsAP(actor);
+            spawnApText(actor);
+            // checkButtonsAP(actor);
         }
     }
 

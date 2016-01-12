@@ -84,12 +84,12 @@ public class ButtonManager : MonoBehaviour
     public GameObject apPerTurnPrefab;
     private GameObject apPerTurnText;
 
-    private void spawnApText(Actor actor)
+    private void spawnApText(Actor actor, Transform t)
     {
         apPerTurnText = Instantiate(apPerTurnPrefab, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
         apPerTurnText.transform.SetParent(panelParent.transform, false);
         apPerTurnText.GetComponent<Text>().text = "+ " + actor.perTurnAp + " AP per turn";
-        Vector2 v2 = new Vector2(currentButtons[0].transform.localPosition.x, currentButtons[0].transform.localPosition.y);
+        Vector2 v2 = new Vector2(t.localPosition.x, t.localPosition.y);
         apPerTurnText.transform.localPosition = new Vector2(v2.x - 250f, v2.y + 150f);
     }
 
@@ -149,6 +149,11 @@ public class ButtonManager : MonoBehaviour
 
                         currentButtons.Add(button);
 
+                        if(i == 0)
+                        {
+                            spawnApText(actor, button.transform);
+                        }
+
                         spawnTxt(button.GetComponentInChildren<ButtonSkills>());
                         
                         //Sprawdzanie kosztu AP
@@ -164,7 +169,6 @@ public class ButtonManager : MonoBehaviour
                 }
                 i++;
             }
-            spawnApText(actor);
             // checkButtonsAP(actor);
         }
     }

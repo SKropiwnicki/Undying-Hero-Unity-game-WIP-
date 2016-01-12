@@ -1,11 +1,23 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
-public class HeroStats : MonoBehaviour
+[Serializable]
+public class HeroesStats
 {
-    public static int level;
-    public static int experience;
+    public int level;
+    public int experience;
 
+    public HeroesStats()
+    {
+        level = 1;
+        experience = 0;
+    }
+}
+
+[Serializable]
+public class HeroStats
+{
     public int maxHealth;
     [HideInInspector]
     public int health;
@@ -17,12 +29,16 @@ public class HeroStats : MonoBehaviour
     public int dexterity;
     public int intelligence;
 
-    void Awake()
+    public HeroStats()
     {
-        if(!Connector.wasGeneratedExploreToMap)
-        {
-            level = 1;
-            experience = 0;
-        }
+        maxHealth = 100;
+        health = 100;
+
+        initiative = 2;
+        def = 3;
+
+        strength = 10;
+        dexterity = 10;
+        intelligence = 10;
     }
 }

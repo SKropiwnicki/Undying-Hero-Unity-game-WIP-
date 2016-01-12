@@ -1,4 +1,4 @@
-Staty hero w START-> Hero1, Hero2
+Staty pocz¹tkowe Hero w HeroStats skrypcie
 
 StartText i EndText w prefabach dungeonow
 

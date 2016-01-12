@@ -12,19 +12,10 @@ public class SoundManager : MonoBehaviour
 
     void Awake()
     {
-        DontDestroyOnLoad(gameObject);
-
         if (instance == null)
             instance = this;
         else if (instance != this)
             Destroy(gameObject);
-
-        /*
-        if (FindObjectsOfType(GetType()).Length > 1)
-         {
-             Destroy(gameObject);
-         }
-         */
     }
 
     public void playSingle(AudioClip clip)

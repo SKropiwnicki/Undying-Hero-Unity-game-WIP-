@@ -25,15 +25,15 @@ public class Heroes : MonoBehaviour
 
         if (Connector.wasGeneratedMapToExplore)
         {
-            level = HeroStats.level;
+            level = Connector.hs.level;
             Debug.Log("LEVEL: " + level);
-            experience = HeroStats.experience;
+            experience = Connector.hs.experience;
         }
         else if(Connector.wasGeneratedBattleToExplore)
         {
-            level = HeroStats.level;
+            level = Connector.hs.level;
             Debug.Log("LEVEL: " + level);
-            experience = HeroStats.experience;
+            experience = Connector.hs.experience;
         }
         else
         {
@@ -48,7 +48,7 @@ public class Heroes : MonoBehaviour
         {
             Debug.Log(level + " " + experience);
             level++;
-            HeroStats.level = level;
+            Connector.hs.level = level;
             hero1.setButtonsActive(true);
             hero2.setButtonsActive(true);
             hero1.levelUpPointsLeft += hero1.onLevelUpPoints;

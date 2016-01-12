@@ -196,7 +196,7 @@ public class Actor : MonoBehaviour
     private void onDeath()
     {
         SoundManager.instance.playOnDeath(onDeathSound);
-        HeroStats.experience += experience;
+        Connector.hs.experience += experience;
 
         Actors.instance.remove(this);
 

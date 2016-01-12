@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
 
 public class Connector : MonoBehaviour
 {
     public static Connector instance;
 
-    public GameObject gameObjectWithHero1Stats;
-    public GameObject gameObjectWithHero2Stats;
-
+    public static HeroesStats hs;
     public static HeroStats hero1;
     public static HeroStats hero2;
 
@@ -27,10 +27,77 @@ public class Connector : MonoBehaviour
 
         DontDestroyOnLoad(this.transform);
 
-        if (!wasGeneratedExploreToMap)
+        if(!wasGeneratedExploreToMap)
         {
+            load();
+        }
+        
+        /*if (!wasGeneratedExploreToMap)
+        {
+            HeroStats.level = 1;
+            HeroStats.experience = 0;
             hero1 = gameObjectWithHero1Stats.GetComponent<HeroStats>();
             hero2 = gameObjectWithHero2Stats.GetComponent<HeroStats>();
+        }*/
+    }
+
+    private void save()
+    {
+        BinaryFormatter bf = new BinaryFormatter();
+        string path = Application.persistentDataPath + "/Player1";
+        Debug.Log(path);
+
+        if (!Directory.Exists(path))
+            Directory.CreateDirectory(path);
+        FileStream file = File.Create(path + "/hero1.dat");
+        bf.Serialize(file, hero1);
+        file.Close();
+        
+        if (!Directory.Exists(path))
+            Directory.CreateDirectory(path);
+        file = File.Create(path + "/hero2.dat");
+        bf.Serialize(file, hero2);
+        file.Close();
+
+        if (!Directory.Exists(path))
+            Directory.CreateDirectory(path);
+        file = File.Create(path + "/heroes.dat");
+        bf.Serialize(file, hs);
+        file.Close();
+
+        Debug.Log("AUTOSAVE done");
+    }
+
+    private void load()
+    {
+        if((File.Exists(Application.persistentDataPath + "/Player1/hero1.dat")) && (File.Exists(Application.persistentDataPath + "/Player1/hero2.dat")))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Open(Application.persistentDataPath + "/Player1/hero1.dat", FileMode.Open);
+            HeroStats h1 = (HeroStats)bf.Deserialize(file);
+            file.Close();
+
+            file = File.Open(Application.persistentDataPath + "/Player1/hero2.dat", FileMode.Open);
+            HeroStats h2 = (HeroStats)bf.Deserialize(file);
+            file.Close();
+
+            file = File.Open(Application.persistentDataPath + "/Player1/heroes.dat", FileMode.Open);
+            HeroesStats h = (HeroesStats)bf.Deserialize(file);
+            file.Close();
+
+            hero1 = h1;
+            hero2 = h2;
+            hs = h;
+
+            Debug.Log("LOAD done");
+        }
+        else
+        {
+            hero1 = new HeroStats();
+            hero2 = new HeroStats();
+            hs = new HeroesStats();
+
+            Debug.Log("Plikow ni ma, tworzenie nowych bohaterow...");
         }
     }
 
@@ -49,6 +116,7 @@ public class Connector : MonoBehaviour
         wasGeneratedMapToExplore = false;
         wasGeneratedBattleToExplore = false;
         wasGeneratedExploreToBattle = false;
+        save();
     }
 
     public void beforeBattleFromExplore()
@@ -57,8 +125,8 @@ public class Connector : MonoBehaviour
         boardPosX = Board.instance.currentPos.x;
         boardPosY = Board.instance.currentPos.y;
         Board.instance.board[boardPosX, boardPosY].type = Board.Tile.Type.EMPTY;
-        HeroStats.level = Heroes.level;
-        HeroStats.experience = Heroes.experience;
+        hs.level = Heroes.level;
+        hs.experience = Heroes.experience;
 
         wasGeneratedExploreToBattle = true;
         wasGeneratedExploreToMap = false;

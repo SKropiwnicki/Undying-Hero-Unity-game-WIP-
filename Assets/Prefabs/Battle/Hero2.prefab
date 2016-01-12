@@ -694,7 +694,7 @@ MonoBehaviour:
   - Defend
   - Fireball
   skillPrefab: {fileID: 0}
-  portraitPrefab: {fileID: 100442, guid: fe83bf6781076aa409d31a3b35fb605e, type: 2}
+  portraitPrefab: {fileID: 106888, guid: e1fcf37c6b374cc45bebfb94d990053c, type: 2}
   healthBar: {fileID: 0}
   shieldBar: {fileID: 0}
   dmgAnimSpeed: 0.9
@@ -1338,7 +1338,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: portraitPrefab
+      value: 
+      objectReference: {fileID: 106888, guid: e1fcf37c6b374cc45bebfb94d990053c, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 199858}

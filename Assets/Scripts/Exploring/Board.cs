@@ -7,11 +7,14 @@ using UnityEngine.Events;
 
 public class Board : MonoBehaviour
 {
+    #region variables
+
     public static Board instance;
 
     public Tile[,] board;
     public int width, height;
     public Point currentPos;
+    public int type = 2;
 
     public Image centerTile;
     public Image upTile;
@@ -42,10 +45,18 @@ public class Board : MonoBehaviour
     public int healMin;
     public int HealMax;
 
+    #endregion
+
     public struct Point
     {
         public int x;
         public int y;
+
+        public Point(int y, int x) : this()
+        {
+            this.y = y;
+            this.x = x;
+        }
     }
 
     void Awake()
@@ -59,6 +70,7 @@ public class Board : MonoBehaviour
         {
             width = Connector.dungeon.width;
             height = Connector.dungeon.height;
+            type = Connector.dungeon.type;
             endText = Connector.dungeon.endText;
             generateBoard();
         }
@@ -131,6 +143,12 @@ public class Board : MonoBehaviour
             return;
         }
 
+        if (board[x, y].type == Tile.Type.NONE)
+        {
+            image.enabled = false;
+            return;
+        }
+
         image.enabled = true;
 
         if(board[x, y].wasVisited)
@@ -182,7 +200,8 @@ public class Board : MonoBehaviour
             EMPTY,
             BLOCK,
             BATTLE,
-            HEAL
+            HEAL,
+            NONE
         }
 
         public Tile()
@@ -297,43 +316,85 @@ public class Board : MonoBehaviour
                 board[i, j] = new Tile();
             }
         }
+        /////////// start and end //////////////
 
         int count = width * height;
         int st = Random.Range(0, width);
         board[st, 0].type = Tile.Type.START;
-        currentPos.x = st;
-        currentPos.y = 0;
+        currentPos.x = st; currentPos.y = 0;
         board[currentPos.x, currentPos.y].wasVisited = true;
-        Debug.Log("start: " + currentPos.x + " " + currentPos.y);
-
         int en = Random.Range(0, width);
-        board[en, width - 1].type = Tile.Type.END;
+        board[en, height - 1].type = Tile.Type.END;
 
-        for (int i = 0; i <= 0.5 * count; i++)
+        ///////////////// if type == 1 ////////////////// brama co 2 wiersze
+
+        if (type == 1)
         {
-            int x = Random.Range(0, width);
-            int y = Random.Range(0, height);
-
-            if (board[x, y].type == Tile.Type.EMPTY)
+            for (int i = 0; i < (height - 1) / 2; i++)
             {
-                board[x, y].type = Tile.Type.BATTLE;
+                int gate = Random.Range(0, width);
+                for (int j = 0; j < width; j++)
+                {
+                    board[j, 1 + i * 2].type = Tile.Type.NONE;
+                }
+                board[gate, 1 + i * 2].type = Tile.Type.BATTLE;
             }
         }
+        
+        ///////////////// if type == 2 ////////////////// prostokat w srodku
 
-        for (int i = height - 1; i >= 0; i--)
+        else if(type == 2)
         {
-            for (int j = 0; j < width; j++)
+            int siz = ((width + height) - 1) / 3;
+            int px = Random.Range(0, width - siz);
+            int py = Random.Range(1, height - siz);
+
+            for(int i = 0; i < siz; i++)
             {
-                if (board[j, i].type == Tile.Type.EMPTY)
+                for(int j = 0; j < siz; j++)
                 {
-                    if (Random.Range(1, 3) == 1)
-                    {
-                        board[j, i].type = Tile.Type.HEAL;
-                    }
+                    board[px + j, py + i].type = Tile.Type.NONE;
                 }
             }
         }
 
+        ///////////// generate list of empty tiles /////////////
+
+        List<Point> freeTiles = new List<Point>();
+        for (int i = height - 1; i >= 0; i--)
+        {
+            for (int j = 0; j < width; j++)
+            {
+                if(board[j, i].type == Tile.Type.EMPTY)
+                    freeTiles.Add(new Point(j, i));
+            }
+        }
+
+        //////////////// battle /////////////
+
+        int k = freeTiles.Count / 2;
+        for (int i = 0; i <= k; i++)
+        {
+            int r = Random.Range(0, freeTiles.Count);
+            board[freeTiles[r].y, freeTiles[r].x].type = Tile.Type.BATTLE;
+            freeTiles.Remove(freeTiles[r]);
+        }
+
+        ////////////// heal //////////////////
+
+        k = (freeTiles.Count + 1) / 2;
+        for (int i = 0; i < k; i++)
+        {
+            int r = Random.Range(0, freeTiles.Count);
+            board[freeTiles[r].y, freeTiles[r].x].type = Tile.Type.HEAL;
+            freeTiles.Remove(freeTiles[r]);
+        }
+
+        debugBoard();
+    }
+
+    private void debugBoard()
+    {
         for (int i = height - 1; i >= 0; i--)
         {
             string str = "";

@@ -79,7 +79,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '6x6
+  m_Text: '4x4
+
+    Brama jedna byc powinna tu
 
     lvl: 1'
 --- !u!114 &11462244
@@ -93,11 +95,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d017d3af21c37d34cb25fca77197f0ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 6
-  height: 6
+  width: 4
+  height: 4
   enemiesLevel: 1
   startText: XDDDDD
   endText: FDDDDD
+  type: 1
 --- !u!114 &11469610
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -181,11 +184,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: width
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: height
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: startText
@@ -201,9 +204,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Text
-      value: '6x6
+      value: '4x4
+
+        Brama jedna byc powinna tu
 
         lvl: 1'
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: type
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

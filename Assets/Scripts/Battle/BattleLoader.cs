@@ -28,14 +28,13 @@ public class BattleLoader : MonoBehaviour
 
     private void spawnHeroes()
     {
-        Hero1Prefab = Instantiate(Hero1Prefab, new Vector3(2.5f, 1.25f, 0), Quaternion.identity) as GameObject;
+        Hero1Prefab = Instantiate(Hero1Prefab, new Vector3(3f, 1f, 0), Quaternion.identity) as GameObject;
         Hero1Prefab.name = "Hero1";
         Hero1Prefab.transform.SetParent(ActorsParent.transform, false);
-
-        /*wykomentowac gdy Hero2 w koncu bedzie
-        Hero2Prefab = Instantiate(Hero2Prefab, new Vector3(5f, 1.25f, 0), Quaternion.identity) as GameObject;
+        
+        Hero2Prefab = Instantiate(Hero2Prefab, new Vector3(6f, 0.25f, 0), Quaternion.identity) as GameObject;
         Hero2Prefab.name = "Hero2";
-        Hero2Prefab.transform.SetParent(ActorsParent.transform, false);*/
+        Hero2Prefab.transform.SetParent(ActorsParent.transform, false);
     }
 
     private void spawnEnemies()
@@ -66,7 +65,7 @@ public class BattleLoader : MonoBehaviour
 
             }
             //UWAGA
-            enemy = Instantiate(enemy, new Vector3(((i + 1) * -2.7f + 0.75f), 0, 0), Quaternion.identity) as GameObject;
+            enemy = Instantiate(enemy, new Vector3(((i + 1) * -2.25f + 1.2f), 0, 0), Quaternion.identity) as GameObject;
             enemy.transform.SetParent(ActorsParent.transform, false);
         }
     }

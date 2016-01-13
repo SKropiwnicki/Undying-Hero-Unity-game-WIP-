@@ -1386,10 +1386,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ActorsParent: {fileID: 1962447944}
   Hero1Prefab: {fileID: 170692, guid: 3e927e7e051ee2a40bade1fe5b3417af, type: 2}
-  Hero2Prefab: {fileID: 0}
+  Hero2Prefab: {fileID: 199858, guid: 0825026f6c034894cb44eb6b714c4f07, type: 2}
   enemiesLevel: 1
   minEnemies: 2
-  maxEnemies: 3
+  maxEnemies: 4
   music: {fileID: 8300000, guid: 2f50483c18e89384c856e72150657350, type: 3}
 --- !u!1 &1397164613
 GameObject:

@@ -39,16 +39,32 @@ public class Hero : MonoBehaviour
                 hero = Connector.hero1;
                 if (Connector.hero1.health < 0)
                 {
-                    Connector.hero1.health = 100; //todo: 0
+                    Connector.hero1.health = Connector.hero2.health / 2;
+                    Connector.hero2.health /= 2;
+
                 }
             }
             else if (name == "Hero2")
             {
                 hero = Connector.hero2;
-                return;
-                //Hero2, a potem podzial hp jesli ktos ma 0 i koniec gry jesli obaj maja 0
+                if (Connector.hero2.health < 0)
+                {
+                    Connector.hero2.health = Connector.hero1.health / 2;
+                    Connector.hero1.health /= 2;
+                }
             }
         }
+        if(Connector.hero1.health <= 0 || Connector.hero2.health <= 0)
+        {
+            onLose();
+        }
+    }
+
+    private void onLose()
+    {
+        Debug.Log("hp1: " + Connector.hero1.health);
+        Debug.Log("hp2: " + Connector.hero2.health);
+        Debug.Log("Przegrales... ups");
     }
 
     void Start()

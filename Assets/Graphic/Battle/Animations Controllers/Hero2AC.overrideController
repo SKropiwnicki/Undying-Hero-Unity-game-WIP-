@@ -7,4 +7,10 @@ AnimatorOverrideController:
   m_PrefabInternal: {fileID: 0}
   m_Name: Hero2AC
   m_Controller: {fileID: 9100000, guid: 4965ae80a3fece046b32ce9751443cb1, type: 2}
-  m_Clips: []
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 9aaddf26fb6b3dc4ba87592537c40c8a, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: dcb077c558ad36d488123ef268689ef3, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 519d4eaa67af37144accc41ff2045937, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 519d4eaa67af37144accc41ff2045937, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: dcb077c558ad36d488123ef268689ef3, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: dcb077c558ad36d488123ef268689ef3, type: 2}

@@ -50,6 +50,7 @@ public class ButtonSkills : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        //if (needNoTarget) isOn = false;
         if (enoughAP)
         {
             if (!ButtonManager.instance.isButtonClicked && !isChosen)  // Jesli zaden przycisk nie jest wybrany

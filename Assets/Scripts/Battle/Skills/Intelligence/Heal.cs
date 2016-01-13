@@ -32,15 +32,10 @@ public class Heal : Skill {
         }
 
         //Pozniej to mozna inaczej rozwiazac
-        target.health += heal;
-        if (target.health > target.maxHealth) target.health = target.maxHealth;
-        string txt = "+" + heal;
-        target.healthBar.value = target.health;
-
-        TextSpawner.instance.spawn(target.transform, txt, Color.green, 42);
+        target.Heal(heal);
 
 //target.TakeDamage(dmg, isCritical);
         source.currentAP -= APCost;
-        Debug.Log("Nowe AP:" + source.currentAP);
+        //Debug.Log("Nowe AP:" + source.currentAP);
     }
 }

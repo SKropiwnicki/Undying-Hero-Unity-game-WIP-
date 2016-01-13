@@ -5,7 +5,7 @@ public class Fireball : Skill
 {
     private float dmgRange = 0.40f;
     private float criticalDamageMultiply = 1.5f;
-    private float intelligenceMultiply = 1.5f;
+    private float intelligenceMultiply = 1.1f;
     public Fireball()
     {
         name = "Fireball";
@@ -16,7 +16,7 @@ public class Fireball : Skill
     {
 
         int baseDmg = Mathf.FloorToInt(source.intelligence * intelligenceMultiply);
-
+        Debug.Log("Base dmg w fireballu:" + baseDmg + " Int ziomka: " + source.intelligence);
 
         if (source.animator)
         {
@@ -25,12 +25,12 @@ public class Fireball : Skill
 
 
 
-        int dmg = Mathf.FloorToInt(Random.Range(source.attackPower - (baseDmg * dmgRange), source.attackPower + (baseDmg * dmgRange)));
+        int dmg = Mathf.FloorToInt(Random.Range(baseDmg - (baseDmg * dmgRange), baseDmg + (baseDmg * dmgRange)));
         bool isCritical = this.isCriticalHit(source.critChance);
 
         if (isCritical) dmg = Mathf.FloorToInt(dmg * criticalDamageMultiply);
 
-        Debug.Log(source.name + " zadaje " + dmg + " dla " + target.name + " CRIT: " + isCritical);
+        Debug.Log(source.name + " zadaje fireballem" + dmg + " dla " + target.name + " CRIT: " + isCritical);
 
         target.TakeDamage(dmg, isCritical);
 

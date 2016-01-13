@@ -119,10 +119,10 @@ public class Actor : MonoBehaviour
                 }
             }
         }
-        Debug.Log("Nazywam sie " + name +" a moje skille to: ");
+        //Debug.Log("Nazywam sie " + name +" a moje skille to: ");
         foreach (Skill skill in skills)
         {
-            Debug.Log("Skill: " + skill.name);
+            //Debug.Log("Skill: " + skill.name);
         }
     }
 
@@ -136,60 +136,136 @@ public class Actor : MonoBehaviour
     //musi byc publiczna zeby metody mogly używać
     public void changeShield(int value)
     {
+        //Debug.Log("Przed hitem shielda jest: " + shield);
         shield += value;
-        if(shield < 0)
+        //Debug.Log("po hicie shielda jest : " + shield);
+        if (shield <= 0)
         {
-            health += shield; //Overdamage leci w hp bo shield jest ujemny
+            int ShieldDamage = value - shield;  // ilosc obrazen + ujemna tarcza
+            //Debug.Log(" policzone ile w shielda poszło " + ShieldDamage);
+            string txt = "" + ShieldDamage + " shield";
+            TextSpawner.instance.spawn(this.transform, txt, Color.blue, 40);
+
+            int hpDamage = shield;
+            if (hpDamage < 0) hpDamage *= -1;  //zamiana znaku na dodatni na potrzebny TakeDamage
+            
             shield = 0;
+            TakeDamage(hpDamage, false, true, true);
+            
             
         }
+        else
+        {
+            if (value > 0)
+            {
+                string txt = "+" + value + " shield";
+                TextSpawner.instance.spawn(this.transform, txt, Color.blue, 40);
+            }
+            else
+            {
+                string txt = value + " shield";
+                TextSpawner.instance.spawn(this.transform, txt, Color.blue, 40);
+            }
+
+        }
+
+
         shieldBar.maxValue = value;
         shieldBar.value = value;
         float ratio = shield / (maxHealth * 1.0f);
         shieldBar.transform.localScale = new Vector3(ratio, 1, 0);
     }
 
+
+    public void Heal(int healValue)
+    {
+        health += healValue;
+        int healed = healValue;
+        if (health > maxHealth)
+        {
+            healed -= (health - maxHealth);
+            health = maxHealth;
+        }
+        string txt = "+" + healed + " hp";
+
+        TextSpawner.instance.spawn(this.transform, txt, Color.green, 40);
+
+        healthBar.value = health;
+
+        if (name == "Hero1") Connector.hero1.health = health;
+        if (name == "Hero2") Connector.hero2.health = health;
+
+    }
+
+    public void APchange(int AP)
+    {
+        currentAP += AP;
+        int apChange = AP;
+        if (currentAP > maxAP)
+        {
+            apChange -= (currentAP - maxAP);
+            currentAP = maxAP;
+        }
+        //Bugi łapiemy
+        if (currentAP < 0) Debug.LogError("NIEPOPRAWNA ZMIANA AP");
+        //Nieskonczone
+
+        string txt = "";
+
+        TextSpawner.instance.spawn(this.transform, txt, Color.green, 40);
+
+    }
+
+    public void TakeDamage(int damageValue)
+    {
+        TakeDamage(damageValue, false, false, false);
+    }
+
     public void TakeDamage(int damageValue, bool isCriticalHit)
     {
-        StopAllCoroutines(); //UWAGA! to moze wpływać na inne coroutiny!
-        //spriteRenderer.color = new Color(1f, 1f, 1f, 1f);
+        TakeDamage(damageValue, isCriticalHit, false, false);
+    }
 
-        int actualDamage = (damageValue - def);
-        if (actualDamage <= 0) actualDamage = 1;
-        if (shield > 0)
+    public void TakeDamage(int damageValue, bool isCriticalHit, bool ignoreDef, bool ignoreShield)
+    {
+        //StopAllCoroutines(); //UWAGA! to moze wpływać na inne coroutiny!
+        //spriteRenderer.color = new Color(1f, 1f, 1f, 1f);
+        int actualDamage = damageValue;
+        if (!ignoreDef)
+        { 
+            actualDamage = (damageValue - def);
+            if (actualDamage <= 0) actualDamage = 1;
+        }
+        if (shield > 0 && !ignoreShield)
         {
             changeShield(-actualDamage);
-            /*
-            string shieldTxt = "-" + actualDamage;
-            TextSpawner.instance.spawnMessage(this.transform, shieldTxt, Color.blue, 34); 
-            */
-        } 
+        }
         else
         {
             health -= actualDamage;
-            if(name == "Hero1")  Connector.hero1.health = health;
-            if(name == "Hero2")  Connector.hero2.health = health;
-        }
+            if (name == "Hero1") Connector.hero1.health = health;
+            if (name == "Hero2") Connector.hero2.health = health;
 
-        string text = "";
-        if (isCriticalHit) text += "CRIT! ";
-        text +="- " + actualDamage;
 
-        TextSpawner.instance.spawn(this.transform, text);
-        //StartCoroutine(damageAnimation());
+            string text = "";
+            if (isCriticalHit) text += "CRIT! ";
+            text += "- " + actualDamage;
+            TextSpawner.instance.spawn(this.transform, text);
+            //StartCoroutine(damageAnimation());
 
-        if (health <= 0)
-        {
-            onDeath();
-        }
+            if (health <= 0)
+            {
+                onDeath();
+            }
 
-        if (healthBar != null)
-        {
-            healthBar.value = health;
-        }
-        else
-        {
-            Debug.Log("Actor.cs, slider problem");
+            if (healthBar != null)
+            {
+                healthBar.value = health;
+            }
+            else
+            {
+                Debug.Log("Actor.cs, slider problem");
+            }
         }
     }
 

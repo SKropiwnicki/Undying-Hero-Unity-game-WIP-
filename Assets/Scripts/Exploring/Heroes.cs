@@ -46,14 +46,21 @@ public class Heroes : MonoBehaviour
     {
         while(experience >= level * (40 + (level * 10)))
         {
-            Debug.Log(level + " " + experience);
             level++;
             Connector.hs.level = level;
-            hero1.setButtonsActive(true);
-            hero2.setButtonsActive(true);
-            hero1.levelUpPointsLeft += hero1.onLevelUpPoints;
-            hero2.levelUpPointsLeft += hero2.onLevelUpPoints;
+            Connector.hero1.levelUpPointsLeft += Connector.hs.onLevelUpPoints;
+            Connector.hero2.levelUpPointsLeft += Connector.hs.onLevelUpPoints;
             OkPanel.instance().make(InspectorStringAssistant.instance.make(onLvlUpText), new UnityAction(okFunction));
+        }
+        if(Connector.hero1.levelUpPointsLeft > 0)
+        {
+            hero1.pointsLeftText.text = Connector.hero1.levelUpPointsLeft + " points left";
+            hero1.setButtonsActive(true);
+        }
+        if (Connector.hero2.levelUpPointsLeft > 0)
+        {
+            hero2.pointsLeftText.text = Connector.hero2.levelUpPointsLeft + " points left";
+            hero2.setButtonsActive(true);
         }
 
         levelText.text = "Level: " + level;

@@ -54,10 +54,12 @@ public class Heroes : MonoBehaviour
         }
         if(Connector.hero1.levelUpPointsLeft > 0)
         {
+            hero1.pointsLeftText.text = Connector.hero1.levelUpPointsLeft + " points left";
             hero1.setButtonsActive(true);
         }
         if (Connector.hero2.levelUpPointsLeft > 0)
         {
+            hero2.pointsLeftText.text = Connector.hero2.levelUpPointsLeft + " points left";
             hero2.setButtonsActive(true);
         }
 

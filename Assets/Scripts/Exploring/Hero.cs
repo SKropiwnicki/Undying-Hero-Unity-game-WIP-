@@ -17,8 +17,7 @@ public class Hero : MonoBehaviour
     public Button dexterityUp;
     public Button intelligenceUp;
 
-    //public int onLevelUpPoints;
-    //public int levelUpPointsLeft;
+    public Text pointsLeftText;
 
     void Awake()
     {
@@ -71,6 +70,7 @@ public class Hero : MonoBehaviour
         strengthUp.gameObject.SetActive(b);
         dexterityUp.gameObject.SetActive(b);
         intelligenceUp.gameObject.SetActive(b);
+        pointsLeftText.gameObject.SetActive(b);
     }
 
     private void setPanel()
@@ -118,6 +118,7 @@ public class Hero : MonoBehaviour
         if (name == "Hero1")
         {
             Connector.hero1.levelUpPointsLeft--;
+            pointsLeftText.text = Connector.hero1.levelUpPointsLeft + " points left";
             if (Connector.hero1.levelUpPointsLeft == 0)
             {
                 setButtonsActive(false);
@@ -126,6 +127,7 @@ public class Hero : MonoBehaviour
         else if (name == "Hero2")
         {
             Connector.hero2.levelUpPointsLeft--;
+            pointsLeftText.text = Connector.hero2.levelUpPointsLeft + " points left";
             if (Connector.hero2.levelUpPointsLeft == 0)
             {
                 setButtonsActive(false);

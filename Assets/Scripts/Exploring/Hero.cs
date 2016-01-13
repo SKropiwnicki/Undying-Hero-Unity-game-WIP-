@@ -17,8 +17,8 @@ public class Hero : MonoBehaviour
     public Button dexterityUp;
     public Button intelligenceUp;
 
-    public int onLevelUpPoints;
-    public int levelUpPointsLeft;
+    //public int onLevelUpPoints;
+    //public int levelUpPointsLeft;
 
     void Awake()
     {
@@ -114,10 +114,22 @@ public class Hero : MonoBehaviour
             hero.intelligence++;
             intelligenceText.text = "Intelligence: " + hero.intelligence;
         }
-        levelUpPointsLeft--;
-        if(levelUpPointsLeft == 0)
+
+        if (name == "Hero1")
         {
-            setButtonsActive(false);
+            Connector.hero1.levelUpPointsLeft--;
+            if (Connector.hero1.levelUpPointsLeft == 0)
+            {
+                setButtonsActive(false);
+            }
+        }
+        else if (name == "Hero2")
+        {
+            Connector.hero2.levelUpPointsLeft--;
+            if (Connector.hero2.levelUpPointsLeft == 0)
+            {
+                setButtonsActive(false);
+            }
         }
     }
 }

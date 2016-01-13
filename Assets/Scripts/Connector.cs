@@ -31,14 +31,6 @@ public class Connector : MonoBehaviour
         {
             load();
         }
-        
-        /*if (!wasGeneratedExploreToMap)
-        {
-            HeroStats.level = 1;
-            HeroStats.experience = 0;
-            hero1 = gameObjectWithHero1Stats.GetComponent<HeroStats>();
-            hero2 = gameObjectWithHero2Stats.GetComponent<HeroStats>();
-        }*/
     }
 
     private void save()

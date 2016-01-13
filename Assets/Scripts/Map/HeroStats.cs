@@ -7,11 +7,14 @@ public class HeroesStats
 {
     public int level;
     public int experience;
+    public int onLevelUpPoints;
 
     public HeroesStats()
     {
         level = 1;
         experience = 0;
+
+        onLevelUpPoints = 3;
     }
 }
 
@@ -29,6 +32,8 @@ public class HeroStats
     public int dexterity;
     public int intelligence;
 
+    public int levelUpPointsLeft;
+
     public HeroStats()
     {
         maxHealth = 100;
@@ -40,5 +45,7 @@ public class HeroStats
         strength = 10;
         dexterity = 10;
         intelligence = 10;
+
+        levelUpPointsLeft = 0;
     }
 }

@@ -75,6 +75,7 @@ public class OrcMageAI : MonoBehaviour, IAI
                                 Debug.Log("Używam heala");
                                 isActionDone = true;
                                 heal.useSkill(Me, target);
+                                break;
                             }
                         }
                     }
@@ -88,6 +89,7 @@ public class OrcMageAI : MonoBehaviour, IAI
                                 Debug.Log("Używam Buffa");
                                 isActionDone = true;
                                 buff.useSkill(Me, target);
+                                break;
                             }
                         }
                     }
@@ -110,6 +112,7 @@ public class OrcMageAI : MonoBehaviour, IAI
                                 Debug.Log("Używam heala");
                                 isActionDone = true;
                                 heal.useSkill(Me, target);
+                                break;
                             }
                         }
                     }
@@ -124,6 +127,7 @@ public class OrcMageAI : MonoBehaviour, IAI
                             Debug.Log("Używam Fireballa");
                             isActionDone = true;
                             bestAttack.useSkill(Me, target);
+                            break;
                         }
                     } 
                     if (autoattack != null && !isActionDone)
@@ -131,6 +135,7 @@ public class OrcMageAI : MonoBehaviour, IAI
                         Debug.Log("Autoatakuje");
                         isActionDone = true;
                         autoattack.useSkill(Me, target);
+                        break;
                     }
                 }
             }

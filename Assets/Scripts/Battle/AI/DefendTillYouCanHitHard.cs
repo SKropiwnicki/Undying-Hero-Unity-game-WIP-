@@ -32,6 +32,7 @@ public class DefendTillYouCanHitHard : MonoBehaviour, IAI
                 {
                     bestAttack = skill;
                     highestAttackAP = skill.APCost;
+                    
                 }
             }
         }
@@ -49,7 +50,11 @@ public class DefendTillYouCanHitHard : MonoBehaviour, IAI
         {
             if (target.name == "Hero1" || target.name == "Hero2")
             {
-                    bestAttack.useSkill(Me, target); 
+                    if (bestAttack.hasEnoughAP(Me.currentAP))
+                    {
+                        bestAttack.useSkill(Me, target);
+                        break;
+                    }
             }
         }
     }

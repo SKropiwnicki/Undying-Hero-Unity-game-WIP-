@@ -21,7 +21,11 @@ public class JustAutoAttack : MonoBehaviour, IAI
             {
                 //TurnManageMent.instance.nextTurn();
                 Skill autoattack = Me.skills.Find(x => x.name.Contains("AutoAttack"));
-                if (autoattack != null) autoattack.useSkill(Me, target);  // To moze sprawic problemy jesli autoattack nie jest na 0 pozycji. ALE MUSI BYC.
+                if (autoattack != null)
+                {
+                    autoattack.useSkill(Me, target);
+                    break;
+                }// To moze sprawic problemy jesli autoattack nie jest na 0 pozycji. ALE MUSI BYC.
             }
         }
     }

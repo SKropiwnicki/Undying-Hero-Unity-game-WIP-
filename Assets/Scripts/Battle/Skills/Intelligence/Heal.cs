@@ -34,8 +34,8 @@ public class Heal : Skill {
         //Pozniej to mozna inaczej rozwiazac
         target.Heal(heal);
 
-//target.TakeDamage(dmg, isCritical);
-        source.currentAP -= APCost;
+        //target.TakeDamage(dmg, isCritical);
+        source.APchange(-APCost);
         //Debug.Log("Nowe AP:" + source.currentAP);
     }
 }

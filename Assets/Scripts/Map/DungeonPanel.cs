@@ -6,18 +6,37 @@ public class DungeonPanel : MonoBehaviour
     public GameObject parent;
 
     public int height;
+    public int width;
+    public int x = 50;
+    public int y = 50;
 
     void Start()
     {
         string path = "Dungeons";
         Object[] dungeons = Resources.LoadAll(path, typeof(GameObject));
 
-        int i = 0;
-        foreach(GameObject dung in dungeons)
+        int cx = 0, cy = 0;
+        for(int j = x+width; j < 1920; j+=(width + x))
         {
-            GameObject go = Instantiate(dung, new Vector3(0, 350 - (i * height), 0), Quaternion.identity) as GameObject;
-            go.transform.SetParent(parent.transform, false);
-            i++;
+            cx++;
+        }
+        for (int j = y+height; j < 1080; j+=(height + y))
+        {
+            cy++;
+        }
+
+        int perW = dungeons.Length / cy;
+        for (int i = 0; i < cx; i++)
+        {
+            for(int j = 0; j < cy; j++)
+            {
+                if(dungeons.Length <= i * cx + j)
+                {
+                    return;
+                }
+                GameObject go = Instantiate(dungeons[i * cx + j], new Vector3(-(perW)*(width/2+x/2) + (i* (width + x)), -y-(j * (height + y)), 0), Quaternion.identity) as GameObject;
+                go.transform.SetParent(parent.transform, false);
+            }
         }
     }
 }

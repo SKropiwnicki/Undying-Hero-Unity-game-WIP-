@@ -20,8 +20,8 @@ public class MagicalFocus : Skill
 
         Debug.Log("Magical focus:" + minusAP);
         int newAP = Mathf.FloorToInt(source.maxAP - minusAP);
-       
-        source.currentAP = newAP;
+
+        source.APchange(-APCost);
         //Tymczasowo tak buffuje
         source.intelligence += buffInt;
         

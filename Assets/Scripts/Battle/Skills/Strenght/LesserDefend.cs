@@ -11,8 +11,8 @@ public class LesserDefend :Skill {
     }
     public override void action(Actor source)
     {
-        source.changeShield(2 + Mathf.FloorToInt(source.strength / 3));
-        source.currentAP -= APCost;
-        Debug.Log("Nowe AP:" + source.currentAP);
+        source.changeShield(6 + Mathf.FloorToInt(source.strength / 5));
+        source.APchange(-APCost);
+        //Debug.Log("Nowe AP:" + source.currentAP);
     }
 }

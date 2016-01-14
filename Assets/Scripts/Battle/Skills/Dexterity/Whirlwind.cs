@@ -37,8 +37,8 @@ public class Whirlwind : Skill {
             }
         }
 
-        source.currentAP -= APCost;
-        
+        source.APchange(-APCost);
+
         Debug.Log("Nowe AP:" + source.currentAP);
     }
 }

@@ -24,7 +24,5 @@ public class AutoAttack : Skill
             source.onAttackEfx();
         }
         target.TakeDamage(dmg, isCritical);
-        source.currentAP -= APCost;
-        Debug.Log("Nowe AP:" + source.currentAP);
     }
 }

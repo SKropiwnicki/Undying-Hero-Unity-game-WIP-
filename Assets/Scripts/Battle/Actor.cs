@@ -213,12 +213,20 @@ public class Actor : MonoBehaviour
             currentAP = maxAP;
         }
         //Bugi łapiemy
-        if (currentAP < 0) Debug.LogError("NIEPOPRAWNA ZMIANA AP");
-        //Nieskonczone
-
+        if (currentAP < 0) Debug.LogError("NIEPOPRAWNA ZMIANA AP na" + currentAP + " zmieniono ap o: "+ apChange);
+        
         string txt = "";
+        if (apChange > 0)
+        {
+            txt = "+" + apChange + " AP";
+        }
+        else
+        {
+            txt = apChange + " AP";
+        }
 
-        TextSpawner.instance.spawn(this.transform, txt, Color.green, 40);
+
+        TextSpawner.instance.spawn(this.transform, txt, Color.yellow, 40);
 
     }
 

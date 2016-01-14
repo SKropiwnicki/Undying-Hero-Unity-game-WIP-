@@ -12,18 +12,18 @@ public class TextSpawner : MonoBehaviour
 
     public class tQueue
     {
-        public Transform transform;
+        public Vector2 transform;
         public Queue<UnityAction> queue;
 
         public tQueue(Transform transform, UnityAction ua)
         {
-            this.transform = transform;
+            this.transform = transform.position;
             queue = new Queue<UnityAction>();
             queue.Enqueue(ua);
         }
     }
 
-    public float timeBeforeNextSpawn = 0.5f;
+    public float timeBeforeNextSpawn;
 
     void Awake()
     {
@@ -44,7 +44,7 @@ public class TextSpawner : MonoBehaviour
 
     private IEnumerator op(Queue<UnityAction> queue)
     {
-        while (!TurnManagement.instance.isBattleFinished)
+        while (true)
         {
             if (queue.Count == 0)
             {
@@ -56,14 +56,14 @@ public class TextSpawner : MonoBehaviour
                 yield return new WaitForSeconds(timeBeforeNextSpawn);
             }
         }
-        yield return new WaitForSeconds(0.1f);
+        //yield return new WaitForSeconds(0.1f);
     }
 
     private void checkAndDo(Transform transform, UnityAction ua)
     {
         foreach (tQueue tq in list)
         {
-            if (transform == tq.transform)
+            if ((Vector2)transform.position == tq.transform)
             {
                 tq.queue.Enqueue(ua);
                 return;

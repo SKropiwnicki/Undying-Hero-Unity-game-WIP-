@@ -255,7 +255,7 @@ public class Actor : MonoBehaviour
 
             if (health <= 0)
             {
-                onDeath();
+                StartCoroutine("onDeath");
             }
 
             if (healthBar != null)
@@ -269,8 +269,9 @@ public class Actor : MonoBehaviour
         }
     }
 
-    private void onDeath()
+    IEnumerator onDeath()
     {
+        this.gameObject.SetActive(false);
         SoundManager.instance.playOnDeath(onDeathSound);
         Connector.hs.experience += experience;
 
@@ -280,7 +281,7 @@ public class Actor : MonoBehaviour
 
         TurnManagement.instance.updatePortraitsPosition();
         TurnManagement.instance.updatePortraitBorderPosition();
-
+        yield return new WaitForSeconds(3f);
         Destroy(this.gameObject);
     }
 

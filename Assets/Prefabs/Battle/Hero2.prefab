@@ -690,7 +690,7 @@ MonoBehaviour:
   isControllable: 1
   shouldCalculateStats: 1
   skillsNames:
-  - PowerAttack
+  - MindBlast
   - Whirlwind
   - Defend
   - Fireball
@@ -698,6 +698,7 @@ MonoBehaviour:
   portraitPrefab: {fileID: 106888, guid: e1fcf37c6b374cc45bebfb94d990053c, type: 2}
   healthBar: {fileID: 0}
   shieldBar: {fileID: 0}
+  displayNameText: {fileID: 0}
   dmgAnimSpeed: 0.9
   spriteRenderer: {fileID: 0}
   animator: {fileID: 0}
@@ -1347,6 +1348,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: displayName
       value: Hero2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: skillsNames.Array.data[0]
+      value: MindBlast
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

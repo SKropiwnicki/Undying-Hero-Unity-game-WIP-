@@ -318,7 +318,6 @@ public class Board : MonoBehaviour
         }
         /////////// start and end //////////////
 
-        int count = width * height;
         int st = Random.Range(0, width);
         board[st, 0].type = Tile.Type.START;
         currentPos.x = st; currentPos.y = 0;

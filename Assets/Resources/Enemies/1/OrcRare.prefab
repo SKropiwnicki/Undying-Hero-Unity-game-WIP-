@@ -85,6 +85,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec7ce56101794704c87b8d29ab2449e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  displayName: Orc Rare
   maxHealth: 30
   health: 0
   shield: 5
@@ -226,6 +227,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: def
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: displayName
+      value: Orc Rare
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

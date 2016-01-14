@@ -56,7 +56,7 @@ public class Targetting : MonoBehaviour
             {
                 if (!isMessageDisplayed)
                 {
-                    TextSpawner.instance.spawn(this.transform, "Choose your target", Color.green, 72);
+                    TextSpawner.instance.spawn(new Vector2(this.transform.position.x, this.transform.position.y + 0.5f), "Choose your target", Color.green, 72);
                     isMessageDisplayed = true;
                 }
                 if (Input.GetMouseButtonDown(0))

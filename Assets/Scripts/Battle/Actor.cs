@@ -6,6 +6,7 @@ using System.Collections.Generic;
 public class Actor : MonoBehaviour
 {
     #region Variables
+    public string displayName;
     public int maxHealth;
     public int health; //aktualne hp
     public int shield = 0;
@@ -20,8 +21,7 @@ public class Actor : MonoBehaviour
     public int strength;
     public int dexterity;
     public int intelligence;
-
-
+    
     //AP
     public int startingAP;
     public int currentAP;
@@ -43,6 +43,7 @@ public class Actor : MonoBehaviour
     //Zmiana na potrzebe skilli
     public Slider healthBar;
     public Slider shieldBar;
+    public Text displayNameText;
 
     public float dmgAnimSpeed = 0.9f;
     [HideInInspector]
@@ -73,6 +74,11 @@ public class Actor : MonoBehaviour
     public void setHpBar(Slider healthBar)
     {
         this.healthBar = healthBar;
+    }
+
+    public void setDisplayNameText(Text text)
+    {
+        displayNameText = text;
     }
 
     public void loadHeroStats()

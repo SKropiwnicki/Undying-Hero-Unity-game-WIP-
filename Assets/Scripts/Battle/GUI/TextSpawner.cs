@@ -74,25 +74,43 @@ public class TextSpawner : MonoBehaviour
         StartCoroutine(op(tqx.queue));
     }
 
+    public void spawn(Vector2 pos, string str)
+    {
+        UnityAction ua = () => { spawnx(pos, str, Color.red, 40); };
+        checkAndDo(transform, ua);
+    }
+
+    public void spawn(Vector2 pos, string str, Color color)
+    {
+        UnityAction ua = () => { spawnx(pos, str, color, 40); };
+        checkAndDo(transform, ua);
+    }
+
+    public void spawn(Vector2 pos, string str, Color color, int fontSize)
+    {
+        UnityAction ua = () => { spawnx(pos, str, color, fontSize); };
+        checkAndDo(transform, ua);
+    }
+
     public void spawn(Transform transform, string str)
     {
-        UnityAction ua = () => { spawnx(transform, str, Color.red, 40); };
+        UnityAction ua = () => { spawnx(transform.position, str, Color.red, 40); };
         checkAndDo(transform, ua);
     }
 
     public void spawn(Transform transform, string str, Color color)
     {
-        UnityAction ua = () => { spawnx(transform, str, color, 40); };
+        UnityAction ua = () => { spawnx(transform.position, str, color, 40); };
         checkAndDo(transform, ua);
     }
 
     public void spawn(Transform transform, string str, Color color, int fontSize)
     {
-        UnityAction ua = () => { spawnx(transform, str, color, fontSize); };
+        UnityAction ua = () => { spawnx(transform.position, str, color, fontSize); };
         checkAndDo(transform, ua);
     }
 
-    private void spawnx(Transform transform, string str, Color color, int fontSize)
+    private void spawnx(Vector2 pos, string str, Color color, int fontSize)
     {
         if (!transform) return;
         text.text = str;
@@ -103,7 +121,7 @@ public class TextSpawner : MonoBehaviour
         tx.color = color;
         damageTextObject.transform.SetParent(textHolder.transform, false);
 
-        Vector3 worldPos = new Vector3(transform.position.x, transform.position.y + yOffset, transform.position.z);
+        Vector3 worldPos = new Vector3(pos.x, pos.y + yOffset, 0);
         Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
         damageTextObject.transform.position = new Vector3(screenPos.x, screenPos.y, screenPos.z);
     }

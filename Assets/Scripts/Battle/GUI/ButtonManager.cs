@@ -86,11 +86,14 @@ public class ButtonManager : MonoBehaviour
 
     private void spawnApText(Actor actor, Transform t)
     {
-        apPerTurnText = Instantiate(apPerTurnPrefab, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
+        apPerTurnText = Instantiate(apPerTurnPrefab) as GameObject;
         apPerTurnText.transform.SetParent(panelParent.transform, false);
         apPerTurnText.GetComponent<Text>().text = "+ " + actor.perTurnAp + " AP per turn";
-        Vector2 v2 = new Vector2(t.localPosition.x, t.localPosition.y);
-        apPerTurnText.transform.localPosition = new Vector2(v2.x - 250f, v2.y + 150f);
+        Vector2 v2 = new Vector2(t.position.x, t.position.y);
+        Rect rect = t.GetComponent<RectTransform>().rect;
+        Debug.Log(v2.x + " " + v2.y);
+        apPerTurnText.transform.position = new Vector2(v2.x, v2.y);
+        apPerTurnText.transform.localPosition = new Vector2(apPerTurnText.transform.localPosition.x - (1.75f * rect.width), apPerTurnText.transform.localPosition.y + (0.83f * rect.height));
     }
 
     void Awake()

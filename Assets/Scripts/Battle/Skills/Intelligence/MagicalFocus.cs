@@ -24,6 +24,10 @@ public class MagicalFocus : Skill
         source.APchange(-APCost);
         //Tymczasowo tak buffuje
         source.intelligence += buffInt;
+
+        int apChange = newAP - source.currentAP;
+
+        source.APchange(apChange);
         
         
 

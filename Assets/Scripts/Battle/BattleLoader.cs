@@ -76,45 +76,42 @@ public class BattleLoader : MonoBehaviour
         spawnHeroes();
 
 
-        yield return new WaitForEndOfFrame();
+        //yield return new WaitForEndOfFrame();
 
         ButtonManager.instance.init();
 
-        yield return new WaitForEndOfFrame();
+        //yield return new WaitForEndOfFrame();
 
         AllSkills.instance.init();
 
-        yield return new WaitForEndOfFrame();
+        //yield return new WaitForEndOfFrame();
 
         Actors.instance.init();
 
-        yield return new WaitForEndOfFrame();
+        //yield return new WaitForEndOfFrame();
 
         HealthBars.instance.spawnSliders();
 
-        yield return new WaitForEndOfFrame();
+        //yield return new WaitForEndOfFrame();
 
         DisplayNames.instance.spawnNames();
 
-        yield return new WaitForEndOfFrame();
+        //yield return new WaitForEndOfFrame();
 
         foreach (Actor actor in Actors.instance.get())
         {
             actor.skillLoader();
         }
 
-        yield return new WaitForEndOfFrame();
+        //yield return new WaitForEndOfFrame();
 
         StartCoroutine(TurnManagement.instance.initTurnManagement());
 
-        yield return new WaitForEndOfFrame();
+        //yield return new WaitForEndOfFrame();
 
         EndBattlePanel.instance.init();        
 
         //yield return new WaitForEndOfFrame();
-        //BattleToExplore.instance.init();
-
-        yield return new WaitForEndOfFrame();
 
         loaded = true;
 

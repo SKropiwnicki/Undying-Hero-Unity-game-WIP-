@@ -284,7 +284,7 @@ public class Board : MonoBehaviour
     private void okBattle()
     {
         Connector.instance.beforeBattleFromExplore();
-        SceneManager.LoadScene("FightPrototype");
+        SceneManager.LoadScene("FightLoading");
     }
     #endregion
 

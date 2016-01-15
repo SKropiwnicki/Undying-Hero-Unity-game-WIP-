@@ -34,6 +34,10 @@ public class DisplayNames : MonoBehaviour
     {
         Text displayNameText = Instantiate(textPrefab) as Text;
         displayNameText.text = actor.displayName;
+        if (actor.level > 0)
+        {
+            displayNameText.text = displayNameText.text + " lvl: " + actor.level;
+        }
         displayNameText.transform.SetParent(textParent.transform, false);
 
         Vector3 worldPos = new Vector3(actor.transform.position.x, y + yOffset, actor.transform.position.z);

@@ -91,7 +91,6 @@ public class ButtonManager : MonoBehaviour
         apPerTurnText.GetComponent<Text>().text = "+ " + actor.perTurnAp + " AP per turn";
         Vector2 v2 = new Vector2(t.position.x, t.position.y);
         Rect rect = t.GetComponent<RectTransform>().rect;
-        Debug.Log(v2.x + " " + v2.y);
         apPerTurnText.transform.position = new Vector2(v2.x, v2.y);
         apPerTurnText.transform.localPosition = new Vector2(apPerTurnText.transform.localPosition.x - (1.75f * rect.width), apPerTurnText.transform.localPosition.y + (0.83f * rect.height));
     }

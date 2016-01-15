@@ -110,6 +110,8 @@ MonoBehaviour:
   portraitPrefab: {fileID: 176246, guid: bcdf09bad632c4d4296a382a334290c3, type: 2}
   healthBar: {fileID: 0}
   shieldBar: {fileID: 0}
+  displayNameText: {fileID: 0}
+  level: 2
   dmgAnimSpeed: 0.9
   spriteRenderer: {fileID: 0}
   animator: {fileID: 0}
@@ -231,6 +233,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: displayName
       value: Orc Rare
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: level
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

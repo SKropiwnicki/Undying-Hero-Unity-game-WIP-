@@ -41,13 +41,14 @@ public class Actor : MonoBehaviour
     public GameObject portraitPrefab;
 
     //Zmiana na potrzebe skilli
-    public Slider healthBar;
-    public Slider shieldBar;
+    private Slider healthBar;
+    private Slider shieldBar;
     public Text displayNameText;
+    public int level = -1;
 
     public float dmgAnimSpeed = 0.9f;
     [HideInInspector]
-    public SpriteRenderer spriteRenderer;
+    public SpriteRenderer spriteRenderer; //todo: del?
 
     public Animator animator;
 

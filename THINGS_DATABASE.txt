@@ -1,3 +1,5 @@
+" lvl: " nad postaciami w skrypcie DisplayNames
+
 Staty pocz¹tkowe Hero w HeroStats skrypcie
 
 StartText i EndText w prefabach dungeonow

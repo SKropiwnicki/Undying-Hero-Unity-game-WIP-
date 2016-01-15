@@ -8,6 +8,7 @@ public class LesserDefend :Skill {
         name = "LesserDefend";
         type = "DefensiveNoTarget";
         APCost = -3;
+        displayName = "Lesser Defend";
     }
     public override void action(Actor source)
     {

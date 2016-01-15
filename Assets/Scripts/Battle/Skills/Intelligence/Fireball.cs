@@ -11,6 +11,7 @@ public class Fireball : Skill
         name = "Fireball";
         type = "DamageTarget";
         APCost = 4;
+        displayName = "Fireball";
     }
     public override void action(Actor source, Actor target)
     {

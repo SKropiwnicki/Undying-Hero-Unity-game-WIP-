@@ -10,6 +10,7 @@ public class Heal : Skill {
         name = "Heal";
         APCost = 4;
         type = "HealTarget";
+        displayName = "Heal";
     }
     public override void action(Actor source, Actor target)
     {

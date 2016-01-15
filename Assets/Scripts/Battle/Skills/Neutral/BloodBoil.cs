@@ -11,6 +11,7 @@ public class BloodBoil : Skill {
         name = "BloodBoil";
         APCost = 4;
         type = "BuffTarget";
+        displayName = "Blood Boil";
     }
     public override void action(Actor source, Actor target)
     {

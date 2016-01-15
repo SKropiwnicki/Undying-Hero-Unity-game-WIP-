@@ -13,6 +13,8 @@ public class Actor : MonoBehaviour
     public int initiative;
     public int experience;
     public int attackPower;
+    public int spellPower;
+    public int healPower;
     public int critChance;
 
     public int def;
@@ -326,8 +328,10 @@ public class Actor : MonoBehaviour
         {
             //strength
             attackPower = 1 + Mathf.FloorToInt(strength*3/4 + dexterity /3);
+            spellPower = 1 + Mathf.FloorToInt(intelligence * 3 / 4 + dexterity / 4);
+            healPower = 1 + Mathf.FloorToInt(intelligence * 3 / 4 + strength / 4);
             if (attackPower < 0) attackPower = 0;
-            maxAP = 7 + Mathf.FloorToInt(strength / 2);
+            maxAP = 7 + Mathf.FloorToInt(strength / 4);
             //dexterity
             initiative = Mathf.FloorToInt(dexterity / 3);
             startingAP = 1 + Mathf.FloorToInt(dexterity / 5);

@@ -8,6 +8,7 @@ public class Defend : Skill {
         name = "Defend";
         type = "DefensiveNoTarget";
         APCost = -4;
+        displayName = "Defend";
     }
     public override void action(Actor source)
     {

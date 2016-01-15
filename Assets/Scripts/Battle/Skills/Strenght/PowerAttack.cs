@@ -8,6 +8,7 @@ public class PowerAttack : Skill
         name = "PowerAttack";
         type = "DamageTarget";
         APCost = 6;
+        displayName = "Power Attack";
     }
     public override void action(Actor source, Actor target)
     {

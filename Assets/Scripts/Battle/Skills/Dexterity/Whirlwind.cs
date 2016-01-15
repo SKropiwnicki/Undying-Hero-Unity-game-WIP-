@@ -10,10 +10,11 @@ public class Whirlwind : Skill {
         name = "Whirlwind";
         APCost = 8;
         type = "DamageAoE";
+        displayName = "Whirlwind";
     }
     public override void action(Actor source)
     {
-        int baseDmg = Mathf.FloorToInt(source.attackPower / 4 + source.dexterity / 2);
+        int baseDmg = Mathf.FloorToInt(source.attackPower / 5f + source.dexterity / 1.3f);
 
 
         if (source.animator)

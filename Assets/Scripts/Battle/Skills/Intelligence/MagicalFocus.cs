@@ -9,6 +9,7 @@ public class MagicalFocus : Skill
         name = "MagicalFocus";
         type = "DefensiveNoTarget";
         APCost = 3;
+        displayName = "Magical Focus";
     }
     public override void action(Actor source)
     {

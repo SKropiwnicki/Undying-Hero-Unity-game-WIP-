@@ -66,7 +66,7 @@ public class OrcMageAI : MonoBehaviour, IAI
             {
                 if (target.isControllable == Me.isControllable)
                 {
-                    if (target.health < target.maxHealth * 0.45f)
+                    if (target.health < target.maxHealth * 0.60f)
                     {
                         if (heal != null)
                         {

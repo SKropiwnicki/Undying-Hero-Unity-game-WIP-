@@ -3,7 +3,7 @@
   <Class Name="Actor" Collapsed="true">
     <Position X="11.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>NQABITAIAAABiCShBwCAgQAAGACAgAgAQARAmBAwEEg=</HashCode>
+      <HashCode>NQABITAIABADiCShBwCAgQAAGAGDgAgAQARAmBAwEEg=</HashCode>
       <FileName>Assets\Scripts\Battle\Actor.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -15,7 +15,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="DefendTillYouCanHitHard" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="10" Y="1.25" Width="1.5" />
+    <Position X="11.5" Y="1.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAEAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
       <FileName>Assets\Scripts\Battle\AI\DefendTillYouCanHitHard.cs</FileName>
@@ -32,7 +32,7 @@
   <Class Name="ButtonManager" Collapsed="true">
     <Position X="11.25" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAwAAAAAAAABAVAQAICEMAABAkAIAACBwICEAAEA=</HashCode>
+      <HashCode>AAQAAxAAAAAAAABAVQQBICEMAABAkAIAACBwICEAAEA=</HashCode>
       <FileName>Assets\Scripts\Battle\GUI\ButtonManager.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -53,22 +53,22 @@
   <Class Name="MyEventListener" Collapsed="true" BaseTypeListCollapsed="true">
     <Position X="13.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAgAAAAAAAAAAAAAAAAAAAgAAAAAAAQAAgAA=</HashCode>
+      <HashCode>AAAAAAAAQgAAAAAAAAAAAAAAAAAAAgAAAAAAAQAAgAA=</HashCode>
       <FileName>Assets\Scripts\Battle\GUI\MyEventListener.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="TextDamage" Collapsed="true">
-    <Position X="15.25" Y="0.75" Width="1.5" />
+    <Position X="16.5" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAEAAAACAAAAAAAAAAAAAAAAEAAAAAAAgAQAAAAEA=</HashCode>
       <FileName>Assets\Scripts\Battle\GUI\TextDamage.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TextSpawner" Collapsed="true">
-    <Position X="13.75" Y="0.75" Width="1.5" />
+    <Position X="15" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAEAAAAAAABAAAEIAAIgAAAAAEA=</HashCode>
+      <HashCode>AAAIAgAAACAAAAAAAAAAAAABAABAAAAIAAIoAAAABEA=</HashCode>
       <FileName>Assets\Scripts\Battle\GUI\TextSpawner.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -76,21 +76,21 @@
     <Position X="14" Y="6.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAABAAAAAAAAAAQAAAAAAAgAAAFAAAAAAIIAAAAAAA=</HashCode>
-      <FileName>Assets\Scripts\Battle\Skill.cs</FileName>
+      <FileName>Assets\Scripts\Battle\Skills\Skill.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AllSkills" Collapsed="true">
-    <Position X="15.5" Y="5.75" Width="1.5" />
+    <Position X="15.5" Y="6.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>CAAAAAAAAAAAAAAAAAAAAAAAAABAAAIAAAAAAAAAAEA=</HashCode>
       <FileName>Assets\Scripts\Battle\Skills\AllSkills.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AutoAttack" Collapsed="true">
-    <Position X="14.75" Y="8" Width="1.5" />
+    <Position X="14.75" Y="9" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAABAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAA=</HashCode>
-      <FileName>Assets\Scripts\Battle\Skills\AutoAttack.cs</FileName>
+      <FileName>Assets\Scripts\Battle\Skills\Strenght\AutoAttack.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ButtonSkills" Collapsed="true" BaseTypeListCollapsed="true">
@@ -102,17 +102,17 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="Defend" Collapsed="true">
-    <Position X="16" Y="7" Width="1.5" />
+    <Position X="17.75" Y="9" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAABAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAA=</HashCode>
-      <FileName>Assets\Scripts\Battle\Skills\Defend.cs</FileName>
+      <HashCode>AAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Battle\Skills\Strenght\Defend.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PowerAttack" Collapsed="true">
-    <Position X="14.25" Y="7" Width="1.5" />
+    <Position X="16.25" Y="9" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Assets\Scripts\Battle\Skills\PowerAttack.cs</FileName>
+      <FileName>Assets\Scripts\Battle\Skills\Strenght\PowerAttack.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Targetting" Collapsed="true">
@@ -129,45 +129,31 @@
       <FileName>Assets\Scripts\Battle\TurnManagement.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="BattleToExplore" Collapsed="true">
-    <Position X="6.5" Y="3" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AECAAAAAAAAAAAAAAAAAEEAAAAFAAAIAIABAwAgAAEg=</HashCode>
-      <FileName>Assets\Scripts\BattleToExplore.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="ExploreToBattle" Collapsed="true">
-    <Position X="6.5" Y="4" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>gECAAAAAAAAAAAAAAAAAElAAAAFAAAAAIABAwAAAAEA=</HashCode>
-      <FileName>Assets\Scripts\ExploreToBattle.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="Board" Collapsed="true">
     <Position X="2.5" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQBAEAiAAJAAASAABACAKAEUIBAAEIk4QAAQERAAEQ=</HashCode>
+      <HashCode>AgQBAEAmASJAAASAQBACAKgEUIBBAEIE4QEAQERAAMQ=</HashCode>
       <FileName>Assets\Scripts\Exploring\Board.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ExploreLoader" Collapsed="true">
-    <Position X="5" Y="3" Width="1.5" />
+    <Position X="4.5" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAACABAAAgAAAAAAAAAAAAAAAAAAACAAAAREI=</HashCode>
+      <HashCode>AAAAAAAAACABAAAgAAAAAAAAAAAAAAQAAAAAAAAAREI=</HashCode>
       <FileName>Assets\Scripts\Exploring\ExploreLoader.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Hero" Collapsed="true">
     <Position X="0.75" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAIBAIALAAgUAAEQBEgAEAAAAAEBAAQCAAAAAABEg=</HashCode>
+      <HashCode>AAAAABAAAPAAAUAAAABEAAUAAAAAEBAAQCAAAAgAAEA=</HashCode>
       <FileName>Assets\Scripts\Exploring\Hero.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Heroes" Collapsed="true">
     <Position X="0.75" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAACAAAAAABAAIAAAAAAEAAgAAAABAAAAABEA=</HashCode>
+      <HashCode>AACAAAAAACAAAAAABAAIEAAAAAEAAgAAAABAAAAABEA=</HashCode>
       <FileName>Assets\Scripts\Exploring\Heroes.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -199,8 +185,167 @@
       <FileName>Assets\Scripts\SoundManager.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="JustAutoAttack" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Battle\AI\JustAutoAttack.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Orientation="Left" Position="0.144" Collapsed="true" />
+  </Class>
+  <Class Name="OrcMageAI" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Battle\AI\OrcMageAI.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="1.288" Collapsed="true" />
+  </Class>
+  <Class Name="DisplayNames" Collapsed="true">
+    <Position X="14.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAABAAAAAAgAhAAAQAEA=</HashCode>
+      <FileName>Assets\Scripts\Battle\GUI\DisplayNames.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SliderWithValue" Collapsed="true">
+    <Position X="13.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAgAAAAAAAAAAAAAABAAAAIAAAEAAAACAA=</HashCode>
+      <FileName>Assets\Scripts\Battle\GUI\SliderWithValue.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ToExploreButton" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="18.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Battle\GUI\ToExploreButton.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Whirlwind" Collapsed="true">
+    <Position X="9.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Battle\Skills\Dexterity\Whirlwind.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Fireball" Collapsed="true">
+    <Position X="8" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAAEAAAAAAAAAAAAEAAAAAAAAAAAI=</HashCode>
+      <FileName>Assets\Scripts\Battle\Skills\Intelligence\Fireball.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Heal" Collapsed="true">
+    <Position X="11" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAFAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Assets\Scripts\Battle\Skills\Intelligence\Heal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MagicalFocus" Collapsed="true">
+    <Position X="12.25" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Battle\Skills\Intelligence\MagicalFocus.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MindBlast" Collapsed="true">
+    <Position X="9.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAAMAAAAAAAAAAAAEAAABAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Battle\Skills\Intelligence\MindBlast.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BloodBoil" Collapsed="true">
+    <Position X="14.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAEAAAAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Battle\Skills\Neutral\BloodBoil.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LesserDefend" Collapsed="true">
+    <Position X="19.25" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Battle\Skills\Strenght\LesserDefend.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CameraAR" Collapsed="true">
+    <Position X="19" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAACAAUA=</HashCode>
+      <FileName>Assets\Scripts\CameraAR.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Connector" Collapsed="true">
+    <Position X="5.25" Y="5.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>ABCAAAAAIICAAAgAAIAAEAIAABBAAMAAIAAAAAEAAEA=</HashCode>
+      <FileName>Assets\Scripts\Connector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TileOnClick" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAgAAIAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Exploring\TileOnClick.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DungeonPanel" Collapsed="true">
+    <Position X="2.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAARAQAAAAAAAAAAAAAAAAABgAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Map\DungeonPanel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DungeonStats" Collapsed="true">
+    <Position X="1" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAIAAAAQAQAAAAAAAAAABAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Map\DungeonStats.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroesStats" Collapsed="true">
+    <Position X="7.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAEAAAAAAAAAEAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Map\HeroStats.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeroStats" Collapsed="true">
+    <Position X="1" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAIAAAAgAAAAQAAgAAAAAAAAAAAQAAAAAAABAg=</HashCode>
+      <FileName>Assets\Scripts\Map\HeroStats.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OnDungClick" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="15.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Map\OnDungClick.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Menu" Collapsed="true">
+    <Position X="2.75" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAEAAIAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Menu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RunGame" Collapsed="true">
+    <Position X="4.25" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\RunGame.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Interface Name="IAI" Collapsed="true">
-    <Position X="10" Y="0.5" Width="1.5" />
+    <Position X="10.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\Battle\AI\IAI.cs</FileName>

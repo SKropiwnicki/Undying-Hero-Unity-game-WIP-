@@ -39,7 +39,7 @@ public class Targetting : MonoBehaviour
 
                 foreach (Skill skill in sourceskills)
                 {
-                    Debug.Log(skill.name + " == "  + skillName);
+                    //Debug.Log(skill.name + " == "  + skillName);
                     if (skill.name == skillName)
                     {
                         isSkillUsed = true;

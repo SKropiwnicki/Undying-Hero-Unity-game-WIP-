@@ -11,7 +11,7 @@ public class Menu : MonoBehaviour
 
     void Start()
     {
-        Debug.Log(Application.persistentDataPath);
+        //Debug.Log(Application.persistentDataPath);
     }
 
     public void playFunc()

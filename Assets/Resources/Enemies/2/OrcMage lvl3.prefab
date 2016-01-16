@@ -31,7 +31,7 @@ GameObject:
   - 61: {fileID: 6132498}
   - 114: {fileID: 11451022}
   m_Layer: 0
-  m_Name: OrcMage
+  m_Name: OrcMage lvl3
   m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -383,19 +383,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayName: Orc Mage
-  maxHealth: 15
+  level: 2
+  experience: 25
+  strength: 10
+  dexterity: 15
+  intelligence: 18
+  maxHealth: 20
+  def: 1
   health: 0
   shield: 0
   initiative: 0
-  experience: 15
   attackPower: 5
   spellPower: 0
   healPower: 0
   critChance: 0
-  def: 1
-  strength: 7
-  dexterity: 15
-  intelligence: 15
   startingAP: 5
   currentAP: 4
   maxAP: 10
@@ -407,10 +408,8 @@ MonoBehaviour:
   - Heal
   - BloodBoil
   - MagicalFocus
-  skillPrefab: {fileID: 0}
   portraitPrefab: {fileID: 188408, guid: c45a85d159f881243b45ef4fb6885660, type: 2}
   displayNameText: {fileID: 0}
-  level: 1
   dmgAnimSpeed: 1
   spriteRenderer: {fileID: 0}
   animator: {fileID: 0}
@@ -802,7 +801,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: strength
-      value: 7
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: dexterity
@@ -810,7 +809,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: experience
-      value: 15
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: displayName
@@ -818,7 +817,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: level
-      value: 1
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: maxHealth
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: intelligence
+      value: 18
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

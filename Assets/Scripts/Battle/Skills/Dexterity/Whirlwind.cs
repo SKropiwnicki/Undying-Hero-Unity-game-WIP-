@@ -32,7 +32,7 @@ public class Whirlwind : Skill {
 
                 if (isCritical) dmg = Mathf.FloorToInt(dmg * 1.5f);
 
-                Debug.Log(source.name + " zadaje " + dmg + " dla " + target.name + " CRIT: " + isCritical);
+                //Debug.Log(source.name + " zadaje " + dmg + " dla " + target.name + " CRIT: " + isCritical);
 
                 target.TakeDamage(dmg, isCritical);
             }
@@ -40,6 +40,6 @@ public class Whirlwind : Skill {
 
         source.APchange(-APCost);
 
-        Debug.Log("Nowe AP:" + source.currentAP);
+        //Debug.Log("Nowe AP:" + source.currentAP);
     }
 }

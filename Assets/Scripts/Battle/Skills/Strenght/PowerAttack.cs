@@ -16,7 +16,7 @@ public class PowerAttack : Skill
         target.TakeDamage(source.attackPower*2, false);
         source.APchange(-APCost);
         source.onAttackEfx(); //dodane by Vuko
-        Debug.Log("Nowe AP:" + source.currentAP);
+        //Debug.Log("Nowe AP:" + source.currentAP);
     }
 
     //to delete

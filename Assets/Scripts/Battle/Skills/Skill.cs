@@ -21,7 +21,7 @@ public abstract class Skill
         }
         useText(source);
         action(source);
-        
+        source.calculateStats();
         TurnManagement.instance.nextTurnCor();
     }
 
@@ -33,7 +33,8 @@ public abstract class Skill
         }
         useText(source);
         action(source, target);
-        
+        source.calculateStats();
+        target.calculateStats();
         TurnManagement.instance.nextTurnCor();
     }
 

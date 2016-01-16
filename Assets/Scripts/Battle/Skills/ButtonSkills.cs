@@ -55,14 +55,14 @@ public class ButtonSkills : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
         {
             if (!ButtonManager.instance.isButtonClicked && !isChosen)  // Jesli zaden przycisk nie jest wybrany
             {
-                //Debug.Log("Button nie jest clicked i nie jest chosen");
+                ////Debug.Log("Button nie jest clicked i nie jest chosen");
                 isChosen = true;
                 defaultColor = new Color(0.0f, 0.8f, 0.0f, 1.0f);
                 ButtonManager.instance.isButtonClicked = true;
             }
             else if (ButtonManager.instance.isButtonClicked && !isChosen) // Jesli jakis przycisk jest juz wybrany, ale to nie ten to nic sie ma nie dziac
             {
-               // Debug.Log("Button jakis jest klikniety ale ten nie jest chosen");
+               // //Debug.Log("Button jakis jest klikniety ale ten nie jest chosen");
             }
             else if (ButtonManager.instance.isButtonClicked && isChosen) // Jeśli ten przycisk byl wcisniety i zostaje wcisniety drugi raz
             {

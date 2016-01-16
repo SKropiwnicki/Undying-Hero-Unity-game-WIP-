@@ -14,6 +14,6 @@ public class LesserDefend :Skill {
     {
         source.changeShield(6 + Mathf.FloorToInt(source.strength / 5));
         source.APchange(-APCost);
-        //Debug.Log("Nowe AP:" + source.currentAP);
+        ////Debug.Log("Nowe AP:" + source.currentAP);
     }
 }

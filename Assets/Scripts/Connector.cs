@@ -40,7 +40,7 @@ public class Connector : MonoBehaviour
     {
         BinaryFormatter bf = new BinaryFormatter();
         string path = Application.persistentDataPath + "/Player" + profileNumber;
-        Debug.Log(path);
+        //Debug.Log(path);
 
         if (!Directory.Exists(path))
             Directory.CreateDirectory(path);
@@ -66,13 +66,13 @@ public class Connector : MonoBehaviour
         bf.Serialize(file, label);
         file.Close();
 
-        Debug.Log("AUTOSAVE done");
+        //Debug.Log("AUTOSAVE done");
     }
 
     private void load()
     {
         string profile = "/Player" + profileNumber;
-        Debug.Log(Application.persistentDataPath + profile + "/hero1.dat");
+        //Debug.Log(Application.persistentDataPath + profile + "/hero1.dat");
         if((File.Exists(Application.persistentDataPath + profile + "/hero1.dat")) && (File.Exists(Application.persistentDataPath + profile + "/hero2.dat")))
         {
             BinaryFormatter bf = new BinaryFormatter();
@@ -92,7 +92,7 @@ public class Connector : MonoBehaviour
             hero2 = h2;
             hs = h;
 
-            Debug.Log("LOAD done");
+            //Debug.Log("LOAD done");
         }
         else
         {
@@ -100,7 +100,7 @@ public class Connector : MonoBehaviour
             hero2 = new HeroStats();
             hs = new HeroesStats();
 
-            Debug.Log("Plikow ni ma, tworzenie nowych bohaterow...");
+            //Debug.Log("Plikow ni ma, tworzenie nowych bohaterow...");
         }
     }
 

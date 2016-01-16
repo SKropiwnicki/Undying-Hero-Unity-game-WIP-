@@ -24,7 +24,7 @@ public class Heal : Skill {
         if (isCritical) heal = Mathf.FloorToInt(heal * criticalMultiply);
 
 
-        Debug.Log(source.name + " Leczy " + heal + " dla " + target.name + " CRIT: " + isCritical);
+        //Debug.Log(source.name + " Leczy " + heal + " dla " + target.name + " CRIT: " + isCritical);
 
 
         if (source.animator)
@@ -37,6 +37,6 @@ public class Heal : Skill {
 
         //target.TakeDamage(dmg, isCritical);
         source.APchange(-APCost);
-        //Debug.Log("Nowe AP:" + source.currentAP);
+        ////Debug.Log("Nowe AP:" + source.currentAP);
     }
 }

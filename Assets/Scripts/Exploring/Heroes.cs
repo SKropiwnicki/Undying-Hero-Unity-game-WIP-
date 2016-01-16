@@ -26,13 +26,13 @@ public class Heroes : MonoBehaviour
         if (Connector.wasGeneratedMapToExplore)
         {
             level = Connector.hs.level;
-            Debug.Log("LEVEL: " + level);
+            //Debug.Log("LEVEL: " + level);
             experience = Connector.hs.experience;
         }
         else if(Connector.wasGeneratedBattleToExplore)
         {
             level = Connector.hs.level;
-            Debug.Log("LEVEL: " + level);
+            //Debug.Log("LEVEL: " + level);
             experience = Connector.hs.experience;
         }
         else

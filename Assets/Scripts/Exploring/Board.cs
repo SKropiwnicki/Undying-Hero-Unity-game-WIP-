@@ -218,7 +218,7 @@ public class Board : MonoBehaviour
         {
             SoundManager.instance.playOnGui(onMoveSound);
             board[newX, newY].wasVisited = true;
-            Debug.Log("nowa pozycja: " + newX + ", " + newY + " : " + board[newX, newY].type);
+            //Debug.Log("nowa pozycja: " + newX + ", " + newY + " : " + board[newX, newY].type);
             currentPos.x = newX;
             currentPos.y = newY;
         }
@@ -292,14 +292,14 @@ public class Board : MonoBehaviour
     {
         if(x < 0 || x >= width || y < 0 || y >= height)
         {
-            Debug.Log("za krawedz wyszedl zes ;x");
+            //Debug.Log("za krawedz wyszedl zes ;x");
             return false;
         }
 
         Tile tile = board[x, y];
         if(tile.type == Tile.Type.BLOCK)
         {
-            Debug.Log("no na blocka to nie wejdziesz ziom");
+            //Debug.Log("no na blocka to nie wejdziesz ziom");
             return false;
         }
         return true;
@@ -401,7 +401,7 @@ public class Board : MonoBehaviour
             {
                 str += board[j, i].type.ToString() + " ";
             }
-            Debug.Log(str);
+            //Debug.Log(str);
         }
     }
 }

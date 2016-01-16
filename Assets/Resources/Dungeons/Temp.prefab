@@ -53,6 +53,17 @@ MonoBehaviour:
   startText: Pierwsze rzeczy
   endText: Drugie rzeczy koncowe
   type: 0
+  startingImage: {fileID: 21300000, guid: 3731437db288f094b91aa1c2c94caa5b, type: 3}
+  endingImage: {fileID: 21300000, guid: 1fd7c84361773dc49bf9f43a27f6965e, type: 3}
+  startingCutscene:
+  - '- TO jest start hahahaha
+
+    - Mysle ze to dobrze, nie?'
+  - CLEAR- Latwo nie bedzie podrozniku...
+  - Ale co tam, dasz rade JAKOS
+  endingCutscene:
+  - To juz jest koniec.
+  - Nie ma juz nic xd
 --- !u!114 &11419756
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -181,6 +192,14 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 0}
+      propertyPath: endingCutscene.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: startingCutscene.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: width
       value: 3
       objectReference: {fileID: 0}
@@ -226,6 +245,38 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: startingCutscene.Array.data[1]
+      value: CLEAR- Latwo nie bedzie podrozniku...
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: startingCutscene.Array.data[0]
+      value: '- TO jest start hahahaha
+
+        - Mysle ze to dobrze, nie?'
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: endingCutscene.Array.data[0]
+      value: To juz jest koniec.
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: endingCutscene.Array.data[1]
+      value: Nie ma juz nic xd
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: startingCutscene.Array.data[2]
+      value: Ale co tam, dasz rade JAKOS
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: startingImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 3731437db288f094b91aa1c2c94caa5b,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: endingImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 1fd7c84361773dc49bf9f43a27f6965e,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 152976}

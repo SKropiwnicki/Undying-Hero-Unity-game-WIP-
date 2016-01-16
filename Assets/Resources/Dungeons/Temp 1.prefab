@@ -98,9 +98,11 @@ MonoBehaviour:
   width: 4
   height: 4
   enemiesLevel: 1
-  startText: XDDDDD
+  startText: 
   endText: FDDDDD
   type: 1
+  startingCutscene: []
+  endingCutscene: []
 --- !u!114 &11469610
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -192,7 +194,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: startText
-      value: XDDDDD
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: endText

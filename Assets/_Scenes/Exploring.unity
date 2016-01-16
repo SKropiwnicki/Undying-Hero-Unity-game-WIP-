@@ -280,6 +280,46 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 184660, guid: db6899465a775b44ca931b53c93c4314, type: 2}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11499154, guid: db6899465a775b44ca931b53c93c4314, type: 2}
+      propertyPath: m_FontData.m_BestFit
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11499154, guid: db6899465a775b44ca931b53c93c4314, type: 2}
+      propertyPath: m_FontData.m_AlignByGeometry
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11499154, guid: db6899465a775b44ca931b53c93c4314, type: 2}
+      propertyPath: m_Text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11499154, guid: db6899465a775b44ca931b53c93c4314, type: 2}
+      propertyPath: m_FontData.m_RichText
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11499154, guid: db6899465a775b44ca931b53c93c4314, type: 2}
+      propertyPath: m_FontData.m_LineSpacing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11499154, guid: db6899465a775b44ca931b53c93c4314, type: 2}
+      propertyPath: m_FontData.m_Alignment
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11499154, guid: db6899465a775b44ca931b53c93c4314, type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 11445846, guid: db6899465a775b44ca931b53c93c4314, type: 2}
+      propertyPath: speed
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 11499154, guid: db6899465a775b44ca931b53c93c4314, type: 2}
+      propertyPath: m_FontData.m_HorizontalOverflow
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11499154, guid: db6899465a775b44ca931b53c93c4314, type: 2}
+      propertyPath: m_FontData.m_VerticalOverflow
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

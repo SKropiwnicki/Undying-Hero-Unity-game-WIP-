@@ -292,7 +292,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53abfac22fae6c5408072d9c70b7ba7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.03
+  speed: 0.05
+  image: {fileID: 0}
   strs:
   - '- xdddddddddddddddddddddddddddddddddddd'
   - CLEAR- nopeeeeeeeeeeeeeeeeeeeeeeeeeeeee
@@ -714,6 +715,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_AnchoredPosition.x
       value: -300
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: speed
+      value: 0.05
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

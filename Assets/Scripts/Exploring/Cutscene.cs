@@ -49,58 +49,89 @@ public class Cutscene : MonoBehaviour, IPointerClickHandler
 	public IEnumerator doIt()
 	{
         speedx = speed;
-		yield return new WaitForSeconds (0.1f);
 		string str = "";
-        for (int j = 0; j < strs.Count; j++) 
-		{
-            speedx = speed;
+        for (int j = 0; j < strs.Count; j++)
+        {
             int i = 0;
-            if(strs[j].StartsWith("CLEAR"))
+            while (i < strs[j].Length)
             {
-                speedx = speed;
-                str = "";
-                i = 5;
-            }
-			while (i < strs [j].Length)
-			{
-				str += strs [j] [i];
-				i++;
-                if (speedx != 0)
+                //znak rozpoczynajacy komendy i nie wyjdziemy poza string przy sprawdzaniu komendy
+                if(strs[j][i] == '<' && strs[j].Length > i+5)
+                {
+                    #region cmd
+                    if(strs[j][i + 1] == 'C'
+                        && strs[j][i + 2] == 'L'
+                        && strs[j][i + 3] == 'E'
+                        && strs[j][i + 4] == 'A'
+                        && strs[j][i + 5] == 'R')
+                    {
+                        speedx = -1; // przy speedzie <0 wymuszam czekanie na przycisk
+                        str = "";
+                        i+=6;
+                    }
+
+                    else if (strs[j][i + 1] == 'C'
+                        && strs[j][i + 2] == 'L'
+                        && strs[j][i + 3] == 'I'
+                        && strs[j][i + 4] == 'C'
+                        && strs[j][i + 5] == 'K')
+                    {
+                        if (speedx != 0)
+                        {
+                            speedx = -1; // przy speedzie <0 wymuszam czekanie na przycisk
+                        }
+                        i+=6;
+                    }
+                    if(strs[j].Length <= i) //gdyby komenda byla ostatnimi znakami stringa to lecimy do kolejnego
+                    {
+                        continue; //break to samo da
+                    }
+                    #endregion
+                }
+                str += strs[j][i]; //dodajemy po literce
+                i++; //^
+                if (speedx > 0) //wyswietlamy co trzeba i czekamy.. EFEKTY hue hue
                 {
                     dialogArea.text = str;
                     yield return new WaitForSeconds(speedx);
                 }
-			}
-            if(speedx == 0)
-            {
-                dialogArea.text = str;
-                speedx = speed;
+                else if(speedx < 0) // przy speedzie <0 wymuszam czekanie na przycisk
+                {
+                    clicked = false;
+                    while (!clicked)
+                    {
+                        yield return new WaitForSeconds(0.1f);
+                    }
+                    speedx = speed; //a potem jade normalnie
+                }
             }
-            clicked = false;
-            while (!clicked) 
-			{
-				yield return new WaitForSeconds (0.1f);
-			}
-		}
-        if(clicked)
+            //jesli zaladowalismy stringa - nic innego przy speedzie 0 sie nie dzieje
+            if (speedx == 0)
+            {
+                dialogArea.text = str; //to wyswietlamy go - tak dziala showAll
+            }
+            str += "\n"; //nowy string, nowa linia
+        }
+        //wypisalismy co bylo trzeba
+        //wiec teraz czekamy na klik myszki i wywolujemy skip - czyli nic innego jak setActive(false);
+        clicked = false;
+        while (!clicked)
+        {
+            yield return new WaitForSeconds(0.1f);
+        }
+        if (clicked) //the end
         {
             skip();
         }
-	}
+    }
 
     private void showAll()
     {
         speedx = 0;
     }
 
-    private void clear()
-    {
-        dialogArea.text = "";
-    }
-
     private void skip()
     {
-        //Destroy (this.gameObject);
         this.gameObject.SetActive(false);
     }
 

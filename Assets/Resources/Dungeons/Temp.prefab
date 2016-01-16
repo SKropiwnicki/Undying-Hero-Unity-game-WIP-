@@ -56,14 +56,36 @@ MonoBehaviour:
   startingImage: {fileID: 21300000, guid: 3731437db288f094b91aa1c2c94caa5b, type: 3}
   endingImage: {fileID: 21300000, guid: 1fd7c84361773dc49bf9f43a27f6965e, type: 3}
   startingCutscene:
-  - '- TO jest start hahahaha
+  - '- TO jest start hahahahaaaaaa
 
-    - Mysle ze to dobrze, nie?'
-  - CLEAR- Latwo nie bedzie podrozniku...
-  - Ale co tam, dasz rade JAKOS
+    aaaaaaaaaaaaaaaaaaaaaa
+
+    aaaaaaaaaaaaaaaaaaa
+
+    <CLICK- Mysle ze to dobrze, nie?
+
+    eeeeeeeeeeeee
+
+    eeeeeeeeeee'
+  - '<CLEAR- Latwo nie bedzie podrozniku.................eeee
+
+    eeeeeeeeeeeeeeeeeeee
+
+    eeeeeeeeeeeeeeeeeeeeeeeee
+
+    eeeeeeeeeeeeeeeeeeee'
+  - 'Ale co tam, dasz rade JAKOSssssssss
+
+    sssssssssssssssssssssssssss
+
+    sssssssssssssssssssssss
+
+    ssssssssssssssssssssssssssss'
   endingCutscene:
-  - To juz jest koniec.
-  - Nie ma juz nic xd
+  - To juz jest koniec. buuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu<CLICK
+  - 'Nie ma juz nic xddddddddddddddddddddddddddddd
+
+    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd'
 --- !u!114 &11419756
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -247,25 +269,47 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: startingCutscene.Array.data[1]
-      value: CLEAR- Latwo nie bedzie podrozniku...
+      value: '<CLEAR- Latwo nie bedzie podrozniku.................eeee
+
+        eeeeeeeeeeeeeeeeeeee
+
+        eeeeeeeeeeeeeeeeeeeeeeeee
+
+        eeeeeeeeeeeeeeeeeeee'
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: startingCutscene.Array.data[0]
-      value: '- TO jest start hahahaha
+      value: '- TO jest start hahahahaaaaaa
 
-        - Mysle ze to dobrze, nie?'
+        aaaaaaaaaaaaaaaaaaaaaa
+
+        aaaaaaaaaaaaaaaaaaa
+
+        <CLICK- Mysle ze to dobrze, nie?
+
+        eeeeeeeeeeeee
+
+        eeeeeeeeeee'
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: endingCutscene.Array.data[0]
-      value: To juz jest koniec.
+      value: To juz jest koniec. buuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu<CLICK
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: endingCutscene.Array.data[1]
-      value: Nie ma juz nic xd
+      value: 'Nie ma juz nic xddddddddddddddddddddddddddddd
+
+        dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd'
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: startingCutscene.Array.data[2]
-      value: Ale co tam, dasz rade JAKOS
+      value: 'Ale co tam, dasz rade JAKOSssssssss
+
+        sssssssssssssssssssssssssss
+
+        sssssssssssssssssssssss
+
+        ssssssssssssssssssssssssssss'
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: startingImage

@@ -78,9 +78,11 @@ public class Board : MonoBehaviour
             type = Connector.dungeon.type;
             endText = Connector.dungeon.endText;
             generateBoard();
-            
-            cutscene.strs = Connector.dungeon.startingCutscene;
-            StartCoroutine(cutscene.doIt());
+
+            cutscene.image.sprite = Connector.dungeon.startingImage;
+            if(Connector.dungeon.startingCutscene != null)
+                cutscene.strs = Connector.dungeon.startingCutscene;
+            cutscene.make();
         }
         else if (Connector.wasGeneratedBattleToExplore)
         {
@@ -255,8 +257,10 @@ public class Board : MonoBehaviour
     {
         if(endText != "")
             OkPanel.instance().make(InspectorStringAssistant.instance.make(endText), new UnityAction(okEnd));
+        if (Connector.dungeon.endingImage != null)
+            cutscene.image.sprite = Connector.dungeon.endingImage;
         cutscene.strs = new List<string>(Connector.dungeon.endingCutscene);
-        StartCoroutine(cutscene.doIt());
+        cutscene.make();
     }
 
     private void okEnd()

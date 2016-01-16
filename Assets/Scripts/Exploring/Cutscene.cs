@@ -10,6 +10,8 @@ public class Cutscene : MonoBehaviour, IPointerClickHandler
     public float speed = 0.2f;
     private float speedx;
 
+    public Image image;
+
     //[SerializeField]
     //[TextArea(8, 8)]
     public List<string> strs;
@@ -33,19 +35,25 @@ public class Cutscene : MonoBehaviour, IPointerClickHandler
 		skipButton.onClick.AddListener (ua);
     }
 
-	public IEnumerator doIt()
-	{
-        if(strs.Count == 0)
+    public void make()
+    {
+        if (strs.Count == 0)
         {
             this.gameObject.SetActive(false);
-            yield break;
+            return;
         }
         this.gameObject.SetActive(true);
+        StartCoroutine("doIt");
+    }
+
+	public IEnumerator doIt()
+	{
         speedx = speed;
 		yield return new WaitForSeconds (0.1f);
 		string str = "";
         for (int j = 0; j < strs.Count; j++) 
 		{
+            speedx = speed;
             int i = 0;
             if(strs[j].StartsWith("CLEAR"))
             {

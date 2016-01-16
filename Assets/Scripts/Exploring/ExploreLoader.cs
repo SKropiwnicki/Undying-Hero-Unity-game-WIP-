@@ -8,7 +8,7 @@ public class ExploreLoader : MonoBehaviour
     
     private string startText;
     private OkPanel okPanel;
-    private UnityAction okAction; 
+    private UnityAction okAction;
 
     void Awake()
     {
@@ -35,7 +35,8 @@ public class ExploreLoader : MonoBehaviour
 
         if (Connector.wasGeneratedMapToExplore)
         {
-            okPanel.make(InspectorStringAssistant.instance.make(startText), okAction);
+            if(startText != "")
+                okPanel.make(InspectorStringAssistant.instance.make(startText), okAction);
         }
 
         yield return new WaitForEndOfFrame();

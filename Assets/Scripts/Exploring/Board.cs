@@ -45,6 +45,9 @@ public class Board : MonoBehaviour
     public int healMin;
     public int HealMax;
 
+    public GameObject cutsceneObject;
+    private Cutscene cutscene;
+
     #endregion
 
     public struct Point
@@ -65,14 +68,19 @@ public class Board : MonoBehaviour
             instance = this;
         else
             Destroy(gameObject);
-        
-        if(Connector.wasGeneratedMapToExplore)
+
+        cutscene = cutsceneObject.GetComponent<Cutscene>();
+
+        if (Connector.wasGeneratedMapToExplore)
         {
             width = Connector.dungeon.width;
             height = Connector.dungeon.height;
             type = Connector.dungeon.type;
             endText = Connector.dungeon.endText;
             generateBoard();
+            
+            cutscene.strs = Connector.dungeon.startingCutscene;
+            StartCoroutine(cutscene.doIt());
         }
         else if (Connector.wasGeneratedBattleToExplore)
         {
@@ -245,7 +253,10 @@ public class Board : MonoBehaviour
     #region onEnd
     private void onEnd()
     {
-        OkPanel.instance().make(InspectorStringAssistant.instance.make(endText), new UnityAction(okEnd));
+        if(endText != "")
+            OkPanel.instance().make(InspectorStringAssistant.instance.make(endText), new UnityAction(okEnd));
+        cutscene.strs = new List<string>(Connector.dungeon.endingCutscene);
+        StartCoroutine(cutscene.doIt());
     }
 
     private void okEnd()

@@ -39,37 +39,7 @@ public class Actor : MonoBehaviour
     [HideInInspector]
     public int tempCritChance; //buffable
 
-    public class Buff
-    {
-        public int value;
-        //public string statName;
-        private int duration;
-        public string statName;
-
-        public Buff(int value, int duration, ref int stat, string statName )
-        {
-            this.value = value;
-            this.duration = duration;
-            this.statName = statName;
-            stat += value;
-        
-        }
-
-        public bool decreaseDurationAndCheck()
-        {
-            duration--;
-            if (duration <= 0) return true;
-            else return false;
-        }
-
-        public void buffOff (ref int stat)
-        {
-            stat -= value;
-        }
-
-
-
-    }
+   
 
     [HideInInspector]
     private List<Buff> buffs;
@@ -411,6 +381,39 @@ public class Actor : MonoBehaviour
     }
 
     #region buff_System
+
+    public class Buff
+    {
+        public int value;
+        //public string statName;
+        private int duration;
+        public string statName;
+
+        public Buff(int value, int duration, ref int stat, string statName)
+        {
+            this.value = value;
+            this.duration = duration;
+            this.statName = statName;
+            stat += value;
+
+        }
+
+        public bool decreaseDurationAndCheck()
+        {
+            duration--;
+            if (duration <= 0) return true;
+            else return false;
+        }
+
+        public void buffOff(ref int stat)
+        {
+            stat -= value;
+        }
+
+
+
+    }
+
 
     public void addBuff(int value, int duration, ref int stat, string statName)
     {

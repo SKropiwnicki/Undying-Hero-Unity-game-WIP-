@@ -9,6 +9,7 @@ public class AutoAttack : Skill
         name = "AutoAttack";
         APCost = 0;
         type = "DamageTarget";
+        displayName = "Normal Attack";
     }
     public  override void action(Actor source, Actor target)
     {

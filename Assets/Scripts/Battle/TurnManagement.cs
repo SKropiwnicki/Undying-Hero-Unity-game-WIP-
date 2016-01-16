@@ -81,9 +81,12 @@ public class TurnManagement : MonoBehaviour
 
     public void onTurnAction()
     {
-        
+        currentActor.checkBuffs();
         currentActor.calculateStats();
         currentActor.currentAP += currentActor.perTurnAp;
+        string apText = "+" + currentActor.perTurnAp + " AP";
+        TextSpawner.instance.spawn(currentActor.transform, apText, Color.yellow, 40);
+
         currentActor.controlMaxAP();
         ButtonManager.instance.spawnButtons(currentActor);
 
@@ -91,7 +94,7 @@ public class TurnManagement : MonoBehaviour
 
         if (currentActor.isControllable)
         {
-            
+            //YourTurn
         }
         else
         {

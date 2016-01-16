@@ -54,7 +54,7 @@ public class BattleLoader : MonoBehaviour
             {
                 if (!hasRareOrc)
                 {
-                    Debug.Log("JEDEN RARE ORC TO DOSYC");
+                    //Debug.Log("JEDEN RARE ORC TO DOSYC");
                     hasRareOrc = true;
                 }
                 else while (enemy.name == "OrcRare")

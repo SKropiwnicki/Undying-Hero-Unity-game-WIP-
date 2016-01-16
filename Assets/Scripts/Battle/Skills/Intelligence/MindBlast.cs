@@ -13,12 +13,13 @@ public class MindBlast : Skill
         name = "MindBlast";
         type = "DamageTarget";
         APCost = 6;
+        displayName = "Mind Blast";
     }
     public override void action(Actor source, Actor target)
     {
 
-        int baseDmg = Mathf.FloorToInt((source.intelligence - target.intelligence)*2);
-            //  Debug.Log("Base dmg w fireballu:" + baseDmg + " Int ziomka: " + source.intelligence);
+        int baseDmg = Mathf.FloorToInt((source.intelligence - target.intelligence)*3);
+            //  //Debug.Log("Base dmg w fireballu:" + baseDmg + " Int ziomka: " + source.intelligence);
         if (baseDmg <= 0) baseDmg = 1;
         if (baseDmg >= target.maxHealth * healthPercent && baseDmg > minDmg)
         {
@@ -37,13 +38,13 @@ public class MindBlast : Skill
 
         if (isCritical) dmg = Mathf.FloorToInt(dmg * criticalDamageMultiply);
 
-        // Debug.Log(source.name + " zadaje fireballem" + dmg + " dla " + target.name + " CRIT: " + isCritical);
+        // //Debug.Log(source.name + " zadaje fireballem" + dmg + " dla " + target.name + " CRIT: " + isCritical);
 
         target.TakeDamage(dmg, isCritical);
 
 
         source.APchange(-APCost);
 
-        //Debug.Log("Nowe AP:" + source.currentAP);
+        ////Debug.Log("Nowe AP:" + source.currentAP);
     }
 }

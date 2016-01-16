@@ -11,6 +11,7 @@ public class BloodBoil : Skill {
         name = "BloodBoil";
         APCost = 4;
         type = "BuffTarget";
+        displayName = "Blood Boil";
     }
     public override void action(Actor source, Actor target)
     {
@@ -23,8 +24,10 @@ public class BloodBoil : Skill {
 
 
         //Tu byńdzie buff
-        target.strength += Mathf.FloorToInt(target.strength * buffMultiply);
-        target.def = 0;
+        int buffValue = Mathf.FloorToInt(target.strength * buffMultiply) - target.strength;
+        target.addBuff(buffValue, 3, ref target.strength, "strength");
+        int defDebuff = 0 - target.def;
+        target.addBuff(defDebuff, 3, ref target.def, "def");
 
         source.APchange(-APCost);
 

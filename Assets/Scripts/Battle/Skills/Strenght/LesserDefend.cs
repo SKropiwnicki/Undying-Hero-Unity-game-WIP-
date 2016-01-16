@@ -8,11 +8,12 @@ public class LesserDefend :Skill {
         name = "LesserDefend";
         type = "DefensiveNoTarget";
         APCost = -3;
+        displayName = "Lesser Defend";
     }
     public override void action(Actor source)
     {
         source.changeShield(6 + Mathf.FloorToInt(source.strength / 5));
         source.APchange(-APCost);
-        //Debug.Log("Nowe AP:" + source.currentAP);
+        ////Debug.Log("Nowe AP:" + source.currentAP);
     }
 }

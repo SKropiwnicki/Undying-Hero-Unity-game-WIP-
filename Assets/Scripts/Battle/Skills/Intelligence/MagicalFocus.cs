@@ -9,6 +9,7 @@ public class MagicalFocus : Skill
         name = "MagicalFocus";
         type = "DefensiveNoTarget";
         APCost = 3;
+        displayName = "Magical Focus";
     }
     public override void action(Actor source)
     {
@@ -23,7 +24,7 @@ public class MagicalFocus : Skill
 
         source.APchange(-APCost);
         //Tymczasowo tak buffuje
-        source.intelligence += buffInt;
+        source.addBuff(buffInt, 3, ref source.intelligence, "intelligence");
 
         int apChange = newAP - source.currentAP;
 

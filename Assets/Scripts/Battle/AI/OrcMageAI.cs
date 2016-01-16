@@ -54,7 +54,7 @@ public class OrcMageAI : MonoBehaviour, IAI
            if(APUp != null)
                 if (APUp.hasEnoughAP(Me.currentAP))
                 {
-                    Debug.Log("Używam " + APUp.name);
+                    //Debug.Log("Używam " + APUp.name);
                     isActionDone = true;
                     APUp.useSkill(Me);
                 }
@@ -72,7 +72,7 @@ public class OrcMageAI : MonoBehaviour, IAI
                         {
                             if (heal.hasEnoughAP(Me.currentAP) && !isActionDone)
                             {
-                                Debug.Log("Używam heala");
+                                //Debug.Log("Używam heala");
                                 isActionDone = true;
                                 heal.useSkill(Me, target);
                                 break;
@@ -86,7 +86,7 @@ public class OrcMageAI : MonoBehaviour, IAI
                         {
                             if (buff.hasEnoughAP(Me.currentAP) && !isActionDone)
                             {
-                                Debug.Log("Używam Buffa");
+                                //Debug.Log("Używam Buffa");
                                 isActionDone = true;
                                 buff.useSkill(Me, target);
                                 break;
@@ -109,7 +109,7 @@ public class OrcMageAI : MonoBehaviour, IAI
                         {
                             if (heal.hasEnoughAP(Me.currentAP) && !isActionDone)
                             {
-                                Debug.Log("Używam heala");
+                                //Debug.Log("Używam heala");
                                 isActionDone = true;
                                 heal.useSkill(Me, target);
                                 break;
@@ -124,7 +124,7 @@ public class OrcMageAI : MonoBehaviour, IAI
                     {
                         if (bestAttack.hasEnoughAP(Me.currentAP) && !isActionDone)
                         {
-                            Debug.Log("Używam Fireballa");
+                            //Debug.Log("Używam Fireballa");
                             isActionDone = true;
                             bestAttack.useSkill(Me, target);
                             break;
@@ -132,7 +132,7 @@ public class OrcMageAI : MonoBehaviour, IAI
                     } 
                     if (autoattack != null && !isActionDone)
                     {
-                        Debug.Log("Autoatakuje");
+                        //Debug.Log("Autoatakuje");
                         isActionDone = true;
                         autoattack.useSkill(Me, target);
                         break;

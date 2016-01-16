@@ -62,9 +62,9 @@ public class Hero : MonoBehaviour
 
     private void onLose()
     {
-        Debug.Log("hp1: " + Connector.hero1.health);
-        Debug.Log("hp2: " + Connector.hero2.health);
-        Debug.Log("Przegrales... ups");
+        //Debug.Log("hp1: " + Connector.hero1.health);
+        //Debug.Log("hp2: " + Connector.hero2.health);
+        //Debug.Log("Przegrales... ups");
     }
 
     void Start()

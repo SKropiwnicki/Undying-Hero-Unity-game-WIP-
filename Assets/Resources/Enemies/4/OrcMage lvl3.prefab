@@ -383,12 +383,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayName: Orc Mage
-  level: 2
-  experience: 30
-  strength: 5
-  dexterity: 14
-  intelligence: 14
-  maxHealth: 22
+  level: 4
+  experience: 60
+  strength: 6
+  dexterity: 15
+  intelligence: 18
+  maxHealth: 32
   def: 1
   reductionInPercent: 0
   health: 0
@@ -808,15 +808,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: strength
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: dexterity
-      value: 14
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: experience
-      value: 30
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: displayName
@@ -824,15 +824,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: level
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: maxHealth
-      value: 22
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: intelligence
-      value: 14
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: def

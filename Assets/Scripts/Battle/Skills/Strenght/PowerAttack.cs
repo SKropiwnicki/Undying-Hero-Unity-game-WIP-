@@ -3,6 +3,8 @@ using System.Collections;
 
 public class PowerAttack : Skill
 {
+    private float attackPowerMultiply = 1.75f;
+
     public PowerAttack()
     {
         name = "PowerAttack";
@@ -12,8 +14,7 @@ public class PowerAttack : Skill
     }
     public override void action(Actor source, Actor target)
     {
-       
-        target.TakeDamage(source.attackPower*2, false);
+        target.TakeDamage(Mathf.FloorToInt(source.attackPower * attackPowerMultiply), false);
         source.APchange(-APCost);
         source.onAttackEfx(); //dodane by Vuko
         //Debug.Log("Nowe AP:" + source.currentAP);

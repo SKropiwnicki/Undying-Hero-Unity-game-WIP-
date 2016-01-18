@@ -2,9 +2,11 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class Whirlwind : Skill {
-
+public class Whirlwind : Skill
+{
     public float dmgRange = 0.15f;
+
+
     public Whirlwind()
     {
         name = "Whirlwind";

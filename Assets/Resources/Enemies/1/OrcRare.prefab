@@ -86,32 +86,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayName: Orc Rare
-  maxHealth: 30
+  level: 1
+  experience: 15
+  strength: 14
+  dexterity: 4
+  intelligence: 8
+  maxHealth: 32
+  def: 1
+  reductionInPercent: 0
   health: 0
   shield: 5
   initiative: 3
-  experience: 20
+  tempInitiative: 0
   attackPower: 3
+  tempAttackPower: 0
+  spellPower: 0
+  tempSpellPower: 0
+  healPower: 0
+  tempHealPower: 0
   critChance: 0
-  def: 2
-  strength: 15
-  dexterity: 5
-  intelligence: 5
+  tempCritChance: 0
   startingAP: 0
   currentAP: 0
   maxAP: 0
   perTurnAp: 0
+  tempPerTurnAp: 0
   isControllable: 0
   shouldCalculateStats: 1
   skillsNames:
   - PowerAttack
   - LesserDefend
-  skillPrefab: {fileID: 0}
   portraitPrefab: {fileID: 176246, guid: bcdf09bad632c4d4296a382a334290c3, type: 2}
-  healthBar: {fileID: 0}
-  shieldBar: {fileID: 0}
   displayNameText: {fileID: 0}
-  level: 2
   dmgAnimSpeed: 0.9
   spriteRenderer: {fileID: 0}
   animator: {fileID: 0}
@@ -180,23 +186,23 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: maxHealth
-      value: 30
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: strength
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: dexterity
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: intelligence
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: experience
-      value: 20
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: atackSound
@@ -228,7 +234,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: def
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: displayName
@@ -236,7 +242,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: level
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

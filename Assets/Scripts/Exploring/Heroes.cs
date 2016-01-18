@@ -44,9 +44,17 @@ public class Heroes : MonoBehaviour
 
     void Start()
     {
-        while(experience >= level * (40 + (level * 10)))
+        while(experience >= 100 + (level - 1) * (level * 100))
         {
             level++;
+
+            Connector.hero1.def++;
+            Connector.hero2.def++;
+            Connector.hero1.maxHealth += 5;
+            Connector.hero2.maxHealth += 5;
+            Connector.hero1.health += 5;
+            Connector.hero2.health += 5;
+
             Connector.hs.level = level;
             Connector.hero1.levelUpPointsLeft += Connector.hs.onLevelUpPoints;
             Connector.hero2.levelUpPointsLeft += Connector.hs.onLevelUpPoints;

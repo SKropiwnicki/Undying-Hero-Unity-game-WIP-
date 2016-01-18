@@ -7,6 +7,7 @@ public class MindBlast : Skill
     private float criticalDamageMultiply = 2.0f;
     private int minDmg = 30;
     private float healthPercent = 0.6f;
+    private int intelligenceDiffMultiply = 4;
     //private float intelligenceMultiply = 1.1f;
     public MindBlast()
     {
@@ -18,7 +19,7 @@ public class MindBlast : Skill
     public override void action(Actor source, Actor target)
     {
 
-        int baseDmg = Mathf.FloorToInt((source.intelligence - target.intelligence)*3);
+        int baseDmg = Mathf.FloorToInt((source.intelligence - target.intelligence)*intelligenceDiffMultiply);
             //  //Debug.Log("Base dmg w fireballu:" + baseDmg + " Int ziomka: " + source.intelligence);
         if (baseDmg <= 0) baseDmg = 1;
         if (baseDmg >= target.maxHealth * healthPercent && baseDmg > minDmg)

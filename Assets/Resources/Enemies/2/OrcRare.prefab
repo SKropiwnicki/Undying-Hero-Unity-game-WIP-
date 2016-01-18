@@ -86,24 +86,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayName: Orc Rare
-  level: 3
-  experience: 35
+  level: 2
+  experience: 30
   strength: 15
-  dexterity: 7
-  intelligence: 7
-  maxHealth: 35
-  def: 3
+  dexterity: 5
+  intelligence: 8
+  maxHealth: 39
+  def: 2
+  reductionInPercent: 0
   health: 0
   shield: 5
   initiative: 3
+  tempInitiative: 0
   attackPower: 3
+  tempAttackPower: 0
   spellPower: 0
+  tempSpellPower: 0
   healPower: 0
+  tempHealPower: 0
   critChance: 0
+  tempCritChance: 0
   startingAP: 0
   currentAP: 0
   maxAP: 0
   perTurnAp: 0
+  tempPerTurnAp: 0
   isControllable: 0
   shouldCalculateStats: 1
   skillsNames:
@@ -179,7 +186,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: maxHealth
-      value: 35
+      value: 39
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: strength
@@ -187,15 +194,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: dexterity
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: intelligence
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: experience
-      value: 35
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: atackSound
@@ -227,7 +234,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: def
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: displayName
@@ -235,7 +242,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: level
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

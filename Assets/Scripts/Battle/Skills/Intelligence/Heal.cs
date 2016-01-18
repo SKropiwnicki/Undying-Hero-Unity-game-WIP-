@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Heal : Skill {
+public class Heal : Skill
+{
     private float healRange = 0.15f;
-    private float intelligenceMultiply = 1.0f;
+    private float intelligenceMultiply = 0.95f;
     private float criticalMultiply = 1.8f;
     public Heal()
     {

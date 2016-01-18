@@ -86,12 +86,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayName: Orc Common
-  level: 2
-  experience: 20
-  strength: 8
-  dexterity: 10
-  intelligence: 2
-  maxHealth: 25
+  level: 4
+  experience: 40
+  strength: 12
+  dexterity: 12
+  intelligence: 4
+  maxHealth: 35
   def: 0
   reductionInPercent: 0
   health: 0
@@ -173,19 +173,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: strength
-      value: 8
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: dexterity
-      value: 10
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: intelligence
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: experience
-      value: 20
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: atackSound
@@ -205,11 +205,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: level
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: maxHealth
-      value: 25
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: def

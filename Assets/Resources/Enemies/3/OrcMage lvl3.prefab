@@ -31,7 +31,7 @@ GameObject:
   - 61: {fileID: 6132498}
   - 114: {fileID: 11451022}
   m_Layer: 0
-  m_Name: OrcMage
+  m_Name: OrcMage lvl3
   m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -383,13 +383,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayName: Orc Mage
-  level: 1
-  experience: 15
-  strength: 4
-  dexterity: 14
-  intelligence: 12
-  maxHealth: 17
-  def: 2
+  level: 3
+  experience: 45
+  strength: 5
+  dexterity: 15
+  intelligence: 16
+  maxHealth: 27
+  def: 1
   reductionInPercent: 0
   health: 0
   shield: 0
@@ -808,15 +808,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: strength
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: dexterity
-      value: 14
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: experience
-      value: 15
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: displayName
@@ -824,19 +824,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: level
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: maxHealth
-      value: 17
+      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: intelligence
-      value: 12
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: def
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

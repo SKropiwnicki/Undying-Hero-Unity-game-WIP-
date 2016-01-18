@@ -14,8 +14,12 @@ public class LesserDefend : Skill
     }
     public override void action(Actor source)
     {
-        source.changeShield(baseShield + Mathf.FloorToInt(source.strength / 4));
+<<<<<<< HEAD
+        source.changeShield(6 + Mathf.FloorToInt(source.strength / 5));
         source.addBuff(33, 1, ref source.reductionInPercent, "reductionInPercent");
+=======
+        source.changeShield(baseShield + Mathf.FloorToInt(source.strength / 4));
+>>>>>>> 2cb61214434e437cc8d5546fc532293a2eb40d7d
         source.APchange(-APCost);
         ////Debug.Log("Nowe AP:" + source.currentAP);
     }

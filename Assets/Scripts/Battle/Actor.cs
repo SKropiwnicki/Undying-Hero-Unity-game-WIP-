@@ -127,7 +127,7 @@ public class Actor : MonoBehaviour
 
         maxHealth = hero.maxHealth;
         health = hero.health;
-        initiative = hero.initiative;
+        //initiative = hero.initiative;
         strength = hero.strength;
         dexterity = hero.dexterity;
         intelligence = hero.intelligence;

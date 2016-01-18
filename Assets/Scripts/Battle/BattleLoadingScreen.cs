@@ -19,6 +19,7 @@ public class BattleLoadingScreen : MonoBehaviour
 
     private IEnumerator newGame()
     {
+        yield return new WaitForSeconds(1);
         AsyncOperation async = SceneManager.LoadSceneAsync("FightPrototype");
 
         while (!async.isDone)

@@ -30,5 +30,6 @@ public class AllSkills : MonoBehaviour
         allSkillList.Add(new MagicalFocus());
         allSkillList.Add(new BloodBoil());
         allSkillList.Add(new MindBlast());
+        allSkillList.Add(new Backstab());
     }
 }

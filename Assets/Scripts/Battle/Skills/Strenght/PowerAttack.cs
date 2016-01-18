@@ -19,9 +19,4 @@ public class PowerAttack : Skill
         //Debug.Log("Nowe AP:" + source.currentAP);
     }
 
-    //to delete
-    public override void action(Actor source)
-    {
-        source.TakeDamage(-20, false);
-    }
 }

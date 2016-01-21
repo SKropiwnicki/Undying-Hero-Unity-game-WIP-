@@ -40,7 +40,7 @@ public class Connector : MonoBehaviour
     {
         BinaryFormatter bf = new BinaryFormatter();
         string path = Application.persistentDataPath + "/Player" + profileNumber;
-        //Debug.Log(path);
+        Debug.Log(path);
 
         if (!Directory.Exists(path))
             Directory.CreateDirectory(path);
@@ -72,7 +72,7 @@ public class Connector : MonoBehaviour
     private void load()
     {
         string profile = "/Player" + profileNumber;
-        //Debug.Log(Application.persistentDataPath + profile + "/hero1.dat");
+        Debug.Log(Application.persistentDataPath + profile + "/hero1.dat");
         if((File.Exists(Application.persistentDataPath + profile + "/hero1.dat")) && (File.Exists(Application.persistentDataPath + profile + "/hero2.dat")))
         {
             BinaryFormatter bf = new BinaryFormatter();

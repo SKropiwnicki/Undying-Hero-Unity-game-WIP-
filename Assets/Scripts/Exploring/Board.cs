@@ -255,15 +255,19 @@ public class Board : MonoBehaviour
     #region onEnd
     private void onEnd()
     {
-        if(endText != "")
-            OkPanel.instance().make(InspectorStringAssistant.instance.make(endText), new UnityAction(okEnd));
-        if (Connector.dungeon.endingImage != null)
-            cutscene.image.sprite = Connector.dungeon.endingImage;
-        cutscene.strs = new List<string>(Connector.dungeon.endingCutscene);
-        cutscene.make();
+         OkPanel.instance().make(InspectorStringAssistant.instance.make(endText), new UnityAction(okEnd));
     }
 
     private void okEnd()
+    {
+        if (Connector.dungeon.endingImage != null)
+            cutscene.image.sprite = Connector.dungeon.endingImage;
+        cutscene.strs = new List<string>(Connector.dungeon.endingCutscene);
+        cutscene.afterFunc = new UnityAction(goToMap);
+        cutscene.make();
+    }
+
+    private void goToMap()
     {
         Connector.instance.beforeMapFromExplore();
         SceneManager.LoadScene("Map");

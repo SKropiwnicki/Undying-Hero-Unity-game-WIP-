@@ -32,10 +32,18 @@ public class DungeonPanel : MonoBehaviour
             {
                 if(dungeons.Length <= i * cx + j)
                 {
+                    Debug.Log(Connector.hs.level + " " + Connector.hs.experience);
+
+                    if (Connector.hs.level == 1 && Connector.hs.experience == 0)
+                    {
+                        OnDungClick.onPointerClick();
+                    }
                     return;
                 }
                 GameObject go = Instantiate(dungeons[i * cx + j], new Vector3(-(perW)*(width/2+x/2) + (i* (width + x)), -y-(j * (height + y)), 0), Quaternion.identity) as GameObject;
                 go.transform.SetParent(parent.transform, false);
+                if(i == 0 && j == 0)
+                    OnDungClick.dungeon = go.GetComponent<DungeonStats>();
             }
         }
     }

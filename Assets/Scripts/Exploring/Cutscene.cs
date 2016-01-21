@@ -24,8 +24,11 @@ public class Cutscene : MonoBehaviour, IPointerClickHandler
 
 	public static bool clicked;
 
+    public UnityAction afterFunc;
+
     void Awake()
     {
+        afterFunc = null;
         dialogArea = objectWithText.GetComponentInChildren<Text>();
 
 		UnityAction ua = new UnityAction (showAll);
@@ -133,6 +136,12 @@ public class Cutscene : MonoBehaviour, IPointerClickHandler
     private void skip()
     {
         this.gameObject.SetActive(false);
+
+        if(afterFunc != null)
+        {
+            afterFunc.Invoke();
+            afterFunc = null;
+        }
     }
 
     public void OnPointerClick(PointerEventData eventData)

@@ -21,6 +21,7 @@ public abstract class Skill
         }
         useText(source);
         action(source);
+        ButtonManager.instance.DestroyOldButtons();
         source.calculateStats();
         TurnManagement.instance.nextTurnCor();
     }

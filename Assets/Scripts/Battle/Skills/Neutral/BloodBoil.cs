@@ -18,6 +18,7 @@ public class BloodBoil : Skill {
         int dmgDealt = Mathf.FloorToInt(target.health * healthPercent);
 
         target.TakeDamage(dmgDealt, false, true, true);
+      
 
         //tymczasowy kolorek
         target.spriteRenderer.color = new Color(1.0f, 0f, 0f, 1.0f);

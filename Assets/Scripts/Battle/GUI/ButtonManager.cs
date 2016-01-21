@@ -175,7 +175,7 @@ public class ButtonManager : MonoBehaviour
         }
     }
 
-    private void DestroyOldButtons()
+    public void DestroyOldButtons()
     {
         if (currentButtons.Count > 0)
         {

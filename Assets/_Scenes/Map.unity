@@ -203,6 +203,7 @@ MonoBehaviour:
   width: 500
   x: 50
   y: 50
+  music: {fileID: 8300000, guid: fd341c56680201d45a7d6ea4f8b27325, type: 3}
 --- !u!4 &471909066
 Transform:
   m_ObjectHideFlags: 0
@@ -556,7 +557,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.1
+  m_Volume: 0.15
   m_Pitch: 1
   Loop: 1
   Mute: 0

@@ -10,6 +10,8 @@ public class DungeonPanel : MonoBehaviour
     public int x = 50;
     public int y = 50;
 
+    public AudioClip music;
+
     void Start()
     {
         string path = "Dungeons";
@@ -32,11 +34,13 @@ public class DungeonPanel : MonoBehaviour
             {
                 if(dungeons.Length <= i * cx + j)
                 {
-                    Debug.Log(Connector.hs.level + " " + Connector.hs.experience);
-
                     if (Connector.hs.level == 1 && Connector.hs.experience == 0)
                     {
                         OnDungClick.onPointerClick();
+                    }
+                    else
+                    {
+                        SoundManager.instance.playMusic(music);
                     }
                     return;
                 }

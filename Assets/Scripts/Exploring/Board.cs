@@ -36,6 +36,8 @@ public class Board : MonoBehaviour
     public Sprite battleTile;
 
     public AudioClip onMoveSound;
+    public AudioClip click;
+    public AudioClip onEndSound;
 
     public string endText;
 
@@ -255,11 +257,13 @@ public class Board : MonoBehaviour
     #region onEnd
     private void onEnd()
     {
-         OkPanel.instance().make(InspectorStringAssistant.instance.make(endText), new UnityAction(okEnd));
+        SoundManager.instance.playSingle(onEndSound);
+        OkPanel.instance().make(InspectorStringAssistant.instance.make(endText), new UnityAction(okEnd));
     }
 
     private void okEnd()
     {
+        SoundManager.instance.playOnGui(click);
         if (Connector.dungeon.endingImage != null)
             cutscene.image.sprite = Connector.dungeon.endingImage;
         cutscene.strs = new List<string>(Connector.dungeon.endingCutscene);
@@ -288,6 +292,7 @@ public class Board : MonoBehaviour
 
     private void okHeal()
     {
+        SoundManager.instance.playOnGui(click);
     }
 
     #endregion
@@ -302,6 +307,7 @@ public class Board : MonoBehaviour
 
     private void okBattle()
     {
+        SoundManager.instance.playOnGui(click);
         Connector.instance.beforeBattleFromExplore();
         SceneManager.LoadScene("FightLoading");
     }

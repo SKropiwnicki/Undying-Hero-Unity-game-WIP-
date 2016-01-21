@@ -23,6 +23,7 @@ public class Cutscene : MonoBehaviour, IPointerClickHandler
     private Text dialogArea;
 
 	public static bool clicked;
+    public AudioClip nextPageSound;
 
     public UnityAction afterFunc;
 
@@ -98,13 +99,14 @@ public class Cutscene : MonoBehaviour, IPointerClickHandler
                     dialogArea.text = str;
                     yield return new WaitForSeconds(speedx);
                 }
-                else if(speedx < 0) // przy speedzie <0 wymuszam czekanie na przycisk
+                else if(speedx < 0) // przy speedzie < 0 wymuszam czekanie na przycisk
                 {
                     clicked = false;
                     while (!clicked)
                     {
                         yield return new WaitForSeconds(0.1f);
                     }
+                    SoundManager.instance.playOnGui(nextPageSound);
                     speedx = speed; //a potem jade normalnie
                 }
             }
@@ -124,6 +126,7 @@ public class Cutscene : MonoBehaviour, IPointerClickHandler
         }
         if (clicked) //the end
         {
+            SoundManager.instance.playOnGui(nextPageSound);
             skip();
         }
     }

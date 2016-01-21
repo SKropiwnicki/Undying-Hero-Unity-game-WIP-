@@ -22,6 +22,7 @@ public class ExploreLoader : MonoBehaviour
 
     void okFunction()
     {
+        SoundManager.instance.playOnGui(Board.instance.click);
     }
 
     void Start()

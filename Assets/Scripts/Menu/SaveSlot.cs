@@ -13,10 +13,14 @@ public class SaveSlot : MonoBehaviour
     public Text text;
 
     public int count;
+    
+    public static AudioClip click;
 
     void Start()
     {
         setText();
+
+        click = Menu.instance.click;
 
         UnityAction ua = new UnityAction(newGameFunc);
         newGameButton.onClick.AddListener(ua);
@@ -51,6 +55,7 @@ public class SaveSlot : MonoBehaviour
 
     public void delFunc()
     {
+        SoundManager.instance.playOnGui(click);
         FileUtil.DeleteFileOrDirectory(Application.persistentDataPath + "/Player" + count);
         playButton.gameObject.SetActive(false);
         delButton.gameObject.SetActive(false);
@@ -61,6 +66,7 @@ public class SaveSlot : MonoBehaviour
 
     public void playFunc()
     {
+        SoundManager.instance.playOnGui(click);
         PlayerPrefs.SetInt("profileNumber", count);
         SceneManager.LoadScene("START");
     }

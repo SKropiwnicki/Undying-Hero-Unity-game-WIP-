@@ -531,7 +531,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1206,6 +1206,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panel: {fileID: 950126264}
+  music: {fileID: 8300000, guid: bed86e018d00c39409b17b51d89592b3, type: 3}
+  click: {fileID: 8300000, guid: 24532ff08bfe5a64b9c3141226aa2f38, type: 3}
 --- !u!224 &1142281733 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 22491124, guid: 96c44049f0dfff848b1f904abaa203ee,

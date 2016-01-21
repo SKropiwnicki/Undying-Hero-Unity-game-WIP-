@@ -6,16 +6,27 @@ using System.Collections.Generic;
 
 public class Menu : MonoBehaviour
 {
+    public static Menu instance = null;
+
     public GameObject panel;
     public static List<SaveLabel> sl;
 
+    public AudioClip music;
+    public AudioClip click;
+
+    void Awake()
+    {
+        instance = this;
+    }
+
     void Start()
     {
-        //Debug.Log(Application.persistentDataPath);
+        SoundManager.instance.playMusic(music);
     }
 
     public void playFunc()
     {
+        SoundManager.instance.playOnGui(click);
         sl = new List<SaveLabel>();
         for(int i = 0; i < 3; i++)
         {
@@ -48,6 +59,7 @@ public class Menu : MonoBehaviour
 
     public void quitFunc()
     {
+        SoundManager.instance.playOnGui(click);
         Application.Quit();
     }
 }

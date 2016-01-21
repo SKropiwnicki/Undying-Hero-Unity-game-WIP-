@@ -29,7 +29,6 @@ public class Cutscene : MonoBehaviour, IPointerClickHandler
 
     void Awake()
     {
-        afterFunc = null;
         dialogArea = objectWithText.GetComponentInChildren<Text>();
 
 		UnityAction ua = new UnityAction (showAll);
@@ -48,6 +47,12 @@ public class Cutscene : MonoBehaviour, IPointerClickHandler
         }
         this.gameObject.SetActive(true);
         StartCoroutine("doIt");
+    }
+
+    public void make(UnityAction ua)
+    {
+        this.afterFunc = ua;
+        make();
     }
 
 	public IEnumerator doIt()
@@ -143,7 +148,6 @@ public class Cutscene : MonoBehaviour, IPointerClickHandler
         if(afterFunc != null)
         {
             afterFunc.Invoke();
-            afterFunc = null;
         }
     }
 

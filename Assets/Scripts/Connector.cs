@@ -21,6 +21,8 @@ public class Connector : MonoBehaviour
     public static Board.Tile[,] board;
     public static int boardPosX, boardPosY;
 
+    public static int profileNumber;
+
     void Awake()
     {
         instance = this;
@@ -29,6 +31,7 @@ public class Connector : MonoBehaviour
 
         if(!wasGeneratedExploreToMap)
         {
+            profileNumber = PlayerPrefs.GetInt("profileNumber");
             load();
         }
     }
@@ -36,7 +39,7 @@ public class Connector : MonoBehaviour
     private void save()
     {
         BinaryFormatter bf = new BinaryFormatter();
-        string path = Application.persistentDataPath + "/Player1";
+        string path = Application.persistentDataPath + "/Player" + profileNumber;
         Debug.Log(path);
 
         if (!Directory.Exists(path))
@@ -57,23 +60,31 @@ public class Connector : MonoBehaviour
         bf.Serialize(file, hs);
         file.Close();
 
-        Debug.Log("AUTOSAVE done");
+        SaveLabel label = new SaveLabel();
+        label.level = hs.level;
+        file = File.Create(path + "/label.dat");
+        bf.Serialize(file, label);
+        file.Close();
+
+        //Debug.Log("AUTOSAVE done");
     }
 
     private void load()
     {
-        if((File.Exists(Application.persistentDataPath + "/Player1/hero1.dat")) && (File.Exists(Application.persistentDataPath + "/Player1/hero2.dat")))
+        string profile = "/Player" + profileNumber;
+        Debug.Log(Application.persistentDataPath + profile + "/hero1.dat");
+        if((File.Exists(Application.persistentDataPath + profile + "/hero1.dat")) && (File.Exists(Application.persistentDataPath + profile + "/hero2.dat")))
         {
             BinaryFormatter bf = new BinaryFormatter();
-            FileStream file = File.Open(Application.persistentDataPath + "/Player1/hero1.dat", FileMode.Open);
+            FileStream file = File.Open(Application.persistentDataPath + profile + "/hero1.dat", FileMode.Open);
             HeroStats h1 = (HeroStats)bf.Deserialize(file);
             file.Close();
 
-            file = File.Open(Application.persistentDataPath + "/Player1/hero2.dat", FileMode.Open);
+            file = File.Open(Application.persistentDataPath + profile + "/hero2.dat", FileMode.Open);
             HeroStats h2 = (HeroStats)bf.Deserialize(file);
             file.Close();
 
-            file = File.Open(Application.persistentDataPath + "/Player1/heroes.dat", FileMode.Open);
+            file = File.Open(Application.persistentDataPath + profile + "/heroes.dat", FileMode.Open);
             HeroesStats h = (HeroesStats)bf.Deserialize(file);
             file.Close();
 
@@ -81,7 +92,7 @@ public class Connector : MonoBehaviour
             hero2 = h2;
             hs = h;
 
-            Debug.Log("LOAD done");
+            //Debug.Log("LOAD done");
         }
         else
         {
@@ -89,7 +100,7 @@ public class Connector : MonoBehaviour
             hero2 = new HeroStats();
             hs = new HeroesStats();
 
-            Debug.Log("Plikow ni ma, tworzenie nowych bohaterow...");
+            //Debug.Log("Plikow ni ma, tworzenie nowych bohaterow...");
         }
     }
 

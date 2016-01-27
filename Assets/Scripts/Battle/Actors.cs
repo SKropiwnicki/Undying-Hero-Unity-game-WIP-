@@ -36,7 +36,7 @@ public class Actors : MonoBehaviour
             }
             else
             {
-                Debug.Log(child.name + " :to nie jest aktor, czy na pewno umiesciles tu poprawny object?");
+                //Debug.Log(child.name + " :to nie jest aktor, czy na pewno umiesciles tu poprawny object?");
             }
         }
     }
@@ -45,7 +45,7 @@ public class Actors : MonoBehaviour
     {
         if(actors == null)
         {
-            Debug.Log("Inicjalizacja aktorow jeszcze nie nastapila! Kolejnosc wykonywania skryptow jest bardzo wazna!");
+            //Debug.Log("Inicjalizacja aktorow jeszcze nie nastapila! Kolejnosc wykonywania skryptow jest bardzo wazna!");
         }
         return actors;
     }

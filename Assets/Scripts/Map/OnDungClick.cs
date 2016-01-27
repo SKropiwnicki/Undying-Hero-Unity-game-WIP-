@@ -14,4 +14,10 @@ public class OnDungClick : MonoBehaviour, IPointerClickHandler
         Connector.instance.beforeExploreFromMap();
         SceneManager.LoadScene("Exploring");
     }
+
+    public static void onPointerClick()
+    {
+        Connector.instance.beforeExploreFromMap();
+        SceneManager.LoadScene("Exploring");
+    }
 }

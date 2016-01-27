@@ -6,7 +6,7 @@ public class MyEventListener : MonoBehaviour, IPointerClickHandler
     private float clickTime;            // time of click
     public bool onClick = true;            // is click allowed on button?
     public bool onDoubleClick = false;    // is double-click allowed on button?
-    public float clickCooldown = 0.2f;    // cooldown between single clicks.
+    public float clickCooldown = 0.4f;    // cooldown between single clicks.
 
     public void OnPointerClick(PointerEventData data)
     {

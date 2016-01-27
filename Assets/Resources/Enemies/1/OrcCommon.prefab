@@ -86,31 +86,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayName: Orc Common
-  maxHealth: 10
+  level: 1
+  experience: 10
+  strength: 6
+  dexterity: 10
+  intelligence: 2
+  maxHealth: 20
+  def: 0
+  reductionInPercent: 0
   health: 0
   shield: 0
   initiative: 1
-  experience: 10
+  tempInitiative: 0
   attackPower: 3
+  tempAttackPower: 0
+  spellPower: 0
+  tempSpellPower: 0
+  healPower: 0
+  tempHealPower: 0
   critChance: 0
-  def: 0
-  strength: 5
-  dexterity: 11
-  intelligence: 1
+  tempCritChance: 0
   startingAP: 0
   currentAP: 0
   maxAP: 0
   perTurnAp: 0
+  tempPerTurnAp: 0
   isControllable: 0
   shouldCalculateStats: 1
   skillsNames:
   - PowerAttack
-  skillPrefab: {fileID: 0}
   portraitPrefab: {fileID: 189602, guid: dc36bad4258f8364b9714cf67ddee2f7, type: 2}
-  healthBar: {fileID: 0}
-  shieldBar: {fileID: 0}
   displayNameText: {fileID: 0}
-  level: 1
   dmgAnimSpeed: 0.9
   spriteRenderer: {fileID: 0}
   animator: {fileID: 0}
@@ -167,15 +173,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: strength
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: dexterity
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: intelligence
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: experience
@@ -200,6 +206,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: level
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: maxHealth
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

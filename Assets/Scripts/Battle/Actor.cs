@@ -2,31 +2,57 @@
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
+using System;
+using System.Linq.Expressions;
 
 public class Actor : MonoBehaviour
 {
     #region Variables
     public string displayName;
-    public int maxHealth;
-    public int health; //aktualne hp
-    public int shield = 0;
-    public int initiative;
+    public int level = -1;
     public int experience;
-    public int attackPower;
-    public int critChance;
-
-    public int def;
-
     //CoreStats
-    public int strength;
-    public int dexterity;
-    public int intelligence;
+    public int strength; //buffable
+    public int dexterity; //buffable
+    public int intelligence; //buffable
+
+    public int maxHealth;
+    public int def; //buffable
+    public int reductionInPercent = 0; //buffable
+
+    public int health; //aktualne hp
+    public int shield = 0; 
+    public int initiative;
+    [HideInInspector]
+    public int tempInitiative; //buffable
     
+    public int attackPower;
+    [HideInInspector]
+    public int tempAttackPower; //buffable
+    public int spellPower;
+    [HideInInspector]
+    public int tempSpellPower; //buffable
+    public int healPower;
+    [HideInInspector]
+    public int tempHealPower; //buffable
+    public int critChance;
+    [HideInInspector]
+    public int tempCritChance; //buffable
+
+   
+
+    [HideInInspector]
+    private List<Buff> buffs;
+
+
+
     //AP
     public int startingAP;
     public int currentAP;
     public int maxAP;
-    public int perTurnAp;    
+    public int perTurnAp;
+    [HideInInspector]
+    public int tempPerTurnAp;    
 
     public bool isControllable;
     public bool shouldCalculateStats = true; //Niektorzy przeciwnicy sa tacy, ze nie chcemy wyliczac im statystyk wedlug zasad, gdyz oni omijaja zasady, np maja strasznie dużo maxAP i jeden epic skill
@@ -36,15 +62,13 @@ public class Actor : MonoBehaviour
     public string[] skillsNames;
     public List<Skill> skills;
 
-    public GameObject skillPrefab;
-
     public GameObject portraitPrefab;
 
     //Zmiana na potrzebe skilli
     private Slider healthBar;
     private Slider shieldBar;
     public Text displayNameText;
-    public int level = -1;
+    
 
     public float dmgAnimSpeed = 0.9f;
     [HideInInspector]
@@ -103,7 +127,7 @@ public class Actor : MonoBehaviour
 
         maxHealth = hero.maxHealth;
         health = hero.health;
-        initiative = hero.initiative;
+        //initiative = hero.initiative;
         strength = hero.strength;
         dexterity = hero.dexterity;
         intelligence = hero.intelligence;
@@ -227,7 +251,7 @@ public class Actor : MonoBehaviour
         }
 
 
-        TextSpawner.instance.spawn(this.transform, txt, Color.yellow, 40);
+        if (apChange != 0 ) TextSpawner.instance.spawn(this.transform, txt, Color.yellow, 40);
 
     }
 
@@ -249,6 +273,9 @@ public class Actor : MonoBehaviour
         if (!ignoreDef)
         { 
             actualDamage = (damageValue - def);
+            if (actualDamage <= 0) actualDamage = 1;
+            float reduction = (100 - reductionInPercent) / 100.0f;
+            actualDamage = Mathf.RoundToInt(reduction * actualDamage);
             if (actualDamage <= 0) actualDamage = 1;
         }
         if (shield > 0 && !ignoreShield)
@@ -325,17 +352,19 @@ public class Actor : MonoBehaviour
         if (shouldCalculateStats)  // Czy wyliczac staty (czasami nie chcemy)
         {
             //strength
-            attackPower = 1 + Mathf.FloorToInt(strength*3/4 + dexterity /3);
+            attackPower = 1 + Mathf.FloorToInt(strength*3/4 + dexterity /3) + tempAttackPower;
+            spellPower = 1 + Mathf.FloorToInt(intelligence * 3 / 4 + dexterity / 4) + tempSpellPower;
+            healPower = 1 + Mathf.FloorToInt(intelligence * 3 / 4 + strength / 4) + healPower;
             if (attackPower < 0) attackPower = 0;
-            maxAP = 7 + Mathf.FloorToInt(strength / 2);
+            maxAP = 7 + Mathf.FloorToInt(strength / 4);
             //dexterity
-            initiative = Mathf.FloorToInt(dexterity / 3);
+            initiative = Mathf.FloorToInt(dexterity / 3) + tempInitiative;
             startingAP = 1 + Mathf.FloorToInt(dexterity / 5);
-            critChance = 0 + Mathf.FloorToInt(dexterity / 4);
+            critChance = 0 + Mathf.FloorToInt(dexterity / 4) + tempCritChance;
             if (critChance > 50) critChance = 50;
 
             //intelligence
-            perTurnAp = 1 + (intelligence / 10);
+            perTurnAp = 1 + (intelligence / 10) + tempPerTurnAp;
 
             controlMaxAP();
         }
@@ -350,4 +379,79 @@ public class Actor : MonoBehaviour
     {
         if (ai != null) ai.specialAI();
     }
+
+    #region buff_System
+
+    public class Buff
+    {
+        public int value;
+        //public string statName;
+        private int duration;
+        public string statName;
+
+        public Buff(int value, int duration, ref int stat, string statName)
+        {
+            this.value = value;
+            this.duration = duration;
+            this.statName = statName;
+            stat += value;
+
+        }
+
+        public bool decreaseDurationAndCheck()
+        {
+            duration--;
+            if (duration <= 0) return true;
+            else return false;
+        }
+
+        public void buffOff(ref int stat)
+        {
+            stat -= value;
+        }
+
+
+
+    }
+
+
+    public void addBuff(int value, int duration, ref int stat, string statName)
+    {
+        if (buffs == null) { buffs = new List<Buff>(); }
+        buffs.Add(new Buff(value, duration, ref stat, statName));
+        Debug.Log("Dodano nowego buffa " + statName + " value: " + value + " duration: " + duration);
+    }
+
+    public void checkBuffs()
+    {
+        if (buffs == null) { buffs = new List<Buff>(); }
+        List<Buff> copyBuffs = new List<Buff>(buffs);
+        foreach (Buff buff in copyBuffs)
+        {
+            if (buff.decreaseDurationAndCheck())
+            {
+                string buffedStatName = buff.statName;
+                bool deleted = false;
+                switch (buffedStatName)
+                {
+                    case "strength": buff.buffOff(ref strength); deleted = true; break;
+                    case "intelligence": buff.buffOff(ref intelligence); deleted = true; break;
+                    case "dexterity": buff.buffOff(ref dexterity); deleted = true; break;
+                    case "def": buff.buffOff(ref def); deleted = true; break;
+                    case "reductionInPercent": buff.buffOff(ref reductionInPercent); deleted = true; break;
+                    case "tempInitiative": buff.buffOff(ref tempInitiative); deleted = true; break;
+                    case "tempAttackPower": buff.buffOff(ref tempAttackPower); deleted = true; break;
+                    case "tempSpellPower": buff.buffOff(ref tempSpellPower); deleted = true; break;
+                    case "tempHealPower": buff.buffOff(ref tempHealPower); deleted = true; break;
+                    case "tempCritChance": buff.buffOff(ref tempCritChance); deleted = true; break;
+                    case "tempPerTurnAp": buff.buffOff(ref tempPerTurnAp); deleted = true; break;
+                    default: break;
+                }
+                buffs.Remove(buff);
+                if (deleted) Debug.Log("Usunieto buffa " + buffedStatName);
+            }
+        }
+    }
+    #endregion
+
 }

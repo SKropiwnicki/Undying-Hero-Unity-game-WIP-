@@ -1,0 +1,26 @@
+﻿using UnityEngine;
+using System.Collections;
+
+public class LesserDefend : Skill
+{
+    private int baseShield = 4;
+
+    public LesserDefend()
+    {
+        name = "LesserDefend";
+        type = "DefensiveNoTarget";
+        APCost = -3;
+        displayName = "Lesser Defend";
+    }
+    public override void action(Actor source)
+    {
+<<<<<<< HEAD
+        source.changeShield(6 + Mathf.FloorToInt(source.strength / 5));
+        source.addBuff(33, 1, ref source.reductionInPercent, "reductionInPercent");
+=======
+        source.changeShield(baseShield + Mathf.FloorToInt(source.strength / 4));
+>>>>>>> 2cb61214434e437cc8d5546fc532293a2eb40d7d
+        source.APchange(-APCost);
+        ////Debug.Log("Nowe AP:" + source.currentAP);
+    }
+}

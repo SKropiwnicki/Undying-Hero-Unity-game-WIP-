@@ -1,15 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Heal : Skill {
+public class Heal : Skill
+{
     private float healRange = 0.15f;
-    private float intelligenceMultiply = 1.0f;
+    private float intelligenceMultiply = 0.95f;
     private float criticalMultiply = 1.8f;
     public Heal()
     {
         name = "Heal";
         APCost = 4;
         type = "HealTarget";
+        displayName = "Heal";
     }
     public override void action(Actor source, Actor target)
     {
@@ -23,7 +25,7 @@ public class Heal : Skill {
         if (isCritical) heal = Mathf.FloorToInt(heal * criticalMultiply);
 
 
-        Debug.Log(source.name + " Leczy " + heal + " dla " + target.name + " CRIT: " + isCritical);
+        //Debug.Log(source.name + " Leczy " + heal + " dla " + target.name + " CRIT: " + isCritical);
 
 
         if (source.animator)
@@ -36,6 +38,6 @@ public class Heal : Skill {
 
         //target.TakeDamage(dmg, isCritical);
         source.APchange(-APCost);
-        //Debug.Log("Nowe AP:" + source.currentAP);
+        ////Debug.Log("Nowe AP:" + source.currentAP);
     }
 }

@@ -11,20 +11,24 @@ public class BloodBoil : Skill {
         name = "BloodBoil";
         APCost = 4;
         type = "BuffTarget";
+        displayName = "Blood Boil";
     }
     public override void action(Actor source, Actor target)
     {
         int dmgDealt = Mathf.FloorToInt(target.health * healthPercent);
 
-        target.TakeDamage(dmgDealt, false);
+        target.TakeDamage(dmgDealt, false, true, true);
+      
 
         //tymczasowy kolorek
         target.spriteRenderer.color = new Color(1.0f, 0f, 0f, 1.0f);
 
 
         //Tu byńdzie buff
-        target.strength += Mathf.FloorToInt(target.strength * buffMultiply);
-        target.def = 0;
+        int buffValue = Mathf.FloorToInt(target.strength * buffMultiply) - target.strength;
+        target.addBuff(buffValue, 3, ref target.strength, "strength");
+        int defDebuff = 0 - target.def;
+        target.addBuff(defDebuff, 3, ref target.def, "def");
 
         source.APchange(-APCost);
 

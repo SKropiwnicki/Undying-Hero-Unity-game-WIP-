@@ -11,12 +11,13 @@ public class Fireball : Skill
         name = "Fireball";
         type = "DamageTarget";
         APCost = 4;
+        displayName = "Fireball";
     }
     public override void action(Actor source, Actor target)
     {
 
         int baseDmg = Mathf.FloorToInt(source.intelligence * intelligenceMultiply);
-      //  Debug.Log("Base dmg w fireballu:" + baseDmg + " Int ziomka: " + source.intelligence);
+      //  //Debug.Log("Base dmg w fireballu:" + baseDmg + " Int ziomka: " + source.intelligence);
 
         if (source.animator)
         {
@@ -30,13 +31,13 @@ public class Fireball : Skill
 
         if (isCritical) dmg = Mathf.FloorToInt(dmg * criticalDamageMultiply);
 
-       // Debug.Log(source.name + " zadaje fireballem" + dmg + " dla " + target.name + " CRIT: " + isCritical);
+       // //Debug.Log(source.name + " zadaje fireballem" + dmg + " dla " + target.name + " CRIT: " + isCritical);
 
         target.TakeDamage(dmg, isCritical);
 
 
         source.APchange(-APCost);
 
-        //Debug.Log("Nowe AP:" + source.currentAP);
+        ////Debug.Log("Nowe AP:" + source.currentAP);
     }
 }

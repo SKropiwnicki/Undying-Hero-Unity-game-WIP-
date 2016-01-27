@@ -92,21 +92,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayName: Hero1
-  maxHealth: 30
-  health: 0
-  shield: 0
-  initiative: 2
+  level: -1
   experience: 0
-  attackPower: 5
-  critChance: 0
-  def: 0
   strength: 0
   dexterity: 0
   intelligence: 0
+  maxHealth: 30
+  def: 0
+  reductionInPercent: 0
+  health: 0
+  shield: 0
+  initiative: 2
+  tempInitiative: 0
+  attackPower: 5
+  tempAttackPower: 0
+  spellPower: 0
+  tempSpellPower: 0
+  healPower: 0
+  tempHealPower: 0
+  critChance: 0
+  tempCritChance: 0
   startingAP: 5
   currentAP: 4
   maxAP: 10
   perTurnAp: 0
+  tempPerTurnAp: 0
   isControllable: 1
   shouldCalculateStats: 1
   skillsNames:
@@ -114,10 +124,9 @@ MonoBehaviour:
   - Whirlwind
   - Defend
   - Fireball
-  skillPrefab: {fileID: 0}
+  - Backstab
   portraitPrefab: {fileID: 100442, guid: fe83bf6781076aa409d31a3b35fb605e, type: 2}
-  healthBar: {fileID: 0}
-  shieldBar: {fileID: 0}
+  displayNameText: {fileID: 0}
   dmgAnimSpeed: 0.9
   spriteRenderer: {fileID: 0}
   animator: {fileID: 0}
@@ -162,7 +171,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: skillsNames.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: isControllable
@@ -231,6 +240,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: displayName
       value: Hero1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: skillsNames.Array.data[4]
+      value: Backstab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

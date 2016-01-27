@@ -171,6 +171,179 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!1001 &118351693
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1477713505}
+    m_Modifications:
+    - target: {fileID: 22415004, guid: db6899465a775b44ca931b53c93c4314, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22415004, guid: db6899465a775b44ca931b53c93c4314, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22415004, guid: db6899465a775b44ca931b53c93c4314, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22415004, guid: db6899465a775b44ca931b53c93c4314, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22415004, guid: db6899465a775b44ca931b53c93c4314, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22415004, guid: db6899465a775b44ca931b53c93c4314, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22415004, guid: db6899465a775b44ca931b53c93c4314, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 22415004, guid: db6899465a775b44ca931b53c93c4314, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 22415004, guid: db6899465a775b44ca931b53c93c4314, type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22415004, guid: db6899465a775b44ca931b53c93c4314, type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22415004, guid: db6899465a775b44ca931b53c93c4314, type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22415004, guid: db6899465a775b44ca931b53c93c4314, type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22415004, guid: db6899465a775b44ca931b53c93c4314, type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22415004, guid: db6899465a775b44ca931b53c93c4314, type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22415004, guid: db6899465a775b44ca931b53c93c4314, type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 22415004, guid: db6899465a775b44ca931b53c93c4314, type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 22415004, guid: db6899465a775b44ca931b53c93c4314, type: 2}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 22415004, guid: db6899465a775b44ca931b53c93c4314, type: 2}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11445846, guid: db6899465a775b44ca931b53c93c4314, type: 2}
+      propertyPath: image
+      value: 
+      objectReference: {fileID: 118351696}
+    - target: {fileID: 22472150, guid: db6899465a775b44ca931b53c93c4314, type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 22493124, guid: db6899465a775b44ca931b53c93c4314, type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 22472150, guid: db6899465a775b44ca931b53c93c4314, type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -395
+      objectReference: {fileID: 0}
+    - target: {fileID: 22493124, guid: db6899465a775b44ca931b53c93c4314, type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -395
+      objectReference: {fileID: 0}
+    - target: {fileID: 22472150, guid: db6899465a775b44ca931b53c93c4314, type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 170
+      objectReference: {fileID: 0}
+    - target: {fileID: 22493124, guid: db6899465a775b44ca931b53c93c4314, type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 170
+      objectReference: {fileID: 0}
+    - target: {fileID: 184660, guid: db6899465a775b44ca931b53c93c4314, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11499154, guid: db6899465a775b44ca931b53c93c4314, type: 2}
+      propertyPath: m_FontData.m_BestFit
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11499154, guid: db6899465a775b44ca931b53c93c4314, type: 2}
+      propertyPath: m_FontData.m_AlignByGeometry
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11499154, guid: db6899465a775b44ca931b53c93c4314, type: 2}
+      propertyPath: m_Text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11499154, guid: db6899465a775b44ca931b53c93c4314, type: 2}
+      propertyPath: m_FontData.m_RichText
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11499154, guid: db6899465a775b44ca931b53c93c4314, type: 2}
+      propertyPath: m_FontData.m_LineSpacing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11499154, guid: db6899465a775b44ca931b53c93c4314, type: 2}
+      propertyPath: m_FontData.m_Alignment
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11499154, guid: db6899465a775b44ca931b53c93c4314, type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 11445846, guid: db6899465a775b44ca931b53c93c4314, type: 2}
+      propertyPath: speed
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 11499154, guid: db6899465a775b44ca931b53c93c4314, type: 2}
+      propertyPath: m_FontData.m_HorizontalOverflow
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11499154, guid: db6899465a775b44ca931b53c93c4314, type: 2}
+      propertyPath: m_FontData.m_VerticalOverflow
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11445846, guid: db6899465a775b44ca931b53c93c4314, type: 2}
+      propertyPath: nextPageSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 90ef0b53c4ed87d4d9b2caaf437a6c91, type: 3}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: db6899465a775b44ca931b53c93c4314, type: 2}
+  m_IsPrefabParent: 0
+--- !u!224 &118351694 stripped
+RectTransform:
+  m_PrefabParentObject: {fileID: 22415004, guid: db6899465a775b44ca931b53c93c4314,
+    type: 2}
+  m_PrefabInternal: {fileID: 118351693}
+--- !u!1 &118351695 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 184660, guid: db6899465a775b44ca931b53c93c4314, type: 2}
+  m_PrefabInternal: {fileID: 118351693}
+--- !u!114 &118351696 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11416938, guid: db6899465a775b44ca931b53c93c4314,
+    type: 2}
+  m_PrefabInternal: {fileID: 118351693}
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1 &126040005
 GameObject:
   m_ObjectHideFlags: 0
@@ -842,11 +1015,14 @@ MonoBehaviour:
   blockTile: {fileID: 21300000, guid: 56ac27bf3a5d99c4b8c687b464a40257, type: 3}
   battleTile: {fileID: 21300000, guid: ad68ac673147431479efdf1cd62fee61, type: 3}
   onMoveSound: {fileID: 8300000, guid: 1a4d46977c1a524448bbaed4cb638ea9, type: 3}
+  click: {fileID: 8300000, guid: 24532ff08bfe5a64b9c3141226aa2f38, type: 3}
+  onEndSound: {fileID: 8300000, guid: 871e5d2a1bbebd54e99f270865ceedb8, type: 3}
   endText: This is the end, you won.
   battleText: You have met an enemy.\nPrepare yourself!
   healText: You found some medicine and you were healed.
   healMin: 10
   HealMax: 30
+  cutsceneObject: {fileID: 118351695}
 --- !u!4 &250698178
 Transform:
   m_ObjectHideFlags: 0
@@ -3427,6 +3603,7 @@ RectTransform:
   - {fileID: 126040006}
   - {fileID: 1993564094}
   - {fileID: 878199936}
+  - {fileID: 118351694}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_AnchorMin: {x: 0, y: 0}
@@ -3597,7 +3774,6 @@ MonoBehaviour:
   hero:
     maxHealth: 100
     health: 100
-    initiative: 2
     def: 3
     strength: 10
     dexterity: 10
@@ -5503,7 +5679,6 @@ MonoBehaviour:
   hero:
     maxHealth: 100
     health: 100
-    initiative: 2
     def: 3
     strength: 10
     dexterity: 10

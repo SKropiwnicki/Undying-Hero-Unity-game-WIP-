@@ -28,11 +28,11 @@ public class BattleLoader : MonoBehaviour
 
     private void spawnHeroes()
     {
-        Hero1Prefab = Instantiate(Hero1Prefab, new Vector3(3f, 1f, 0), Quaternion.identity) as GameObject;
+        Hero1Prefab = Instantiate(Hero1Prefab, new Vector3(3.25f, 1f, 0), Quaternion.identity) as GameObject;
         Hero1Prefab.name = "Hero1";
         Hero1Prefab.transform.SetParent(ActorsParent.transform, false);
         
-        Hero2Prefab = Instantiate(Hero2Prefab, new Vector3(6f, 0.25f, 0), Quaternion.identity) as GameObject;
+        Hero2Prefab = Instantiate(Hero2Prefab, new Vector3(6.25f, 0.25f, 0), Quaternion.identity) as GameObject;
         Hero2Prefab.name = "Hero2";
         Hero2Prefab.transform.SetParent(ActorsParent.transform, false);
     }
@@ -54,7 +54,7 @@ public class BattleLoader : MonoBehaviour
             {
                 if (!hasRareOrc)
                 {
-                    Debug.Log("JEDEN RARE ORC TO DOSYC");
+                    //Debug.Log("JEDEN RARE ORC TO DOSYC");
                     hasRareOrc = true;
                 }
                 else while (enemy.name == "OrcRare")
@@ -65,7 +65,7 @@ public class BattleLoader : MonoBehaviour
 
             }
             //UWAGA
-            enemy = Instantiate(enemy, new Vector3(((i + 1) * -2.25f + 1.2f), 0, 0), Quaternion.identity) as GameObject;
+            enemy = Instantiate(enemy, new Vector3(((i + 1) * -2f + 1.2f), 0, 0), Quaternion.identity) as GameObject;
             enemy.transform.SetParent(ActorsParent.transform, false);
         }
     }
@@ -76,45 +76,42 @@ public class BattleLoader : MonoBehaviour
         spawnHeroes();
 
 
-        yield return new WaitForEndOfFrame();
+        //yield return new WaitForEndOfFrame();
 
         ButtonManager.instance.init();
 
-        yield return new WaitForEndOfFrame();
+        //yield return new WaitForEndOfFrame();
 
         AllSkills.instance.init();
 
-        yield return new WaitForEndOfFrame();
+        //yield return new WaitForEndOfFrame();
 
         Actors.instance.init();
 
-        yield return new WaitForEndOfFrame();
+        //yield return new WaitForEndOfFrame();
 
         HealthBars.instance.spawnSliders();
 
-        yield return new WaitForEndOfFrame();
+        //yield return new WaitForEndOfFrame();
 
         DisplayNames.instance.spawnNames();
 
-        yield return new WaitForEndOfFrame();
+        //yield return new WaitForEndOfFrame();
 
         foreach (Actor actor in Actors.instance.get())
         {
             actor.skillLoader();
         }
 
-        yield return new WaitForEndOfFrame();
+        //yield return new WaitForEndOfFrame();
 
         StartCoroutine(TurnManagement.instance.initTurnManagement());
 
-        yield return new WaitForEndOfFrame();
+        //yield return new WaitForEndOfFrame();
 
         EndBattlePanel.instance.init();        
 
         //yield return new WaitForEndOfFrame();
-        //BattleToExplore.instance.init();
-
-        yield return new WaitForEndOfFrame();
 
         loaded = true;
 

@@ -2,18 +2,21 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class Whirlwind : Skill {
-
+public class Whirlwind : Skill
+{
     public float dmgRange = 0.15f;
+
+
     public Whirlwind()
     {
         name = "Whirlwind";
         APCost = 8;
         type = "DamageAoE";
+        displayName = "Whirlwind";
     }
     public override void action(Actor source)
     {
-        int baseDmg = Mathf.FloorToInt(source.attackPower / 4 + source.dexterity / 2);
+        int baseDmg = Mathf.FloorToInt(source.attackPower / 5f + source.dexterity / 1.3f);
 
 
         if (source.animator)
@@ -31,7 +34,7 @@ public class Whirlwind : Skill {
 
                 if (isCritical) dmg = Mathf.FloorToInt(dmg * 1.5f);
 
-                Debug.Log(source.name + " zadaje " + dmg + " dla " + target.name + " CRIT: " + isCritical);
+                //Debug.Log(source.name + " zadaje " + dmg + " dla " + target.name + " CRIT: " + isCritical);
 
                 target.TakeDamage(dmg, isCritical);
             }
@@ -39,6 +42,6 @@ public class Whirlwind : Skill {
 
         source.APchange(-APCost);
 
-        Debug.Log("Nowe AP:" + source.currentAP);
+        //Debug.Log("Nowe AP:" + source.currentAP);
     }
 }

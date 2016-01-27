@@ -38,7 +38,7 @@ public class DefendTillYouCanHitHard : MonoBehaviour, IAI
         }
 
 
-        //Debug.Log("AI " + Me.name + " Moj defend skill to " + defend.name + " a moj best attack to " + bestAttack.name);
+        ////Debug.Log("AI " + Me.name + " Moj defend skill to " + defend.name + " a moj best attack to " + bestAttack.name);
 
 
         if (Me.currentAP < highestAttackAP)

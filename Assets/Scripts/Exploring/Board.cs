@@ -36,6 +36,8 @@ public class Board : MonoBehaviour
     public Sprite battleTile;
 
     public AudioClip onMoveSound;
+    public AudioClip click;
+    public AudioClip onEndSound;
 
     public string endText;
 
@@ -44,6 +46,9 @@ public class Board : MonoBehaviour
     public string healText;
     public int healMin;
     public int HealMax;
+
+    public GameObject cutsceneObject;
+    private Cutscene cutscene;
 
     #endregion
 
@@ -65,14 +70,21 @@ public class Board : MonoBehaviour
             instance = this;
         else
             Destroy(gameObject);
-        
-        if(Connector.wasGeneratedMapToExplore)
+
+        cutscene = cutsceneObject.GetComponent<Cutscene>();
+
+        if (Connector.wasGeneratedMapToExplore)
         {
             width = Connector.dungeon.width;
             height = Connector.dungeon.height;
             type = Connector.dungeon.type;
             endText = Connector.dungeon.endText;
             generateBoard();
+
+            cutscene.image.sprite = Connector.dungeon.startingImage;
+            if(Connector.dungeon.startingCutscene != null)
+                cutscene.strs = Connector.dungeon.startingCutscene;
+            cutscene.make();
         }
         else if (Connector.wasGeneratedBattleToExplore)
         {
@@ -218,7 +230,7 @@ public class Board : MonoBehaviour
         {
             SoundManager.instance.playOnGui(onMoveSound);
             board[newX, newY].wasVisited = true;
-            Debug.Log("nowa pozycja: " + newX + ", " + newY + " : " + board[newX, newY].type);
+            //Debug.Log("nowa pozycja: " + newX + ", " + newY + " : " + board[newX, newY].type);
             currentPos.x = newX;
             currentPos.y = newY;
         }
@@ -245,10 +257,20 @@ public class Board : MonoBehaviour
     #region onEnd
     private void onEnd()
     {
+        SoundManager.instance.playSingle(onEndSound);
         OkPanel.instance().make(InspectorStringAssistant.instance.make(endText), new UnityAction(okEnd));
     }
 
     private void okEnd()
+    {
+        SoundManager.instance.playOnGui(click);
+        if (Connector.dungeon.endingImage != null)
+            cutscene.image.sprite = Connector.dungeon.endingImage;
+        cutscene.strs = new List<string>(Connector.dungeon.endingCutscene);
+        cutscene.make(new UnityAction(goToMap));
+    }
+
+    private void goToMap()
     {
         Connector.instance.beforeMapFromExplore();
         SceneManager.LoadScene("Map");
@@ -269,6 +291,7 @@ public class Board : MonoBehaviour
 
     private void okHeal()
     {
+        SoundManager.instance.playOnGui(click);
     }
 
     #endregion
@@ -283,8 +306,9 @@ public class Board : MonoBehaviour
 
     private void okBattle()
     {
+        SoundManager.instance.playOnGui(click);
         Connector.instance.beforeBattleFromExplore();
-        SceneManager.LoadScene("FightPrototype");
+        SceneManager.LoadScene("FightLoading");
     }
     #endregion
 
@@ -292,14 +316,14 @@ public class Board : MonoBehaviour
     {
         if(x < 0 || x >= width || y < 0 || y >= height)
         {
-            Debug.Log("za krawedz wyszedl zes ;x");
+            //Debug.Log("za krawedz wyszedl zes ;x");
             return false;
         }
 
         Tile tile = board[x, y];
         if(tile.type == Tile.Type.BLOCK)
         {
-            Debug.Log("no na blocka to nie wejdziesz ziom");
+            //Debug.Log("no na blocka to nie wejdziesz ziom");
             return false;
         }
         return true;
@@ -371,7 +395,7 @@ public class Board : MonoBehaviour
 
         //////////////// battle /////////////
 
-        int k = freeTiles.Count / 2;
+        /*int k = freeTiles.Count / 2;
         for (int i = 0; i <= k; i++)
         {
             int r = Random.Range(0, freeTiles.Count);
@@ -387,7 +411,7 @@ public class Board : MonoBehaviour
             int r = Random.Range(0, freeTiles.Count);
             board[freeTiles[r].y, freeTiles[r].x].type = Tile.Type.HEAL;
             freeTiles.Remove(freeTiles[r]);
-        }
+        }*/
 
         debugBoard();
     }
@@ -401,7 +425,7 @@ public class Board : MonoBehaviour
             {
                 str += board[j, i].type.ToString() + " ";
             }
-            Debug.Log(str);
+            //Debug.Log(str);
         }
     }
 }

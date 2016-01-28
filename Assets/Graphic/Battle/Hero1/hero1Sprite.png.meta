@@ -1,0 +1,280 @@
+fileFormatVersion: 2
+guid: 68bdad0db33f2244b92562f35e397feb
+timeCreated: 1454024958
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: hero1Sprite_0
+    21300002: hero1Sprite_1
+    21300004: hero1Sprite_2
+    21300006: hero1Sprite_3
+    21300008: hero1Sprite_4
+    21300010: hero1Sprite_5
+    21300012: hero1Sprite_6
+    21300014: hero1Sprite_7
+    21300016: hero1Sprite_8
+    21300018: hero1Sprite_9
+    21300020: hero1Sprite_10
+    21300022: hero1Sprite_11
+    21300024: hero1Sprite_12
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: hero1Sprite_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 94
+        width: 51
+        height: 95
+      alignment: 9
+      pivot: {x: 0.3288964, y: 0.9018678}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 17.226284, y: 9.322556}
+        - {x: -16.773716, y: 9.322556}
+        - {x: -16.773716, y: -85.677444}
+        - {x: 28.226284, y: -85.677444}
+        - {x: 34.226284, y: -81.677444}
+        - {x: 34.226284, y: -9.677444}
+        - {x: 32.226284, y: -4.6774445}
+    - name: hero1Sprite_1
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 103
+        width: 57
+        height: 88
+      alignment: 9
+      pivot: {x: 0.54465175, y: 0.5908989}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21.04515, y: 36.0009}
+        - {x: -31.04515, y: 8.0009}
+        - {x: -31.04515, y: -40.9991}
+        - {x: -21.04515, y: -51.9991}
+        - {x: 22.95485, y: -51.9991}
+        - {x: 25.95485, y: -41.9991}
+        - {x: 25.95485, y: 35.0009}
+        - {x: 24.95485, y: 36.0009}
+    - name: hero1Sprite_2
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 182
+        width: 25
+        height: 38
+      alignment: 9
+      pivot: {x: 0.48545533, y: 0.12683748}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: hero1Sprite_3
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 130
+        width: 26
+        height: 55
+      alignment: 9
+      pivot: {x: 0.402109, y: 0.8371515}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: hero1Sprite_4
+      rect:
+        serializedVersion: 2
+        x: 1124
+        y: 146
+        width: 21
+        height: 43
+      alignment: 9
+      pivot: {x: 0.7423968, y: 0.753671}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: hero1Sprite_5
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 28
+        width: 49
+        height: 98
+      alignment: 9
+      pivot: {x: 0.4035358, y: 0.8190727}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 19.226746, y: -60.269127}
+        - {x: 20.226746, y: -52.269127}
+        - {x: 29.226746, y: -44.269127}
+        - {x: 29.226746, y: -37.269127}
+        - {x: 26.226746, y: -31.269127}
+        - {x: 24.226746, y: -33.269127}
+        - {x: 22.226746, y: -34.269127}
+        - {x: 23.226746, y: -28.269127}
+        - {x: 23.226746, y: -29.269127}
+        - {x: 25.226746, y: -31.269127}
+        - {x: 29.226746, y: -32.269127}
+        - {x: 29.226746, y: -5.269127}
+        - {x: 23.226746, y: 12.730873}
+        - {x: 12.226746, y: 17.730873}
+        - {x: -12.773254, y: 17.730873}
+        - {x: -18.773254, y: 15.730873}
+        - {x: -19.773254, y: 13.730873}
+        - {x: -19.773254, y: -65.26913}
+        - {x: -11.773254, y: -80.26913}
+        - {x: 12.226746, y: -80.26913}
+        - {x: 15.226746, y: -77.26913}
+        - {x: 15.226746, y: -72.26913}
+        - {x: 15.226746, y: -79.26913}
+        - {x: 16.226746, y: -80.26913}
+        - {x: 20.226746, y: -80.26913}
+        - {x: 26.226746, y: -68.26913}
+        - {x: 24.226746, y: -56.269127}
+        - {x: 21.226746, y: -58.269127}
+      - - {x: -16.773254, y: -29.269127}
+        - {x: -13.773254, y: -28.269127}
+        - {x: -13.773254, y: -25.269127}
+        - {x: -16.773254, y: -24.269127}
+        - {x: -18.773254, y: -26.269127}
+    - name: hero1Sprite_6
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 45
+        width: 43
+        height: 81
+      alignment: 9
+      pivot: {x: 0.39853117, y: 0.77830696}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 24.86316, y: -23.042862}
+        - {x: 25.86316, y: -13.042862}
+        - {x: 25.86316, y: 0.95713806}
+        - {x: 8.863159, y: 15.957138}
+        - {x: 3.8631592, y: 17.957138}
+        - {x: -8.136841, y: 17.957138}
+        - {x: -17.13684, y: 3.957138}
+        - {x: -17.13684, y: -63.042862}
+        - {x: 18.86316, y: -63.042862}
+        - {x: 25.86316, y: -59.042862}
+        - {x: 25.86316, y: -33.042862}
+        - {x: 20.86316, y: -23.042862}
+        - {x: 21.86316, y: -24.042862}
+    - name: hero1Sprite_7
+      rect:
+        serializedVersion: 2
+        x: 895
+        y: 110
+        width: 37
+        height: 27
+      alignment: 9
+      pivot: {x: 0.5982683, y: 0.7154637}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: hero1Sprite_8
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 116
+        width: 22
+        height: 33
+      alignment: 9
+      pivot: {x: 0.41736394, y: 0.84155923}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: hero1Sprite_9
+      rect:
+        serializedVersion: 2
+        x: 1348
+        y: 61
+        width: 55
+        height: 60
+      alignment: 9
+      pivot: {x: 0.9032604, y: 0.8878343}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.679321, y: 6.7299423}
+        - {x: -49.67932, y: -45.270058}
+        - {x: -49.67932, y: -53.270058}
+        - {x: -46.67932, y: -53.270058}
+        - {x: 5.3206787, y: -10.270058}
+        - {x: 5.3206787, y: 6.7299423}
+    - name: hero1Sprite_10
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 17
+        width: 27
+        height: 33
+      alignment: 9
+      pivot: {x: 0.5942654, y: 0.77545106}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: hero1Sprite_11
+      rect:
+        serializedVersion: 2
+        x: 758
+        y: 44
+        width: 5
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: hero1Sprite_12
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 0
+        width: 24
+        height: 38
+      alignment: 9
+      pivot: {x: 0.42425027, y: 0.7966167}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

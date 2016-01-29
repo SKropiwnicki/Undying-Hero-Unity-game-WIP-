@@ -671,22 +671,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec7ce56101794704c87b8d29ab2449e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  displayName: Hero2
-  maxHealth: 30
-  health: 0
-  shield: 0
-  initiative: 2
+  displayName: Xarn
+  level: -1
   experience: 0
-  attackPower: 5
-  critChance: 0
-  def: 0
   strength: 0
   dexterity: 0
   intelligence: 0
+  maxHealth: 30
+  def: 0
+  reductionInPercent: 0
+  health: 0
+  shield: 0
+  initiative: 2
+  tempInitiative: 0
+  attackPower: 5
+  tempAttackPower: 0
+  spellPower: 0
+  tempSpellPower: 0
+  healPower: 0
+  tempHealPower: 0
+  critChance: 0
+  tempCritChance: 0
   startingAP: 5
   currentAP: 4
   maxAP: 10
   perTurnAp: 0
+  tempPerTurnAp: 0
   isControllable: 1
   shouldCalculateStats: 1
   skillsNames:
@@ -694,10 +704,7 @@ MonoBehaviour:
   - Whirlwind
   - Defend
   - Fireball
-  skillPrefab: {fileID: 0}
   portraitPrefab: {fileID: 106888, guid: e1fcf37c6b374cc45bebfb94d990053c, type: 2}
-  healthBar: {fileID: 0}
-  shieldBar: {fileID: 0}
   displayNameText: {fileID: 0}
   dmgAnimSpeed: 0.9
   spriteRenderer: {fileID: 0}
@@ -1347,7 +1354,7 @@ Prefab:
       objectReference: {fileID: 106888, guid: e1fcf37c6b374cc45bebfb94d990053c, type: 2}
     - target: {fileID: 0}
       propertyPath: displayName
-      value: Hero2
+      value: Xarn
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: skillsNames.Array.data[0]

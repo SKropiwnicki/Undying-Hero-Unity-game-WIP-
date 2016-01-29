@@ -50,42 +50,38 @@ MonoBehaviour:
   width: 2
   height: 4
   enemiesLevel: 1
-  startText: Pierwsze rzeczy
-  endText: Drugie rzeczy koncowe
+  startText: You hear orc around. Beware!
+  endText: This is the end of this foul place.
   type: 0
   startingImage: {fileID: 21300000, guid: 3731437db288f094b91aa1c2c94caa5b, type: 3}
   endingImage: {fileID: 21300000, guid: 1fd7c84361773dc49bf9f43a27f6965e, type: 3}
   startingCutscene:
-  - '- TO jest start hahahahaaaaaa
+  - "You were sent here to hunt evil force in this place.\n<CLICK You came to this
+    place full of rightful rage... <CLICK but your teammate is not like you. \n<CLICK
+    -This is just a waste of time, Kaendar. - said Xarn, your partner - I don't think
+    we will meet any great evil here\n<CLICK -Be catious I sense something - suddenly
+    you said."
+  - '<CLEAR At start it was just the low sound, that you wouldn''t hear without your
+    extra senses.
 
-    aaaaaaaaaaaaaaaaaaaaaa
+    <CLICK But the more you waited the more you heard. <CLICK After a while you could
+    clearly hear orcish language
 
-    aaaaaaaaaaaaaaaaaaa
+    <CLICK -Oh so it isn''t waste of time after all, is it? - Xarn smiled.
 
-    <CLICK- Mysle ze to dobrze, nie?
-
-    eeeeeeeeeeeee
-
-    eeeeeeeeeee'
-  - '<CLEAR- Latwo nie bedzie podrozniku.................eeee
-
-    eeeeeeeeeeeeeeeeeeee
-
-    eeeeeeeeeeeeeeeeeeeeeeeee
-
-    eeeeeeeeeeeeeeeeeeee'
-  - 'Ale co tam, dasz rade JAKOSssssssss
-
-    sssssssssssssssssssssssssss
-
-    sssssssssssssssssssssss
-
-    ssssssssssssssssssssssssssss'
+    <CLICK -Yes, we are here to hunt.'
   endingCutscene:
-  - To juz jest koniec. buuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu<CLICK
-  - 'Nie ma juz nic xddddddddddddddddddddddddddddd
+  - "After last orc died you cleared your sword and stopped for the moment. <CLICK
+    For what devil purpose could those beast be here. <CLICK You came here only because
+    it was said to hold some object of power, but... <CLICK was that trap? \n<CLICK
+    If it was, it doesn't matter. These beast were weak and paid price for their weakness"
+  - '<CLEAR - So, Kaendar, my friend, what do you think of it? -Xarn Asked after a
+    while
 
-    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd'
+    <CLICK - We have to go to other place like this. We will find more of them. -
+    You answered.
+
+    <CLICK - If you say so...'
 --- !u!114 &11419756
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -221,7 +217,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: startingCutscene.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: width
@@ -237,11 +233,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: startText
-      value: Pierwsze rzeczy
+      value: You hear orc around. Beware!
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: endText
-      value: Drugie rzeczy koncowe
+      value: This is the end of this foul place.
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: enemiesLevel
@@ -273,37 +269,41 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: startingCutscene.Array.data[1]
-      value: '<CLEAR- Latwo nie bedzie podrozniku.................eeee
+      value: '<CLEAR At start it was just the low sound, that you wouldn''t hear without
+        your extra senses.
 
-        eeeeeeeeeeeeeeeeeeee
+        <CLICK But the more you waited the more you heard. <CLICK After a while you
+        could clearly hear orcish language
 
-        eeeeeeeeeeeeeeeeeeeeeeeee
+        <CLICK -Oh so it isn''t waste of time after all, is it? - Xarn smiled.
 
-        eeeeeeeeeeeeeeeeeeee'
+        <CLICK -Yes, we are here to hunt.'
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: startingCutscene.Array.data[0]
-      value: '- TO jest start hahahahaaaaaa
-
-        aaaaaaaaaaaaaaaaaaaaaa
-
-        aaaaaaaaaaaaaaaaaaa
-
-        <CLICK- Mysle ze to dobrze, nie?
-
-        eeeeeeeeeeeee
-
-        eeeeeeeeeee'
+      value: "You were sent here to hunt evil force in this place.\n<CLICK You came
+        to this place full of rightful rage... <CLICK but your teammate is not like
+        you. \n<CLICK -This is just a waste of time, Kaendar. - said Xarn, your partner
+        - I don't think we will meet any great evil here\n<CLICK -Be catious I sense
+        something - suddenly you said."
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: endingCutscene.Array.data[0]
-      value: To juz jest koniec. buuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu<CLICK
+      value: "After last orc died you cleared your sword and stopped for the moment.
+        <CLICK For what devil purpose could those beast be here. <CLICK You came here
+        only because it was said to hold some object of power, but... <CLICK was that
+        trap? \n<CLICK If it was, it doesn't matter. These beast were weak and paid
+        price for their weakness"
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: endingCutscene.Array.data[1]
-      value: 'Nie ma juz nic xddddddddddddddddddddddddddddd
+      value: '<CLEAR - So, Kaendar, my friend, what do you think of it? -Xarn Asked
+        after a while
 
-        dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd'
+        <CLICK - We have to go to other place like this. We will find more of them.
+        - You answered.
+
+        <CLICK - If you say so...'
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: startingCutscene.Array.data[2]

@@ -395,7 +395,7 @@ public class Board : MonoBehaviour
 
         //////////////// battle /////////////
 
-        /*int k = freeTiles.Count / 2;
+        int k = freeTiles.Count / 2;
         for (int i = 0; i <= k; i++)
         {
             int r = Random.Range(0, freeTiles.Count);
@@ -411,7 +411,7 @@ public class Board : MonoBehaviour
             int r = Random.Range(0, freeTiles.Count);
             board[freeTiles[r].y, freeTiles[r].x].type = Tile.Type.HEAL;
             freeTiles.Remove(freeTiles[r]);
-        }*/
+        }
 
         debugBoard();
     }

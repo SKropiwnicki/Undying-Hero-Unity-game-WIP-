@@ -91,7 +91,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec7ce56101794704c87b8d29ab2449e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  displayName: Hero1
+  displayName: Kaendar
   level: -1
   experience: 0
   strength: 0
@@ -239,7 +239,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: displayName
-      value: Hero1
+      value: Kaendar
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: skillsNames.Array.data[4]

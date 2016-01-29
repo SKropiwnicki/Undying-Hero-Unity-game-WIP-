@@ -47,26 +47,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d017d3af21c37d34cb25fca77197f0ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 3
+  width: 5
   height: 3
   enemiesLevel: 3
-  startText: Pierwsze rzeczy
-  endText: Drugie rzeczy koncowe
+  startText: This place... seems evil.
+  endText: Evil beaten once again!
   type: 0
   startingImage: {fileID: 21300000, guid: 3731437db288f094b91aa1c2c94caa5b, type: 3}
   endingImage: {fileID: 21300000, guid: 1fd7c84361773dc49bf9f43a27f6965e, type: 3}
   startingCutscene:
-  - '- TO jest start hahahahaaaaaa
-
-    aaaaaaaaaaaaaaaaaaaaaa
-
-    aaaaaaaaaaaaaaaaaaa
-
-    <CLICK- Mysle ze to dobrze, nie?
-
-    eeeeeeeeeeeee
-
-    eeeeeeeeeee'
+  - "You were sent here to hunt evil force in this place.\n<CLICK You came to this
+    place full of rightful rage... <CLICK but your teammate is not like you. \n<CLICK
+    -This is just a waste of time, Kaendar. - said Xarn, your partner - I don't think
+    we will meet any great evil here\n<CLICK -Be catious I sense something - suddenly
+    you said."
   - '<CLEAR- Latwo nie bedzie podrozniku.................eeee
 
     eeeeeeeeeeeeeeeeeeee
@@ -82,7 +76,10 @@ MonoBehaviour:
 
     ssssssssssssssssssssssssssss'
   endingCutscene:
-  - To juz jest koniec. buuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu<CLICK
+  - "After last orc died you cleared your sword and stopped for the moment. <CLICK
+    For what devil purpose could those beast be here. <CLICK You came here only because
+    it was said to hold some object of power, but... <CLICK was that trap? \n<CLICK
+    If it was, it doesn't matter. These beast were weak and paid price for their weakness"
   - 'Nie ma juz nic xddddddddddddddddddddddddddddd
 
     dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd'
@@ -129,9 +126,12 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '3x3
+  m_Text: 'Level 3: Bloody hell.
 
-    lvl: 3'
+
+    This place is too damn huge. Better watch out.
+
+    Recommended levels: 4-6'
 --- !u!114 &11456254
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -223,7 +223,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: width
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: height
@@ -235,11 +235,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: startText
-      value: Pierwsze rzeczy
+      value: This place... seems evil.
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: endText
-      value: Drugie rzeczy koncowe
+      value: Evil beaten once again!
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: enemiesLevel
@@ -247,9 +247,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Text
-      value: '3x3
+      value: 'Level 3: Bloody hell.
 
-        lvl: 3'
+
+        This place is too damn huge. Better watch out.
+
+        Recommended levels: 4-6'
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_AnchorMin.y
@@ -279,21 +282,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: startingCutscene.Array.data[0]
-      value: '- TO jest start hahahahaaaaaa
-
-        aaaaaaaaaaaaaaaaaaaaaa
-
-        aaaaaaaaaaaaaaaaaaa
-
-        <CLICK- Mysle ze to dobrze, nie?
-
-        eeeeeeeeeeeee
-
-        eeeeeeeeeee'
+      value: "You were sent here to hunt evil force in this place.\n<CLICK You came
+        to this place full of rightful rage... <CLICK but your teammate is not like
+        you. \n<CLICK -This is just a waste of time, Kaendar. - said Xarn, your partner
+        - I don't think we will meet any great evil here\n<CLICK -Be catious I sense
+        something - suddenly you said."
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: endingCutscene.Array.data[0]
-      value: To juz jest koniec. buuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu<CLICK
+      value: "After last orc died you cleared your sword and stopped for the moment.
+        <CLICK For what devil purpose could those beast be here. <CLICK You came here
+        only because it was said to hold some object of power, but... <CLICK was that
+        trap? \n<CLICK If it was, it doesn't matter. These beast were weak and paid
+        price for their weakness"
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: endingCutscene.Array.data[1]
